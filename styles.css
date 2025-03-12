@@ -1,0 +1,33 @@
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #cad2c5;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header__nav-list {
+	list-style-type: none;
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	padding-left: 0;
+}
+
+.header__nav-link {
+	text-decoration: none;
+	margin: 1.5em;
+	color: #354f52;
+}
+
+.header__nav-link:visited {
+	color: #78290f;
+}
+
+.header__nav-link:hover {
+	color: #15616d;
+	text-decoration: underline;
+}
+
+.header__nav-link:active {
+	color: #ff7d00;
+}
