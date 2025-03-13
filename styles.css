@@ -5,6 +5,10 @@ body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.header {
+	position: relative;
+}
+
 .header__nav-list {
 	list-style-type: none;
 	display: flex;
@@ -43,34 +47,72 @@ body {
 	border-radius: 15px;
 	box-shadow: 5px 5px 5px #52796f;
 	margin: 1.5em;
-	padding: 1em;
+	padding: 0.8em;
 }
 
 .main__icon {
 	background-color: #2f3e46;
 	border-radius: 50%;
-	max-width: 30%;
+	max-width: 100%;
+	position: relative;
 }
 
 .main__full-name {
 	color: #2f3e46;
-	font-size: 1.5em;
+	font-size: 1.43em;
 	font-weight: 600;
 	margin-bottom: 0;
 }
 
 .main__role {
 	color: #2f3e46;
-	font-size: 1.3em;
+	font-size: 1.25em;
 	font-weight: 400;
 	margin-top: 0;
+	margin-bottom: 0.5em;
 }
 
 .main__btnContact {
 	background-color: #2f3e46;
-	border: 2px solid #2f3e46;
+	border: 2px solid #15616d;
 	color: #f0ebd8;
 	padding: 0.5em 1em;
 	border-radius: 8px;
 	font-size: 1em;
+	position: relative;
+	margin-left: 2.5em;
+}
+
+.main__btnContact:hover {
+	background-color: #1d2d44;
+	border: 2px solid #3e5c76;
+}
+
+.main__container--profile {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.main__subcontainer--image {
+	width: 35%;
+}
+
+.main__subcontainer--text {
+	width: 65%;
+	padding-left: 1em;
+}
+
+.main__article-title {
+	color: #0d1321;
+	font-weight: 400;
+	font-size: 1.4em;
+	margin-bottom: 0.5em;
+}
+
+.main__profile-desc {
+	color: #0d1321;
+	font-size: 1.03em;
+	padding: 0 0.4em;
+	margin: 0;
 }
