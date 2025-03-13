@@ -17,6 +17,7 @@ body {
 	text-decoration: none;
 	margin: 1.5em;
 	color: #354f52;
+	font-size: 1em;
 }
 
 .header__nav-link:visited {
@@ -30,4 +31,46 @@ body {
 
 .header__nav-link:active {
 	color: #ff7d00;
+}
+
+/* To-do: Add functionalities
+1. When nav link is clicked, page automatically scrolls to the section
+2. Keep header nav fixed
+*/
+
+.main__article {
+	background-color: #f0ebd8;
+	border-radius: 15px;
+	box-shadow: 5px 5px 5px #52796f;
+	margin: 1.5em;
+	padding: 1em;
+}
+
+.main__icon {
+	background-color: #2f3e46;
+	border-radius: 50%;
+	max-width: 30%;
+}
+
+.main__full-name {
+	color: #2f3e46;
+	font-size: 1.5em;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.main__role {
+	color: #2f3e46;
+	font-size: 1.3em;
+	font-weight: 400;
+	margin-top: 0;
+}
+
+.main__btnContact {
+	background-color: #2f3e46;
+	border: 2px solid #2f3e46;
+	color: #f0ebd8;
+	padding: 0.5em 1em;
+	border-radius: 8px;
+	font-size: 1em;
 }
