@@ -40,6 +40,7 @@ body {
 /* To-do: Add functionalities
 1. When nav link is clicked, page automatically scrolls to the section
 2. Keep header nav fixed
+3. When 'Contact Me' button is clicked, redirect user to send email (mailto:cezcomia@gmail.com)
 */
 
 .main__article {
@@ -115,4 +116,41 @@ body {
 	font-size: 1.03em;
 	padding: 0 0.4em;
 	margin: 0;
+}
+
+.main__article--portfolio {
+	position: relative;
+}
+
+.main__article-title--portfolio {
+	margin-top: 0.3em;
+}
+
+.main__project-image {
+	max-width: 100%;
+}
+
+.main__container--project {
+	position: relative;
+}
+
+.main__subcontainer--project {
+	background-color: #2f3e46;
+	color: #f0ebd8;
+	padding: 1em;
+	position: absolute;
+	top: 0;
+	height: 90%;
+	/* display: none; */
+}
+
+.main__project-name {
+	font-weight: 400;
+	font-size: 1.4em;
+	text-align: center;
+	margin: 0.3em;
+}
+
+.main__project-details {
+	font-size: 1.03em;
 }
