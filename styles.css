@@ -7,6 +7,17 @@ body {
 
 .header {
 	position: relative;
+	z-index: 1;
+}
+
+.header__nav {
+	background-color: #cad2c5;
+	width: 100%;
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	right: 0;
+	border: 1.3px solid #f0ebd8;
 }
 
 .header__nav-list {
@@ -15,6 +26,7 @@ body {
 	justify-content: flex-end;
 	width: 100%;
 	padding-left: 0;
+	padding-bottom: 0.5em;
 }
 
 .header__nav-link {
@@ -38,11 +50,15 @@ body {
 }
 
 /* To-do: Add functionalities
-1. When nav link is clicked, page automatically scrolls to the section
-2. Keep header nav fixed
+/1. When nav link is clicked, page automatically scrolls to the section
+/2. Keep header nav fixed
 3. When 'Contact Me' button is clicked, redirect user to send email (mailto:cezcomia@gmail.com)
 4. Display portfolio screenshot. When hovering on image, display project name and desc
 */
+
+.main {
+	margin-top: 5em;
+}
 
 .main__article {
 	background-color: #f0ebd8;
@@ -50,6 +66,7 @@ body {
 	box-shadow: 5px 5px 5px #52796f;
 	margin: 1.5em;
 	padding: 0.8em;
+	scroll-margin-top: 5em;
 }
 
 .main__icon {
@@ -177,6 +194,11 @@ body {
 	border-radius: 8px;
 }
 
+.footer__subcontainer:hover {
+	background-color: #1d2d44;
+	border: 2px solid #3e5c76;
+}
+
 svg {
 	width: 100%;
 	display: flex;
@@ -194,9 +216,14 @@ svg {
 	top: -4px;
 }
 
+.divider {
+	border: 1.3px solid #f0ebd8;
+}
+
 .footer__copyright {
 	color: #0d1321;
 	padding: 0.5em 1em 1em 1em;
 	text-align: center;
 	font-size: 0.95em;
+	position: relative;
 }
