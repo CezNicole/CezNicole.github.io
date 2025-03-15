@@ -50,11 +50,19 @@ body {
 }
 
 /* To-do: Add functionalities
+<<<<<<< HEAD
  /1. When nav link is clicked, page automatically scrolls to the section
  /2. Keep header nav fixed
  3. When 'Contact Me' button is clicked, redirect user to send email (mailto:cezcomia@gmail.com)
  4. Display portfolio screenshot. When hovering on image, display project name and desc
  */
+=======
+/1. When nav link is clicked, page automatically scrolls to the section
+/2. Keep header nav fixed
+3. When 'Contact Me' button is clicked, redirect user to send email (mailto:cezcomia@gmail.com)
+4. Display portfolio screenshot. When hovering on image, display project name and desc
+*/
+>>>>>>> 399776e94e4a2b7ca96eecac78d945ca530319b0
 
 .main {
 	margin-top: 5em;
