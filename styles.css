@@ -6,7 +6,7 @@ body {
 }
 
 /* Mobile Screens */
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
 	.header {
 		position: relative;
 		z-index: 1;
@@ -94,7 +94,8 @@ body {
 		border-radius: 8px;
 		font-size: 1em;
 		position: relative;
-		margin-left: 2.5em;
+		/* margin-left: 2em; */
+		margin-left: 1em;
 	}
 
 	.main__btnContact:hover {
@@ -157,7 +158,8 @@ body {
 		padding: 1em;
 		position: absolute;
 		top: 0;
-		height: 90%;
+		/* height: 90%; */
+		height: 85%;
 		display: none;
 	}
 
@@ -173,13 +175,16 @@ body {
 
 	.main__project-name {
 		font-weight: 400;
-		font-size: 1.4em;
+		/* font-size: 1.4em; */
+		font-size: 3.8vw;
 		text-align: center;
 		margin: 0.3em;
 	}
 
 	.main__project-details {
-		font-size: 1.03em;
+		/* font-size: 1.03em; */
+		font-size: 3.4vw;
+		line-height: 1.4;
 	}
 
 	.footer__title {
@@ -240,4 +245,12 @@ body {
 		font-size: 0.95em;
 		position: relative;
 	}
+}
+
+/* Tablet Screens */
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+}
+
+/* Desktop Screens */
+@media screen and (min-width: 1280px) {
 }
