@@ -613,6 +613,7 @@ body {
 		padding: 0 0.37em;
 		margin: 0 0 1.5em;
 		line-height: 1.4;
+		max-width: 75%;
 	}
 
 	.main__article--portfolio {
@@ -639,6 +640,7 @@ body {
 		top: 0;
 		height: 85%;
 		display: none;
+		max-width: 75%;
 	}
 
 	.main__container--project:hover {

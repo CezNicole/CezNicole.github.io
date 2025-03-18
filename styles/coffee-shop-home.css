@@ -39,13 +39,42 @@
 	.header__links {
 		text-decoration: none;
 	}
-}
 
-/* .header__banner-name {
-	margin-top: 3em;
-} */
+	.banner__container {
+		display: flex;
+		margin-top: 6em;
+	}
 
-.banner__container {
-	display: flex;
-	margin-top: 6em;
+	.main__products {
+		background-color: #f7f7f7;
+	}
+
+	.main__product-header {
+		margin: 0;
+	}
+
+	.main__promotion {
+		background-color: #fff;
+	}
+
+	.main__promotion-header {
+		margin: 0;
+	}
+
+	.main__promotion-image {
+		background-image: url(../assets/images/coldbrewbackground.png);
+		/* background-repeat: no-repeat; */
+		background-size: contain;
+	}
+
+	.footer {
+		background-color: #fff0ed;
+		width: 100%;
+		position: relative;
+		bottom: 0;
+	}
+
+	.footer__socials-list {
+		margin: 0;
+	}
 }
