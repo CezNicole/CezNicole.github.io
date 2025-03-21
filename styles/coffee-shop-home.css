@@ -31,8 +31,23 @@
 	}
 
 	.banner__subcontainer {
-		padding: 2em 5em;
+		/* padding: 2em 5em; */
+		/* padding: 6em 6em 2em; */
+		padding: 6em 3.5em 2em;
 		margin: 0 auto;
+		max-width: 70%;
+	}
+
+	.banner__subcontainer--tilted-can {
+		background-image: url(../assets/images/coldbrewbackground.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 3em auto 0;
 	}
 
 	.header__banner-image {
@@ -48,10 +63,27 @@
 		background-color: #fff;
 	}
 
+	.main__promotion-icon-list {
+		list-style-type: none;
+		display: flex;
+		justify-content: space-between;
+		padding: 0;
+		margin: 1.5em 0;
+		max-width: 27em;
+	}
+
+	.main__promotion-background-image {
+		max-width: 20em;
+		position: relative;
+	}
+
 	.main__promotion-image {
-		background-image: url(../assets/images/coldbrewbackground.png);
-		/* background-repeat: no-repeat; */
-		background-size: contain;
+		position: relative;
+		bottom: 2em;
+	}
+
+	.main__promotion-discount {
+		width: 100%;
 	}
 
 	.footer {
@@ -157,8 +189,12 @@
 		font-weight: 400;
 	}
 
-	.descriptive-text--add-width {
-		width: 110%;
+	.descriptive-text--three-lines {
+		max-width: 100%;
+	}
+
+	.descriptive-text--two-lines {
+		max-width: 100%;
 	}
 
 	.descriptive-text--gray {
@@ -169,6 +205,20 @@
 	.product-text__price {
 		color: #5bacc3;
 		font-size: 33px;
+		font-weight: 700;
+	}
+
+	.discount-code {
+		background-color: #393939;
+		color: #fff;
+		width: 90%;
+		margin: 3em auto;
+		padding: 0.5em;
+		font-size: 45px;
+		font-weight: 400;
+	}
+
+	.discount-code--bold {
 		font-weight: 700;
 	}
 }
