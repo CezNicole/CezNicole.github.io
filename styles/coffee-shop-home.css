@@ -119,6 +119,7 @@
 		font-size: 60px;
 		font-weight: 300;
 		margin: 0;
+		color: #393939;
 	}
 
 	.section-titles--center {
@@ -290,10 +291,10 @@
 		/* padding-bottom: 2em; */
 		/* padding: 6em 6em 2em; */
 		/* padding: 2em 3.5em 2em; */
-		padding-top: 2em;
+		padding: 2em 0 3em;
 		margin: 0 auto;
 		width: 50%;
-		border: 2px solid blue;
+		/* border: 2px solid blue; */
 	}
 
 	.banner__subcontainer--tilted-can {
@@ -319,7 +320,7 @@
 
 	.banner__subcontainer--coffee-bag {
 		display: flex;
-		justify-content: right;
+		justify-content: flex-start;
 	}
 
 	.header__banner-image {
@@ -383,6 +384,7 @@
 		font-size: 60px;
 		font-weight: 300;
 		margin: 0;
+		color: #393939;
 	}
 
 	.section-titles--center {
