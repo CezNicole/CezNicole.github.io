@@ -166,6 +166,7 @@
 		max-width: 20em;
 		margin: 3.5em auto;
 		border-radius: 0.7em;
+		box-shadow: 2px 2px 6px 2px#f7f7f7;
 	}
 
 	.product-images {
@@ -287,14 +288,9 @@
 	}
 
 	.banner__subcontainer {
-		/* padding: 1em 5em 2em; */
-		/* padding-bottom: 2em; */
-		/* padding: 6em 6em 2em; */
-		/* padding: 2em 3.5em 2em; */
 		padding: 2em 0 3em;
 		margin: 0 auto;
 		width: 50%;
-		/* border: 2px solid blue; */
 	}
 
 	.banner__subcontainer--tilted-can {
@@ -306,8 +302,6 @@
 		justify-content: center;
 		align-items: center;
 		margin: 3em auto 0;
-		/* max-width: 25.5em; */
-		/* width: 100%; */
 		max-width: 40%;
 		position: relative;
 	}
@@ -315,7 +309,6 @@
 	.banner__subcontainer--nitro-coffee {
 		padding: 6em 2em 2em;
 		margin-left: 7.5%;
-		/* To-do: fix padding top to match style guide */
 	}
 
 	.banner__subcontainer--coffee-bag {
@@ -429,14 +422,17 @@
 	.product-cards__container {
 		display: flex;
 		flex-wrap: wrap;
-		border: 2px solid red;
+		justify-content: space-evenly;
 	}
 
 	.product-cards {
 		background-color: #fff;
-		max-width: 20em;
+		width: 20em;
 		margin: 3.5em auto;
 		border-radius: 0.7em;
+		box-shadow: 2px 2px 6px 2px#f7f7f7;
+		margin-left: 0.5em;
+		margin-right: 0.5em;
 	}
 
 	.product-images {
