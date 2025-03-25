@@ -320,7 +320,6 @@
 
 	.banner__subcontainer--coffee-bag {
 		display: flex;
-		/* justify-content: flex-start; */
 		justify-content: center;
 	}
 
