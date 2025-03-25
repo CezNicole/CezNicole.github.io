@@ -617,10 +617,11 @@
 		max-width: 14em;
 	}
 
-	/* .main__products {
+	.main__products {
 		background-color: #f7f7f7;
 		padding-bottom: 3em;
-	} */
+		max-width: 80em;
+	}
 
 	/* .main__promotion {
 		background-color: #fff;
@@ -681,18 +682,18 @@
 		color: #393939;
 	}
 
-	/* .section-titles--center {
+	.section-titles--center {
 		text-align: center;
 		padding: 1em 1em 0;
-	} */
+	}
 
-	/* .section-subtitles {
+	.section-subtitles {
 		font-size: 33px;
 		font-weight: 300;
 		width: 100%;
 		color: #393939;
 		margin: 0.75em 0;
-	} */
+	}
 
 	.nav-links {
 		font-size: 33px;
@@ -715,57 +716,63 @@
 		border: 2px solid #5bacc3;
 	}
 
-	/* .buttons--center {
+	.buttons--center {
 		display: flex;
 		margin: 0 auto;
-	} */
+	}
 
-	/* .product-cards__container {
+	.product-cards__container {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-evenly;
-	} */
+	}
 
-	/* .product-cards {
+	.product-cards {
 		background-color: #fff;
 		width: 20em;
 		margin: 3.5em auto;
 		border-radius: 0.7em;
 		box-shadow: 2px 2px 6px 2px#f7f7f7;
-		margin-left: 0.5em;
-		margin-right: 0.5em;
-	} */
+	}
 
-	/* .product-images {
+	.product-cards:nth-of-type(1) {
+		margin-left: 6em;
+	}
+
+	.product-cards:nth-last-of-type(1) {
+		margin-right: 6em;
+	}
+
+	.product-images {
 		display: flex;
 		margin: 0 auto;
 		padding: 1.5em;
 		height: 280px;
-	} */
+	}
 
-	/* .product-text-container {
+	.product-text-container {
 		background-color: #fff0ed;
 		display: flex;
 		width: 100%;
-	} */
+	}
 
-	/* .product-text {
+	.product-text {
 		margin: 0;
-	} */
+	}
 
-	/* .product-text-subcontainer {
+	.product-text-subcontainer {
 		padding: 2em 1em;
-	} */
+	}
 
-	/* .product-text-subcontainer--left {
+	.product-text-subcontainer--left {
 		width: 80%;
-	} */
+	}
 
-	/* .product-text-subcontainer--right {
+	.product-text-subcontainer--right {
 		width: 20%;
 		position: relative;
 		top: 0.75em;
-	} */
+	}
 
 	.descriptive-text {
 		font-size: 18px;
@@ -780,15 +787,15 @@
 		max-width: 25em;
 	} */
 
-	/* .descriptive-text--gray {
+	.descriptive-text--gray {
 		color: #808080;
-	} */
+	}
 
-	/* .product-text__price {
+	.product-text__price {
 		color: #5bacc3;
 		font-size: 33px;
 		font-weight: 700;
-	} */
+	}
 
 	/* .discount-code {
 		background-color: #393939;
