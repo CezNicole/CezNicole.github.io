@@ -287,9 +287,10 @@
 
 	.banner__subcontainer {
 		/* padding: 1em 5em 2em; */
-		padding-bottom: 2em;
+		/* padding-bottom: 2em; */
 		/* padding: 6em 6em 2em; */
-		/* padding: 6em 3.5em 2em; */
+		/* padding: 2em 3.5em 2em; */
+		padding-top: 2em;
 		margin: 0 auto;
 		width: 50%;
 		border: 2px solid blue;
@@ -308,6 +309,17 @@
 		/* width: 100%; */
 		max-width: 40%;
 		position: relative;
+	}
+
+	.banner__subcontainer--nitro-coffee {
+		padding: 6em 2em 2em;
+		margin-left: 7.5%;
+		/* To-do: fix padding top to match style guide */
+	}
+
+	.banner__subcontainer--coffee-bag {
+		display: flex;
+		justify-content: right;
 	}
 
 	.header__banner-image {
@@ -474,13 +486,13 @@
 		/* color: #f7f7f7; */
 	}
 
-	/* .product-text__price {
+	.product-text__price {
 		color: #5bacc3;
 		font-size: 33px;
 		font-weight: 700;
-	} */
+	}
 
-	/* .discount-code {
+	.discount-code {
 		background-color: #393939;
 		color: #fff;
 		width: 90%;
@@ -488,21 +500,22 @@
 		padding: 0.5em;
 		font-size: 45px;
 		font-weight: 400;
-	} */
+		text-align: center;
+	}
 
-	/* .discount-code--bold {
+	.discount-code--bold {
 		font-weight: 700;
-	} */
+	}
 
-	/* .address--next-line {
+	.address--next-line {
 		display: flex;
-	} */
+	}
 
-	/* .business-hours {
+	.business-hours {
 		margin: 0;
-	} */
+	}
 
-	/* .business-hours--bold {
+	.business-hours--bold {
 		font-weight: 700;
-	} */
+	}
 }
