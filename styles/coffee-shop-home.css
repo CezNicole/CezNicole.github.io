@@ -510,7 +510,7 @@
 	.discount-code {
 		background-color: #393939;
 		color: #fff;
-		width: 90%;
+		width: 83%;
 		margin: 3em auto;
 		padding: 0.5em;
 		font-size: 45px;
@@ -580,7 +580,7 @@
 		width: 50%;
 	}
 
-	/* .banner__subcontainer--tilted-can {
+	.banner__subcontainer--tilted-can {
 		background-image: url(../assets/images/coldbrewbackground.png);
 		background-repeat: no-repeat;
 		background-size: contain;
@@ -593,7 +593,7 @@
 		width: 100%;
 		max-width: 25em;
 		position: relative;
-	} */
+	}
 
 	.banner__subcontainer--nitro-coffee {
 		padding: 6em 2em 2em;
@@ -607,47 +607,46 @@
 		max-width: 50%;
 	}
 
-	/* .banner__subcontainer--promotional-left {
+	.banner__subcontainer--promotional-left {
 		padding: 6em 1.5em 2em;
 		margin: 0 2em;
 		width: 50%;
-	} */
+	}
 
 	.header__banner-image {
 		max-width: 14em;
 	}
 
-	.main__products {
-		background-color: #f7f7f7;
-		padding-bottom: 3em;
+	.main {
 		max-width: 80em;
 	}
 
-	/* .main__promotion {
+	.main__products {
+		background-color: #f7f7f7;
+		padding-bottom: 3em;
+	}
+
+	.main__promotion {
 		background-color: #fff;
 		padding-top: 1.5em;
 		display: flex;
 		justify-content: space-around;
 		margin: 0 auto;
-	} */
+	}
 
-	/* .main__promotion-icon-list {
+	.main__promotion-icon-list {
 		list-style-type: none;
 		display: flex;
 		justify-content: space-between;
 		padding: 0;
 		margin: 1.5em 0;
 		max-width: 27em;
-	} */
+	}
 
-	/* .main__promotion-image {
+	.main__promotion-image {
 		position: relative;
 		bottom: 2.7em;
-	} */
-
-	/* .main__promotion-discount {
-		width: 100%;
-	} */
+	}
 
 	/* .footer {
 		background-color: #fff0ed;
@@ -783,9 +782,9 @@
 		max-width: 20em;
 	}
 
-	/* .descriptive-text--two-lines {
+	.descriptive-text--two-lines {
 		max-width: 25em;
-	} */
+	}
 
 	.descriptive-text--gray {
 		color: #808080;
@@ -797,20 +796,20 @@
 		font-weight: 700;
 	}
 
-	/* .discount-code {
+	.discount-code {
 		background-color: #393939;
 		color: #fff;
-		width: 90%;
+		width: 83%;
 		margin: 3em auto;
 		padding: 0.5em;
 		font-size: 45px;
 		font-weight: 400;
 		text-align: center;
-	} */
+	}
 
-	/* .discount-code--bold {
+	.discount-code--bold {
 		font-weight: 700;
-	} */
+	}
 
 	/* .address--next-line {
 		display: flex;
