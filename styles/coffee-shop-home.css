@@ -49,6 +49,11 @@
 		position: relative;
 	}
 
+	.banner__subcontainer--promotional-left {
+		padding: 6em 2.5em;
+		max-width: 100%;
+	}
+
 	.header__banner-image {
 		max-width: 14em;
 	}
@@ -301,8 +306,10 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin: 3em auto 0;
-		max-width: 40%;
+		margin: 1em auto 0;
+		padding-top: 8em;
+		width: 100%;
+		max-width: 25em;
 		position: relative;
 	}
 
@@ -316,6 +323,13 @@
 		justify-content: flex-start;
 	}
 
+	.banner__subcontainer--promotional-left {
+		/* padding: 6em 3em 2em; */
+		/* padding: 6em 2.5em 2em; */
+		padding: 6em 1.5em 2em;
+		margin-left: 2em;
+	}
+
 	.header__banner-image {
 		max-width: 14em;
 	}
@@ -323,10 +337,12 @@
 	.main__products {
 		background-color: #f7f7f7;
 		padding-bottom: 3em;
+		border: 2px solid blue;
 	}
 
 	.main__promotion {
 		background-color: #fff;
+		padding-top: 1.5em;
 	}
 
 	.main__promotion-icon-list {
@@ -340,7 +356,9 @@
 
 	.main__promotion-image {
 		position: relative;
-		top: 1em;
+		/* top: 1em; */
+		bottom: 2.7em;
+		border: 2px solid green;
 	}
 
 	.main__promotion-discount {
