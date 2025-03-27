@@ -231,3 +231,33 @@
         @include font-bold;
     }
 }
+
+@include breakpoints.tablet{
+    // header nav
+    .header {
+        &__nav-list {
+            display: flex;
+        }
+
+        &__list-item {
+            &--left {
+                align-items: baseline;
+                width: 75%;
+            }
+
+            &:not(:first-child) {
+                display: flex;
+                justify-content: space-evenly;
+                min-width: 11em;
+                width: 25%;
+                position: relative;
+                top: 0.6em;
+                padding: 1em 0;
+            }
+        }
+    }
+
+    // menu banner background image
+    // menu items - description width
+    // footer
+}
