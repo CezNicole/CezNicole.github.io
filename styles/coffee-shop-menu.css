@@ -209,4 +209,23 @@ body {
 .business-hours--bold {
   font-weight: 700;
   font-style: normal;
+}
+
+@media (min-width: 768px) {
+  .header__nav-list {
+    display: flex;
+  }
+  .header__list-item--left {
+    align-items: baseline;
+    width: 75%;
+  }
+  .header__list-item:not(:first-child) {
+    display: flex;
+    justify-content: space-evenly;
+    min-width: 11em;
+    width: 25%;
+    position: relative;
+    top: 0.6em;
+    padding: 1em 0;
+  }
 }/*# sourceMappingURL=coffee-shop-menu.css.map */
