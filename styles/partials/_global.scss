@@ -1,0 +1,31 @@
+@use './fonts';
+@use './colors';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    color: colors.$graphite;
+    background-color: colors.$nitro-pink;
+}
+
+@mixin font-light {
+    font-weight: 300;
+    font-style: normal;
+}
+
+@mixin font-regular {
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin font-italic {
+    font-weight: 400;
+    font-style: italic;
+}
+
+@mixin font-bold {
+    font-weight: 700;
+    font-style: normal;
+}

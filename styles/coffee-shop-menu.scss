@@ -1,0 +1,9 @@
+@use './partials/global' as *;
+@use './partials/colors' as colors;
+@use './partials/breakpoints' as breakpoints;
+
+// heading 1 & 2
+.section-titles{
+    @include font-light;
+    font-size: 60px;
+}

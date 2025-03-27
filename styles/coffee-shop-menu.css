@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url(../../assets/fonts/OpenSans-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../../assets/fonts/OpenSans-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../../assets/fonts/OpenSans-Italic.ttf) format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../../assets/fonts/OpenSans-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  color: #393939;
+  background-color: #fff0ed;
+}
+
+.section-titles {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 60px;
+}/*# sourceMappingURL=coffee-shop-menu.css.map */
