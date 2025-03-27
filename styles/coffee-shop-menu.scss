@@ -87,3 +87,31 @@
     color: colors.$white;
     display: flex;
 }
+
+
+// header nav
+.header__nav-list{
+    list-style-type: none;
+    padding: 1em;
+}
+
+.header__links{
+    text-decoration: none;
+}
+
+.header__list-item--left{
+    display: flex;
+}
+
+.header__list-item:not(:first-child){
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+}
+
+.section-subtitles--blue{
+    color: colors.$nitro-blue;
+}
+
+
+
