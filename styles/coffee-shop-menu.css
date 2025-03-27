@@ -47,6 +47,7 @@
   font-weight: 400;
   font-style: normal;
   font-size: 21px;
+  text-decoration: none;
 }
 
 .buttons {
@@ -113,12 +114,22 @@
   align-items: center;
 }
 
-.nav-links__menu {
+.sub-navigation {
   width: 100%;
   background-color: #393939;
   color: #fff;
   display: flex;
-  padding: 0;
+  border-left: 3px solid #5bacc3;
+  padding: 0 1em;
+}
+
+.menu-links__list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #393939;
+  padding: 0.75em 0.4em;
 }
 
 .header__nav-list {

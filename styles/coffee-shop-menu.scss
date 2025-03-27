@@ -18,6 +18,7 @@
 .nav-links{
     @include font-regular;
     font-size: 21px;
+    text-decoration: none;
 }
 
 .buttons{
@@ -91,13 +92,24 @@
 }
 
 // sub-navigation (menu links)
-.nav-links__menu{
+.sub-navigation{
     width: 100%;
     background-color: colors.$graphite;
     color: colors.$white;
     display: flex;
-    padding: 0;
+    border-left: 3px solid colors.$nitro-blue;
+    padding: 0 1em;
 }
+
+.menu-links__list{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: colors.$graphite;
+    padding: 0.75em 0.4em;
+}
+
 
 
 // header nav
@@ -123,6 +135,7 @@
 .section-subtitles--blue{
     color: colors.$nitro-blue;
 }
+
 
 
 // 
