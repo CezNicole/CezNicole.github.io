@@ -12,6 +12,19 @@
 .section-subtitles{
     @include font-light;
     font-size: 33px;
+
+    &--blue {
+        color: colors.$nitro-blue;
+    }
+    
+    // menu section headers
+    // &--center {
+    //     text-align: center;
+    // }
+
+    &__footer {
+        margin: 0.75em 0;
+    }
 }
 
 // nav link, button
@@ -28,27 +41,39 @@
 }
 
 // paragraph text - regular
-.desciptive-text{
+.descriptive-text{
     @include font-regular;
     font-size: 18px;
-}
 
-// paragraph text - regular italic
-.descriptive-text__description{
-    @include font-italic;
-    font-size: 18px;
+    // paragraph text - regular italic
+    &__description{
+        @include font-italic;
+        font-size: 18px;
+        width: 100%;
+    }
+
+    &__price {
+        color: colors.$nitro-blue;
+        padding-top: 0.25em;
+    }
 }
 
 // discount text
 .discount-code{
     @include font-regular;
     font-size: 45px;
+
+    // FirstNitro discount code on landing page
+    &--bold{
+        @include font-bold;
+        border:  2px solid red;
+    }
 }
 
 // FirstNitro discount code on landing page
-.discount-code--bold{
-    @include font-bold;
-}
+// .discount-code--bold{
+//     @include font-bold;
+// }
 
 // discount border box on landing page
 .discount-banner{
@@ -101,41 +126,108 @@
     padding: 0 1em;
 }
 
-.menu-links__list{
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background-color: colors.$graphite;
-    padding: 0.75em 0.4em;
+.menu-links{
+    &__list{
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-color: colors.$graphite;
+        padding: 0.75em 0.4em;
+    }
 }
 
 
 
 // header nav
-.header__nav-list{
-    list-style-type: none;
-    padding: 1em;
+.header{
+    &__nav-list{
+        list-style-type: none;
+        padding: 1em;
+    }
+
+    &__links {
+        text-decoration: none;
+    }
+
+    &__list-item{
+        &--left {
+            display: flex;
+        }
+
+        &:not(:first-child) {
+            text-align: center;
+            padding: 1em;
+            width: 100%;
+        }
+    }
 }
 
-.header__links{
-    text-decoration: none;
-}
 
-.header__list-item--left{
-    display: flex;
-}
 
-.header__list-item:not(:first-child){
+// menu section
+.menu{
+    padding: 1em 1em 2em;
     text-align: center;
-    padding: 1em;
+
+    &:last-child {
+        border-bottom: 52px solid colors.$graphite;
+    }
+
+    &--white {
+        background-color: colors.$white;
+        width: 100%;
+    }
+}
+
+
+
+// menu items
+.products{
+    @extend .section-subtitles;
+    padding: 0.7em 0 0.25em;
+}
+
+
+
+// footer
+.footer {
+    background-color: colors.$nitro-pink;
     width: 100%;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        margin: 2em auto;
+        width: 60%;
+    }
+
+    &__socials-list {
+        list-style-type: none;
+        display: flex;
+    }
+
+    &__list-item {
+        padding-right: 0.5em;
+    }
 }
 
-.section-subtitles--blue{
-    color: colors.$nitro-blue;
+
+
+.address{
+    &--next-line {
+        display: flex;
+    }
 }
 
+.business-hours {
+    margin: 0;
 
-
-// 
+    &--bold {
+        @include font-bold;
+    }
+}
