@@ -26,7 +26,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #393939;
   background-color: #fff0ed;
 }
@@ -108,4 +108,27 @@
   background-color: #393939;
   color: #fff;
   display: flex;
+}
+
+.header__nav-list {
+  list-style-type: none;
+  padding: 1em;
+}
+
+.header__links {
+  text-decoration: none;
+}
+
+.header__list-item--left {
+  display: flex;
+}
+
+.header__list-item:not(:first-child) {
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+}
+
+.section-subtitles--blue {
+  color: #5bacc3;
 }/*# sourceMappingURL=coffee-shop-menu.css.map */
