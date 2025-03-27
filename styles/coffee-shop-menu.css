@@ -28,6 +28,9 @@
   box-sizing: border-box;
   font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #393939;
+}
+
+body {
   background-color: #fff0ed;
 }
 
@@ -37,10 +40,16 @@
   font-size: 60px;
 }
 
-.section-subtitles {
+.section-subtitles, .products {
   font-weight: 300;
   font-style: normal;
   font-size: 33px;
+}
+.section-subtitles--blue {
+  color: #5bacc3;
+}
+.section-subtitles__footer {
+  margin: 0.75em 0;
 }
 
 .nav-links, .buttons {
@@ -55,16 +64,20 @@
   color: #fff;
 }
 
-.desciptive-text {
+.descriptive-text {
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
 }
-
 .descriptive-text__description {
   font-weight: 400;
   font-style: italic;
   font-size: 18px;
+  width: 100%;
+}
+.descriptive-text__price {
+  color: #5bacc3;
+  padding-top: 0.25em;
 }
 
 .discount-code {
@@ -72,10 +85,10 @@
   font-style: normal;
   font-size: 45px;
 }
-
 .discount-code--bold {
   font-weight: 700;
   font-style: normal;
+  border: 2px solid red;
 }
 
 .discount-banner {
@@ -136,21 +149,64 @@
   list-style-type: none;
   padding: 1em;
 }
-
 .header__links {
   text-decoration: none;
 }
-
 .header__list-item--left {
   display: flex;
 }
-
 .header__list-item:not(:first-child) {
   text-align: center;
   padding: 1em;
   width: 100%;
 }
 
-.section-subtitles--blue {
-  color: #5bacc3;
+.menu {
+  padding: 1em 1em 2em;
+  text-align: center;
+}
+.menu:last-child {
+  border-bottom: 52px solid #393939;
+}
+.menu--white {
+  background-color: #fff;
+  width: 100%;
+}
+
+.products {
+  padding: 0.7em 0 0.25em;
+}
+
+.footer {
+  background-color: #fff0ed;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer__container {
+  margin: 2em auto;
+  width: 60%;
+}
+.footer__socials-list {
+  list-style-type: none;
+  display: flex;
+}
+.footer__list-item {
+  padding-right: 0.5em;
+}
+
+.address--next-line {
+  display: flex;
+}
+
+.business-hours {
+  margin: 0;
+}
+.business-hours--bold {
+  font-weight: 700;
+  font-style: normal;
 }/*# sourceMappingURL=coffee-shop-menu.css.map */
