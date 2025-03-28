@@ -200,10 +200,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: left;
+    padding: 0.5em 2em;
 
     &__container {
-        margin: 2em auto;
-        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 1.5em auto;
+        width: 63%;
+        max-width: 17em;
     }
 
     &__socials-list {
@@ -211,7 +218,7 @@
         display: flex;
     }
 
-    &__list-item {
+    &__list-item{
         padding-right: 0.5em;
     }
 }
@@ -231,6 +238,7 @@
         @include font-bold;
     }
 }
+
 
 @include breakpoints.tablet{
     // header nav
@@ -258,6 +266,44 @@
     }
 
     // menu banner background image
+    .banner {
+        max-width: 1744px;
+    }
+
     // menu items - description width
+    .descriptive-text {
+        // paragraph text - regular italic
+        &__description {
+            width: 26.5em;
+            margin: 0 auto;
+        }
+    }
+
     // footer
+    .footer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        padding: 2.5em;
+
+        &__container{
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin: 0 auto;
+        
+            &:first-child{
+                width: 37.5%;
+            }
+
+            &:nth-of-type(even){
+                width: 37.5%;
+                min-width: 17.5em;
+            }
+        }
+    }
 }
