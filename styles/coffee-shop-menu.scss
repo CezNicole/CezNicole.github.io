@@ -114,6 +114,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: 1200px;
 }
 
 // sub-navigation (menu links)
@@ -267,7 +268,7 @@
 
     // menu banner background image
     .banner {
-        max-width: 1744px;
+        background-size: 1750px;
     }
 
     // menu items - description width
@@ -286,15 +287,13 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        margin: 0 auto;
-        padding: 2.5em;
 
         &__container{
             width: 25%;
+            min-width: 10%;
             display: flex;
             flex-direction: column;
             justify-content: space-evenly;
-            margin: 0 auto;
         
             &:first-child{
                 width: 37.5%;
@@ -304,6 +303,25 @@
                 width: 37.5%;
                 min-width: 17.5em;
             }
+        }
+    }
+}
+
+
+@include breakpoints.desktop{
+    .header{
+        max-width: 80em;
+    }
+
+    .main{
+        max-width: 80em;
+    }
+
+    .footer{
+        max-width: 80em;
+
+        &__container {
+            width: 15%;
         }
     }
 }
