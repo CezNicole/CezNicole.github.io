@@ -100,11 +100,11 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 45px;
+  color: #fff;
 }
 .discount-code--bold {
   font-weight: 700;
   font-style: normal;
-  border: 2px solid red;
 }
 
 .discount-banner {
@@ -163,10 +163,42 @@ body {
   margin: 0 auto;
   max-width: 100%;
 }
+.banner__subcontainer--tilted-can {
+  background-image: url(../assets/images/coldbrewbackground.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3em auto 8em;
+  position: relative;
+}
 
 .main__products {
   background-color: #f7f7f7;
   padding-bottom: 3em;
+}
+.main__promotion {
+  background-color: #fff;
+}
+.main__promotion-icon-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  max-width: 27em;
+  margin-bottom: 1.5em;
+}
+.main__promotion-discount {
+  background-color: #393939;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em 3.5em;
+  margin: 0 auto 7.5em;
+  max-width: 95%;
 }
 
 .product-cards {
