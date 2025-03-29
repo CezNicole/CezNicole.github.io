@@ -62,6 +62,8 @@ body {
 .buttons {
   background-color: #5bacc3;
   color: #fff;
+  padding: 0.4em 1.2em;
+  border: 2px solid #5bacc3;
 }
 
 .descriptive-text {
