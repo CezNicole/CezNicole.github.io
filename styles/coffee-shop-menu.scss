@@ -38,6 +38,8 @@
     @extend .nav-links;
     background-color: colors.$nitro-blue;
     color: colors.$white;
+    padding: 0.4em 1.2em;
+    border: 2px solid colors.$nitro-blue;
 }
 
 // paragraph text - regular
