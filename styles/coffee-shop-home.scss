@@ -76,18 +76,13 @@
 .discount-code {
 	@include font-regular;
 	font-size: 45px;
+	color: colors.$white;
 
 	// FirstNitro discount code on landing page
 	&--bold {
 		@include font-bold;
-		border: 2px solid red;
 	}
 }
-
-// FirstNitro discount code on landing page
-// .discount-code--bold{
-//     @include font-bold;
-// }
 
 // discount border box on landing page
 .discount-banner {
@@ -165,6 +160,20 @@
 		margin: 0 auto;
 		// max-width: 70%;
 		max-width: 100%;
+
+		&--tilted-can{
+			background-image: url(../assets/images/coldbrewbackground.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			// margin: 3em auto 5em;
+			margin: 3em auto 8em;
+			position: relative;
+		}
 	}
 }
 
@@ -173,6 +182,30 @@
 	&__products{
 		background-color: colors.$light-gray;
 		padding-bottom: 3em;
+	}
+
+	// promotional section (we're different)
+	&__promotion{
+		background-color: colors.$white;
+	}
+
+	&__promotion-icon-list{
+		list-style-type: none;
+		display: flex;
+		justify-content: space-between;
+		max-width: 27em;
+		margin-bottom: 1.5em;
+	}
+
+	&__promotion-discount{
+		background-color: colors.$graphite;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 1.5em 3.5em;
+		margin: 0 auto 7.5em;
+		max-width: 95%;
 	}
 }
 
