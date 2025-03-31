@@ -173,6 +173,7 @@
 			// margin: 3em auto 5em;
 			margin: 3em auto 8em;
 			position: relative;
+			height: 25em;
 		}
 	}
 }
@@ -206,6 +207,12 @@
 		padding: 1.5em 3.5em;
 		margin: 0 auto 7.5em;
 		max-width: 95%;
+	}
+
+	&__promotion-image{
+		position: relative;
+		// bottom: 0.5em;
+		bottom: 0.65em;
 	}
 }
 
@@ -290,7 +297,9 @@
 	justify-content: center;
 	align-items: center;
 	text-align: left;
-	padding: 0.5em 2em;
+	// padding: 0.5em 2em;
+	// padding: 1em 2em 2em;
+	padding: 2.5em 2em 1em;
 
 	&__container {
 		display: flex;
@@ -372,16 +381,50 @@
 			padding: 2em 0 3em;
 			margin: 0 auto;
 			width: 50%;
-
+		
 			&--nitro-coffee{
 				padding: 6em 2em 2em;
 				margin-left: 7.5%;
-				width: 26em;
+				min-width: 23.5em;
+				width: 50%;
 			}
 
 			&--coffee-bag{
 				display: flex;
 				justify-content: center;
+				width: 35em;
+				max-width: 50%;
+			}
+
+			&--promotional-left{
+				padding: 6em 1.5em 2em;
+				// margin: 0 2em;
+				// margin: 0 0 0 1.5em;
+				// margin-left: 2.5%;
+				// margin-left: 2em;
+				// margin-top: auto;
+				// margin-bottom: auto;
+				// margin: auto auto auto 7.5%;
+				margin: 1em auto 4em 5%;
+				width: 50%;
+				// max-width: 30em;
+				max-width: 70%;
+
+				// margin: 3em 1em;
+				// width: 45em;
+				// max-width: 100%;
+				// width: 70%;
+				// width: 50%;
+				// min-width: 15em;
+				// max-width: 80%;
+				// padding-left: 5em;
+			}
+
+			&--tilted-can{
+				padding-top: 4em;
+				margin: 6em 1.5em;
+				width: 45em;
+				max-width: 31.5em;
 			}
 		}
 	}
@@ -389,33 +432,93 @@
 	// paragraph text - regular
 	.descriptive-text {
 		&--three-lines{
-			width: 120%;
+			width: 110%;
 			max-width: 20em;
 		}
-		// @include font-regular;
-		// font-size: 18px;
-		// width: 90%;
-		// padding: 1em 0 2em;
 
-		// &--gray {
-		// 	color: #808080;
-		// 	padding: 0;
-		// }
-
-		// // paragraph text - regular italic
-		// &__description {
-		// 	@include font-italic;
-		// 	font-size: 18px;
-		// 	width: 100%;
-		// }
-
-		// &__price {
-		// 	color: colors.$nitro-blue;
-		// 	padding-top: 0.25em;
-		// }
+		&--two-lines{
+			width: 105%;
+			max-width: 25em;
+		}
 	}
 
 	// products section
+	.product-cards {
+		width: 20em;
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+
+		&__container{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+		}
+	}
+
 	// promotional section
+	.main{
+		&__promotion{
+			display: flex;
+			flex-direction: column;
+			margin: 0 auto;
+			width: 100%;
+
+			&--top{
+				display: flex;
+			}
+
+			&--bottom{
+				width: 100%;
+				display: flex;
+				margin: 2em auto;
+			}
+		}
+
+		&__promotion-discount{
+			display: flex;
+			padding: 1.5em 5em;
+		}
+	}
+
 	// footer
+	.footer {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+
+		&__container {
+			width: 25%;
+			min-width: 10%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+
+			&:first-child {
+				width: 37.5%;
+			}
+
+			&:nth-of-type(even) {
+				width: 37.5%;
+				// min-width: 17.5em;
+				min-width: 18.2em;
+			}
+		}
+	}
+}
+
+
+
+@include breakpoints.desktop{
+	body{
+		max-width: 80em;
+	}
+
+	.footer {
+
+		&__container {
+			width: 15%;
+		}
+	}
 }

@@ -190,7 +190,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: left;
-  padding: 0.5em 2em;
+  padding: 1em 2em 2em;
 }
 .footer__container {
   display: flex;
@@ -268,13 +268,7 @@ body {
   }
 }
 @media (min-width: 1280px) {
-  .header {
-    max-width: 80em;
-  }
-  .main {
-    max-width: 80em;
-  }
-  .footer {
+  body {
     max-width: 80em;
   }
   .footer__container {
