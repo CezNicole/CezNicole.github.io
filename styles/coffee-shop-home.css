@@ -75,6 +75,8 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
+}
+.descriptive-text__section-paragraph {
   width: 90%;
   padding: 1em 0 2em;
 }
@@ -221,8 +223,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: left;
-  border: 2px solid blue;
-  padding: 2.5em 2em 1em;
+  padding: 1em 2em 2em;
 }
 .footer__container {
   display: flex;
@@ -231,13 +232,11 @@ body {
   align-items: flex-start;
   margin: 1.5em auto;
   width: 70%;
-  max-width: 18.2em;
-  border: 2px solid blue;
+  max-width: 17em;
 }
 .footer__socials-list {
   list-style-type: none;
   display: flex;
-  padding: 1.3em 0;
 }
 .footer__list-item {
   padding-right: 0.5em;
@@ -245,16 +244,8 @@ body {
 
 .address--next-line {
   display: flex;
-  padding: 0;
 }
 
-.business-hours {
-  margin: 0;
-  padding-bottom: 0;
-}
-.business-hours:last-child {
-  padding: 0 0 2em;
-}
 .business-hours--bold {
   font-weight: 700;
   font-style: normal;
@@ -263,7 +254,7 @@ body {
 .disabled {
   pointer-events: none;
   opacity: 0.5;
-  cursor: none;
+  cursor: default;
 }
 
 @media (min-width: 768px) {
@@ -360,7 +351,6 @@ body {
   }
   .footer__container {
     width: 25%;
-    min-width: 10%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -370,14 +360,16 @@ body {
   }
   .footer__container:nth-of-type(even) {
     width: 37.5%;
-    min-width: 18.2em;
+    min-width: 17em;
+  }
+  .footer__container:last-child {
+    width: 11em;
+    position: relative;
+    top: 0.4em;
   }
 }
 @media (min-width: 1280px) {
   body {
     max-width: 80em;
-  }
-  .footer__container {
-    width: 15%;
   }
 }/*# sourceMappingURL=coffee-shop-home.css.map */
