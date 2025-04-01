@@ -162,7 +162,6 @@ body {
   justify-content: center;
   align-items: center;
   text-align: left;
-  border: 2px solid blue;
   padding: 1em 2em 2em;
 }
 .footer__container {
@@ -171,9 +170,8 @@ body {
   justify-content: center;
   align-items: flex-start;
   margin: 1.5em auto;
-  width: 63%;
+  width: 70%;
   max-width: 17em;
-  border: 2px solid blue;
 }
 .footer__socials-list {
   list-style-type: none;
@@ -187,9 +185,6 @@ body {
   display: flex;
 }
 
-.business-hours {
-  margin: 0;
-}
 .business-hours--bold {
   font-weight: 700;
   font-style: normal;
@@ -234,7 +229,6 @@ body {
   }
   .footer__container {
     width: 25%;
-    min-width: 10%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -244,14 +238,16 @@ body {
   }
   .footer__container:nth-of-type(even) {
     width: 37.5%;
-    min-width: 17.5em;
+    min-width: 17em;
+  }
+  .footer__container:last-child {
+    width: 11em;
+    position: relative;
+    top: 0.4em;
   }
 }
 @media (min-width: 1280px) {
   body {
     max-width: 80em;
-  }
-  .footer__container {
-    width: 15%;
   }
 }/*# sourceMappingURL=coffee-shop-menu.css.map */

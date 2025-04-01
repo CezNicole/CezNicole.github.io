@@ -46,8 +46,13 @@
 	// @include font-regular;
 	// font-size: 18px;
 	@include paragraph-text-regular;
-	width: 90%;
-	padding: 1em 0 2em;
+	// width: 90%;
+	// padding: 1em 0 2em;
+	// border:  2px dashed darkorange;
+
+	&__section-paragraph{
+		@include section-paragraph;
+	}
 
 	&--gray {
 		color: #808080;
@@ -241,27 +246,32 @@
 	// padding: 0.5em 2em;
 	@include footer;
 	// padding: 1em 2em 2em;
-	padding: 2.5em 2em 1em;
+	// padding: 2.5em 2em 1em;
 
 	&__container {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
-		margin: 1.5em auto;
-		width: 70%;
-		max-width: 18.2em;
-		border: 2px solid blue;
+		// display: flex;
+		// flex-direction: column;
+		// justify-content: center;
+		// align-items: flex-start;
+		// margin: 1.5em auto;
+		// // width: 63%;
+		// width: 70%;
+		// // max-width: 18.2em;
+		// max-width: 17em;
+		// border: 2px solid blue;
+		@include footer-container;
 	}
 
 	&__socials-list {
-		list-style-type: none;
-		display: flex;
-		padding: 1.3em 0;
+		// list-style-type: none;
+		// display: flex;
+		// padding: 1.3em 0;
+		@include footer-socials-list;
 	}
 
 	&__list-item {
-		padding-right: 0.5em;
+		// padding-right: 0.5em;
+		@include footer-socials-icons;
 	}
 }
 
@@ -269,21 +279,24 @@
 
 .address {
 	&--next-line {
-		display: flex;
-		padding: 0;
+		// display: flex;
+		// padding: 0;
+		@include address-block-text;
 	}
 }
 
 .business-hours {
-	margin: 0;
-	padding-bottom: 0;
+	// margin: 0;
+	// padding-bottom: 0;
 
-	&:last-child{
-		padding: 0 0 2em;
-	}
+	// &:last-child{
+	// 	padding: 0 0 2em;
+	// 	border:  2px solid red;
+	// }
 
 	&--bold {
-		@include font-bold;
+		// @include font-bold;
+		@include business-hours-bold;
 	}
 }
 
@@ -291,9 +304,10 @@
 
 // home / menu disabled styling 
 .disabled{
-	pointer-events: none;
-	opacity: 0.5;
-	cursor: none;
+	// pointer-events: none;
+	// opacity: 0.5;
+	// cursor: none;
+	@include disabled;
 }
 
 
@@ -302,23 +316,26 @@
 	// header
 	.header{
 		&__nav-list{
-			display: flex;
+			// display: flex;
+			@include tablet-header-nav-list;
 		}
 
 		&__list-item{
 			&--left{
-				align-items: baseline;
-				width: 75%;
+				// align-items: baseline;
+				// width: 75%;
+				@include tablet-header-link-nitro;
 			}
 
 			&:not(:first-child){
-				display: flex;
-				justify-content: space-evenly;
-				min-width: 11em;
-				width: 25%;
-				position: relative;
-				top: 0.6em;
-				padding: 1em 0;
+				// display: flex;
+				// justify-content: space-evenly;
+				// min-width: 11em;
+				// width: 25%;
+				// position: relative;
+				// top: 0.6em;
+				// padding: 1em 0;
+				@include tablet-other-header-links;
 			}
 		}
 	}
@@ -434,27 +451,37 @@
 
 	// footer
 	.footer {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
+		// width: 100%;
+		// display: flex;
+		// flex-direction: row;
+		// justify-content: center;
+		// align-items: center;
+		@include tablet-footer;
 
 		&__container {
-			width: 25%;
-			min-width: 10%;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-evenly;
+			// width: 25%;
+			// min-width: 10%;
+			// display: flex;
+			// flex-direction: column;
+			// justify-content: space-evenly;
+			@include tablet-footer-container;
 
 			&:first-child {
-				width: 37.5%;
+				// width: 37.5%;
+				@include tablet-address;
+				// @include tablet-business-hours;
 			}
 
 			&:nth-of-type(even) {
-				width: 37.5%;
+				// width: 37.5%;
 				// min-width: 17.5em;
-				min-width: 18.2em;
+				// min-width: 18.2em;
+				// min-width: 17em;
+				@include tablet-business-hours;
+			}
+
+			&:last-child {
+				@include tablet-socials;
 			}
 		}
 	}
@@ -464,13 +491,15 @@
 
 @include breakpoints.desktop{
 	body{
-		max-width: 80em;
+		// max-width: 80em;
+		@include desktop-max-width;
 	}
 
-	.footer {
+	// .footer {
 
-		&__container {
-			width: 15%;
-		}
-	}
+	// 	&__container {
+	// 		width: 15%;
+	// 		border: 2px solid red;
+	// 	}
+	// }
 }
