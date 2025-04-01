@@ -46,7 +46,6 @@ body{
 @mixin section-paragraph {
     width: 90%;
     padding: 1em 0 2em;
-    // border:  2px dashed darkorange;
 }
 
 @mixin blue-text{
@@ -90,13 +89,6 @@ body{
 @mixin discount-code{
     @include font-regular;
     font-size: 45px;
-}
-
-@mixin discount-banners{
-    width: 90%;
-    background-color: colors.$graphite;
-    color: colors.$white;
-    border: 2px solid red;
 }
 
 @mixin icons{
@@ -164,9 +156,6 @@ body{
     margin: 1.5em auto;
     width: 70%;
     max-width: 17em;
-    // width: 63%;
-    // max-width: 17em;
-    // border: 2px solid blue;
 }
 
 @mixin footer-socials-list{
@@ -180,14 +169,6 @@ body{
 
 @mixin address-block-text{
     display: flex;
-    // padding: 0;  //Home needs this
-    // border: 2px solid green;
-}
-
-@mixin business-hours{
-    // margin: 0;
-	// padding-bottom: 0;   //Home needs this
-    // border: 2px solid pink;
 }
 
 @mixin business-hours-bold{
@@ -200,9 +181,12 @@ body{
     cursor: default;
 }
 
+@mixin enabled{
+    cursor: pointer;
+}
 
 
-// Tablet styling mixins
+
 @mixin tablet-header-nav-list{
     display: flex;
 }
@@ -232,40 +216,28 @@ body{
 
 @mixin tablet-footer-container{
     width: 25%;
-    // width: 33.33%;
-    // min-width: 10%;
-    // min-width: 15.7em;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
 @mixin tablet-address{
-    // min-width: 15em;
     width: 37.5%;
 }
 
 @mixin tablet-business-hours{
-    // min-width: 18em;
-    // min-width: 38%;
-    // width: 37.5%;
     @include tablet-address;
     min-width: 17em;
 }
 
 @mixin tablet-socials{
-    // min-width: 10em;
     width: 11em;
-    // border: 2px solid red;
     position: relative;
     top: 0.4em;
 }
 
 
 
-
-
-// Desktop styling mixins
 @mixin desktop-max-width{
     max-width: 80em;
 }
