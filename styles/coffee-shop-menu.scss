@@ -2,79 +2,46 @@
 @use './partials/colors' as colors;
 @use './partials/breakpoints' as breakpoints;
 
-// heading 1 & 2
 .section-titles{
-    // @include font-light;
-    // font-size: 60px;
     @include section-titles;
 }
 
-// heading 3, nav heading, footer heading
 .section-subtitles{
-    // @include font-light;
-    // font-size: 33px;
     @include section-subtitles;
 
     &--blue {
-        // color: colors.$nitro-blue;
         @include blue-text;
     }
     
-    // menu section headers
-    // &--center {
-    //     text-align: center;
-    // }
-
     &__footer {
-        // margin: 0.75em 0;
         @include footer-headers;
     }
 }
 
-// nav link, button
 .nav-links{
     @include nav-links;
 }
 
-// paragraph text - regular
 .descriptive-text{
-    // @include font-regular;
-    // font-size: 18px;
     @include paragraph-text-regular;
 
-    // paragraph text - regular italic
     &__description{
-        // @include font-italic;
-        // font-size: 18px;
-        // width: 100%;
         @include paragraph-text-regular-italic;
     }
 
     &__price {
-        // color: colors.$nitro-blue;
-        // padding-top: 0.25em;
         @include menu-price;
     }
 }
 
-// small icons
 .icons{
     @include icons;
 }
 
-// menu border box
 .title-box{
-    // width: 300px;
-    // height: 200px;
-    // background-color: colors.$graphite;
-    // color: colors.$white;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
     @include title-box;
 }
 
-// menu banner background
 .banner{
     @include background;
     background-image: url(../assets/images/coffee-circle.jpg);
@@ -85,7 +52,6 @@
     background-size: 1200px;
 }
 
-// sub-navigation (menu links)
 .sub-navigation{
     width: 100%;
     background-color: colors.$graphite;
@@ -106,37 +72,26 @@
     }
 }
 
-
-
-// header nav
 .header{
     &__nav-list{
-        // list-style-type: none;
-        // padding: 1em;
         @include header-nav-list;
     }
 
     &__links {
-        // text-decoration: none;
         @include header-links;
     }
 
     &__list-item{
         &--left {
-            // display: flex;
             @include header-link-nitro;
         }
 
         &:not(:first-child) {
-            // text-align: center;
-            // padding: 1em;
-            // width: 100%;
             @include other-header-links;
         }
     }
 }
 
-// menu section
 .menu{
     padding: 1em 1em 2em;
     text-align: center;
@@ -151,150 +106,83 @@
     }
 }
 
-// menu items
 .products{
     @extend .section-subtitles;
     padding: 0.7em 0 0.25em;
 }
 
-// footer
 .footer {
-    // background-color: colors.$nitro-pink;
-    // width: 100%;
-    // position: relative;
-    // bottom: 0;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // text-align: left;
-    // padding: 0.5em 2em;
     @include footer;
-    // padding: 1em 2em 2em;
 
     &__container {
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: flex-start;
-        // margin: 1.5em auto;
-		// width:70%;
-        // max-width: 17em;
-        // width: 63%;
         @include footer-container;
     }
 
     &__socials-list {
-        // list-style-type: none;
-        // display: flex;
         @include footer-socials-list;
     }
 
     &__list-item{
-        // padding-right: 0.5em;
         @include footer-socials-icons;
     }
 }
 
-
-
 .address{
     &--next-line {
-        // display: flex;
         @include address-block-text;
     }
 }
 
 .business-hours {
-    // margin: 0;
-
     &--bold {
-        // @include font-bold;
         @include business-hours-bold;
     }
 }
 
-
-
-// home / menu disabled styling 
 .disabled{
-    // pointer-events: none;
-    // opacity: 0.5;
-    // cursor: default;
     @include disabled;
 }
 
 
-
 @include breakpoints.tablet{
-    // header nav
     .header {
         &__nav-list {
-            // display: flex;
 			@include tablet-header-nav-list;
         }
 
         &__list-item {
             &--left {
-                // align-items: baseline;
-                // width: 75%;
                 @include tablet-header-link-nitro;
             }
 
             &:not(:first-child) {
-                // display: flex;
-                // justify-content: space-evenly;
-                // min-width: 11em;
-                // width: 25%;
-                // position: relative;
-                // top: 0.6em;
-                // padding: 1em 0;
                 @include tablet-other-header-links;
             }
         }
     }
 
-    // menu banner background image
     .banner {
         background-size: 1750px;
     }
 
-    // menu items - description width
     .descriptive-text {
-        // paragraph text - regular italic
         &__description {
             width: 26.5em;
             margin: 0 auto;
         }
     }
 
-    // footer
     .footer {
-        // width: 100%;
-        // display: flex;
-        // flex-direction: row;
-        // justify-content: center;
-        // align-items: center;
         @include tablet-footer;
 
         &__container{
-            // width: 25%;
-            // min-width: 10%;
-            // display: flex;
-            // flex-direction: column;
-            // justify-content: space-evenly;
             @include tablet-footer-container;
         
             &:first-child{
-                // width: 37.5%;
                 @include tablet-address;
             }
 
             &:nth-of-type(even){
-                // width: 37.5%;
-                // width: 34%;
-                // min-width: 17.5em;
-                // min-width: 17em;
                 @include tablet-business-hours;
             }
 
@@ -308,14 +196,6 @@
 
 @include breakpoints.desktop{
     body{
-        // max-width: 80em;
         @include desktop-max-width;
     }
-
-    // .footer{
-    //     &__container {
-    //         width: 15%;
-    //         border: 2px solid red;
-    //     }
-    // }
 }

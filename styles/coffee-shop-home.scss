@@ -2,10 +2,7 @@
 @use './partials/colors' as colors;
 @use './partials/breakpoints' as breakpoints;
 
-// heading 1 & 2
 .section-titles {
-	// @include font-light;
-	// font-size: 60px;
 	@include section-titles;
 
 	&--center{
@@ -14,24 +11,18 @@
 	}
 }
 
-// heading 3, nav heading, footer heading
 .section-subtitles {
-	// @include font-light;
-	// font-size: 33px;
 	@include section-subtitles;
 
 	&--blue {
-		// color: colors.$nitro-blue;
 		@include blue-text;
 	}
 
 	&__footer {
-		// margin: 0.75em 0;
 		@include footer-headers;
 	}
 }
 
-// nav link, button
 .buttons {
 	@include buttons;
 
@@ -39,16 +30,18 @@
 		display: flex;
 		margin: 0 auto;
 	}
+
+	&--enabled{
+		@include enabled;
+	}
+
+	&--disabled{
+		@include disabled;
+	}
 }
 
-// paragraph text - regular
 .descriptive-text {
-	// @include font-regular;
-	// font-size: 18px;
 	@include paragraph-text-regular;
-	// width: 90%;
-	// padding: 1em 0 2em;
-	// border:  2px dashed darkorange;
 
 	&__section-paragraph{
 		@include section-paragraph;
@@ -60,25 +53,19 @@
 	}
 }
 
-// discount text
 .discount-code {
-	// @include font-regular;
-	// font-size: 45px;
 	@include discount-code;
 	color: colors.$white;
 
-	// FirstNitro discount code on landing page
 	&--bold {
 		@include font-bold;
 	}
 }
 
-// small icons
 .icons {
 	@include icons;
 }
 
-// product images on landing page
 .product-images {
 	@include product-images;
 	display: flex;
@@ -86,29 +73,21 @@
 	padding: 1.5em;
 }
 
-// header nav
 .header {
 	&__nav-list {
-		// list-style-type: none;
-		// padding: 1em;
 		@include header-nav-list;
 	}
 
 	&__links {
-		// text-decoration: none;
 		@include header-links;
 	}
 
 	&__list-item {
 		&--left {
-			// display: flex;
 			@include header-link-nitro;
 		}
 
 		&:not(:first-child) {
-			// text-align: center;
-			// padding: 1em;
-			// width: 100%;
 			@include other-header-links;
 		}
 	}
@@ -118,9 +97,7 @@
 	}
 }
 
-// menu banner background / landing page nitro coffee banner
 .banner {
-	// nitro coffee banner
 	&__container{
 		width: 100%;
 		display: flex;
@@ -128,10 +105,8 @@
 	}
 
 	&__subcontainer{
-		// padding: 6em 3.5em 2em;
 		padding: 3em 3.5em 2em;
 		margin: 0 auto;
-		// max-width: 70%;
 		max-width: 100%;
 
 		&--tilted-can{
@@ -143,7 +118,6 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			// margin: 3em auto 5em;
 			margin: 3em auto 8em;
 			position: relative;
 			height: 25em;
@@ -151,14 +125,12 @@
 	}
 }
 
-// our products section
 .main{
 	&__products{
 		background-color: colors.$light-gray;
 		padding-bottom: 3em;
 	}
 
-	// promotional section (we're different)
 	&__promotion{
 		background-color: colors.$white;
 	}
@@ -177,19 +149,17 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		padding: 1.5em 3.5em;
+		padding: 1.5em 3em;
 		margin: 0 auto 7.5em;
-		max-width: 95%;
+		width: 90%;
 	}
 
 	&__promotion-image{
 		position: relative;
-		// bottom: 0.5em;
 		bottom: 0.65em;
 	}
 }
 
-// product cards
 .product-cards{
 	background-color: colors.$white;
 	max-width: 20em;
@@ -232,115 +202,56 @@
 	}
 }
 
-// footer
 .footer {
-	// background-color: colors.$nitro-pink;
-	// width: 100%;
-	// position: relative;
-	// bottom: 0;
-	// display: flex;
-	// flex-direction: column;
-	// justify-content: center;
-	// align-items: center;
-	// text-align: left;
-	// padding: 0.5em 2em;
 	@include footer;
-	// padding: 1em 2em 2em;
-	// padding: 2.5em 2em 1em;
 
 	&__container {
-		// display: flex;
-		// flex-direction: column;
-		// justify-content: center;
-		// align-items: flex-start;
-		// margin: 1.5em auto;
-		// // width: 63%;
-		// width: 70%;
-		// // max-width: 18.2em;
-		// max-width: 17em;
-		// border: 2px solid blue;
 		@include footer-container;
 	}
 
 	&__socials-list {
-		// list-style-type: none;
-		// display: flex;
-		// padding: 1.3em 0;
 		@include footer-socials-list;
 	}
 
 	&__list-item {
-		// padding-right: 0.5em;
 		@include footer-socials-icons;
 	}
 }
 
-
-
 .address {
 	&--next-line {
-		// display: flex;
-		// padding: 0;
 		@include address-block-text;
 	}
 }
 
 .business-hours {
-	// margin: 0;
-	// padding-bottom: 0;
-
-	// &:last-child{
-	// 	padding: 0 0 2em;
-	// 	border:  2px solid red;
-	// }
-
 	&--bold {
-		// @include font-bold;
 		@include business-hours-bold;
 	}
 }
 
-
-
-// home / menu disabled styling 
 .disabled{
-	// pointer-events: none;
-	// opacity: 0.5;
-	// cursor: none;
 	@include disabled;
 }
 
 
-
 @include breakpoints.tablet{
-	// header
 	.header{
 		&__nav-list{
-			// display: flex;
 			@include tablet-header-nav-list;
 		}
 
 		&__list-item{
 			&--left{
-				// align-items: baseline;
-				// width: 75%;
 				@include tablet-header-link-nitro;
 			}
 
 			&:not(:first-child){
-				// display: flex;
-				// justify-content: space-evenly;
-				// min-width: 11em;
-				// width: 25%;
-				// position: relative;
-				// top: 0.6em;
-				// padding: 1em 0;
 				@include tablet-other-header-links;
 			}
 		}
 	}
 
-	// nitro coffee banner
 	.banner{
 		&__container{
 			flex-wrap: nowrap;
@@ -367,26 +278,9 @@
 
 			&--promotional-left{
 				padding: 6em 1.5em 2em;
-				// margin: 0 2em;
-				// margin: 0 0 0 1.5em;
-				// margin-left: 2.5%;
-				// margin-left: 2em;
-				// margin-top: auto;
-				// margin-bottom: auto;
-				// margin: auto auto auto 7.5%;
 				margin: 1em auto 4em 5%;
 				width: 50%;
-				// max-width: 30em;
 				max-width: 70%;
-
-				// margin: 3em 1em;
-				// width: 45em;
-				// max-width: 100%;
-				// width: 70%;
-				// width: 50%;
-				// min-width: 15em;
-				// max-width: 80%;
-				// padding-left: 5em;
 			}
 
 			&--tilted-can{
@@ -398,7 +292,6 @@
 		}
 	}
 
-	// paragraph text - regular
 	.descriptive-text {
 		&--three-lines{
 			width: 110%;
@@ -411,7 +304,6 @@
 		}
 	}
 
-	// products section
 	.product-cards {
 		width: 20em;
 		margin-left: 0.5em;
@@ -424,7 +316,6 @@
 		}
 	}
 
-	// promotional section
 	.main{
 		&__promotion{
 			display: flex;
@@ -442,41 +333,19 @@
 				margin: 2em auto;
 			}
 		}
-
-		&__promotion-discount{
-			display: flex;
-			padding: 1.5em 5em;
-		}
 	}
 
-	// footer
 	.footer {
-		// width: 100%;
-		// display: flex;
-		// flex-direction: row;
-		// justify-content: center;
-		// align-items: center;
 		@include tablet-footer;
 
 		&__container {
-			// width: 25%;
-			// min-width: 10%;
-			// display: flex;
-			// flex-direction: column;
-			// justify-content: space-evenly;
 			@include tablet-footer-container;
 
 			&:first-child {
-				// width: 37.5%;
 				@include tablet-address;
-				// @include tablet-business-hours;
 			}
 
 			&:nth-of-type(even) {
-				// width: 37.5%;
-				// min-width: 17.5em;
-				// min-width: 18.2em;
-				// min-width: 17em;
 				@include tablet-business-hours;
 			}
 
@@ -488,18 +357,8 @@
 }
 
 
-
 @include breakpoints.desktop{
 	body{
-		// max-width: 80em;
 		@include desktop-max-width;
 	}
-
-	// .footer {
-
-	// 	&__container {
-	// 		width: 15%;
-	// 		border: 2px solid red;
-	// 	}
-	// }
 }

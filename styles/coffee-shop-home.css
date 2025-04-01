@@ -70,6 +70,14 @@ body {
   display: flex;
   margin: 0 auto;
 }
+.buttons--enabled {
+  cursor: pointer;
+}
+.buttons--disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: default;
+}
 
 .descriptive-text {
   font-weight: 400;
@@ -170,9 +178,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5em 3.5em;
+  padding: 1.5em 3em;
   margin: 0 auto 7.5em;
-  max-width: 95%;
+  width: 90%;
 }
 .main__promotion-image {
   position: relative;
@@ -337,10 +345,6 @@ body {
     width: 100%;
     display: flex;
     margin: 2em auto;
-  }
-  .main__promotion-discount {
-    display: flex;
-    padding: 1.5em 5em;
   }
   .footer {
     width: 100%;
