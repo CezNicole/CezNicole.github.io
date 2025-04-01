@@ -44,7 +44,7 @@ body {
   padding: 1em 1em 0;
 }
 
-.section-subtitles, .products, .product-text__price {
+.section-subtitles, .product-text__price {
   font-weight: 300;
   font-style: normal;
   font-size: 33px;
@@ -56,14 +56,11 @@ body {
   margin: 0.75em 0;
 }
 
-.nav-links, .buttons {
+.buttons {
   font-weight: 400;
   font-style: normal;
   font-size: 21px;
   text-decoration: none;
-}
-
-.buttons {
   background-color: #5bacc3;
   color: #fff;
   padding: 0.4em 1.2em;
@@ -85,16 +82,6 @@ body {
   color: #808080;
   padding: 0;
 }
-.descriptive-text__description {
-  font-weight: 400;
-  font-style: italic;
-  font-size: 18px;
-  width: 100%;
-}
-.descriptive-text__price {
-  color: #5bacc3;
-  padding-top: 0.25em;
-}
 
 .discount-code {
   font-weight: 400;
@@ -107,12 +94,6 @@ body {
   font-style: normal;
 }
 
-.discount-banner {
-  width: 90%;
-  background-color: #393939;
-  color: #fff;
-}
-
 .icons {
   width: 50px;
 }
@@ -122,16 +103,6 @@ body {
   display: flex;
   margin: 0 auto;
   padding: 1.5em;
-}
-
-.title-box {
-  width: 300px;
-  height: 200px;
-  background-color: #393939;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .header__nav-list {
@@ -240,22 +211,6 @@ body {
   font-weight: 700;
 }
 
-.menu {
-  padding: 1em 1em 2em;
-  text-align: center;
-}
-.menu:last-child {
-  border-bottom: 52px solid #393939;
-}
-.menu--white {
-  background-color: #fff;
-  width: 100%;
-}
-
-.products {
-  padding: 0.7em 0 0.25em;
-}
-
 .footer {
   background-color: #fff0ed;
   width: 100%;
@@ -266,6 +221,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: left;
+  border: 2px solid blue;
   padding: 2.5em 2em 1em;
 }
 .footer__container {
@@ -276,6 +232,7 @@ body {
   margin: 1.5em auto;
   width: 70%;
   max-width: 18.2em;
+  border: 2px solid blue;
 }
 .footer__socials-list {
   list-style-type: none;

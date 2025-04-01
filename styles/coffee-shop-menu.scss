@@ -4,17 +4,20 @@
 
 // heading 1 & 2
 .section-titles{
-    @include font-light;
-    font-size: 60px;
+    // @include font-light;
+    // font-size: 60px;
+    @include section-titles;
 }
 
 // heading 3, nav heading, footer heading
 .section-subtitles{
-    @include font-light;
-    font-size: 33px;
+    // @include font-light;
+    // font-size: 33px;
+    @include section-subtitles;
 
     &--blue {
-        color: colors.$nitro-blue;
+        // color: colors.$nitro-blue;
+        @include blue-text;
     }
     
     // menu section headers
@@ -23,95 +26,58 @@
     // }
 
     &__footer {
-        margin: 0.75em 0;
+        // margin: 0.75em 0;
+        @include footer-headers;
     }
 }
 
 // nav link, button
 .nav-links{
-    @include font-regular;
-    font-size: 21px;
-    text-decoration: none;
-}
-
-.buttons{
-    @extend .nav-links;
-    background-color: colors.$nitro-blue;
-    color: colors.$white;
-    padding: 0.4em 1.2em;
-    border: 2px solid colors.$nitro-blue;
+    @include nav-links;
 }
 
 // paragraph text - regular
 .descriptive-text{
-    @include font-regular;
-    font-size: 18px;
+    // @include font-regular;
+    // font-size: 18px;
+    @include paragraph-text-regular;
 
     // paragraph text - regular italic
     &__description{
-        @include font-italic;
-        font-size: 18px;
-        width: 100%;
+        // @include font-italic;
+        // font-size: 18px;
+        // width: 100%;
+        @include paragraph-text-regular-italic;
     }
 
     &__price {
-        color: colors.$nitro-blue;
-        padding-top: 0.25em;
+        // color: colors.$nitro-blue;
+        // padding-top: 0.25em;
+        @include menu-price;
     }
-}
-
-// discount text
-.discount-code{
-    @include font-regular;
-    font-size: 45px;
-
-    // FirstNitro discount code on landing page
-    &--bold{
-        @include font-bold;
-        border:  2px solid red;
-    }
-}
-
-// FirstNitro discount code on landing page
-// .discount-code--bold{
-//     @include font-bold;
-// }
-
-// discount border box on landing page
-.discount-banner{
-    width: 90%;
-    background-color: colors.$graphite;
-    color: colors.$white;
 }
 
 // small icons
 .icons{
-    width: 50px;
-}
-
-// product images on landing page
-.product-images{
-    height: 280px;
+    @include icons;
 }
 
 // menu border box
 .title-box{
-    width: 300px;
-    height: 200px;
-    background-color: colors.$graphite;
-    color: colors.$white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // width: 300px;
+    // height: 200px;
+    // background-color: colors.$graphite;
+    // color: colors.$white;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    @include title-box;
 }
 
 // menu banner background
 .banner{
+    @include background;
     background-image: url(../assets/images/coffee-circle.jpg);
-    width: 100%;
-    height: 700px;
-    background-position: center;
-    background-size: cover;
     position: relative;
     display: flex;
     justify-content: center;
@@ -145,28 +111,30 @@
 // header nav
 .header{
     &__nav-list{
-        list-style-type: none;
-        padding: 1em;
+        // list-style-type: none;
+        // padding: 1em;
+        @include header-nav-list;
     }
 
     &__links {
-        text-decoration: none;
+        // text-decoration: none;
+        @include header-links;
     }
 
     &__list-item{
         &--left {
-            display: flex;
+            // display: flex;
+            @include header-link-nitro;
         }
 
         &:not(:first-child) {
-            text-align: center;
-            padding: 1em;
-            width: 100%;
+            // text-align: center;
+            // padding: 1em;
+            // width: 100%;
+            @include other-header-links;
         }
     }
 }
-
-
 
 // menu section
 .menu{
@@ -183,28 +151,25 @@
     }
 }
 
-
-
 // menu items
 .products{
     @extend .section-subtitles;
     padding: 0.7em 0 0.25em;
 }
 
-
-
 // footer
 .footer {
-    background-color: colors.$nitro-pink;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
+    // background-color: colors.$nitro-pink;
+    // width: 100%;
+    // position: relative;
+    // bottom: 0;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    // text-align: left;
     // padding: 0.5em 2em;
+    @include footer;
     padding: 1em 2em 2em;
 
     &__container {
@@ -215,6 +180,7 @@
         margin: 1.5em auto;
         width: 63%;
         max-width: 17em;
+        border: 2px solid blue;
     }
 
     &__socials-list {
