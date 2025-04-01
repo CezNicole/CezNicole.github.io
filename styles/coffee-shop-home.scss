@@ -346,6 +346,15 @@
 
 
 
+// home / menu disabled styling 
+.disabled{
+	pointer-events: none;
+	opacity: 0.5;
+	cursor: none;
+}
+
+
+
 @include breakpoints.tablet{
 	// header
 	.header{
