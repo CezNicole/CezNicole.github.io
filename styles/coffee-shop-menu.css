@@ -221,6 +221,12 @@ body {
   font-style: normal;
 }
 
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: default;
+}
+
 @media (min-width: 768px) {
   .header__nav-list {
     display: flex;

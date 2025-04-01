@@ -244,6 +244,16 @@
 }
 
 
+
+// home / menu disabled styling 
+.disabled{
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: default;
+}
+
+
+
 @include breakpoints.tablet{
     // header nav
     .header {
