@@ -32,3 +32,120 @@ body{
     font-weight: 700;
     font-style: normal;
 }
+
+@mixin section-titles{
+    @include font-light;
+    font-size: 60px;
+}
+
+@mixin section-subtitles{
+    @include font-light;
+    font-size: 33px;
+}
+
+@mixin blue-text{
+    color: colors.$nitro-blue;
+}
+
+@mixin footer-headers{
+    margin: 0.75em 0;
+}
+
+@mixin nav-links{
+    @include font-regular;
+    font-size: 21px;
+    text-decoration: none;
+}
+
+@mixin buttons{
+    @include nav-links;
+    background-color: colors.$nitro-blue;
+    color: colors.$white;
+    padding: 0.4em 1.2em;
+    border: 2px solid colors.$nitro-blue;
+}
+
+@mixin paragraph-text-regular{
+    @include font-regular;
+    font-size: 18px;
+}
+
+@mixin paragraph-text-regular-italic{
+    @include font-italic;
+    font-size: 18px;
+    width: 100%;
+}
+
+@mixin menu-price{
+    color: colors.$nitro-blue;
+    padding-top: 0.25em;
+}
+
+@mixin discount-code{
+    @include font-regular;
+    font-size: 45px;
+}
+
+@mixin discount-banners{
+    width: 90%;
+    background-color: colors.$graphite;
+    color: colors.$white;
+    border: 2px solid red;
+}
+
+@mixin icons{
+    width: 50px;
+}
+
+@mixin product-images{
+    height: 280px;
+}
+
+@mixin title-box{
+    width: 300px;
+    height: 200px;
+    background-color: colors.$graphite;
+    color: colors.$white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin background{
+    width: 100%;
+    height: 700px;
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin header-nav-list{
+    list-style-type: none;
+    padding: 1em;
+}
+
+@mixin header-links{
+    text-decoration: none;
+}
+
+@mixin header-link-nitro{
+    display: flex;
+}
+
+@mixin other-header-links{
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+}
+
+@mixin footer{
+    background-color: colors.$nitro-pink;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    border: 2px solid blue;
+}
