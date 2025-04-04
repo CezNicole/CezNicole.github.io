@@ -14,10 +14,6 @@
 .section-subtitles {
 	@include section-subtitles;
 
-	&--blue {
-		@include blue-text;
-	}
-
 	&__footer {
 		@include footer-headers;
 	}
@@ -80,6 +76,10 @@
 
 	&__links {
 		@include header-links;
+
+		&--blue{
+			@include blue-text;
+		}
 	}
 
 	&__list-item {

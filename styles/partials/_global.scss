@@ -6,11 +6,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: colors.$graphite;
 }
 
-body{
+.nitro-coffee-shop{
     background-color: colors.$nitro-pink;
+    color: colors.$graphite;
 }
 
 @mixin font-light {
@@ -123,6 +123,7 @@ body{
 
 @mixin header-links{
     text-decoration: none;
+    color: colors.$graphite;
 }
 
 @mixin header-link-nitro{
