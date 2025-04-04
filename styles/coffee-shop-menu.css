@@ -27,11 +27,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #393939;
 }
 
-body {
+.nitro-coffee-shop {
   background-color: #fff0ed;
+  color: #393939;
 }
 
 .section-titles {
@@ -44,9 +44,6 @@ body {
   font-weight: 300;
   font-style: normal;
   font-size: 33px;
-}
-.section-subtitles--blue {
-  color: #5bacc3;
 }
 .section-subtitles__footer {
   margin: 0.75em 0;
@@ -126,6 +123,10 @@ body {
 }
 .header__links {
   text-decoration: none;
+  color: #393939;
+}
+.header__links--blue {
+  color: #5bacc3;
 }
 .header__list-item--left {
   display: flex;
