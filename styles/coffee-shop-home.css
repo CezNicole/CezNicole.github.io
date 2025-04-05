@@ -26,10 +26,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.portfolio {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #cad2c5;
 }
 
 .nitro-coffee-shop {
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fff0ed;
   color: #393939;
 }
