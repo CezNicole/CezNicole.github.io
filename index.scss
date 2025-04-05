@@ -14,14 +14,16 @@
 	z-index: 1;
 
 	&__nav{
-		padding: 1.5em 0;
+		// padding: 1.5em 0;
+		padding: 1em 0;
 		background-color: colors.$portfolio-green;
 		width: 100%;
 		position: fixed;
 		overflow: hidden;
 		top: 0;
 		right: 0;
-		border-bottom: 1.5px solid colors.$yellow;
+		// border-bottom: 1.5px solid colors.$yellow;
+		box-shadow: 5px 5px 5px 5px colors.$border-cyan;
 		// border: 2px solid red;
 		display: flex;
 		justify-content: space-evenly;
@@ -44,28 +46,6 @@
 	}
 }
 
-// .header__nav {
-// 	padding: 1.5em 0;
-// 	background-color: colors.$portfolio-green;
-// 	width: 100%;
-// 	position: fixed;
-// 	overflow: hidden;
-// 	top: 0;
-// 	right: 0;
-// 	// border-bottom: 1.3px solid colors.$yellow;
-// 	border-bottom: 1.5px solid colors.$yellow;
-// }
-
-// .header__nav-list {
-// 	list-style-type: none;
-// 	display: flex;
-// 	justify-content: flex-end;
-// 	align-items: center;
-// 	width: 100%;
-// 	// padding-left: 0;
-// 	// padding-bottom: 0.5em;
-// }
-
 .nav-links {
 	// text-decoration: none;
 	// @include font-light;
@@ -74,12 +54,13 @@
 	margin: 0.75em;
 	// font-size: 1.25em;
 
-	&:visited {
-		color: colors.$dark-blue;
-	}
+	// &:visited {
+	// 	color: colors.$dark-blue;
+	// }
 
 	&:hover {
-		color: colors.$cyan;
+		// color: colors.$cyan;
+		color: colors.$grayish-blue;
 		text-decoration: underline;
 	}
 
@@ -88,7 +69,7 @@
 	}
 }
 
-.icons {
+.social-icons {
 	margin: 0 0.75em;
 	width: 35px;
 
@@ -102,103 +83,162 @@
 	}
 }
 
-.main {
-	// margin-top: 5em;
-	// margin-top: 5.5em;
-	margin-top: 8em;
-
-	&__article {
-		background-color: colors.$yellow;
-		border-radius: 15px;
-		// box-shadow: 5px 5px 5px colors.$border-cyan;
-		box-shadow: 2px 2px 5px 5px colors.$border-cyan;
-		margin: 1.5em;
-		padding: 0.8em;
-		// scroll-margin-top: 5em;
-		// scroll-margin-top: 5.5em;
-		scroll-margin-top: 6.5em;
-	}
-
-	&__icon {
-		background-color: colors.$grayish-blue;
-		border-radius: 50%;
-		max-width: 9em;
-		position: relative;
-	}
-}
-
-// .main__article {
-// 	background-color: colors.$yellow;
-// 	border-radius: 15px;
-// 	box-shadow: 5px 5px 5px #52796f;
-// 	margin: 1.5em;
-// 	padding: 0.8em;
-// 	// scroll-margin-top: 5em;
-// 	scroll-margin-top: 5.5em;
-// }
-
-// .main__icon {
-// 	background-color: #2f3e46;
-// 	border-radius: 50%;
-// 	max-width: 9em;
-// 	position: relative;
-// }
-
-.main__full-name {
-	color: #2f3e46;
-	font-size: 1.43em;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.main__role {
-	color: #2f3e46;
-	font-size: 1.25em;
-	font-weight: 400;
-	margin-top: 0;
-	margin-bottom: 0.5em;
-}
-
-.main__btnContact {
-	background-color: #2f3e46;
-	border: 2px solid #15616d;
-	color: colors.$yellow;
-	padding: 0.5em 1em;
-	border-radius: 8px;
-	font-size: 1em;
+.profile-icon{
+	background-color: colors.$grayish-blue;
+	border-radius: 50%;
+	// max-width: 9em;
+	// width: 9.5em;
+	width: 9em;
 	position: relative;
 }
 
-.main__btnContact:hover {
-	background-color: #1d2d44;
-	border: 2px solid #3e5c76;
+.main {
+	// margin-top: 5em;
+	// margin-top: 5.5em;
+	// margin-top: 8em;
+	margin-top: 7em;
+	color: colors.$grayish-blue;
+	// color: red;
 }
 
-.main__btnContact:active {
-	background-color: #78290f;
+.section-cards{
+	background-color: colors.$yellow;
+	border-radius: 15px;
+	box-shadow: 5px 5px 5px colors.$border-cyan;
+	// box-shadow: 2px 2px 5px 5px colors.$border-cyan;
+	// margin: 1.5em;
+	margin: 2.3em auto;
+	padding: 0.8em;
+	scroll-margin-top: 6em;
+	width: 90%;
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+		border: 2px solid blue;
+
+		&--image {
+			// width: 40%;
+			// width: 37%;
+			// min-width: 9.8em;
+			border: 2px solid red;
+		}
+
+		&--text {
+			// width: 95%;
+			// max-width: 20em;
+			// width: 60%;
+			// width: 63%;
+			// margin-left: 8.5em;
+			border: 2px solid green;
+			// text-align: center;
+		}
+	}
+
+	&__titles{
+		@include section-subtitles;
+		// font-size: 1.5em;
+	}
 }
 
-.main__container--profile {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
+.profile-name{
+	@include section-titles;
+	// @include nav-links;
+	@include font-bold;
+	// font-size: 26px;
+	// font-size: 1.6em;
+	// color: colors.$grayish-blue;
 }
 
-.main__subcontainer--image {
-	width: 5%;
+.profile-role{
+	@include section-subtitles;
+	// @include nav-links;
+	// padding: 0.3em;
+	margin: 0.5em auto;
+
 }
 
-.main__subcontainer--text {
-	width: 95%;
-	margin-left: 8.5em;
+.buttons{
+	// @include buttons;
+	@include nav-links;
+	// background-color: colors.$grayish-blue;
+	background-color: colors.$portfolio-cyan;
+	// border: 2px solid colors.$portfolio-cyan;
+	border: none;
+	color: colors.$yellow;
+	border-radius: 8px;
+	padding: 0.5em 1em;
+
+	&:hover {
+		// background-color: #1d2d44;
+		background-color: colors.$grayish-blue;
+		// border: 2px solid colors.$dark-blue;
+	}
+
+	&:active {
+		background-color: colors.$dark-red;
+	}
 }
 
-.main__article-title {
-	color: #0d1321;
-	font-weight: 400;
-	font-size: 1.4em;
-	margin-bottom: 0.5em;
-}
+// .main__full-name {
+// 	color: #2f3e46;
+// 	font-size: 1.43em;
+// 	font-weight: 600;
+// 	margin-bottom: 0;
+// }
+
+// .main__role {
+// 	color: #2f3e46;
+// 	font-size: 1.25em;
+// 	font-weight: 400;
+// 	margin-top: 0;
+// 	margin-bottom: 0.5em;
+// }
+
+// .main__btnContact {
+// 	background-color: #2f3e46;
+// 	border: 2px solid #15616d;
+// 	color: colors.$yellow;
+// 	padding: 0.5em 1em;
+// 	border-radius: 8px;
+// 	font-size: 1em;
+// 	position: relative;
+// }
+
+
+
+// .main__container--profile {
+// 	display: flex;
+// 	justify-content: space-between;
+// 	width: 100%;
+// 	border: 2px solid blue;
+// }
+
+
+
+// .main__subcontainer--image {
+// 	// width: 5%;
+// 	width: 40%;
+// 	// min-width: 9.8em;
+// 	border: 2px solid red;
+// }
+
+// .main__subcontainer--text {
+// 	// width: 95%;
+// 	// max-width: 20em;
+// 	width: 60%;
+// 	// margin-left: 8.5em;
+// 	border: 2px solid green;
+// }
+
+// .main__article-title {
+// 	color: #0d1321;
+// 	font-weight: 400;
+// 	font-size: 1.4em;
+// 	margin-bottom: 0.5em;
+// }
 
 .main__profile-desc {
 	color: #0d1321;
@@ -312,13 +352,18 @@
 // 	top: -4px;
 // }
 
-.divider {
-	border: 1.3px solid colors.$yellow;
-}
+// .divider {
+// 	// border: 1.3px solid colors.$yellow;
+// 	border: 1.5px solid colors.$yellow;
+// }
 
 .footer__copyright {
-	color: #0d1321;
-	padding: 0.5em 1em 1em 1em;
+	// box-shadow: 2px 2px 5px 5px colors.$border-cyan;
+	box-shadow: 5px 5px 5px 5px colors.$border-cyan;
+	// color: #0d1321;
+	color: colors.$grayish-blue;
+	// padding: 0.5em 1em 1em 1em;
+	padding: 1em;
 	text-align: center;
 	font-size: 0.95em;
 	position: relative;
