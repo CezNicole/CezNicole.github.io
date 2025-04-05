@@ -43,7 +43,6 @@
   position: relative;
   z-index: 1;
 }
-
 .header__nav {
   padding: 1.5em 0;
   background-color: #cad2c5;
@@ -52,15 +51,21 @@
   overflow: hidden;
   top: 0;
   right: 0;
-  border-bottom: 1.3px solid #f0ebd8;
+  border-bottom: 1.5px solid #f0ebd8;
+  display: flex;
+  justify-content: space-evenly;
 }
-
 .header__nav-list {
   list-style-type: none;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
+}
+.header__icon-list {
   width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
 }
 
 .nav-links {
@@ -71,33 +76,40 @@
   color: #354f52;
   margin: 0.75em;
 }
-
 .nav-links:visited {
   color: #3e5c76;
 }
-
 .nav-links:hover {
   color: #15616d;
   text-decoration: underline;
 }
-
 .nav-links:active {
   color: #78290f;
 }
 
-.main {
-  margin-top: 5.5em;
+.icons {
+  margin: 0 0.75em;
+  width: 35px;
+}
+.icons:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.3);
+}
+.icons:active svg path {
+  fill: #78290f;
 }
 
+.main {
+  margin-top: 8em;
+}
 .main__article {
   background-color: #f0ebd8;
   border-radius: 15px;
-  box-shadow: 5px 5px 5px #52796f;
+  box-shadow: 2px 2px 5px 5px #52796f;
   margin: 1.5em;
   padding: 0.8em;
-  scroll-margin-top: 5.5em;
+  scroll-margin-top: 6.5em;
 }
-
 .main__icon {
   background-color: #2f3e46;
   border-radius: 50%;
@@ -214,53 +226,6 @@
 .main__project-details {
   font-size: 3.15vw;
   line-height: 1.4;
-}
-
-.footer__title {
-  color: #2f3e46;
-  font-size: 1.4em;
-  padding: 0 1.1em;
-}
-
-.footer__container {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.footer__subcontainer {
-  width: 30px;
-  height: 30px;
-  background-color: #2f3e46;
-  margin: 1em;
-  padding: 1em;
-  border-radius: 8px;
-}
-
-.footer__subcontainer:hover {
-  background-color: #1d2d44;
-  border: 2px solid #3e5c76;
-}
-
-.footer__subcontainer:active {
-  background-color: #78290f;
-}
-
-svg {
-  width: 100%;
-  display: flex;
-  margin: auto;
-}
-
-.footer__icons--linkedin {
-  width: 90%;
-}
-
-.footer__icons--github {
-  width: 120%;
-  position: relative;
-  left: -3.5px;
-  top: -4px;
 }
 
 .divider {
