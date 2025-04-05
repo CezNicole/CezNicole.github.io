@@ -5,10 +5,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+// Portfolio Page Styling
+.portfolio{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: colors.$portfolio-green;
+}
+
+
+
+
+// Nitro Coffee Shop Styling
 .nitro-coffee-shop{
+    font-family: 'Open Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: colors.$nitro-pink;
     color: colors.$graphite;
 }
