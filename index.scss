@@ -51,7 +51,8 @@
 	// @include font-light;
 	@include nav-links;
 	color: colors.$portfolio-cyan;
-	margin: 0.75em;
+	// margin: 0.75em;
+	margin: 0.65em;
 	// font-size: 1.25em;
 
 	// &:visited {
@@ -129,10 +130,16 @@
 		}
 
 		&--about{
-			// border: 2px solid blue;
+			// border: 2px solid red;
 			// padding: 0.5em;
 			padding: 1em;
 			margin: 1.5em auto 0;
+		}
+
+		&--portfolio{
+			@extend .section-cards__container--about;
+			margin: 0;
+			border: 2px solid green
 		}
 	}
 
@@ -150,6 +157,8 @@
 		// padding: 0.85em 0 0;
 		// margin: 0 0 1.5em;
 		line-height: 1.4;
+		font-size: 1.4em;
+		border: 2px solid blue;
 	}
 }
 
@@ -157,8 +166,7 @@
 	@include section-titles;
 	// @include nav-links;
 	@include font-bold;
-	// font-size: 26px;
-	font-size: 1.87em;
+	font-size: 1.8em;
 	// color: colors.$grayish-blue;
 }
 
@@ -169,7 +177,6 @@
 	// margin: 0.5em auto;
 	margin: 0.3em auto 0.5em;
 	font-size: 1.6em;
-
 }
 
 .buttons{
@@ -260,21 +267,23 @@
 // 	line-height: 1.4;
 // }
 
-.main__article--portfolio {
-	position: relative;
-}
+// .main__article--portfolio {
+// 	position: relative;
+// 	border: 2px solid red;
+// }
 
-.main__article-title--portfolio {
-	margin-top: 0.3em;
-}
+// .main__article-title--portfolio {
+// 	margin-top: 0.3em;
+// }
 
 .main__project-image {
 	max-width: 100%;
 }
 
-.main__container--project {
-	position: relative;
-}
+// .main__container--project {
+// 	position: relative;
+// 	border: 2px solid red;
+// }
 
 /* .main__subcontainer--project {
 	background-color: #2f3e46;
@@ -304,10 +313,10 @@
 	margin: 0.3em;
 }
 
-.main__project-details {
-	font-size: 3.15vw;
-	line-height: 1.4;
-}
+// .main__project-details {
+// 	font-size: 3.15vw;
+// 	line-height: 1.4;
+// }
 
 // .footer__title {
 // 	color: #2f3e46;

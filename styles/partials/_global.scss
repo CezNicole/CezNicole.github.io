@@ -13,7 +13,10 @@
     background-color: colors.$portfolio-green;
 }
 
-
+@mixin portfolio-desc-text{
+    @include font-regular;
+    font-size: 1.3em;
+}
 
 
 // Nitro Coffee Shop Styling

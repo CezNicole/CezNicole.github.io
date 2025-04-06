@@ -74,7 +74,7 @@
   font-size: 21px;
   text-decoration: none;
   color: #354f52;
-  margin: 0.75em;
+  margin: 0.65em;
 }
 .nav-links:hover {
   color: #2f3e46;
@@ -127,9 +127,13 @@
 .section-cards__container--image {
   min-width: 9.8em;
 }
-.section-cards__container--about {
+.section-cards__container--about, .section-cards__container--portfolio {
   padding: 1em;
   margin: 1.5em auto 0;
+}
+.section-cards__container--portfolio {
+  margin: 0;
+  border: 2px solid green;
 }
 .section-cards__titles {
   font-weight: 300;
@@ -142,6 +146,8 @@
   font-size: 18px;
   padding: 0.85em 0.5em;
   line-height: 1.4;
+  font-size: 1.4em;
+  border: 2px solid blue;
 }
 
 .profile-name {
@@ -150,7 +156,7 @@
   font-size: 60px;
   font-weight: 700;
   font-style: normal;
-  font-size: 1.87em;
+  font-size: 1.8em;
 }
 
 .profile-role {
@@ -179,20 +185,8 @@
   background-color: #78290f;
 }
 
-.main__article--portfolio {
-  position: relative;
-}
-
-.main__article-title--portfolio {
-  margin-top: 0.3em;
-}
-
 .main__project-image {
   max-width: 100%;
-}
-
-.main__container--project {
-  position: relative;
 }
 
 /* .main__subcontainer--project {
@@ -219,11 +213,6 @@
   font-size: 3.8vw;
   text-align: center;
   margin: 0.3em;
-}
-
-.main__project-details {
-  font-size: 3.15vw;
-  line-height: 1.4;
 }
 
 .footer__copyright {
