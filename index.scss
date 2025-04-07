@@ -52,7 +52,9 @@
 	@include nav-links;
 	color: colors.$portfolio-cyan;
 	// margin: 0.75em;
-	margin: 0.65em;
+	// margin: 0.65em;
+	margin: 0.5em;
+	// margin: 0.45em;
 	// font-size: 1.25em;
 
 	// &:visited {
@@ -71,7 +73,8 @@
 }
 
 .social-icons {
-	margin: 0 0.75em;
+	// margin: 0 0.75em;
+	margin: 0 0.5em;
 	width: 35px;
 
 	&:hover {
@@ -89,8 +92,10 @@
 	border-radius: 50%;
 	// max-width: 9em;
 	// width: 9.5em;
-	width: 9em;
-	position: relative;
+	// width: 9em;
+	// width: 45%;
+	width: 10em;
+	// position: relative;
 }
 
 .main {
@@ -105,8 +110,8 @@
 .section-cards{
 	background-color: colors.$yellow;
 	border-radius: 15px;
-	box-shadow: 5px 5px 5px colors.$border-cyan;
-	// box-shadow: 2px 2px 5px 5px colors.$border-cyan;
+	box-shadow: 10px 10px colors.$border-cyan;
+	// box-shadow: 2px 2px 5px 5px colors.$yellow;
 	// margin: 1.5em;
 	margin: 2.3em auto;
 	padding: 0.8em;
@@ -123,14 +128,16 @@
 		&--image {
 			// width: 40%;
 			// width: 37%;
-			min-width: 9.8em;
+			// min-width: 9.8em;
+			width: 100%;
 			// display: flex;
 			// justify-content: center;
 			// align-items: center;
 		}
 
 		&--about{
-			// border: 2px solid red;
+			border: 2px solid green;
+			width: 100%;
 			// padding: 0.5em;
 			padding: 1em;
 			margin: 1.5em auto 0;
@@ -149,16 +156,15 @@
 	}
 
 	&__desc{
-		@include paragraph-text-regular;
-		padding: 0.85em 0.5em;
+		// @include paragraph-text-regular;
+		@include portfolio-desc-text;
+		padding: 0.85em 0.45em;
 		// color: #0d1321;
 		// font-size: 1.03em;
 		// padding: 0 0.37em;
 		// padding: 0.85em 0 0;
 		// margin: 0 0 1.5em;
-		line-height: 1.4;
-		font-size: 1.4em;
-		border: 2px solid blue;
+		// font-size: 1.2em;
 	}
 }
 
@@ -379,14 +385,15 @@
 // }
 
 .footer__copyright {
+	@include portfolio-desc-text;
 	// box-shadow: 2px 2px 5px 5px colors.$border-cyan;
 	box-shadow: 5px 5px 5px 5px colors.$border-cyan;
 	// color: #0d1321;
-	color: colors.$grayish-blue;
+	// color: colors.$grayish-blue;
 	// padding: 0.5em 1em 1em 1em;
-	padding: 1em;
+	padding: 1em 0;
 	text-align: center;
-	font-size: 0.95em;
+	// font-size: 0.95em;
 	position: relative;
 }
 

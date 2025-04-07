@@ -15,7 +15,9 @@
 
 @mixin portfolio-desc-text{
     @include font-regular;
-    font-size: 1.3em;
+	color: colors.$grayish-blue;
+    font-size: 1.2em;
+    line-height: 1.4;
 }
 
 

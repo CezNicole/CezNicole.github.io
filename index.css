@@ -74,7 +74,7 @@
   font-size: 21px;
   text-decoration: none;
   color: #354f52;
-  margin: 0.65em;
+  margin: 0.5em;
 }
 .nav-links:hover {
   color: #2f3e46;
@@ -85,7 +85,7 @@
 }
 
 .social-icons {
-  margin: 0 0.75em;
+  margin: 0 0.5em;
   width: 35px;
 }
 .social-icons:hover {
@@ -99,8 +99,7 @@
 .profile-icon {
   background-color: #2f3e46;
   border-radius: 50%;
-  width: 9em;
-  position: relative;
+  width: 10em;
 }
 
 .main {
@@ -111,7 +110,7 @@
 .section-cards {
   background-color: #f0ebd8;
   border-radius: 15px;
-  box-shadow: 5px 5px 5px #52796f;
+  box-shadow: 10px 10px #52796f;
   margin: 2.3em auto;
   padding: 0.8em;
   scroll-margin-top: 6em;
@@ -125,9 +124,11 @@
   text-align: center;
 }
 .section-cards__container--image {
-  min-width: 9.8em;
+  width: 100%;
 }
 .section-cards__container--about, .section-cards__container--portfolio {
+  border: 2px solid green;
+  width: 100%;
   padding: 1em;
   margin: 1.5em auto 0;
 }
@@ -143,11 +144,10 @@
 .section-cards__desc {
   font-weight: 400;
   font-style: normal;
-  font-size: 18px;
-  padding: 0.85em 0.5em;
+  color: #2f3e46;
+  font-size: 1.2em;
   line-height: 1.4;
-  font-size: 1.4em;
-  border: 2px solid blue;
+  padding: 0.85em 0.45em;
 }
 
 .profile-name {
@@ -216,10 +216,13 @@
 }
 
 .footer__copyright {
-  box-shadow: 5px 5px 5px 5px #52796f;
+  font-weight: 400;
+  font-style: normal;
   color: #2f3e46;
-  padding: 1em;
+  font-size: 1.2em;
+  line-height: 1.4;
+  box-shadow: 5px 5px 5px 5px #52796f;
+  padding: 1em 0;
   text-align: center;
-  font-size: 0.95em;
   position: relative;
 }/*# sourceMappingURL=index.css.map */
