@@ -20,6 +20,11 @@
     line-height: 1.4;
 }
 
+@mixin project-details-text{
+    @include portfolio-desc-text;
+    font-size: 1.1em;
+    color: colors.$white;
+}
 
 // Nitro Coffee Shop Styling
 .nitro-coffee-shop{
