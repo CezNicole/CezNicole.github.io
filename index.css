@@ -119,7 +119,7 @@
   font-size: 1.6em;
 }
 
-.buttons {
+.buttons, .buttons--project {
   font-weight: 400;
   font-style: normal;
   font-size: 21px;
@@ -130,11 +130,25 @@
   border-radius: 8px;
   padding: 0.5em 1em;
 }
-.buttons:hover {
+.buttons:hover, .buttons--project:hover {
   background-color: #2f3e46;
 }
-.buttons:active {
+.buttons:active, .buttons--project:active {
   background-color: #78290f;
+}
+.buttons--project {
+  background-color: #3e5c76;
+  color: #fff;
+  display: flex;
+  margin: 2.5em auto;
+}
+.buttons--project:hover {
+  background-color: #fff;
+  color: #3e5c76;
+}
+.buttons--project:active {
+  background-color: #78290f;
+  color: #fff;
 }
 
 .main {
@@ -216,10 +230,6 @@
   background-color: #2f3e46;
   padding: 1em;
   transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   overflow-y: auto;
 }
 .project-details__desc {
@@ -231,6 +241,7 @@
   font-size: 1.1em;
   color: #fff;
   margin-bottom: 0.75em;
+  text-align: left;
 }
 
 .card-details {
@@ -255,25 +266,6 @@
   padding: 1em 0;
 }
 
-/* .main__subcontainer--project {
-	background-color: #2f3e46;
-	color: #f0ebd8;
-	padding: 1em;
-	position: absolute;
-	top: 0;
-	height: 85%;
-	display: none;
-} */
-/* .main__container--project:hover {
-	.main__project-image {
-		visibility: hidden;
-	}
-
-	.main__subcontainer--project {
-		display: flex;
-		flex-direction: column;
-	}
-} */
 .copyright {
   font-weight: 400;
   font-style: normal;
@@ -284,4 +276,34 @@
   padding: 1em 0;
   text-align: center;
   position: relative;
+  bottom: 0;
+}
+
+@media (min-width: 768px) {
+  body {
+    border: 2px solid red;
+  }
+  .nav-links {
+    margin: 1.5em;
+  }
+  .social-icons {
+    margin: 0 1.5em;
+  }
+  .section-cards__container--full-width {
+    width: 100%;
+    text-align: center;
+  }
+  .section-cards__desc {
+    font-weight: 400;
+    font-style: normal;
+    color: #2f3e46;
+    font-size: 1.2em;
+    line-height: 1.4;
+    padding: 0.85em 0.45em;
+    border: 2px solid green;
+  }
+  .section-cards__desc--projects {
+    max-width: 25em;
+    max-height: 50em;
+  }
 }/*# sourceMappingURL=index.css.map */
