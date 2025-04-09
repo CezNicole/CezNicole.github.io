@@ -22,9 +22,10 @@
 
 @mixin project-details-text{
     @include portfolio-desc-text;
-    font-size: 1.1em;
+    font-size: 0.95em;
     color: colors.$white;
 }
+
 
 // Nitro Coffee Shop Styling
 .nitro-coffee-shop{
