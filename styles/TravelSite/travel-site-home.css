@@ -137,6 +137,15 @@ $activities: #FEFAF5;
   max-width: 13em;
 }
 
+.page-subtitle {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  font-weight: 700;
+  font-style: normal;
+  color: #335576;
+}
+
 .main__banner {
   background-color: #FEFAF5;
   padding: 2em 1.5em;
@@ -156,6 +165,9 @@ $activities: #FEFAF5;
   display: flex;
   justify-content: flex-end;
   margin: 0 auto;
+}
+.main__recommendations {
+  padding: 1.5em;
 }
 
 .text-content {
@@ -181,4 +193,21 @@ $activities: #FEFAF5;
 .banner-image {
   width: 100%;
   max-width: 18em;
+}
+
+.destination-cards {
+  width: 100%;
+  max-width: 55em;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.destination-cards__images {
+  width: 15em;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  margin: 1em auto;
+  position: relative;
 }/*# sourceMappingURL=travel-site-home.css.map */
