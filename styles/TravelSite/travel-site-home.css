@@ -66,6 +66,7 @@ $activities: #FEFAF5;
 .travel-site {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #FFFFFF;
+  overflow-x: hidden;
 }
 
 /*
@@ -104,9 +105,9 @@ $activities: #FEFAF5;
   justify-content: flex-start;
 }
 .nav--right {
+  width: 70%;
   display: flex;
   justify-content: flex-end;
-  width: 70%;
 }
 .nav__list-item {
   list-style-type: none;
@@ -127,4 +128,126 @@ $activities: #FEFAF5;
 .nav__links--active {
   border-bottom: 4px solid #DB7A4E;
   padding: 0.5em 0;
+}
+
+.page-title {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.6em;
+  color: #335576;
+  max-width: 13em;
+}
+
+.page-subtitle {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.6em;
+  color: #335576;
+  font-size: 1.3em;
+}
+.page-subtitle__destinations {
+  color: #FFFFFF;
+  position: relative;
+  bottom: 2.85em;
+  left: 6.75em;
+}
+
+.main__banner, .footer {
+  background-color: #FEFAF5;
+  padding: 2em 1.5em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.main__banner--left {
+  width: 100%;
+  max-width: 30em;
+  padding: 2em 0;
+}
+.main__banner--right {
+  width: 100%;
+  max-width: 20em;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 auto;
+}
+.main__recommendations {
+  padding: 1.5em;
+}
+
+.text-content {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.8em;
+  color: #335576;
+}
+.text-content--padding, .text-content--orange {
+  padding: 1.75em 0;
+}
+.text-content--orange {
+  color: #DB7A4E;
+  padding-bottom: 0.8em;
+}
+
+.buttons {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.8em;
+  color: #335576;
+  color: #fff;
+  background-color: #DB7A4E;
+  border: none;
+  border-radius: 5em;
+  padding: 0.5em 2em;
+}
+
+.banner-image {
+  width: 100%;
+  max-width: 18em;
+}
+
+.destination-cards {
+  width: 100%;
+  max-width: 55em;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto 1em;
+  flex-wrap: wrap;
+}
+.destination-cards__images {
+  width: 15em;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  margin: 1em auto;
+  position: relative;
+}
+
+.card {
+  max-width: 20em;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.footer__container {
+  margin: 1em;
+}
+.footer__subcontainer {
+  margin: 0;
+}
+
+.social-icons {
+  padding: 1.75em 0 0.8em;
+  width: 25%;
+  max-width: 2em;
+  margin: 0 1.5em 0 0;
+}
+.social-icons--resize {
+  width: 12%;
+  max-width: 1em;
 }/*# sourceMappingURL=travel-site-home.css.map */

@@ -42,11 +42,11 @@ $activities: #FEFAF5;
     }
 
     &--right {
+        width: 70%;
         display: flex;
         // justify-content: space-evenly;
         justify-content: flex-end;
         // margin: 0 1em;
-        width: 70%;
     }
 
     &__list-item{
@@ -68,5 +68,149 @@ $activities: #FEFAF5;
             border-bottom: 4px solid colors.$travel-site-orange;
             padding: 0.5em 0;
         }
+    }
+}
+
+.page-title{
+    @include header-text;
+    max-width: 13em;
+}
+
+.page-subtitle{
+    @include subheader-text;
+    // padding-bottom: 1em;
+
+    &__destinations{
+        color: colors.$travel-site-white;
+        position: relative;
+        // bottom: 3.4em;
+        bottom: 2.85em;
+        // left: 9.8em;
+        left: 6.75em;
+    }
+}
+
+.main{
+    &__banner{
+        background-color: colors.$light-orange;
+        padding: 2em 1.5em;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+
+        &--left{
+            width: 100%;
+            max-width: 30em;
+            padding: 2em 0;
+        }
+
+        &--right{
+            width: 100%;
+            max-width: 20em;
+            display: flex;
+            // justify-content: center;
+            justify-content: flex-end;
+            margin: 0 auto;
+        }
+    }
+
+    &__recommendations{
+        padding: 1.5em;
+    }
+}
+
+.text-content{
+    @include small-text;
+    
+    &--padding{
+        padding: 1.75em 0;
+    }
+
+    &--orange{
+        @extend .text-content--padding;
+        color: colors.$travel-site-orange;
+        padding-bottom: 0.8em;
+    }
+}
+
+.buttons{
+    @include small-text;
+    color: colors.$white;
+    background-color: colors.$travel-site-orange;
+    border: none;
+    border-radius: 5em;
+    padding: 0.5em 2em;
+}
+
+.banner-image{
+    width: 100%;
+    max-width: 18em;
+}
+
+.destination-cards{
+    width: 100%;
+    max-width: 55em;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto 1em;
+    flex-wrap: wrap;
+
+    &__images{
+        width: 15em;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+        margin: 1em auto;
+        position: relative;
+    }
+}
+
+.card {
+    // width: 100%;
+    // max-width: 45vw;
+    max-width: 20em;
+}
+
+.footer{
+    @extend .main__banner;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &__container{
+        margin: 1em;
+        // width: 38%;
+        // max-width: 40em;
+    }
+    
+    &__subcontainer{
+        margin: 0;
+        // display: flex;
+
+        // &--days{
+        //     justify-content: space-between;
+        // }
+
+        // &--times{
+        //     // display: flex;
+        //     // justify-content: space-between;
+        //     border: 2px solid red;
+        // }
+    }
+}
+
+.social-icons{
+    padding: 1.75em 0 0.8em;
+    // width: 15%;
+    width: 25%;
+    max-width: 2em;
+    margin: 0 1.5em 0 0;
+
+    &--resize{
+        // width: 8%;
+        width: 12%;
+        max-width: 1em;
     }
 }
