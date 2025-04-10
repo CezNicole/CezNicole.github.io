@@ -82,12 +82,12 @@ $activities: #FEFAF5;
     color: colors.$travel-site-blue;
     // padding-bottom: 1em;
 
-    // &__destinations{
-    //     // color: colors.$travel-site-white;
-    //     // position: relative;
-    //     // top: 21.5em;
-    //     // right: 9em;
-    // }
+    &__destinations{
+        color: colors.$travel-site-white;
+        position: relative;
+        bottom: 3.4em;
+        left: 9.8em;
+    }
 }
 
 .main{
@@ -144,7 +144,7 @@ $activities: #FEFAF5;
     max-width: 55em;
     display: flex;
     justify-content: space-evenly;
-    margin: 0 auto;
+    margin: 0 auto 1em;
     flex-wrap: wrap;
 
     &__images{
@@ -155,4 +155,14 @@ $activities: #FEFAF5;
         margin: 1em auto;
         position: relative;
     }
+}
+
+.card {
+    // width: 100%;
+    // max-width: 45vw;
+    max-width: 20em;
+}
+
+.footer{
+    @extend .main__banner;
 }

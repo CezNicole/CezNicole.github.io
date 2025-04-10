@@ -145,8 +145,14 @@ $activities: #FEFAF5;
   font-style: normal;
   color: #335576;
 }
+.page-subtitle__destinations {
+  color: #FFFFFF;
+  position: relative;
+  bottom: 3.4em;
+  left: 9.8em;
+}
 
-.main__banner {
+.main__banner, .footer {
   background-color: #FEFAF5;
   padding: 2em 1.5em;
   display: flex;
@@ -200,7 +206,7 @@ $activities: #FEFAF5;
   max-width: 55em;
   display: flex;
   justify-content: space-evenly;
-  margin: 0 auto;
+  margin: 0 auto 1em;
   flex-wrap: wrap;
 }
 .destination-cards__images {
@@ -210,4 +216,8 @@ $activities: #FEFAF5;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   margin: 1em auto;
   position: relative;
+}
+
+.card {
+  max-width: 20em;
 }/*# sourceMappingURL=travel-site-home.css.map */
