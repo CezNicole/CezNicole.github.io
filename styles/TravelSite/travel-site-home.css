@@ -127,4 +127,54 @@ $activities: #FEFAF5;
 .nav__links--active {
   border-bottom: 4px solid #DB7A4E;
   padding: 0.5em 0;
+}
+
+.page-title {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.6em;
+  color: #335576;
+}
+
+.main__banner {
+  background-color: #FEFAF5;
+  padding: 2em 1.5em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.main__banner--left {
+  width: 100%;
+  max-width: 30em;
+  padding: 1.5em 0;
+}
+.main__banner--right {
+  display: flex;
+  margin: 0 auto;
+}
+
+.text-content {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.8em;
+  color: #335576;
+  padding: 1.75em 0;
+}
+
+.buttons {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.8em;
+  color: #335576;
+  color: #fff;
+  background-color: #DB7A4E;
+  border: none;
+  border-radius: 5em;
+  padding: 0.5em 2em;
+}
+
+.banner-image {
+  width: 100%;
+  max-width: 15em;
 }/*# sourceMappingURL=travel-site-home.css.map */

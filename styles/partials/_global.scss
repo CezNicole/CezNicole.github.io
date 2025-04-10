@@ -279,6 +279,18 @@
     @include font-regular;
     font-size: 1em;
 }
+
+@mixin header-text{
+    @include font-bold;
+    font-size: 1.6em;
+    color: colors.$travel-site-blue;
+}
+
+@mixin small-text{
+    @include font-regular;
+    font-size: 0.8em;
+    color: colors.$travel-site-blue;
+}
 /*
 navbar: fixed
 font: Verdana
