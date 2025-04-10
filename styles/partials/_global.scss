@@ -273,6 +273,7 @@
 .travel-site{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: colors.$travel-site-white;
+    overflow-x: hidden;
 }
 
 @mixin regular-text{
@@ -284,6 +285,11 @@
     @include font-bold;
     font-size: 1.6em;
     color: colors.$travel-site-blue;
+}
+
+@mixin subheader-text{
+    @include header-text;
+    font-size: 1.3em;
 }
 
 @mixin small-text{
