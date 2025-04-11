@@ -1,52 +1,30 @@
-// Travel Site Styling
-
-/*
-navbar: fixed
-font: Verdana
-text-align: left
-
-$travel-site-background: #FFFFFF;
-$travel-site-logo: #335576;
-$nav-link-active: #DB7A4E;
-$footer-background: #FEFAF5;
-
-$footer-text: #335576;
-$footer-subtitles: #DB7A4E;
-
-$hero-background: #FEFAF5;
-$slogan: #335576;
-$button: #DB7A4E;
-
-$recommendations-title: #335576;
-$border-radius: 5px;
-$card-border: 1px solid rgba(0 0 0 20%);
-$box-shadow: 0px 4px 4px rgba(0 0 0 20%);
-
-$activities: #FEFAF5;
-*/
 @use '../../styles/partials/global' as *;
 @use '../../styles/partials/colors' as colors;
 @use '../../styles/partials/breakpoints' as breakpoints;
 
 .nav{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 1em;
-    // margin: 0 1em;
     width: 100%;
 
     &--left{
-        width: 30%;
+        width: 100%;
         display: flex;
-        justify-content: flex-start;
+        margin: 0 auto 1.5em;
     }
 
     &--right {
-        width: 70%;
+        width: 100%;
         display: flex;
-        // justify-content: space-evenly;
-        justify-content: flex-end;
-        // margin: 0 1em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & > .nav__list-item{
+            margin: 0.85em auto;
+        }
     }
 
     &__list-item{
@@ -73,20 +51,15 @@ $activities: #FEFAF5;
 
 .page-title{
     @include header-text;
-    max-width: 13em;
 }
 
 .page-subtitle{
     @include subheader-text;
-    // padding-bottom: 1em;
 
     &__destinations{
         color: colors.$travel-site-white;
         position: relative;
-        // bottom: 3.4em;
         bottom: 2.85em;
-        // left: 9.8em;
-        left: 6.75em;
     }
 }
 
@@ -101,7 +74,6 @@ $activities: #FEFAF5;
 
         &--left{
             width: 100%;
-            max-width: 30em;
             padding: 2em 0;
         }
 
@@ -109,7 +81,6 @@ $activities: #FEFAF5;
             width: 100%;
             max-width: 20em;
             display: flex;
-            // justify-content: center;
             justify-content: flex-end;
             margin: 0 auto;
         }
@@ -167,50 +138,112 @@ $activities: #FEFAF5;
 }
 
 .card {
-    // width: 100%;
-    // max-width: 45vw;
+    width: 15em;
     max-width: 20em;
+    margin: 0 0.5em;
+
+    &__title{
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 1.2em;
+    }
 }
 
 .footer{
     @extend .main__banner;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
 
     &__container{
-        margin: 1em;
-        // width: 38%;
-        // max-width: 40em;
+        margin: 1.5em auto;
+        padding: 0 0.5em;
     }
     
     &__subcontainer{
         margin: 0;
-        // display: flex;
-
-        // &--days{
-        //     justify-content: space-between;
-        // }
-
-        // &--times{
-        //     // display: flex;
-        //     // justify-content: space-between;
-        //     border: 2px solid red;
-        // }
     }
 }
 
 .social-icons{
     padding: 1.75em 0 0.8em;
-    // width: 15%;
     width: 25%;
     max-width: 2em;
     margin: 0 1.5em 0 0;
 
     &--resize{
-        // width: 8%;
         width: 12%;
         max-width: 1em;
+    }
+}
+
+@include breakpoints.tablet{
+    .nav {
+        display: flex;
+        flex-direction: row;
+        padding: 1em 4em;
+        width: 100%;
+
+        &--left {
+            width: 30%;
+            display: flex;
+            justify-content: flex-start;
+            margin: 0;
+        }
+
+        &--right {
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+
+            &>.nav__list-item {
+                margin: 0;
+            }
+        }
+    }
+
+    .main{
+        &__banner{
+            width: 100%;
+
+            &--left {
+                padding: 2em 0 0 2.85em;
+                width: 55%;
+                max-width: 32.5em;
+            }
+        
+            &--right {
+                display: flex;
+                justify-content: flex-end;
+                width: 45%;
+                max-width: 35em;
+            }
+        }
+    }
+
+    .page-title{
+        max-width: 13em;
+    }
+
+    .destination-cards{
+        max-width: 100%;
+    }
+
+    .footer{
+        &__subcontainer{
+            padding: 0 2em 0 0;
+            
+            &--hours {
+                display: flex;
+            }
+        }
+    }
+}
+
+@include breakpoints.desktop{
+    body{
+        @include desktop-max-width;
     }
 }
