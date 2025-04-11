@@ -183,7 +183,14 @@ $activities: #FEFAF5;
 .card {
     // width: 100%;
     // max-width: 45vw;
+    width: 15em;
     max-width: 20em;
+
+    &__title{
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 1.2em;
+    }
 }
 
 .footer{

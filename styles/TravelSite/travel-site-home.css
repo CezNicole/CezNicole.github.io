@@ -66,7 +66,6 @@ $activities: #FEFAF5;
 .travel-site {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #FFFFFF;
-  overflow-x: hidden;
 }
 
 /*
@@ -228,7 +227,13 @@ $activities: #FEFAF5;
 }
 
 .card {
+  width: 15em;
   max-width: 20em;
+}
+.card__title {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1.2em;
 }
 
 .footer {
