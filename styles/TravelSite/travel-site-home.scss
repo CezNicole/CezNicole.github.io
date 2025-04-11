@@ -30,23 +30,34 @@ $activities: #FEFAF5;
 
 .nav{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding: 1em;
     // margin: 0 1em;
     width: 100%;
 
     &--left{
-        width: 30%;
+        // width: 30%;
+        width: 100%;
         display: flex;
-        justify-content: flex-start;
+        // justify-content: flex-start;
+        margin: 0 auto 1.5em;
     }
 
     &--right {
-        width: 70%;
+        // width: 70%;
+        width: 100%;
         display: flex;
-        // justify-content: space-evenly;
-        justify-content: flex-end;
+        flex-direction: column;
+        // justify-content: space-between;
+        // justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
         // margin: 0 1em;
+
+        & > .nav__list-item{
+            margin: 0.85em auto;
+        }
     }
 
     &__list-item{
@@ -84,9 +95,12 @@ $activities: #FEFAF5;
         color: colors.$travel-site-white;
         position: relative;
         // bottom: 3.4em;
-        bottom: 2.85em;
         // left: 9.8em;
-        left: 6.75em;
+
+        bottom: 2.85em;
+        // left: 6.75em;
+        // right: -6.75em;
+        // float: right;
     }
 }
 
@@ -175,12 +189,14 @@ $activities: #FEFAF5;
 .footer{
     @extend .main__banner;
     display: flex;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
 
     &__container{
-        margin: 1em;
+        // margin: 1em;
+        margin: 1.5em auto;
         // width: 38%;
         // max-width: 40em;
     }
@@ -212,5 +228,41 @@ $activities: #FEFAF5;
         // width: 8%;
         width: 12%;
         max-width: 1em;
+    }
+}
+
+@include breakpoints.tablet{
+    // body{
+    //     border: 2px solid red;
+    // }
+
+    .nav {
+        // padding: 1em 4em;
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-between;
+        // padding: 1em;
+        padding: 1em 4em;
+        width: 100%;
+
+        &--left {
+            width: 30%;
+            display: flex;
+            justify-content: flex-start;
+            margin: 0;
+        }
+
+        &--right {
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            // justify-content: space-evenly;
+            // margin: 0 1em;
+
+            &>.nav__list-item {
+                margin: 0;
+            }
+        }
     }
 }

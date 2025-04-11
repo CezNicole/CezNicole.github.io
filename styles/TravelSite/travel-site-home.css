@@ -95,19 +95,25 @@ $activities: #FEFAF5;
 */
 .nav {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 1em;
   width: 100%;
 }
 .nav--left {
-  width: 30%;
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
+  margin: 0 auto 1.5em;
 }
 .nav--right {
-  width: 70%;
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.nav--right > .nav__list-item {
+  margin: 0.85em auto;
 }
 .nav__list-item {
   list-style-type: none;
@@ -149,7 +155,6 @@ $activities: #FEFAF5;
   color: #FFFFFF;
   position: relative;
   bottom: 2.85em;
-  left: 6.75em;
 }
 
 .main__banner, .footer {
@@ -230,12 +235,12 @@ $activities: #FEFAF5;
 
 .footer {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
 }
 .footer__container {
-  margin: 1em;
+  margin: 1.5em auto;
 }
 .footer__subcontainer {
   margin: 0;
@@ -250,4 +255,28 @@ $activities: #FEFAF5;
 .social-icons--resize {
   width: 12%;
   max-width: 1em;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    padding: 1em 4em;
+    width: 100%;
+  }
+  .nav--left {
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+  }
+  .nav--right {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .nav--right > .nav__list-item {
+    margin: 0;
+  }
 }/*# sourceMappingURL=travel-site-home.css.map */
