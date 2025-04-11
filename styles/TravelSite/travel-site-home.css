@@ -229,6 +229,7 @@ $activities: #FEFAF5;
 .card {
   width: 15em;
   max-width: 20em;
+  margin: 0 0.5em;
 }
 .card__title {
   display: flex;
@@ -244,6 +245,7 @@ $activities: #FEFAF5;
 }
 .footer__container {
   margin: 1.5em auto;
+  padding: 0 1em;
 }
 .footer__subcontainer {
   margin: 0;
@@ -298,5 +300,11 @@ $activities: #FEFAF5;
   }
   .page-title {
     max-width: 13em;
+  }
+  .footer__subcontainer {
+    padding: 0 2em 0 0;
+  }
+  .footer__subcontainer--hours {
+    display: flex;
   }
 }/*# sourceMappingURL=travel-site-home.css.map */
