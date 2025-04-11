@@ -141,7 +141,6 @@ $activities: #FEFAF5;
   font-style: normal;
   font-size: 1.6em;
   color: #335576;
-  max-width: 13em;
 }
 
 .page-subtitle {
@@ -167,7 +166,6 @@ $activities: #FEFAF5;
 }
 .main__banner--left {
   width: 100%;
-  max-width: 30em;
   padding: 2em 0;
 }
 .main__banner--right {
@@ -278,5 +276,22 @@ $activities: #FEFAF5;
   }
   .nav--right > .nav__list-item {
     margin: 0;
+  }
+  .main__banner, .footer {
+    width: 100%;
+  }
+  .main__banner--left {
+    padding: 2em 0 0 2.85em;
+    width: 55%;
+    max-width: 32.5em;
+  }
+  .main__banner--right {
+    display: flex;
+    justify-content: flex-end;
+    width: 45%;
+    max-width: 35em;
+  }
+  .page-title {
+    max-width: 13em;
   }
 }/*# sourceMappingURL=travel-site-home.css.map */
