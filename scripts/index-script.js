@@ -4,8 +4,14 @@ btnContact.addEventListener('click', (event) => {
     window.location = 'mailto:cezcomia@gmail.com';
 })
 
-const btnViewFeatures = document.getElementById('btnViewFeatures');
-btnViewFeatures.addEventListener('click', (event) => {
+const btnViewFeaturesNitro = document.getElementById('btnViewNitro');
+btnViewFeaturesNitro.addEventListener('click', (event) => {
     event.preventDefault();
     window.open('pages/coffee-shop-home.html', '_blank');
+})
+
+const btnViewFeaturesTravelSite = document.getElementById('btnViewTravelSite');
+btnViewFeaturesTravelSite.addEventListener('click', (event) =>{
+    event.preventDefault();
+    window.open('pages/travel-site-home.html', '_blank');
 })

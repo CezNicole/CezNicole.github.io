@@ -205,6 +205,10 @@
 		@include project-details-text;
 		margin-bottom: 0.75em;
 		text-align: left;
+
+		&--italic{
+			@include font-italic;
+		}
 	}
 }
 

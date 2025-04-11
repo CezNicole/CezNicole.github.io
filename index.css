@@ -276,6 +276,10 @@ $activities: #FEFAF5;
   margin-bottom: 0.75em;
   text-align: left;
 }
+.project-details__desc--italic {
+  font-weight: 400;
+  font-style: italic;
+}
 
 .card-details {
   position: absolute;
