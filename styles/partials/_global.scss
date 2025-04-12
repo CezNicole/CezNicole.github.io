@@ -302,9 +302,16 @@
 @mixin destination-title{
     @include font-bold;
     color: colors.$travel-site-white;
-    font-size: 3.5em;
+    // font-size: 3.5em;
+    font-size: 3.8em;
     // position: absolute;
     // top: 1em;
+}
+
+@mixin days-text{
+    @include font-bold;
+    font-size: 1.15em;
+    color: colors.$black;
 }
 /*
 navbar: fixed
