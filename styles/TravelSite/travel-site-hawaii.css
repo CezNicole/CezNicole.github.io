@@ -87,10 +87,10 @@ $activities: #FEFAF5;
   justify-content: center;
   align-items: center;
 }
-.nav--right > .nav__list-item {
+.nav--right > .nav__list-item, .nav--right > .activities {
   margin: 0.85em auto;
 }
-.nav__list-item {
+.nav__list-item, .activities {
   list-style-type: none;
 }
 .nav__links {
@@ -99,6 +99,7 @@ $activities: #FEFAF5;
   font-size: 1em;
   color: #000000;
   text-decoration: none;
+  color: #000000;
   margin: 0 0.5em;
 }
 .nav__links--blue {
@@ -213,6 +214,43 @@ $activities: #FEFAF5;
   padding-right: 1.2em;
 }
 
+.banner {
+  width: 100%;
+  height: 700px;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../../assets/images/TravelSite/hawaii.jpg);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 1250px;
+  background-repeat: no-repeat;
+}
+.banner__title {
+  font-weight: 700;
+  font-style: normal;
+  color: #FFFFFF;
+  font-size: 3.5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1em;
+}
+
+.activity-cards {
+  background-color: #FFFFFF;
+  border: 2px solid blue;
+  padding: 1em;
+}
+.activity-cards__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border: 2px solid red;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -236,59 +274,4 @@ $activities: #FEFAF5;
 .social-icons--resize {
   width: 12%;
   max-width: 1em;
-}
-
-@media (min-width: 768px) {
-  .nav {
-    display: flex;
-    flex-direction: row;
-    padding: 1em 4em;
-    width: 100%;
-  }
-  .nav--left {
-    width: 30%;
-    display: flex;
-    justify-content: flex-start;
-    margin: 0;
-  }
-  .nav--right {
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-  }
-  .nav--right > .nav__list-item {
-    margin: 0;
-  }
-  .main__banner, .footer {
-    width: 100%;
-  }
-  .main__banner--left {
-    padding: 2em 0 0 2.85em;
-    width: 55%;
-    max-width: 32.5em;
-  }
-  .main__banner--right {
-    display: flex;
-    justify-content: flex-end;
-    width: 45%;
-    max-width: 35em;
-  }
-  .page-title {
-    max-width: 13em;
-  }
-  .destination-cards {
-    max-width: 100%;
-  }
-  .footer__subcontainer {
-    padding: 0 2em 0 0;
-  }
-  .footer__subcontainer--hours {
-    display: flex;
-  }
-}
-@media (min-width: 1280px) {
-  body {
-    max-width: 80em;
-  }
-}/*# sourceMappingURL=travel-site-home.css.map */
+}/*# sourceMappingURL=travel-site-hawaii.css.map */
