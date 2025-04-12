@@ -279,6 +279,7 @@
 @mixin regular-text{
     @include font-regular;
     font-size: 1em;
+    color: colors.$black;
 }
 
 @mixin header-text{
@@ -296,6 +297,21 @@
     @include font-regular;
     font-size: 0.8em;
     color: colors.$travel-site-blue;
+}
+
+@mixin destination-title{
+    @include font-bold;
+    color: colors.$travel-site-white;
+    // font-size: 3.5em;
+    font-size: 3.8em;
+    // position: absolute;
+    // top: 1em;
+}
+
+@mixin days-text{
+    @include font-bold;
+    font-size: 1.15em;
+    color: colors.$black;
 }
 /*
 navbar: fixed
