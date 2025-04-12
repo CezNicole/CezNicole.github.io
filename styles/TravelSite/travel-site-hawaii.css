@@ -354,6 +354,9 @@ $activities: #FEFAF5;
   .destination-cards {
     max-width: 100%;
   }
+  .activity-cards {
+    padding: 1em;
+  }
   .footer__subcontainer {
     padding: 0 2em 0 0;
   }
