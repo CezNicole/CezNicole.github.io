@@ -2,7 +2,7 @@
 @use '../partials/colors' as colors;
 @use '../partials/breakpoints' as breakpoints;
 
-.nav{
+.nav {
     // display: flex;
     // flex-direction: column;
     // justify-content: space-between;
@@ -13,7 +13,7 @@
     // z-index: 1;
     @include navigation-bar;
 
-    &--left{
+    &--left {
         // width: 100%;
         // display: flex;
         // margin: 0 auto 1.5em;
@@ -28,24 +28,25 @@
         // align-items: center;
         @include right-navigation-bar;
 
-        & > .nav__list-item{
+        & > .nav__list-item {
             // margin: 0.85em auto;
             @include right-navigation-links;
         }
     }
 
-    &__list-item{
+    &__list-item {
         // list-style-type: none;
         @include remove-link-underline;
     }
-    
-    &__links{
+
+    &__links {
         // @include regular-text;
         // text-decoration: none;
+        // color: colors.$black;
         // margin: 0 0.5em;
         @include navigation-links;
 
-        &--blue{
+        &--blue {
             // color: colors.$travel-site-blue;
             // @include font-bold;
             @include travel-site-link;
@@ -59,14 +60,14 @@
     }
 }
 
-.page-title{
+.page-title {
     @include header-text;
 }
 
-.page-subtitle{
+.page-subtitle {
     @include subheader-text;
 
-    &__destinations{
+    &__destinations {
         // color: colors.$travel-site-white;
         // position: relative;
         // bottom: 2.85em;
@@ -74,8 +75,11 @@
     }
 }
 
-.main{
-    &__banner{
+.main {
+    // max-width: 100%;
+    @include destination-pages-max-width;
+
+    &__banner {
         // background-color: colors.$light-orange;
         // padding: 2em 1.5em;
         // display: flex;
@@ -84,18 +88,13 @@
         // width: 100%;
         @include main-banner;
 
-        &--padding{
-            padding-top: 18em;
-            padding-bottom: 3em;
-        }
-
-        &--left{
+        &--left {
             // width: 100%;
             // padding: 2em 0;
             @include left-main-banner;
         }
 
-        &--right{
+        &--right {
             // width: 100%;
             // max-width: 20em;
             // display: flex;
@@ -105,21 +104,21 @@
         }
     }
 
-    &__recommendations{
+    &__recommendations {
         // padding: 1.5em;
         @include recommendations-title;
     }
 }
 
-.text-content{
+.text-content {
     @include small-text;
-    
-    &--padding{
+
+    &--padding {
         // padding: 1.75em 0;
         @include text-content-padding;
     }
 
-    &--orange{
+    &--orange {
         // @extend .text-content--padding;
         // color: colors.$travel-site-orange;
         // padding-bottom: 0.8em;
@@ -127,7 +126,7 @@
     }
 }
 
-.buttons{
+.buttons {
     // @include small-text;
     // color: colors.$white;
     // background-color: colors.$travel-site-orange;
@@ -137,43 +136,130 @@
     @include buttons;
 }
 
-.banner-image{
-    width: 100%;
-    max-width: 18em;
+// .banner-image {
+//     width: 100%;
+//     max-width: 18em;
+// }
+
+.destination-cards {
+    // width: 100%;
+    // max-width: 55em;
+    // display: flex;
+    // justify-content: space-evenly;
+    // margin: 0 auto 1em;
+    // flex-wrap: wrap;
+
+    // &__images {
+    //     width: 15em;
+    //     border-radius: 5px;
+    //     border: 1px solid rgba(0, 0, 0, 0.2);
+    //     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    //     margin: 1em auto;
+    //     position: relative;
+    // }
 }
 
-.destination-cards{
-    width: 100%;
-    max-width: 55em;
+// .card {
+//     // width: 15em;
+//     // max-width: 20em;
+//     // margin: 0 0.5em;
+
+//     // &__title {
+//     //     display: flex;
+//     //     justify-content: flex-end;
+//     //     padding-right: 1.2em;
+//     // }
+// }
+
+
+// ICELAND PAGE STYLING
+.banner {
+    @include background;
+    background-image: url(../../assets/images/TravelSite/iceland.jpg);
+    position: relative;
     display: flex;
-    justify-content: space-evenly;
-    margin: 0 auto 1em;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // background-size: 1200px;
+    // background-size: 1250px;
+    background-size: 1300px;
+    background-repeat: no-repeat;
+    // width: 100%;
 
-    &__images{
-        // width: 15em;
-        // border-radius: 5px;
-        // border: 1px solid rgba(0, 0, 0, 0.2);
-        // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-        // margin: 1em auto;
-        // position: relative;
-        @include destination-card-images;
+    &__title {
+        @include destination-title;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // padding: 1em;
+        position: relative;
+        bottom: 0;
+        left: 0.5em;
+    }
+
+    &__container {
+        position: relative;
+        width: 90%;
+        max-width: 70em;
+        // padding: 0 0 2em;
+        // border: 2px solid red;
     }
 }
 
-.card {
-    width: 15em;
-    max-width: 20em;
-    margin: 0 0.5em;
+.activity-cards {
+    // @extend .destination-cards__images;
+    @include destination-card-images;
+    background-color: colors.$travel-site-white;
+    // padding: 1em;
+    padding: 1em 0.3em;
+    // border: 2px solid blue;
+    width: 33%;
+    max-width: 17em;
+    margin: 0.03em;
+    // margin: 0.05em;
+    // width: 17em;
+    // margin: 0.5em;
+    position: relative;
+    height: 23.5em;
 
-    &__title{
+    &__container {
+        width: 100%;
+        max-width: 65em;
         display: flex;
-        justify-content: flex-end;
-        padding-right: 1.2em;
+        justify-content: space-evenly;
+        // align-items: center;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        text-align: center;
+        position: relative;
+        // height: 25em;
+        height: 26em;
+        // border: 2px solid red;
+        // padding-top: 1em;
     }
 }
 
-.footer{
+.activities {
+    @extend .nav__list-item;
+    @include regular-text;
+    background-color: colors.$light-orange;
+    margin: 1em auto;
+    // padding: 1em;
+    padding: 1em 0;
+
+    &--days {
+        @include days-text;
+        border-bottom: 2px solid colors.$black;
+    }
+
+    &__list-item {
+        // margin: 1.5em 0 2em;
+        margin: 1.5em 0 0;
+    }
+}
+
+.footer {
     // @extend .main__banner;
     // display: flex;
     // justify-content: space-between;
@@ -181,32 +267,32 @@
     // width: 100%;
     @include footer;
 
-    &__container{
+    &__container {
         // margin: 1.5em auto;
         // padding: 0 0.5em;
         @include footer-container;
     }
-    
-    &__subcontainer{
+
+    &__subcontainer {
         // margin: 0;
         @include footer-subcontainer;
     }
 }
 
-.social-icons{
+.social-icons {
     // padding: 1.75em 0 0.8em;
     // width: 25%;
     // max-width: 2em;
     // margin: 0 1.5em 0 0;
     @include social-icons;
 
-    &--resize{
+    &--resize {
         width: 12%;
         max-width: 1em;
     }
 }
 
-@include breakpoints.tablet{
+@include breakpoints.tablet {
     .nav {
         display: flex;
         flex-direction: row;
@@ -232,21 +318,16 @@
         }
     }
 
-    .main{
-        &__banner{
+    .main {
+        &__banner {
             width: 100%;
-
-            &--padding {
-                padding-top: 6em;
-                padding-bottom: 3em;
-            }
 
             &--left {
                 padding: 2em 0 0 2.85em;
                 width: 55%;
                 max-width: 32.5em;
             }
-        
+
             &--right {
                 display: flex;
                 justify-content: flex-end;
@@ -256,18 +337,25 @@
         }
     }
 
-    .page-title{
+    .page-title {
         max-width: 13em;
     }
 
-    .destination-cards{
+    .destination-cards {
         max-width: 100%;
     }
 
-    .footer{
-        &__subcontainer{
+
+
+    // HAWAII PAGE STYLING
+    .activity-cards {
+        padding: 1em;
+    }
+
+    .footer {
+        &__subcontainer {
             padding: 0 2em 0 0;
-            
+
             &--hours {
                 display: flex;
             }
@@ -275,8 +363,8 @@
     }
 }
 
-@include breakpoints.desktop{
-    body{
+@include breakpoints.desktop {
+    body {
         @include desktop-max-width;
     }
 }

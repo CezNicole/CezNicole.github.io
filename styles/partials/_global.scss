@@ -313,6 +313,143 @@
     font-size: 1.15em;
     color: colors.$black;
 }
+
+@mixin navigation-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    width: 100%;
+    position: fixed;
+    background-color: colors.$travel-site-white;
+    z-index: 1;
+}
+
+@mixin left-navigation-bar{
+    width: 100%;
+    display: flex;
+    margin: 0 auto 1.5em;
+}
+
+@mixin right-navigation-bar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin right-navigation-links{
+    margin: 0.85em auto;
+}
+
+@mixin remove-link-underline{
+    list-style-type: none;
+}
+
+@mixin navigation-links{
+    @include regular-text;
+    text-decoration: none;
+    margin: 0 0.5em;
+}
+
+@mixin travel-site-link{
+    color: colors.$travel-site-blue;
+    @include font-bold;
+}
+
+@mixin active-link{
+    border-bottom: 4px solid colors.$travel-site-orange;
+    padding: 0.5em 0;
+}
+
+@mixin destination-card-labels{
+    color: colors.$travel-site-white;
+    position: relative;
+    bottom: 2.85em;
+}
+
+@mixin destination-pages-max-width{
+    max-width: 100%;
+}
+
+@mixin main-banner{
+    background-color: colors.$light-orange;
+    padding: 2em 1.5em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@mixin left-main-banner{
+    width: 100%;
+    padding: 2em 0;
+}
+
+@mixin right-main-banner{
+    width: 100%;
+    max-width: 20em;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+}
+
+@mixin recommendations-title{
+    padding: 1.5em;
+}
+
+@mixin text-content-padding{
+    padding: 1.75em 0;
+}
+
+@mixin orange-text{
+    @include text-content-padding;
+    color: colors.$travel-site-orange;
+    padding-bottom: 0.8em;
+}
+
+@mixin buttons{
+    @include small-text;
+    color: colors.$white;
+    background-color: colors.$travel-site-orange;
+    border: none;
+    border-radius: 5em;
+    padding: 0.5em 2em;
+}
+
+@mixin destination-card-images{
+    width: 15em;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    margin: 1em auto;
+    position: relative;
+}
+
+@mixin footer{
+    @include main-banner;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@mixin footer-container{
+    margin: 1.5em auto;
+    padding: 0 0.5em;
+}
+
+@mixin footer-subcontainer{
+    margin: 0;
+}
+
+@mixin social-icons{
+    padding: 1.75em 0 0.8em;
+    width: 25%;
+    max-width: 2em;
+    margin: 0 1.5em 0 0;
+}
 /*
 navbar: fixed
 font: Verdana

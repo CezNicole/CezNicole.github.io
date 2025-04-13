@@ -188,25 +188,20 @@ $activities: #FEFAF5;
 }
 
 .footer {
-  background-color: #fff0ed;
-  width: 100%;
-  position: relative;
-  bottom: 0;
+  background-color: #FEFAF5;
+  padding: 2em 1.5em;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  padding: 1em 2em 2em;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
 }
 .footer__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
   margin: 1.5em auto;
-  width: 70%;
-  max-width: 17em;
+  padding: 0 0.5em;
 }
 .footer__socials-list {
   list-style-type: none;

@@ -90,10 +90,10 @@ $activities: #FEFAF5;
   justify-content: center;
   align-items: center;
 }
-.nav--right > .nav__list-item {
+.nav--right > .nav__list-item, .nav--right > .activities {
   margin: 0.85em auto;
 }
-.nav__list-item {
+.nav__list-item, .activities {
   list-style-type: none;
 }
 .nav__links {
@@ -134,6 +134,9 @@ $activities: #FEFAF5;
   bottom: 2.85em;
 }
 
+.main {
+  max-width: 100%;
+}
 .main__banner {
   background-color: #FEFAF5;
   padding: 2em 1.5em;
@@ -141,10 +144,6 @@ $activities: #FEFAF5;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
-}
-.main__banner--padding {
-  padding-top: 18em;
-  padding-bottom: 3em;
 }
 .main__banner--left {
   width: 100%;
@@ -188,37 +187,80 @@ $activities: #FEFAF5;
   padding: 0.5em 2em;
 }
 
-.banner-image {
+.banner {
   width: 100%;
-  max-width: 18em;
+  height: 700px;
+  background-position: center;
+  background-size: cover;
+  background-image: url(../../assets/images/TravelSite/greece.jpg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: 1300px;
+  background-repeat: no-repeat;
+}
+.banner__title {
+  font-weight: 700;
+  font-style: normal;
+  color: #FFFFFF;
+  font-size: 3.8em;
+  position: relative;
+  bottom: 0;
+  left: 0.5em;
+}
+.banner__container {
+  position: relative;
+  width: 90%;
+  max-width: 70em;
 }
 
-.destination-cards {
-  width: 100%;
-  max-width: 55em;
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0 auto 1em;
-  flex-wrap: wrap;
-}
-.destination-cards__images {
+.activity-cards {
   width: 15em;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   margin: 1em auto;
   position: relative;
+  background-color: #FFFFFF;
+  padding: 1em 0.3em;
+  width: 33%;
+  max-width: 17em;
+  margin: 0.03em;
+  position: relative;
+  height: 23.5em;
+}
+.activity-cards__container {
+  width: 100%;
+  max-width: 65em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  text-align: center;
+  position: relative;
+  height: 26em;
 }
 
-.card {
-  width: 15em;
-  max-width: 20em;
-  margin: 0 0.5em;
+.activities {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+  color: #000000;
+  background-color: #FEFAF5;
+  margin: 1em auto;
+  padding: 1em 0;
 }
-.card__title {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 1.2em;
+.activities--days {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.15em;
+  color: #000000;
+  border-bottom: 2px solid #000000;
+}
+.activities__list-item {
+  margin: 1.5em 0 0;
 }
 
 .footer {
@@ -271,15 +313,11 @@ $activities: #FEFAF5;
     flex-direction: row;
     justify-content: flex-end;
   }
-  .nav--right > .nav__list-item {
+  .nav--right > .nav__list-item, .nav--right > .activities {
     margin: 0;
   }
   .main__banner {
     width: 100%;
-  }
-  .main__banner--padding {
-    padding-top: 6em;
-    padding-bottom: 3em;
   }
   .main__banner--left {
     padding: 2em 0 0 2.85em;
@@ -298,6 +336,9 @@ $activities: #FEFAF5;
   .destination-cards {
     max-width: 100%;
   }
+  .activity-cards {
+    padding: 1em;
+  }
   .footer__subcontainer {
     padding: 0 2em 0 0;
   }
@@ -309,4 +350,4 @@ $activities: #FEFAF5;
   body {
     max-width: 80em;
   }
-}/*# sourceMappingURL=travel-site-home.css.map */
+}/*# sourceMappingURL=travel-site-greece.css.map */

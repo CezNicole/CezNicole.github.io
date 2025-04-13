@@ -3,48 +3,59 @@
 @use '../partials/breakpoints' as breakpoints;
 
 .nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1em;
-    width: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    // padding: 1em;
+    // width: 100%;
+    // position: fixed;
+    // background-color: colors.$travel-site-white;
+    // z-index: 1;
+    @include navigation-bar;
 
     &--left {
-        width: 100%;
-        display: flex;
-        margin: 0 auto 1.5em;
+        // width: 100%;
+        // display: flex;
+        // margin: 0 auto 1.5em;
+        @include left-navigation-bar;
     }
 
     &--right {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        // width: 100%;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        @include right-navigation-bar;
 
-        &>.nav__list-item {
-            margin: 0.85em auto;
+        & > .nav__list-item {
+            // margin: 0.85em auto;
+            @include right-navigation-links;
         }
     }
 
     &__list-item {
-        list-style-type: none;
+        // list-style-type: none;
+        @include remove-link-underline;
     }
 
     &__links {
-        @include regular-text;
-        text-decoration: none;
-        color: colors.$black;
-        margin: 0 0.5em;
+        // @include regular-text;
+        // text-decoration: none;
+        // color: colors.$black;
+        // margin: 0 0.5em;
+        @include navigation-links;
 
         &--blue {
-            color: colors.$travel-site-blue;
-            @include font-bold;
+            // color: colors.$travel-site-blue;
+            // @include font-bold;
+            @include travel-site-link;
         }
 
         &--active {
-            border-bottom: 4px solid colors.$travel-site-orange;
-            padding: 0.5em 0;
+            // border-bottom: 4px solid colors.$travel-site-orange;
+            // padding: 0.5em 0;
+            @include active-link;
         }
     }
 }
@@ -57,39 +68,45 @@
     @include subheader-text;
 
     &__destinations {
-        color: colors.$travel-site-white;
-        position: relative;
-        bottom: 2.85em;
+        // color: colors.$travel-site-white;
+        // position: relative;
+        // bottom: 2.85em;
+        @include destination-card-labels;
     }
 }
 
 .main {
-    max-width: 100%;
+    // max-width: 100%;
+    @include destination-pages-max-width;
 
     &__banner {
-        background-color: colors.$light-orange;
-        padding: 2em 1.5em;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 100%;
+        // background-color: colors.$light-orange;
+        // padding: 2em 1.5em;
+        // display: flex;
+        // justify-content: space-between;
+        // flex-wrap: wrap;
+        // width: 100%;
+        @include main-banner;
 
         &--left {
-            width: 100%;
-            padding: 2em 0;
+            // width: 100%;
+            // padding: 2em 0;
+            @include left-main-banner;
         }
 
         &--right {
-            width: 100%;
-            max-width: 20em;
-            display: flex;
-            justify-content: flex-end;
-            margin: 0 auto;
+            // width: 100%;
+            // max-width: 20em;
+            // display: flex;
+            // justify-content: flex-end;
+            // margin: 0 auto;
+            @include right-main-banner;
         }
     }
 
     &__recommendations {
-        padding: 1.5em;
+        // padding: 1.5em;
+        @include recommendations-title;
     }
 }
 
@@ -97,59 +114,62 @@
     @include small-text;
 
     &--padding {
-        padding: 1.75em 0;
+        // padding: 1.75em 0;
+        @include text-content-padding;
     }
 
     &--orange {
-        @extend .text-content--padding;
-        color: colors.$travel-site-orange;
-        padding-bottom: 0.8em;
+        // @extend .text-content--padding;
+        // color: colors.$travel-site-orange;
+        // padding-bottom: 0.8em;
+        @include orange-text;
     }
 }
 
 .buttons {
-    @include small-text;
-    color: colors.$white;
-    background-color: colors.$travel-site-orange;
-    border: none;
-    border-radius: 5em;
-    padding: 0.5em 2em;
+    // @include small-text;
+    // color: colors.$white;
+    // background-color: colors.$travel-site-orange;
+    // border: none;
+    // border-radius: 5em;
+    // padding: 0.5em 2em;
+    @include buttons;
 }
 
-.banner-image {
-    width: 100%;
-    max-width: 18em;
-}
+// .banner-image {
+//     width: 100%;
+//     max-width: 18em;
+// }
 
 .destination-cards {
-    width: 100%;
-    max-width: 55em;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0 auto 1em;
-    flex-wrap: wrap;
+    // width: 100%;
+    // max-width: 55em;
+    // display: flex;
+    // justify-content: space-evenly;
+    // margin: 0 auto 1em;
+    // flex-wrap: wrap;
 
-    &__images {
-        width: 15em;
-        border-radius: 5px;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-        margin: 1em auto;
-        position: relative;
-    }
+    // &__images {
+    //     width: 15em;
+    //     border-radius: 5px;
+    //     border: 1px solid rgba(0, 0, 0, 0.2);
+    //     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    //     margin: 1em auto;
+    //     position: relative;
+    // }
 }
 
-.card {
-    width: 15em;
-    max-width: 20em;
-    margin: 0 0.5em;
+// .card {
+//     // width: 15em;
+//     // max-width: 20em;
+//     // margin: 0 0.5em;
 
-    &__title {
-        display: flex;
-        justify-content: flex-end;
-        padding-right: 1.2em;
-    }
-}
+//     // &__title {
+//     //     display: flex;
+//     //     justify-content: flex-end;
+//     //     padding-right: 1.2em;
+//     // }
+// }
 
 
 // HAWAII PAGE STYLING
@@ -174,9 +194,8 @@
         // left: 0;
         // padding: 1em;
         position: relative;
-        bottom: 0.5em;
+        bottom: 0;
         left: 0.5em;
-
     }
 
     &__container{
@@ -189,7 +208,8 @@
 }
 
 .activity-cards{
-    @extend .destination-cards__images;
+    // @extend .destination-cards__images;
+    @include destination-card-images;
     background-color: colors.$travel-site-white;
     // padding: 1em;
     padding: 1em 0.3em;
@@ -208,12 +228,15 @@
         max-width: 65em;
         display: flex;
         justify-content: space-evenly;
-        align-items: center;
+        // align-items: center;
+        align-items: flex-end;
         flex-wrap: wrap;
         text-align: center;
         position: relative;
-        height: 25em;
+        // height: 25em;
+        height: 26em;
         // border: 2px solid red;
+        // padding-top: 1em;
     }
 }
 
@@ -237,27 +260,31 @@
 }
 
 .footer {
-    @extend .main__banner;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
+    // @extend .main__banner;
+    // display: flex;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
+    // width: 100%;
+    @include footer;
 
     &__container {
-        margin: 1.5em auto;
-        padding: 0 0.5em;
+        // margin: 1.5em auto;
+        // padding: 0 0.5em;
+        @include footer-container;
     }
 
     &__subcontainer {
-        margin: 0;
+        // margin: 0;
+        @include footer-subcontainer;
     }
 }
 
 .social-icons {
-    padding: 1.75em 0 0.8em;
-    width: 25%;
-    max-width: 2em;
-    margin: 0 1.5em 0 0;
+    // padding: 1.75em 0 0.8em;
+    // width: 25%;
+    // max-width: 2em;
+    // margin: 0 1.5em 0 0;
+    @include social-icons;
 
     &--resize {
         width: 12%;
