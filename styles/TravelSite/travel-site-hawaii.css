@@ -188,11 +188,11 @@ $activities: #FEFAF5;
 }
 
 .banner {
+  background-image: url(../../assets/images/TravelSite/hawaii.jpg);
   width: 100%;
   height: 700px;
   background-position: center;
   background-size: cover;
-  background-image: url(../../assets/images/TravelSite/hawaii.jpg);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -200,6 +200,11 @@ $activities: #FEFAF5;
   align-items: center;
   background-size: 1300px;
   background-repeat: no-repeat;
+}
+.banner--resize {
+  height: 800px;
+  padding-top: 18em;
+  padding-bottom: 3em;
 }
 .banner__title {
   font-weight: 700;
@@ -330,11 +335,9 @@ $activities: #FEFAF5;
     width: 45%;
     max-width: 35em;
   }
-  .page-title {
-    max-width: 13em;
-  }
-  .destination-cards {
-    max-width: 100%;
+  .banner--resize {
+    height: 700px;
+    padding: 0;
   }
   .activity-cards {
     padding: 1em;

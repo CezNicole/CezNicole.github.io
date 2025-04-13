@@ -440,7 +440,7 @@
     padding: 0 0.5em;
 }
 
-@mixin footer-subcontainer{
+@mixin remove-margins{
     margin: 0;
 }
 
@@ -450,6 +450,105 @@
     max-width: 2em;
     margin: 0 1.5em 0 0;
 }
+
+@mixin resize-social-icons{
+    width: 12%;
+    max-width: 1em;
+}
+
+@mixin destination-banner {
+    @include background;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: 1300px;
+    background-repeat: no-repeat;
+}
+
+@mixin mobile-banner-resize {
+    height: 800px;
+    padding-top: 18em;
+    padding-bottom: 3em;
+}
+
+@mixin banner-title {
+    @include destination-title;
+    position: relative;
+    bottom: 0;
+    left: 0.5em;
+}
+
+@mixin banner-container {
+    position: relative;
+    width: 90%;
+    max-width: 70em;
+}
+
+
+
+@mixin tablet-navigation-bar{
+    display: flex;
+    flex-direction: row;
+    padding: 1em 4em;
+    width: 100%;
+}
+
+@mixin tablet-left-navigation-bar {
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+@mixin tablet-right-navigation-bar {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+@mixin tablet-main-banner{
+    width: 100%;
+}
+
+@mixin tablet-left-main-banner {
+    padding: 2em 0 0 2.85em;
+    width: 55%;
+    max-width: 32.5em;
+}
+
+@mixin tablet-right-main-banner {
+    display: flex;
+    justify-content: flex-end;
+    width: 45%;
+    max-width: 35em;
+}
+
+@mixin tablet-footer-subcontainer{
+    padding: 0 2em 0 0;
+}
+
+@mixin tablet-hours-section{
+    display: flex;
+}
+
+@mixin activity-cards{
+    @include destination-card-images;
+    background-color: colors.$travel-site-white;
+    padding: 1em 0.3em;
+    width: 33%;
+    max-width: 17em;
+    margin: 0.03em;
+    position: relative;
+    height: 23.5em;
+}
+
+
+
+
+
 /*
 navbar: fixed
 font: Verdana
