@@ -229,7 +229,7 @@
   max-width: 1em;
 }
 
-.social-links {
+.social-links, .destination-links {
   list-style-type: none;
   text-decoration: none;
 }
@@ -255,6 +255,9 @@
   }
   .nav--right > .nav__list-item {
     margin: 0;
+  }
+  .recommendations-title {
+    padding: 0 2.2em;
   }
   .main__banner {
     width: 100%;

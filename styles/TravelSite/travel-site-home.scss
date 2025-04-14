@@ -139,6 +139,10 @@
     @include remove-link-underline;
 }
 
+.destination-links{
+    @extend .social-links;
+}
+
 
 @include breakpoints.tablet{
     .nav {
@@ -155,6 +159,10 @@
                 @include remove-margins;
             }
         }
+    }
+
+    .recommendations-title{
+        padding: 0 2.2em;
     }
 
     .main{

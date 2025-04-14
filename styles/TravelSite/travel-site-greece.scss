@@ -148,6 +148,10 @@
     @include remove-link-underline;
 }
 
+.destination-links {
+    @extend .social-links;
+}
+
 
 @include breakpoints.tablet {
     .nav {
