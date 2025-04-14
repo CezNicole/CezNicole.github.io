@@ -5,6 +5,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body{
     overflow-x: hidden;
 }
 
@@ -317,6 +320,7 @@
 }
 
 @mixin navigation-bar{
+    @include desktop-max-width;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
