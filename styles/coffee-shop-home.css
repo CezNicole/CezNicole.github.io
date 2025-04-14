@@ -44,34 +44,10 @@
   background-color: #FFFFFF;
 }
 
-/*
-navbar: fixed
-font: Verdana
-text-align: left
-
-$travel-site-background: #FFFFFF;
-$travel-site-logo: #335576;
-$nav-link-active: #DB7A4E;
-$footer-background: #FEFAF5;
-
-$footer-text: #335576;
-$footer-subtitles: #DB7A4E;
-
-$hero-background: #FEFAF5;
-$slogan: #335576;
-$button: #DB7A4E;
-
-$recommendations-title: #335576;
-$border-radius: 5px;
-$card-border: 1px solid rgba(0 0 0 20%);
-$box-shadow: 0px 4px 4px rgba(0 0 0 20%);
-
-$activities: #FEFAF5;
-*/
 .section-titles {
   font-weight: 300;
   font-style: normal;
-  font-size: 60px;
+  font-size: 3.75em;
 }
 .section-titles--center {
   text-align: center;
@@ -81,7 +57,7 @@ $activities: #FEFAF5;
 .section-subtitles, .product-text__price {
   font-weight: 300;
   font-style: normal;
-  font-size: 33px;
+  font-size: 2.06em;
 }
 .section-subtitles__footer {
   margin: 0.75em 0;
@@ -90,13 +66,12 @@ $activities: #FEFAF5;
 .buttons {
   font-weight: 400;
   font-style: normal;
-  font-size: 0.8em;
-  color: #335576;
+  font-size: 1.31em;
+  text-decoration: none;
+  background-color: #5bacc3;
   color: #fff;
-  background-color: #DB7A4E;
-  border: none;
-  border-radius: 5em;
-  padding: 0.5em 2em;
+  padding: 0.4em 1.2em;
+  border: 0.125em solid #5bacc3;
 }
 .buttons--center {
   display: flex;
@@ -258,20 +233,25 @@ $activities: #FEFAF5;
 }
 
 .footer {
-  background-color: #FEFAF5;
-  padding: 2em 1.5em;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  background-color: #fff0ed;
   width: 100%;
+  position: relative;
+  bottom: 0;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  padding: 1em 2em 2em;
 }
 .footer__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   margin: 1.5em auto;
-  padding: 0 0.5em;
+  width: 70%;
+  max-width: 17em;
 }
 .footer__socials-list {
   list-style-type: none;

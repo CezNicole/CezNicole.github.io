@@ -134,7 +134,7 @@
     // border: none;
     // border-radius: 5em;
     // padding: 0.5em 2em;
-    @include buttons;
+    @include travel-site-buttons;
 }
 
 .banner-image{
@@ -179,12 +179,12 @@
     // justify-content: space-between;
     // flex-wrap: wrap;
     // width: 100%;
-    @include footer;
+    @include travel-site-footer;
 
     &__container{
         // margin: 1.5em auto;
         // padding: 0 0.5em;
-        @include footer-container;
+        @include travel-site-footer-container;
     }
     
     &__subcontainer{
@@ -206,6 +206,11 @@
         @include resize-social-icons;
     }
 }
+
+.social-links{
+    @include remove-link-underline;
+}
+
 
 @include breakpoints.tablet{
     .nav {
