@@ -59,12 +59,14 @@
 
 @mixin section-titles{
     @include font-light;
-    font-size: 60px;
+    // font-size: 60px;
+    font-size: 3.75em;
 }
 
 @mixin section-subtitles{
     @include font-light;
-    font-size: 33px;
+    // font-size: 33px;
+    font-size: 2.06em;
 }
 
 @mixin section-paragraph {
@@ -82,16 +84,18 @@
 
 @mixin nav-links{
     @include font-regular;
-    font-size: 21px;
+    // font-size: 21px;
+    font-size: 1.31em;
     text-decoration: none;
 }
 
-@mixin buttons{
+@mixin nitro-coffee-buttons{
     @include nav-links;
     background-color: colors.$nitro-blue;
     color: colors.$white;
     padding: 0.4em 1.2em;
-    border: 2px solid colors.$nitro-blue;
+    // border: 2px solid colors.$nitro-blue;
+    border: 0.125em solid colors.$nitro-blue;
 }
 
 @mixin paragraph-text-regular{
@@ -160,7 +164,7 @@
     width: 100%;
 }
 
-@mixin footer{
+@mixin nitro-coffee-footer{
     background-color: colors.$nitro-pink;
     width: 100%;
     position: relative;
@@ -173,7 +177,7 @@
     padding: 1em 2em 2em;
 }
 
-@mixin footer-container{
+@mixin nitro-coffee-footer-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -313,27 +317,275 @@
     font-size: 1.15em;
     color: colors.$black;
 }
-/*
-navbar: fixed
-font: Verdana
-text-align: left
 
-$travel-site-background: #FFFFFF;
-$travel-site-logo: #335576;
-$nav-link-active: #DB7A4E;
-$footer-background: #FEFAF5;
+@mixin navigation-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    width: 100%;
+    position: fixed;
+    background-color: colors.$travel-site-white;
+    z-index: 1;
+}
 
-$footer-text: #335576;
-$footer-subtitles: #DB7A4E;
+@mixin left-navigation-bar{
+    width: 100%;
+    display: flex;
+    margin: 0 auto 1.5em;
+}
 
-$hero-background: #FEFAF5;
-$slogan: #335576;
-$button: #DB7A4E;
+@mixin right-navigation-bar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-$recommendations-title: #335576;
-$border-radius: 5px;
-$card-border: 1px solid rgba(0 0 0 20%);
-$box-shadow: 0px 4px 4px rgba(0 0 0 20%);
+@mixin right-navigation-links{
+    margin: 0.85em auto;
+}
 
-$activities: #FEFAF5;
-*/
+@mixin remove-link-underline{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+@mixin navigation-links{
+    @include regular-text;
+    text-decoration: none;
+    margin: 0 0.5em;
+}
+
+@mixin travel-site-link{
+    color: colors.$travel-site-blue;
+    @include font-bold;
+}
+
+@mixin active-link{
+    border-bottom: 4px solid colors.$travel-site-orange;
+    padding: 0.5em 0;
+}
+
+@mixin destination-card-labels{
+    color: colors.$travel-site-white;
+    position: relative;
+    bottom: 2.85em;
+}
+
+@mixin destination-pages-max-width{
+    max-width: 100%;
+}
+
+@mixin main-banner{
+    background-color: colors.$light-orange;
+    padding: 2em 1.5em;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@mixin left-main-banner{
+    width: 100%;
+    padding: 2em 0;
+}
+
+@mixin right-main-banner{
+    width: 100%;
+    max-width: 20em;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+}
+
+@mixin recommendations-title{
+    padding: 1.5em;
+}
+
+@mixin text-content-padding{
+    padding: 1.75em 0;
+}
+
+@mixin orange-text{
+    @include text-content-padding;
+    color: colors.$travel-site-orange;
+    padding-bottom: 0.8em;
+}
+
+@mixin travel-site-buttons{
+    @include small-text;
+    color: colors.$white;
+    background-color: colors.$travel-site-orange;
+    border: none;
+    border-radius: 5em;
+    padding: 0.5em 2em;
+}
+
+@mixin destination-card-images{
+    width: 15em;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    margin: 1em auto;
+    position: relative;
+}
+
+@mixin travel-site-footer{
+    @include main-banner;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+@mixin travel-site-footer-container{
+    margin: 1.5em auto;
+    padding: 0 0.5em;
+}
+
+@mixin remove-margins{
+    margin: 0;
+}
+
+@mixin social-icons{
+    padding: 1.75em 0 0.8em;
+    width: 25%;
+    max-width: 2em;
+    margin: 0 1.5em 0 0;
+}
+
+@mixin resize-social-icons{
+    width: 12%;
+    max-width: 1em;
+}
+
+@mixin destination-banner {
+    @include background;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: 1300px;
+    background-repeat: no-repeat;
+}
+
+@mixin mobile-banner-resize {
+    // height: 800px;
+    // height: 1120px;
+    height: 70em;
+    padding-top: 18em;
+    padding-bottom: 3em;
+}
+
+@mixin banner-title {
+    @include destination-title;
+    position: relative;
+    bottom: 0;
+    // left: 0.5em;
+    left: 0;
+}
+
+@mixin banner-container {
+    position: relative;
+    width: 90%;
+    max-width: 70em;
+}
+
+@mixin activity-cards {
+    @include destination-card-images;
+    background-color: colors.$travel-site-white;
+    padding: 1em 0.3em;
+    width: 33%;
+    max-width: 17em;
+    margin: 0.03em;
+    position: relative;
+    height: 23.5em;
+}
+
+@mixin activity-cards-container {
+    width: 100%;
+    max-width: 65em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    text-align: center;
+    position: relative;
+    height: 26em;
+}
+
+@mixin activities {
+    @include regular-text;
+    background-color: colors.$light-orange;
+    margin: 1em auto;
+    padding: 1em 0;
+}
+
+@mixin activities-day-titles {
+    @include days-text;
+    border-bottom: 2px solid colors.$black;
+}
+
+@mixin activities-list-item {
+    margin: 1.5em 0 0;
+}
+
+@mixin add-equal-padding{
+    padding: 1em;
+}
+
+
+
+@mixin tablet-navigation-bar{
+    display: flex;
+    flex-direction: row;
+    padding: 1em 4em;
+    width: 100%;
+}
+
+@mixin tablet-left-navigation-bar {
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+@mixin tablet-right-navigation-bar {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+@mixin tablet-main-banner{
+    width: 100%;
+}
+
+@mixin tablet-left-main-banner {
+    padding: 2em 0 0 2.85em;
+    width: 55%;
+    max-width: 32.5em;
+}
+
+@mixin tablet-right-main-banner {
+    display: flex;
+    justify-content: flex-end;
+    width: 45%;
+    max-width: 35em;
+}
+
+@mixin tablet-footer-subcontainer{
+    padding: 0 2em 0 0;
+}
+
+@mixin tablet-hours-section{
+    display: flex;
+}
+
+@mixin tablet-banner-resize{
+    height: 700px;
+    padding: 0;
+}

@@ -112,10 +112,10 @@
 }
 
 .footer {
-    @include footer;
+    @include nitro-coffee-footer;
 
     &__container {
-        @include footer-container;
+        @include nitro-coffee-footer-container;
     }
 
     &__socials-list {

@@ -44,36 +44,15 @@
   background-color: #FFFFFF;
 }
 
-/*
-navbar: fixed
-font: Verdana
-text-align: left
-
-$travel-site-background: #FFFFFF;
-$travel-site-logo: #335576;
-$nav-link-active: #DB7A4E;
-$footer-background: #FEFAF5;
-
-$footer-text: #335576;
-$footer-subtitles: #DB7A4E;
-
-$hero-background: #FEFAF5;
-$slogan: #335576;
-$button: #DB7A4E;
-
-$recommendations-title: #335576;
-$border-radius: 5px;
-$card-border: 1px solid rgba(0 0 0 20%);
-$box-shadow: 0px 4px 4px rgba(0 0 0 20%);
-
-$activities: #FEFAF5;
-*/
 .nav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1em;
   width: 100%;
+  position: fixed;
+  background-color: #FFFFFF;
+  z-index: 1;
 }
 .nav--left {
   width: 100%;
@@ -92,6 +71,7 @@ $activities: #FEFAF5;
 }
 .nav__list-item {
   list-style-type: none;
+  text-decoration: none;
 }
 .nav__links {
   font-weight: 400;
@@ -131,13 +111,17 @@ $activities: #FEFAF5;
   bottom: 2.85em;
 }
 
-.main__banner, .footer {
+.main__banner {
   background-color: #FEFAF5;
   padding: 2em 1.5em;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
+}
+.main__banner--padding {
+  padding-top: 18em;
+  padding-bottom: 3em;
 }
 .main__banner--left {
   width: 100%;
@@ -160,10 +144,11 @@ $activities: #FEFAF5;
   font-size: 0.8em;
   color: #335576;
 }
-.text-content--padding, .text-content--orange {
+.text-content--padding {
   padding: 1.75em 0;
 }
 .text-content--orange {
+  padding: 1.75em 0;
   color: #DB7A4E;
   padding-bottom: 0.8em;
 }
@@ -214,6 +199,12 @@ $activities: #FEFAF5;
 }
 
 .footer {
+  background-color: #FEFAF5;
+  padding: 2em 1.5em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -238,6 +229,11 @@ $activities: #FEFAF5;
   max-width: 1em;
 }
 
+.social-links {
+  list-style-type: none;
+  text-decoration: none;
+}
+
 @media (min-width: 768px) {
   .nav {
     display: flex;
@@ -260,8 +256,12 @@ $activities: #FEFAF5;
   .nav--right > .nav__list-item {
     margin: 0;
   }
-  .main__banner, .footer {
+  .main__banner {
     width: 100%;
+  }
+  .main__banner--padding {
+    padding-top: 6em;
+    padding-bottom: 3em;
   }
   .main__banner--left {
     padding: 2em 0 0 2.85em;
