@@ -280,6 +280,9 @@
   .page-title {
     max-width: 13em;
   }
+  .page-subtitle--add-padding {
+    padding: 0 2.2em;
+  }
   .destination-cards {
     max-width: 100%;
   }
