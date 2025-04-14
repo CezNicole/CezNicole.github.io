@@ -264,7 +264,7 @@
   max-width: 1em;
 }
 
-.social-links {
+.social-links, .destination-links {
   list-style-type: none;
   text-decoration: none;
 }
