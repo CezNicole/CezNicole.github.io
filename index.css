@@ -28,6 +28,10 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .portfolio {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #cad2c5;
@@ -309,7 +313,10 @@
   }
 }
 @media (min-width: 1280px) {
-  body, .header__nav {
+  body {
+    max-width: 80em;
+  }
+  .header__nav {
     max-width: 80em;
   }
   .section-cards {

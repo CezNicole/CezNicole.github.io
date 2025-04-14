@@ -266,7 +266,7 @@
 
 	.header{
 		&__nav{
-			@extend body;
+			@include desktop-max-width;
 		}
 	}
 
