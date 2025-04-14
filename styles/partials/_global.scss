@@ -306,10 +306,7 @@
 @mixin destination-title{
     @include font-bold;
     color: colors.$travel-site-white;
-    // font-size: 3.5em;
     font-size: 3.8em;
-    // position: absolute;
-    // top: 1em;
 }
 
 @mixin days-text{
@@ -473,7 +470,6 @@
 }
 
 @mixin mobile-banner-resize {
-    // height: 800px;
     // height: 1120px;
     height: 70em;
     padding-top: 18em;
@@ -484,7 +480,6 @@
     @include destination-title;
     position: relative;
     bottom: 0;
-    // left: 0.5em;
     left: 0;
 }
 
