@@ -93,7 +93,7 @@ body {
 .descriptive-text {
   font-weight: 400;
   font-style: normal;
-  font-size: 18px;
+  font-size: 1.13em;
 }
 .descriptive-text__section-paragraph {
   width: 90%;
@@ -107,7 +107,7 @@ body {
 .discount-code {
   font-weight: 400;
   font-style: normal;
-  font-size: 45px;
+  font-size: 2.8em;
   color: #fff;
 }
 .discount-code--bold {
@@ -116,11 +116,11 @@ body {
 }
 
 .icons {
-  width: 50px;
+  width: 3.1em;
 }
 
 .product-images {
-  height: 280px;
+  height: 17.5em;
   display: flex;
   margin: 0 auto;
   padding: 1.5em;
@@ -160,7 +160,7 @@ body {
   max-width: 100%;
 }
 .banner__subcontainer--tilted-can {
-  background-image: url(../assets/images/coldbrewbackground.png);
+  background-image: url(../../assets/images/NitroCoffeeShop/coldbrewbackground.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -207,7 +207,7 @@ body {
   max-width: 20em;
   margin: 3.5em auto;
   border-radius: 0.7em;
-  box-shadow: 2px 2px 6px 2px #f7f7f7;
+  box-shadow: 0.13em 0.13em 0.38em 0.13em #f7f7f7;
 }
 
 .product-text__container {
@@ -217,7 +217,7 @@ body {
   width: 100%;
   border-bottom-left-radius: 0.7em;
   border-bottom-right-radius: 0.7em;
-  box-shadow: 2px 2px 6px 2px #f7f7f7;
+  box-shadow: 0.13em 0.13em 0.38em 0.13em #f7f7f7;
 }
 .product-text__subcontainer {
   padding: 2em 1em;

@@ -1,6 +1,6 @@
-@use './partials/global' as *;
-@use './partials/colors' as colors;
-@use './partials/breakpoints' as breakpoints;
+@use '../partials/global' as *;
+@use '../partials/colors' as colors;
+@use '../partials/breakpoints' as breakpoints;
 
 .section-titles {
 	@include section-titles;
@@ -110,7 +110,7 @@
 		max-width: 100%;
 
 		&--tilted-can{
-			background-image: url(../assets/images/coldbrewbackground.png);
+			background-image: url(../../assets/images/NitroCoffeeShop/coldbrewbackground.png);
 			background-repeat: no-repeat;
 			background-size: contain;
 			background-position: center;
@@ -165,7 +165,7 @@
 	max-width: 20em;
 	margin: 3.5em auto;
 	border-radius: 0.7em;
-	box-shadow: 2px 2px 6px 2px colors.$light-gray;
+	box-shadow: 0.13em 0.13em 0.38em 0.13em colors.$light-gray;
 }
 
 .product-text{
@@ -176,7 +176,7 @@
 		width: 100%;
 		border-bottom-left-radius: 0.7em;
 		border-bottom-right-radius: 0.7em;
-		box-shadow: 2px 2px 6px 2px colors.$light-gray;
+		box-shadow: 0.13em 0.13em 0.38em 0.13em colors.$light-gray;
 	}
 
 	&__subcontainer {
