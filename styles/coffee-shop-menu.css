@@ -73,12 +73,12 @@ body {
 .descriptive-text {
   font-weight: 400;
   font-style: normal;
-  font-size: 18px;
+  font-size: 1.13em;
 }
 .descriptive-text__description {
   font-weight: 400;
   font-style: italic;
-  font-size: 18px;
+  font-size: 1.13em;
   width: 100%;
 }
 .descriptive-text__price {
@@ -87,12 +87,12 @@ body {
 }
 
 .icons {
-  width: 50px;
+  width: 3.1em;
 }
 
 .title-box {
-  width: 300px;
-  height: 200px;
+  width: 5em;
+  height: 3.35em;
   background-color: #393939;
   color: #fff;
   display: flex;
@@ -102,7 +102,7 @@ body {
 
 .banner {
   width: 100%;
-  height: 700px;
+  height: 43.75em;
   background-position: center;
   background-size: cover;
   background-image: url(../assets/images/coffee-circle.jpg);
@@ -110,7 +110,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: 1200px;
+  background-size: 75em;
 }
 
 .sub-navigation {
@@ -118,8 +118,11 @@ body {
   background-color: #393939;
   color: #fff;
   display: flex;
-  border-left: 3px solid #5bacc3;
+  border-left: 0.19em solid #5bacc3;
   padding: 0 1em;
+}
+.sub-navigation--resize {
+  padding: 0 0.8em;
 }
 
 .menu-links__list {
@@ -156,7 +159,7 @@ body {
   text-align: center;
 }
 .menu:last-child {
-  border-bottom: 52px solid #393939;
+  border-bottom: 3.25em solid #393939;
 }
 .menu--white {
   background-color: #fff;
@@ -229,7 +232,8 @@ body {
     padding: 1em 0;
   }
   .banner {
-    background-size: 1750px;
+    background-size: 109.38em;
+    border: 2px solid red;
   }
   .descriptive-text__description {
     width: 26.5em;

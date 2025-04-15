@@ -63,13 +63,11 @@ body{
 
 @mixin section-titles{
     @include font-light;
-    // font-size: 60px;
     font-size: 3.75em;
 }
 
 @mixin section-subtitles{
     @include font-light;
-    // font-size: 33px;
     font-size: 2.06em;
 }
 
@@ -88,7 +86,6 @@ body{
 
 @mixin nav-links{
     @include font-regular;
-    // font-size: 21px;
     font-size: 1.31em;
     text-decoration: none;
 }
@@ -98,18 +95,17 @@ body{
     background-color: colors.$nitro-blue;
     color: colors.$white;
     padding: 0.4em 1.2em;
-    // border: 2px solid colors.$nitro-blue;
     border: 0.125em solid colors.$nitro-blue;
 }
 
 @mixin paragraph-text-regular{
     @include font-regular;
-    font-size: 18px;
+    font-size: 1.13em;
 }
 
 @mixin paragraph-text-regular-italic{
     @include font-italic;
-    font-size: 18px;
+    font-size: 1.13em;
     width: 100%;
 }
 
@@ -120,20 +116,20 @@ body{
 
 @mixin discount-code{
     @include font-regular;
-    font-size: 45px;
+    font-size: 2.8em;
 }
 
 @mixin icons{
-    width: 50px;
+    width: 3.1em;
 }
 
 @mixin product-images{
-    height: 280px;
+    height: 17.5em;
 }
 
 @mixin title-box{
-    width: 300px;
-    height: 200px;
+    width: 5em;
+    height: 3.35em;
     background-color: colors.$graphite;
     color: colors.$white;
     display: flex;
@@ -143,7 +139,7 @@ body{
 
 @mixin background{
     width: 100%;
-    height: 700px;
+    height: 43.75em;
     background-position: center;
     background-size: cover;
 }
@@ -281,7 +277,6 @@ body{
 .travel-site{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: colors.$travel-site-white;
-    // overflow-x: hidden;
 }
 
 @mixin regular-text{
@@ -366,7 +361,7 @@ body{
 }
 
 @mixin active-link{
-    border-bottom: 4px solid colors.$travel-site-orange;
+    border-bottom: 0.25em solid colors.$travel-site-orange;
     padding: 0.5em 0;
 }
 
@@ -427,9 +422,9 @@ body{
 
 @mixin destination-card-images{
     width: 15em;
-    border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 0.31em;
+    border: 0.06em solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0em 0.25em 0.25em rgba(0, 0, 0, 0.2);
     margin: 1em auto;
     position: relative;
 }
@@ -470,12 +465,11 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-size: 1300px;
+    background-size: 81.25em;
     background-repeat: no-repeat;
 }
 
 @mixin mobile-banner-resize {
-    // height: 1120px;
     height: 70em;
     padding-top: 18em;
     padding-bottom: 3em;
@@ -526,7 +520,7 @@ body{
 
 @mixin activities-day-titles {
     @include days-text;
-    border-bottom: 2px solid colors.$black;
+    border-bottom: 0.13em solid colors.$black;
 }
 
 @mixin activities-list-item {
@@ -586,6 +580,6 @@ body{
 }
 
 @mixin tablet-banner-resize{
-    height: 700px;
+    height: 43.75em;
     padding: 0;
 }

@@ -45,7 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-size: 1200px;
+    background-size: 75em;
 }
 
 .sub-navigation{
@@ -53,8 +53,12 @@
     background-color: colors.$graphite;
     color: colors.$white;
     display: flex;
-    border-left: 3px solid colors.$nitro-blue;
+    border-left: 0.19em solid colors.$nitro-blue;
     padding: 0 1em;
+
+    &--resize{
+        padding: 0 0.8em;
+    }
 }
 
 .menu-links{
@@ -97,7 +101,7 @@
     text-align: center;
 
     &:last-child {
-        border-bottom: 52px solid colors.$graphite;
+        border-bottom: 3.25em solid colors.$graphite;
     }
 
     &--white {
@@ -162,7 +166,9 @@
     }
 
     .banner {
-        background-size: 1750px;
+        // background-size: 1750px;
+        background-size: 109.38em;
+        border: 2px solid red;
     }
 
     .descriptive-text {
