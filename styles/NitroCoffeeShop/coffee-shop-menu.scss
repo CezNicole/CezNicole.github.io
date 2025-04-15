@@ -1,6 +1,6 @@
-@use './partials/global' as *;
-@use './partials/colors' as colors;
-@use './partials/breakpoints' as breakpoints;
+@use '../partials/global' as *;
+@use '../partials/colors' as colors;
+@use '../partials/breakpoints' as breakpoints;
 
 .section-titles{
     @include section-titles;
@@ -40,7 +40,7 @@
 
 .banner{
     @include background;
-    background-image: url(../assets/images/coffee-circle.jpg);
+    background-image: url(../../assets/images/NitroCoffeeShop/coffee-circle.jpg);
     position: relative;
     display: flex;
     justify-content: center;

@@ -1,6 +1,6 @@
-@use './partials/global' as *;
-@use './partials/colors' as colors;
-@use './partials/breakpoints' as breakpoints;
+@use '../partials/global' as *;
+@use '../partials/colors' as colors;
+@use '../partials/breakpoints' as breakpoints;
 
 .section-titles {
 	@include section-titles;
@@ -110,7 +110,7 @@
 		max-width: 100%;
 
 		&--tilted-can{
-			background-image: url(../assets/images/coldbrewbackground.png);
+			background-image: url(../../assets/images/NitroCoffeeShop/coldbrewbackground.png);
 			background-repeat: no-repeat;
 			background-size: contain;
 			background-position: center;
