@@ -86,7 +86,65 @@ body {
   background-color: #FFFFFF;
 }
 
+.band-site {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+.header {
+  background-color: #323232;
+  padding: 1.5em 0 0.72em;
+}
+.header__list-item {
+  list-style-type: none;
+  text-decoration: none;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2em 0 0;
+}
+
 .nav-links {
   list-style-type: none;
   text-decoration: none;
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.nav-links--active {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #ffffff;
+  border-bottom: 0.23em solid #ffffff;
+  padding: 1em 2em;
+}
+.nav-links--inactive {
+  color: #e1e1e1;
+  padding: 1em 0;
+}
+.nav-links:hover {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  border-bottom: 0.23em solid #ffffff;
+  padding: 1em 0;
+  margin-left: 2em;
+}
+
+.bandsite-logo {
+  height: 1.25em;
+  width: 7.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1em;
 }/*# sourceMappingURL=band-site-biography.css.map */

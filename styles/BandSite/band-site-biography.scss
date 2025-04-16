@@ -2,6 +2,50 @@
 @use '../../styles/partials/colors' as colors;
 @use '../../styles/partials/breakpoints' as breakpoints;
 
+.band-site{
+    @include avenir-font-regular;
+    @include mobile-page-header;
+}
+
+.header{
+    background-color: colors.$bandsite-black;
+    // @include mobile-padding-headlines;
+    padding: 1.5em 0 0.72em;
+    
+    &__list-item{
+        @include remove-link-underline;
+    }
+
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2em 0 0;
+    }
+}
+
 .nav-links{
     @include remove-link-underline;
+    @include avenir-font-regular;
+
+    &--active{
+        @include bandsite-active-link;
+        // @include bandsite-divider;
+    }
+
+    &--inactive{
+        @include bandsite-inactive-link;
+    }
+
+    &:hover{
+        @include bandsite-hover-link;
+        margin-left: 2em;
+    }
+}
+
+.bandsite-logo{
+    @include bandsite-logo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1em;
 }

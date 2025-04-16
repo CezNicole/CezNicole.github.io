@@ -19,22 +19,30 @@
 		<title>Biography | Band Site</title>
 		<link rel="stylesheet" href="../styles/BandSite/band-site-biography.css" />
 	</head>
-	<body>
+	<body class="band-site">
 		<header class="header">
 			<ul>
-				<li>
-					<a href="./band-site-home.html" class="nav-links">
+				<li class="header__list-item">
+					<a href="./band-site-biography.html" class="nav-links">
 						<img
 							src="../assets/icons/BandSite/Logo/Logo-bandsite.svg"
-							alt="BandSite logo" />
+							alt="BandSite logo"
+							class="bandsite-logo" />
 					</a>
 				</li>
-				<li>
-					<a href="./band-site-home.html" class="nav-links">Biography</a>
-				</li>
-				<li>
-					<a href="" class="nav-links">Shows</a>
-				</li>
+
+				<div class="header__container">
+					<li class="header__list-item">
+						<a
+							href="./band-site-biography.html"
+							class="nav-links nav-links--active"
+							>Biography</a
+						>
+					</li>
+					<li class="header__list-item">
+						<a href="" class="nav-links nav-links--inactive">Shows</a>
+					</li>
+				</div>
 			</ul>
 		</header>
 
@@ -154,7 +162,8 @@
 
 			<img
 				src="../assets/icons/BandSite/Logo/Logo-bandsite.svg"
-				alt="BandSite logo" />
+				alt="BandSite logo"
+				class="bandsite-logo" />
 			<p>Copyright The Bees Knees &copy; 2024 All Rights Reserved</p>
 		</footer>
 	</body>
