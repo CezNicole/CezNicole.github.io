@@ -583,3 +583,234 @@ body{
     height: 43.75em;
     padding: 0;
 }
+
+
+
+// Band Site Styling
+@mixin avenir-font-regular{
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@mixin avenir-font-demi{
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+@mixin avenir-font-bold{
+    font-family: 'Avenir Next', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin mobile-page-header{
+    @include avenir-font-bold;
+    font-size: 1.5em;
+    line-height: 2em;
+}
+
+@mixin mobile-section-header{
+    @include mobile-page-header;
+}
+
+@mixin mobile-subheader{
+    @include avenir-font-demi;
+    font-size: 0.88em;
+    line-height: 1.38em;
+}
+
+@mixin mobile-body-copy{
+    @include avenir-font-regular;
+    font-size: 0.81em;
+    line-height: 1.13em;
+}
+
+@mixin mobile-footer-copy{
+    @include mobile-body-copy;
+}
+
+@mixin mobile-labels-and-buttons{
+    @include avenir-font-bold;
+    font-size: 0.63em;
+    line-height: 1.25em;
+}
+
+
+
+@mixin tablet-page-header{
+    @include avenir-font-bold;
+    font-size: 3.75em;
+    line-height: 4.25em;
+}
+
+@mixin tablet-section-header{
+    @include avenir-font-bold;
+    font-size: 2.25em;
+    line-height: 2.75em;
+}
+
+@mixin tablet-subheader{
+    @include avenir-font-demi;
+    font-size: 1.5em;
+    line-height: 2em;
+}
+
+@mixin tablet-body-copy{
+    @include avenir-font-regular;
+    font-size: 0.88em;
+    line-height: 1.38em;
+}
+
+@mixin tablet-footer-copy{
+    @include avenir-font-regular;
+    font-size: 0.88em;
+    line-height: 1.25em;
+}
+
+@mixin tablet-labels-and-buttons{
+    @include avenir-font-bold;
+    font-size: 0.75em;
+    line-height: 1.25em;
+}
+
+
+@mixin mobile-padding-headlines{
+    padding: 1.5em 1em 1em;
+}
+
+@mixin tablet-padding-headlines{
+    padding: 3em 2.25em 2.25em;
+}
+
+
+
+// NOT SURE ABOUT THESE
+@mixin mobile-margin{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+@mixin tablet-margin{
+    margin-left: 2.25em;
+    margin-right: 2.25em;
+}
+
+@mixin desktop-margin{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+@mixin bandsite-logo{
+    height: 1.25em;
+    width: 7.5em;
+}
+
+
+@mixin primary-cta{
+    background-color: colors.$bandsite-black;
+    color: colors.$bandsite-white;
+    height: 2.5em;
+    // mobile: spans entire container width
+    // tablet/desktop: width: 9.38em; padding: auto 2em;
+    border-radius: 0.25em;
+}
+
+@mixin primary-cta-hover{
+    background-color: colors.$bandsite-darkblack;
+}
+
+
+@mixin bandsite-active-link{
+    @include avenir-font-bold;
+    color: colors.$bandsite-white;
+    border-bottom: 3.75em;  //subject to change
+}
+
+@mixin bandsite-hover-link{
+    @include avenir-font-regular;   //not sure if it's this or demi or the same as bandsite-active-link
+    color: colors.$bandsite-white;
+    border-bottom: 3.75em; //subject to change
+}
+
+@mixin bandsite-inactive-link{
+    color: colors.$mercury;
+}
+
+
+@mixin bandsite-divider{
+    border-bottom: 0.06em solid colors.$mercury;
+    padding: 1em 0;
+}
+
+
+@mixin hero-image{
+    background-color: rgba($bandsite-black, 0.50);
+}
+
+
+
+// FOR SPRINT 2
+@mixin mobile-form-fields{
+    height: 2.25em;
+    // width: spans entire container width
+    border-radius: 0.25em;
+    padding: 0.75em;
+}
+
+@mixin tablet-form-fields{
+    height: 3em;
+    // width: spans entire container width
+    border-radius: 0.25em;
+    padding: 1em;
+}
+
+
+@mixin form-field-labels{
+    margin-bottom: 0.25em;
+}
+
+@mixin form-field-border{
+    border: 0.06em solid colors.$mercury;
+}
+
+@mixin form-field-border-active {
+    border: 0.06em solid colors.$bandsite-black;
+}
+
+@mixin form-field-border-error {
+    border: 0.06em solid colors.$red;
+}
+
+@mixin mobile-tables-padding{
+    padding: 1em;
+}
+
+@mixin tablet-tables-padding{
+    padding: 1.5em 1.13em;
+}
+
+@mixin table-row-selected{
+    background-color: colors.$mercury;
+}
+
+@mixin table-row-hover{
+    background-color: colors.$alabaster;
+}
+
+@mixin mobile-avatar-images{
+    border-radius: 50%;
+    width: 2.25em;
+    height: 2.25em;
+    background-color: colors.$mercury;
+}
+
+@mixin tablet-avatar-images{
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    background-color: colors.$mercury;
+}

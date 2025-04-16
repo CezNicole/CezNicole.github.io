@@ -1,0 +1,7 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/colors' as colors;
+@use '../../styles/partials/breakpoints' as breakpoints;
+
+.nav-links{
+    @include remove-link-underline;
+}

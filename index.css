@@ -22,6 +22,44 @@
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+/*
+PRIMARY COLORS
+BandSite-Black: Primary text color for dark on light background. Dark background color
+-used for social icons
+-bandsite logo 
+
+Silver: Seconday text color. Inactive CTA text color. 
+
+White: Primary text color for light on dark background. Light background color. Active CTA text color.
+-active and hover links
+
+
+SECONDARY COLORS
+BandSite-DarkBlack: CTA hover state.
+
+Mercury: Divider line. Form field outline.
+-inactive links
+
+Alabaster: Alternative light background color
+*/
 * {
   margin: 0;
   padding: 0;
