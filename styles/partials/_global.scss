@@ -606,7 +606,8 @@ body{
 }
 
 @mixin mobile-page-header{
-    @include avenir-font-bold;
+    // @include avenir-font-bold;
+    @include avenir-font-demi;
     font-size: 1.5em;
     line-height: 2em;
 }
@@ -624,7 +625,9 @@ body{
 @mixin mobile-body-copy{
     @include avenir-font-regular;
     font-size: 0.81em;
-    line-height: 1.13em;
+    // line-height: 1.13em;
+    line-height: 1.5em;
+
 }
 
 @mixin mobile-footer-copy{
@@ -748,6 +751,10 @@ body{
 @mixin bandsite-divider{
     border-bottom: 0.06em solid colors.$mercury;
     padding: 1em 0;
+}
+
+@mixin full-image-width{
+    width: 100%;
 }
 
 

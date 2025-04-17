@@ -7,6 +7,15 @@
     @include mobile-page-header;
 }
 
+.section-titles {
+    @include mobile-section-header;
+}
+
+.full-width{
+    @include full-image-width;
+}
+
+
 .header{
     background-color: colors.$bandsite-black;
     // @include mobile-padding-headlines;
@@ -51,7 +60,8 @@
 }
 
 .hero-banner{
-    width: 100%;
+    // width: 100%;
+    @extend .full-width;
     // position: relative;
     // display: flex;
     // justify-content: center;
@@ -60,7 +70,8 @@
     
 
     &__container{
-        width: 100%;
+        // width: 100%;
+        @extend .full-width;
         position: relative;
         display: flex;
         justify-content: center;
@@ -83,16 +94,18 @@
     }
 
     &__subcontainer{
-        width: 100%;
+        // width: 100%;
+        @extend .full-width;
         position: absolute;
         top: 23%;
         display: flex;
     }
 
     &__title{
-        @include mobile-section-header;
+        // @include mobile-section-header;
         @include mobile-padding-headlines;
-        font-weight: 600;
+        @extend .section-titles;
+        // font-weight: 600;
         color: colors.$bandsite-white;
         z-index: 1;
         padding-left: 0.75em;
@@ -112,4 +125,46 @@
         // justify-content: center;
         // align-items: flex-start;
     }
+}
+
+.about-section{
+    // width: 100%;
+    @extend .full-width;
+    // @include mobile-margin;
+    @include mobile-padding-headlines;
+}
+
+.biography-images{
+    @extend .full-width;
+    height: 15em;
+    // height: 50vw;
+    max-height: 50vw;
+    // max-height: 15em;
+}
+
+.biography-text-content{
+    @include mobile-body-copy;
+    width: 94.7%;
+
+    &__quote{
+        @include mobile-subheader;
+        line-height: 1.8em;
+        width: 97%;
+
+        &--block{
+            display: flex;
+        }
+    }
+
+    &__band-info2{
+        @include mobile-padding-headlines;
+        padding-left: 0;
+        width: 100%;
+    }
+}
+
+.section-subtitle{
+    @include mobile-padding-headlines;
+    @include mobile-subheader;
+    padding-left: 0;
 }
