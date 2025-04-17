@@ -9,6 +9,10 @@
 
 .section-titles {
     @include mobile-section-header;
+
+    &__footer{
+        padding-bottom: 0.4em;
+    }
 }
 
 .full-width{
@@ -43,6 +47,7 @@
 
     &--inactive{
         @include bandsite-inactive-link;
+        margin-right: 1em;
     }
 
     &:hover{
@@ -57,6 +62,17 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto 1em;
+
+    &__footer{
+        // @include mobile-padding-headlines;
+        // border: 2px solid red;
+        // position: relative;
+        // left: 0;
+        // display: flex;
+        // justify-content: flex-start;
+        // align-items: flex-start;
+        margin: 3em 0 1em;
+    }
 }
 
 .hero-banner{
@@ -168,14 +184,74 @@
     @include mobile-padding-headlines;
     @include mobile-subheader;
     padding-left: 0;
+
+    &--less-padding{
+        padding-top: 1em;
+    }
 }
 
 .gallery-section{
-    background-color: colors.$alabaster;
     @include mobile-padding-headlines;
+    background-color: colors.$alabaster;
     padding-bottom: 0.5em;
 
     & > .biography-images:not(:last-child) {
         padding-bottom: 0.5em;
+    }
+}
+
+.footer{
+    @include mobile-padding-headlines;
+    // @include mobile-footer-copy;
+    background-color: colors.$bandsite-black;
+    color: colors.$bandsite-white;
+}
+
+.social-icons{
+    width: 1.5em;
+    // @include social-icons;
+    // width: 100%;
+    // width: 100%;
+    // max-width: 2em;
+    margin-right: 2em;
+
+    &--resize{
+        // @include resize-social-icons;
+        // width: 100%;
+        width: 0.9em;
+        // width: 55%;
+        // margin-left: 1.15em;
+    }
+}
+
+.social-links{
+    @include remove-link-underline;
+
+    &__container{
+        // width: 50%;
+        @extend .full-width;
+        // height: 100%;
+        display: flex;
+        // justify-content: space-evenly;
+        justify-content: flex-start;
+        // position: relative;
+        // right: 1.25em;
+        // width: 40%;
+        // right: 1em;
+    }
+}
+
+.footer-content{
+    @include mobile-footer-copy;
+    width: 55%;
+
+    &--extra-padding{
+        padding-top: 1em;
+    }
+
+    &__copyright{
+        width: 100%;
+        font-size: 0.7em;
+        padding-bottom: 1.5em;
     }
 }
