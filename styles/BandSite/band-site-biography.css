@@ -220,6 +220,7 @@ body {
   padding: 1.5em 1em 1em;
   padding-left: 0;
   width: 100%;
+  padding-bottom: 0;
 }
 
 .section-subtitle {
@@ -230,4 +231,13 @@ body {
   font-size: 0.88em;
   line-height: 1.38em;
   padding-left: 0;
+}
+
+.gallery-section {
+  background-color: #fafafa;
+  padding: 1.5em 1em 1em;
+  padding-bottom: 0.5em;
+}
+.gallery-section > .biography-images:not(:last-child) {
+  padding-bottom: 0.5em;
 }/*# sourceMappingURL=band-site-biography.css.map */

@@ -160,6 +160,7 @@
         @include mobile-padding-headlines;
         padding-left: 0;
         width: 100%;
+        padding-bottom: 0;
     }
 }
 
@@ -167,4 +168,14 @@
     @include mobile-padding-headlines;
     @include mobile-subheader;
     padding-left: 0;
+}
+
+.gallery-section{
+    background-color: colors.$alabaster;
+    @include mobile-padding-headlines;
+    padding-bottom: 0.5em;
+
+    & > .biography-images:not(:last-child) {
+        padding-bottom: 0.5em;
+    }
 }
