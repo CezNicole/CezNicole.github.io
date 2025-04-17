@@ -52,28 +52,26 @@
 
 .hero-banner{
     width: 100%;
-    // background-color: rgba(colors.$bandsite-black, 0.5);
-    // height: 250px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // position: relative;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     // overflow: hidden;
     
 
     &__container{
-        // position: relative;
         width: 100%;
-        height: 100%;
-        // height: 251px;
         position: relative;
-        background-image: url('../../assets/images/BandSite/hero-bio.jpg'); // Replace with your image path
-        background-size: cover; // Ensures the image covers the entire area
-        background-position: center center; // Keeps the image centered
-        background-repeat: no-repeat; // Prevents repeating if the image is smaller than the container
         display: flex;
         justify-content: center;
         align-items: center;
+        // position: relative;
+        // height: 100%;
+        // height: 251px;
+        // background-image: url('../../assets/images/BandSite/hero-bio.jpg'); // Replace with your image path
+        // background-size: cover; // Ensures the image covers the entire area
+        // background-position: center center; // Keeps the image centered
+        // background-repeat: no-repeat; // Prevents repeating if the image is smaller than the container
 
         &::before {
             content: '';
@@ -84,21 +82,34 @@
         }
     }
 
+    &__subcontainer{
+        width: 100%;
+        position: absolute;
+        top: 23%;
+        display: flex;
+    }
+
     &__title{
         @include mobile-section-header;
+        @include mobile-padding-headlines;
+        font-weight: 600;
         color: colors.$bandsite-white;
-        position: absolute;
-        top: 20%;
-        left: 0;
+        z-index: 1;
+        padding-left: 0.75em;
+        font-size: 7.2vw;
+        // @include mobile-subheader;
+        // position: absolute;
+        // position: relative;
+        // top: 20%;
+        // top: 0;
+        // left: 0;
         // position: relative;
         // bottom: 6em;
         // right: 0.7em;
-        z-index: 1;
-        @include mobile-padding-headlines;
+        // padding-left: 0.65em;
         // margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        
+        // display: flex;
+        // justify-content: center;
+        // align-items: flex-start;
     }
 }
