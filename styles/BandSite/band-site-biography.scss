@@ -7,6 +7,19 @@
     @include mobile-page-header;
 }
 
+.section-titles {
+    @include mobile-section-header;
+
+    &__footer{
+        padding-bottom: 0.4em;
+    }
+}
+
+.full-width{
+    @include full-image-width;
+}
+
+
 .header{
     background-color: colors.$bandsite-black;
     // @include mobile-padding-headlines;
@@ -34,6 +47,7 @@
 
     &--inactive{
         @include bandsite-inactive-link;
+        margin-right: 1em;
     }
 
     &:hover{
@@ -48,10 +62,22 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto 1em;
+
+    &__footer{
+        // @include mobile-padding-headlines;
+        // border: 2px solid red;
+        // position: relative;
+        // left: 0;
+        // display: flex;
+        // justify-content: flex-start;
+        // align-items: flex-start;
+        margin: 3em 0 1em;
+    }
 }
 
 .hero-banner{
-    width: 100%;
+    // width: 100%;
+    @extend .full-width;
     // position: relative;
     // display: flex;
     // justify-content: center;
@@ -60,7 +86,8 @@
     
 
     &__container{
-        width: 100%;
+        // width: 100%;
+        @extend .full-width;
         position: relative;
         display: flex;
         justify-content: center;
@@ -83,16 +110,18 @@
     }
 
     &__subcontainer{
-        width: 100%;
+        // width: 100%;
+        @extend .full-width;
         position: absolute;
         top: 23%;
         display: flex;
     }
 
     &__title{
-        @include mobile-section-header;
+        // @include mobile-section-header;
         @include mobile-padding-headlines;
-        font-weight: 600;
+        @extend .section-titles;
+        // font-weight: 600;
         color: colors.$bandsite-white;
         z-index: 1;
         padding-left: 0.75em;
@@ -111,5 +140,118 @@
         // display: flex;
         // justify-content: center;
         // align-items: flex-start;
+    }
+}
+
+.about-section{
+    // width: 100%;
+    @extend .full-width;
+    // @include mobile-margin;
+    @include mobile-padding-headlines;
+}
+
+.biography-images{
+    @extend .full-width;
+    height: 15em;
+    // height: 50vw;
+    max-height: 50vw;
+    // max-height: 15em;
+}
+
+.biography-text-content{
+    @include mobile-body-copy;
+    width: 94.7%;
+
+    &__quote{
+        @include mobile-subheader;
+        line-height: 1.8em;
+        width: 97%;
+
+        &--block{
+            display: flex;
+        }
+    }
+
+    &__band-info2{
+        @include mobile-padding-headlines;
+        padding-left: 0;
+        width: 100%;
+        padding-bottom: 0;
+    }
+}
+
+.section-subtitle{
+    @include mobile-padding-headlines;
+    @include mobile-subheader;
+    padding-left: 0;
+
+    &--less-padding{
+        padding-top: 1em;
+    }
+}
+
+.gallery-section{
+    @include mobile-padding-headlines;
+    background-color: colors.$alabaster;
+    padding-bottom: 0.5em;
+
+    & > .biography-images:not(:last-child) {
+        padding-bottom: 0.5em;
+    }
+}
+
+.footer{
+    @include mobile-padding-headlines;
+    // @include mobile-footer-copy;
+    background-color: colors.$bandsite-black;
+    color: colors.$bandsite-white;
+}
+
+.social-icons{
+    width: 1.5em;
+    // @include social-icons;
+    // width: 100%;
+    // width: 100%;
+    // max-width: 2em;
+    margin-right: 2em;
+
+    &--resize{
+        // @include resize-social-icons;
+        // width: 100%;
+        width: 0.9em;
+        // width: 55%;
+        // margin-left: 1.15em;
+    }
+}
+
+.social-links{
+    @include remove-link-underline;
+
+    &__container{
+        // width: 50%;
+        @extend .full-width;
+        // height: 100%;
+        display: flex;
+        // justify-content: space-evenly;
+        justify-content: flex-start;
+        // position: relative;
+        // right: 1.25em;
+        // width: 40%;
+        // right: 1em;
+    }
+}
+
+.footer-content{
+    @include mobile-footer-copy;
+    width: 55%;
+
+    &--extra-padding{
+        padding-top: 1em;
+    }
+
+    &__copyright{
+        width: 100%;
+        font-size: 0.7em;
+        padding-bottom: 1.5em;
     }
 }
