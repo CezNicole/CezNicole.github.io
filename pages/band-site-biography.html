@@ -5,41 +5,56 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- open graph tags -->
-		<meta name="og:title" content="Portfolio: Band Site Home Page" />
+		<meta name="og:title" content="Portfolio: Band Site Biography Page" />
 		<meta property="og:type" content="website" />
 		<meta
 			property="og:url"
-			content="https://ceznicole.github.io/pages/band-site-home.html" />
+			content="https://ceznicole.github.io/pages/band-site-biography.html" />
 		<meta
 			property="og:description"
 			content="BandSite is a responsive web application built with HTML, SCSS, and JavaScript." />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="CezNicole's Portfolio Page" />
 
-		<title>Home | Band Site</title>
-		<link rel="stylesheet" href="" />
+		<title>Biography | Band Site</title>
+		<link rel="stylesheet" href="../styles/BandSite/band-site-biography.css" />
 	</head>
 	<body class="band-site">
 		<header class="header">
 			<ul>
-				<li>
-					<a href="./band-site-home.html">
+				<li class="header__list-item">
+					<a href="./band-site-biography.html" class="nav-links">
 						<img
 							src="../assets/icons/BandSite/Logo/Logo-bandsite.svg"
-							alt="BandSite logo" />
+							alt="BandSite logo"
+							class="bandsite-logo" />
 					</a>
 				</li>
-				<li><a href="./band-site-home.html">Biography</a></li>
-				<li><a href="">Shows</a></li>
+
+				<div class="header__container">
+					<li class="header__list-item">
+						<a
+							href="./band-site-biography.html"
+							class="nav-links nav-links--active"
+							>Biography</a
+						>
+					</li>
+					<li class="header__list-item">
+						<a href="" class="nav-links nav-links--inactive">Shows</a>
+					</li>
+				</div>
 			</ul>
 		</header>
 
 		<main>
-			<section>
+			<section class="hero-banner__container">
 				<img
 					src="../assets/images/BandSite/hero-bio.jpg"
-					alt="A picture of a bee on top of a bunch of sunflowers, with a pink to blue gradient color." />
-				<h1>The Bees Knees</h1>
+					alt="A picture of a bee on top of a bunch of sunflowers, with a pink to blue gradient color."
+					class="hero-banner" />
+				<div class="hero-banner__subcontainer">
+					<h1 class="hero-banner__title">The Bees Knees</h1>
+				</div>
 			</section>
 
 			<section>
@@ -150,7 +165,8 @@
 
 			<img
 				src="../assets/icons/BandSite/Logo/Logo-bandsite.svg"
-				alt="BandSite logo" />
+				alt="BandSite logo"
+				class="bandsite-logo" />
 			<p>Copyright The Bees Knees &copy; 2024 All Rights Reserved</p>
 		</footer>
 	</body>
