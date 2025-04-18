@@ -141,6 +141,9 @@ body {
   border-bottom: 0.23em solid #ffffff;
   padding: 1em 2em;
 }
+.nav-links--active:hover {
+  margin-left: 2em;
+}
 .nav-links--inactive {
   color: #e1e1e1;
   padding: 1em 0;
@@ -153,7 +156,6 @@ body {
   color: #ffffff;
   border-bottom: 0.23em solid #ffffff;
   padding: 1em 0;
-  margin-left: 2em;
 }
 
 .bandsite-logo {
@@ -294,43 +296,34 @@ body {
 
 @media (min-width: 768px) {
   .header {
-    padding: 0;
+    height: 3.8em;
   }
   .header__navbar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
+    align-items: flex-start;
+    position: relative;
+    bottom: 3.1em;
+    left: 2em;
+    width: 32.5em;
+  }
+  .nav-links {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 0.88em;
+    line-height: 1.38em;
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
   .nav-links--active {
-    font-family: "Avenir Next", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    color: #ffffff;
-    border-bottom: 0.23em solid #ffffff;
-    padding: 1em 2em;
     margin-left: 2.25em;
     margin-right: 2.25em;
-    padding: 0 0 1.4em;
-    margin-right: 4em;
-  }
-  .nav-links--inactive {
-    color: #e1e1e1;
     padding: 1em 0;
-    margin-right: 1em;
-  }
-  .nav-links:hover {
-    font-family: "Avenir Next", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #ffffff;
-    border-bottom: 0.23em solid #ffffff;
-    padding: 1em 0;
-    margin-left: 2em;
   }
   .bandsite-logo {
     margin-left: 2.25em;
     margin-right: 2.25em;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
   }
 }/*# sourceMappingURL=band-site-biography.css.map */

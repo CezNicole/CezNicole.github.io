@@ -732,19 +732,19 @@ body{
     color: colors.$bandsite-white;
     // border-bottom: 3.75em solid colors.$bandsite-white;  //subject to change
     border-bottom: 0.23em solid colors.$bandsite-white; //subject to change
-    padding: 1em 2em;
+    // padding: 1em 2em;
 }
 
 @mixin bandsite-hover-link{
     @include avenir-font-regular;   //not sure if it's this or demi or the same as bandsite-active-link
     color: colors.$bandsite-white;
     border-bottom: 0.23em solid colors.$bandsite-white; //subject to change
-    padding: 1em 0;
+    // padding: 1em 0;
 }
 
 @mixin bandsite-inactive-link{
     color: colors.$mercury;
-    padding: 1em 0;
+    // padding: 1em 0;
 }
 
 

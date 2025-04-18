@@ -43,16 +43,23 @@
     &--active{
         @include bandsite-active-link;
         // @include bandsite-divider;
+        padding: 1em 2em;
+
+        &:hover{
+            margin-left: 2em;
+        }
     }
 
     &--inactive{
         @include bandsite-inactive-link;
+        padding: 1em 0;
         margin-right: 1em;
     }
 
     &:hover{
         @include bandsite-hover-link;
-        margin-left: 2em;
+        padding: 1em 0;
+        // margin-left: 2em;
     }
 }
 
@@ -263,50 +270,51 @@
     }
 
     .header{
-        padding: 0;
+        // padding: 0;
+        // height: 4.45em;
+        height: 3.8em;
 
         &__navbar{
             display: flex;
-            justify-content: flex-start;
-            align-items: center;
+            // justify-content: flex-start;
+            justify-content: space-around;
+            align-items: flex-start;
+            position: relative;
+            // bottom: 3.5em;
+            bottom: 3.1em;
+            left: 2em;
+            width: 32.5em;
         }
-
-        // &__container {
-        //     // display: flex;
-        //     // justify-content: space-evenly;
-        //     // align-items: center;
-        //     // padding: 0 2em 0 0;
-        //     // border: 2px solid blue;
-        // }
     }
 
     .nav-links{
         // border: 2px solid blue;
         // @include tablet-margin;
+        @include mobile-subheader;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // position: relative;
+        // bottom: 3.5em;
+        // border: 2px solid red;
+            // display: flex;
+            // justify-content: space-evenly;
+
         
         &--active {
-            @include bandsite-active-link;
+            // @include bandsite-active-link;
             @include tablet-margin;
             // @include bandsite-divider;
-            padding: 0 0 1.4em;
-            margin-right: 4em;
-        }
-    
-        &--inactive {
-            @include bandsite-inactive-link;
-            margin-right: 1em;
-        }
-    
-        &:hover {
-            @include bandsite-hover-link;
-            margin-left: 2em;
+            // padding: 0 0 1.4em;
+            // margin-right: 4em;
+            padding: 1em 0;
         }
     }
 
     .bandsite-logo{
         // margin: 0 2.25em;
         @include tablet-margin;
-        margin-top: 1.5em;
-        margin-bottom: 1.5em;
+        // margin-top: 1.5em;
+        // margin-bottom: 1.5em;
     }
 }
