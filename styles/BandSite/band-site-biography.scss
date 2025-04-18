@@ -330,4 +330,65 @@
             font-size: 7vw;
         }
     }
+
+    .about-section{
+        @include tablet-padding-headlines;
+        padding-top: 1.5em;
+
+        &__container{
+            @include tablet-margin;
+        }
+    }
+
+    .biography-images {
+        // @extend .full-width;
+        width: 85%;
+        // max-width: 30em;
+        display: flex;
+        margin: 0 auto;
+        // height: 15em;
+        height: 20em;
+        max-height:40vw;
+        // height: 50vw;
+        // max-height: 50vw;
+        // max-height: 15em;
+    }
+
+    .biography-text-content {
+        // @include mobile-body-copy;
+        // width: 94.7%;
+        @include tablet-body-copy;
+        
+
+        &__quote {
+            // @include mobile-subheader;
+            // line-height: 1.8em;
+            // width: 97%;
+            @include tablet-padding-headlines;
+            padding-top: 1.5em;
+            padding-bottom: 0.5em;
+            line-height: 1.38em;
+            display: block;
+            margin: 0 auto;
+
+            &--block {
+                // display: flex;
+                @include mobile-body-copy;
+                @include avenir-font-demi;
+                padding: 0.5em 0;
+            }
+        }
+
+        &__band-info2 {
+            @include mobile-padding-headlines;
+            padding-left: 0;
+            width: 100%;
+            padding-bottom: 0;
+        }
+
+        &--flexbox{
+            width: 100%;
+            display: flex;
+        }
+    }
 }
