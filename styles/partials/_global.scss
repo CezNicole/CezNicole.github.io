@@ -643,13 +643,15 @@ body{
 
 
 @mixin tablet-page-header{
-    @include avenir-font-bold;
+    // @include avenir-font-bold;
+    @include avenir-font-demi;
     font-size: 3.75em;
     line-height: 4.25em;
 }
 
 @mixin tablet-section-header{
-    @include avenir-font-bold;
+    // @include avenir-font-bold;
+    @include avenir-font-demi;
     font-size: 2.25em;
     line-height: 2.75em;
 }

@@ -265,10 +265,6 @@
 
 
 @include breakpoints.tablet{
-    body{
-        // border: 2px solid red;
-    }
-
     .header{
         // padding: 0;
         // height: 4.45em;
@@ -316,5 +312,22 @@
         @include tablet-margin;
         // margin-top: 1.5em;
         // margin-bottom: 1.5em;
+    }
+
+    .hero-banner{
+        // height: 100%;
+        // max-height: 25em;
+        max-width: 70em;
+        // background-size: 75em;
+        
+        &__title{
+            // padding-left: 0.75em;
+            @include tablet-section-header;
+            padding: 1.75em 1.5em;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            font-size: 7vw;
+        }
     }
 }

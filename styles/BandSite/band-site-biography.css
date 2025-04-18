@@ -326,4 +326,16 @@ body {
     margin-left: 2.25em;
     margin-right: 2.25em;
   }
+  .hero-banner {
+    max-width: 70em;
+  }
+  .hero-banner__title {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.25em;
+    line-height: 2.75em;
+    padding: 1.75em 1.5em;
+    font-size: 7vw;
+  }
 }/*# sourceMappingURL=band-site-biography.css.map */
