@@ -255,3 +255,58 @@
         padding-bottom: 1.5em;
     }
 }
+
+
+@include breakpoints.tablet{
+    body{
+        // border: 2px solid red;
+    }
+
+    .header{
+        padding: 0;
+
+        &__navbar{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        // &__container {
+        //     // display: flex;
+        //     // justify-content: space-evenly;
+        //     // align-items: center;
+        //     // padding: 0 2em 0 0;
+        //     // border: 2px solid blue;
+        // }
+    }
+
+    .nav-links{
+        // border: 2px solid blue;
+        // @include tablet-margin;
+        
+        &--active {
+            @include bandsite-active-link;
+            @include tablet-margin;
+            // @include bandsite-divider;
+            padding: 0 0 1.4em;
+            margin-right: 4em;
+        }
+    
+        &--inactive {
+            @include bandsite-inactive-link;
+            margin-right: 1em;
+        }
+    
+        &:hover {
+            @include bandsite-hover-link;
+            margin-left: 2em;
+        }
+    }
+
+    .bandsite-logo{
+        // margin: 0 2.25em;
+        @include tablet-margin;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+}
