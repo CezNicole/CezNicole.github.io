@@ -305,7 +305,7 @@ body {
     position: relative;
     bottom: 3.1em;
     left: 2em;
-    width: 32.5em;
+    width: 30em;
   }
   .nav-links {
     font-family: "Avenir Next", sans-serif;
@@ -345,6 +345,22 @@ body {
   .about-section__container {
     margin-left: 2.25em;
     margin-right: 2.25em;
+    border: 2px solid red;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .about-section__container--flexbox {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.81em;
+    line-height: 1.5em;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
   }
   .biography-images {
     width: 85%;
@@ -361,12 +377,13 @@ body {
     line-height: 1.38em;
   }
   .biography-text-content__quote {
-    padding: 3em 2.25em 2.25em;
+    width: 85%;
     padding-top: 1.5em;
     padding-bottom: 0.5em;
     line-height: 1.38em;
     display: block;
     margin: 0 auto;
+    border: 2px solid blue;
   }
   .biography-text-content__quote--block {
     font-family: "Avenir Next", sans-serif;
@@ -380,13 +397,7 @@ body {
     padding: 0.5em 0;
   }
   .biography-text-content__band-info2 {
-    padding: 1.5em 1em 1em;
-    padding-left: 0;
-    width: 100%;
-    padding-bottom: 0;
-  }
-  .biography-text-content--flexbox {
-    width: 100%;
-    display: flex;
+    padding: 0;
+    margin: 0 1em;
   }
 }/*# sourceMappingURL=band-site-biography.css.map */

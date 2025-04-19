@@ -182,7 +182,7 @@
     &__band-info2{
         @include mobile-padding-headlines;
         padding-left: 0;
-        width: 100%;
+        @include full-image-width;
         padding-bottom: 0;
     }
 }
@@ -257,7 +257,7 @@
     }
 
     &__copyright{
-        width: 100%;
+        @include full-image-width;
         font-size: 0.7em;
         padding-bottom: 1.5em;
     }
@@ -279,7 +279,8 @@
             // bottom: 3.5em;
             bottom: 3.1em;
             left: 2em;
-            width: 32.5em;
+            // width: 32.5em;
+            width: 30em;
         }
     }
 
@@ -334,9 +335,37 @@
     .about-section{
         @include tablet-padding-headlines;
         padding-top: 1.5em;
+       
 
         &__container{
             @include tablet-margin;
+            // @include full-image-width;
+            // width: 100%;
+            // margin: 0 1em;
+            // padding: 0 1em;
+            border: 2px solid red;
+            // @include full-image-width;
+            // display: block;
+            // margin: 0 auto;
+            width: 85%;
+            // max-width: 31em;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            
+            &--flexbox {
+                // width: 100%;
+                // @extend .full-width;
+                // @include tablet-body-copy;
+                @include mobile-body-copy;
+                @include full-image-width;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: flex-start;
+                // width: 38em;
+                // width: 100%;
+                // max-width: 38em;
+            }
         }
     }
 
@@ -358,18 +387,20 @@
         // @include mobile-body-copy;
         // width: 94.7%;
         @include tablet-body-copy;
-        
 
         &__quote {
             // @include mobile-subheader;
             // line-height: 1.8em;
             // width: 97%;
-            @include tablet-padding-headlines;
+            // @include full-image-width;
+            // @include tablet-padding-headlines;
+            width: 85%;
             padding-top: 1.5em;
             padding-bottom: 0.5em;
             line-height: 1.38em;
             display: block;
             margin: 0 auto;
+            border: 2px solid blue;
 
             &--block {
                 // display: flex;
@@ -380,15 +411,12 @@
         }
 
         &__band-info2 {
-            @include mobile-padding-headlines;
-            padding-left: 0;
-            width: 100%;
-            padding-bottom: 0;
-        }
-
-        &--flexbox{
-            width: 100%;
-            display: flex;
+            // @include mobile-padding-headlines;
+            // padding-left: 0;
+            // width: 100%;
+            // padding-bottom: 0;
+            padding: 0;
+            margin: 0 1em;
         }
     }
 }
