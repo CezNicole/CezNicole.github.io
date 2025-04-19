@@ -344,6 +344,7 @@ body {
   .about-section {
     padding: 3em 2.25em 2.25em;
     padding-top: 1.5em;
+    padding-bottom: 1.5em;
   }
   .about-section__container {
     margin-left: 2.25em;
@@ -414,6 +415,7 @@ body {
   .gallery-section {
     padding: 3em 2.25em 2.25em;
     padding-top: 1.5em;
+    padding-bottom: 0.8em;
   }
   .gallery-section__container {
     display: flex;

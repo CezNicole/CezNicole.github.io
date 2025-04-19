@@ -340,6 +340,7 @@
     .about-section{
         @include tablet-padding-headlines;
         padding-top: 1.5em;
+        padding-bottom: 1.5em;
 
         &__container{
             @include tablet-margin;
@@ -448,6 +449,7 @@
         // padding-bottom: 0.5em;
         @include tablet-padding-headlines;
         padding-top: 1.5em;
+        padding-bottom: 0.8em;
 
         // &>.biography-images {
         //     // padding-bottom: 0.5em;
