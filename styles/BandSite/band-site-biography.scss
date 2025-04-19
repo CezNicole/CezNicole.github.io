@@ -9,6 +9,7 @@
 
 .section-titles {
     @include mobile-section-header;
+    // padding-bottom: 0.25em;
 
     &__footer{
         padding-bottom: 0.4em;
@@ -265,6 +266,10 @@
 
 
 @include breakpoints.tablet{
+    .section-titles {
+        padding-bottom: 0.25em;
+    }
+    
     .header{
         // padding: 0;
         // height: 4.45em;
@@ -335,7 +340,6 @@
     .about-section{
         @include tablet-padding-headlines;
         padding-top: 1.5em;
-       
 
         &__container{
             @include tablet-margin;
@@ -370,17 +374,35 @@
     }
 
     .biography-images {
-        // @extend .full-width;
-        width: 85%;
-        // max-width: 30em;
-        display: flex;
-        margin: 0 auto;
-        // height: 15em;
-        height: 20em;
-        max-height:40vw;
-        // height: 50vw;
-        // max-height: 50vw;
-        // max-height: 15em;
+        // width: 38%;
+        // width: 32%;
+        width: 33%;
+        // max-width: 10em;
+        // max-width: 9.5em;
+        // height: 6em;
+        height: 100%;
+        // max-height: 5.5em;
+        // max-height: 6em;
+        // max-height: 5em;
+        // padding: 0.5em 0.35em;
+        padding-right: 0.8em;
+        padding-bottom: 1em;
+
+        &__musicians{
+            // @extend .full-width;
+            width: 85%;
+            // max-width: 30em;
+            max-width: 100%;
+            display: flex;
+            margin: 0 auto;
+            // height: 15em;
+            height: 20em;
+            max-height:40vw;
+            padding: 0;
+            // height: 50vw;
+            // max-height: 50vw;
+            // max-height: 15em;
+        }
     }
 
     .biography-text-content {
@@ -417,6 +439,38 @@
             // padding-bottom: 0;
             padding: 0;
             margin: 0 1em;
+        }
+    }
+
+    .gallery-section {
+        // @include mobile-padding-headlines;
+        // background-color: colors.$alabaster;
+        // padding-bottom: 0.5em;
+        @include tablet-padding-headlines;
+        padding-top: 1.5em;
+
+        // &>.biography-images {
+        //     // padding-bottom: 0.5em;
+        //     // border: 2px solid green;
+        //     // width: 38%;
+        //     // max-width: 10em;
+        //     // height: 6em;
+        // }
+
+        &__container{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            // width: 30em;
+            // max-width: 100%;
+            // margin: 0 auto;
+            // @include tablet-margin;
+            // margin: 1em;
+            // padding: 0;
+            // padding: 1em;
+            // width: 38%;
+            // max-width: 10em;
+            // height: 6em;
         }
     }
 }
