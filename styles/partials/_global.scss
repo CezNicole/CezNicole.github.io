@@ -643,13 +643,15 @@ body{
 
 
 @mixin tablet-page-header{
-    @include avenir-font-bold;
+    // @include avenir-font-bold;
+    @include avenir-font-demi;
     font-size: 3.75em;
     line-height: 4.25em;
 }
 
 @mixin tablet-section-header{
-    @include avenir-font-bold;
+    // @include avenir-font-bold;
+    @include avenir-font-demi;
     font-size: 2.25em;
     line-height: 2.75em;
 }
@@ -732,19 +734,19 @@ body{
     color: colors.$bandsite-white;
     // border-bottom: 3.75em solid colors.$bandsite-white;  //subject to change
     border-bottom: 0.23em solid colors.$bandsite-white; //subject to change
-    padding: 1em 2em;
+    // padding: 1em 2em;
 }
 
 @mixin bandsite-hover-link{
     @include avenir-font-regular;   //not sure if it's this or demi or the same as bandsite-active-link
     color: colors.$bandsite-white;
     border-bottom: 0.23em solid colors.$bandsite-white; //subject to change
-    padding: 1em 0;
+    // padding: 1em 0;
 }
 
 @mixin bandsite-inactive-link{
     color: colors.$mercury;
-    padding: 1em 0;
+    // padding: 1em 0;
 }
 
 

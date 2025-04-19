@@ -9,6 +9,7 @@
 
 .section-titles {
     @include mobile-section-header;
+    // padding-bottom: 0.25em;
 
     &__footer{
         padding-bottom: 0.4em;
@@ -43,16 +44,23 @@
     &--active{
         @include bandsite-active-link;
         // @include bandsite-divider;
+        padding: 1em 2em;
+
+        &:hover{
+            margin-left: 2em;
+        }
     }
 
     &--inactive{
         @include bandsite-inactive-link;
+        padding: 1em 0;
         margin-right: 1em;
     }
 
     &:hover{
         @include bandsite-hover-link;
-        margin-left: 2em;
+        padding: 1em 0;
+        // margin-left: 2em;
     }
 }
 
@@ -175,7 +183,7 @@
     &__band-info2{
         @include mobile-padding-headlines;
         padding-left: 0;
-        width: 100%;
+        @include full-image-width;
         padding-bottom: 0;
     }
 }
@@ -250,8 +258,354 @@
     }
 
     &__copyright{
-        width: 100%;
+        @include full-image-width;
         font-size: 0.7em;
         padding-bottom: 1.5em;
+    }
+}
+
+
+@include breakpoints.tablet{
+    .section-titles {
+        @include mobile-page-header;
+        padding-bottom: 0.25em;
+
+        &__footer {
+            // padding-bottom: 0.4em;
+            font-size: 1.8em;
+        }
+    }
+
+    .section-subtitle {
+        // @include mobile-padding-headlines;
+        // @include mobile-subheader;
+        // padding-left: 0;
+
+        &--less-padding {
+            // padding-top: 1em;
+            padding-top: 1.5em;
+        }
+    }
+    
+    .header{
+        // padding: 0;
+        // height: 4.45em;
+        height: 3.8em;
+
+        &__navbar{
+            display: flex;
+            // justify-content: flex-start;
+            justify-content: space-around;
+            align-items: flex-start;
+            position: relative;
+            // bottom: 3.5em;
+            bottom: 3.1em;
+            left: 2em;
+            // width: 32.5em;
+            width: 30em;
+        }
+    }
+
+    .nav-links{
+        // border: 2px solid blue;
+        // @include tablet-margin;
+        @include mobile-subheader;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // position: relative;
+        // bottom: 3.5em;
+        // border: 2px solid red;
+            // display: flex;
+            // justify-content: space-evenly;
+
+        
+        &--active {
+            // @include bandsite-active-link;
+            @include tablet-margin;
+            // @include bandsite-divider;
+            // padding: 0 0 1.4em;
+            // margin-right: 4em;
+            padding: 1em 0;
+        }
+    }
+
+    .bandsite-logo{
+        // margin: 0 2.25em;
+        @include tablet-margin;
+        // margin-top: 1.5em;
+        // margin-bottom: 1.5em;
+
+        &__footer{
+            // position: relative;
+            // bottom: 12em;
+            // bottom: 0;
+            // left: 18em;
+            // // margin: 3em 0 1em;
+            // margin: 0.35em 0;
+            // margin: 0;
+            margin-top: 2.5em;
+        }
+
+        &__container{
+            // position: relative;
+            position: absolute;
+            // top: -0.45em;
+            top: 0;
+            // left: 26em;
+            right: 0;
+            // bottom: 12.1em;
+            // bottom: 0;
+            // left: 25em;
+            display: flex;
+            justify-content: flex-end;
+            // align-items: flex-end;
+            // width: 10%;
+            // max-width: 20em;
+            // // margin: 3em 0 1em;
+            // margin: 0.35em 0;
+        }
+    }
+
+    .hero-banner{
+        // height: 100%;
+        // max-height: 25em;
+        max-width: 70em;
+        // background-size: 75em;
+        
+        &__title{
+            // padding-left: 0.75em;
+            @include tablet-section-header;
+            padding: 1.75em 1.5em;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            font-size: 7vw;
+        }
+    }
+
+    .about-section{
+        @include tablet-padding-headlines;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+
+        &__container{
+            @include tablet-margin;
+            // @include full-image-width;
+            // width: 100%;
+            // margin: 0 1em;
+            // padding: 0 1em;
+            border: 2px solid red;
+            // @include full-image-width;
+            // display: block;
+            // margin: 0 auto;
+            width: 85%;
+            // max-width: 31em;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            
+            &--flexbox {
+                // width: 100%;
+                // @extend .full-width;
+                // @include tablet-body-copy;
+                @include mobile-body-copy;
+                @include full-image-width;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: flex-start;
+                // width: 38em;
+                // width: 100%;
+                // max-width: 38em;
+            }
+        }
+    }
+
+    .biography-images {
+        // width: 38%;
+        // width: 32%;
+        width: 33%;
+        // max-width: 10em;
+        // max-width: 9.5em;
+        // height: 6em;
+        height: 100%;
+        // max-height: 5.5em;
+        // max-height: 6em;
+        // max-height: 5em;
+        // padding: 0.5em 0.35em;
+        padding-right: 0.8em;
+        padding-bottom: 1em;
+
+        &__musicians{
+            // @extend .full-width;
+            width: 85%;
+            // max-width: 30em;
+            max-width: 100%;
+            display: flex;
+            margin: 0 auto;
+            // height: 15em;
+            height: 20em;
+            max-height:40vw;
+            padding: 0;
+            // height: 50vw;
+            // max-height: 50vw;
+            // max-height: 15em;
+        }
+    }
+
+    .biography-text-content {
+        // @include mobile-body-copy;
+        // width: 94.7%;
+        @include tablet-body-copy;
+
+        &__quote {
+            // @include mobile-subheader;
+            // line-height: 1.8em;
+            // width: 97%;
+            // @include full-image-width;
+            // @include tablet-padding-headlines;
+            width: 85%;
+            padding-top: 1.5em;
+            padding-bottom: 0.5em;
+            line-height: 1.38em;
+            display: block;
+            margin: 0 auto;
+            border: 2px solid blue;
+
+            &--block {
+                // display: flex;
+                @include mobile-body-copy;
+                @include avenir-font-demi;
+                padding: 0.5em 0;
+            }
+        }
+
+        &__band-info2 {
+            // @include mobile-padding-headlines;
+            // padding-left: 0;
+            // width: 100%;
+            // padding-bottom: 0;
+            padding: 0;
+            margin: 0 1em;
+        }
+    }
+
+    .gallery-section {
+        // @include mobile-padding-headlines;
+        // background-color: colors.$alabaster;
+        // padding-bottom: 0.5em;
+        @include tablet-padding-headlines;
+        padding-top: 1.5em;
+        padding-bottom: 0.8em;
+
+        // &>.biography-images {
+        //     // padding-bottom: 0.5em;
+        //     // border: 2px solid green;
+        //     // width: 38%;
+        //     // max-width: 10em;
+        //     // height: 6em;
+        // }
+
+        &__container{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            // width: 30em;
+            // max-width: 100%;
+            // margin: 0 auto;
+            // @include tablet-margin;
+            // margin: 1em;
+            // padding: 0;
+            // padding: 1em;
+            // width: 38%;
+            // max-width: 10em;
+            // height: 6em;
+        }
+    }
+
+    .footer {
+        // @include mobile-padding-headlines;
+        // @include mobile-footer-copy;
+        // background-color: colors.$bandsite-black;
+        // color: colors.$bandsite-white;
+        @include tablet-padding-headlines;
+        padding-top: 1.5em;
+        @include full-image-width;
+        @include tablet-body-copy;
+        font-size: 0.83em;
+        position: relative;
+        bottom: 0;
+
+        &__container{
+            display: flex;
+            justify-content: space-between;
+            // justify-content: space-around;
+            // width: 32em;
+            // width: 12.3em;
+            width: 50%;
+            // max-width: 12em;
+            // width: 28.5%;
+            // width: 15em;
+            // max-width: 14em;
+            max-width: 15em;
+            // max-width: 45%;
+            // max-width: 26vw;
+        }
+
+        &__subcontainer{
+            display: flex;
+            justify-content: space-evenly;
+            // justify-content: flex-start;
+            // @include full-image-width;
+            // width: 33%;
+            // max-width: 24em;
+            // width: 61%;
+            width: 70%;
+            max-width: 35em;
+            // max-width: 10em;
+            // flex-wrap: wrap;
+        }
+    }
+
+    .social-links {
+        &__container {
+            // width: 68%;
+            width: 25%;
+            max-width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            // @extend .full-width;
+            // height: 100%;
+            // display: flex;
+            // justify-content: space-evenly;
+            // justify-content: flex-start;
+            // position: relative;
+            // right: 1.25em;
+            // width: 40%;
+            // right: 1em;
+        }
+    }
+
+    .social-icons {
+        // width: 1em;
+        width: 1.2em;
+        margin-right: 1.5em;
+
+        &--resize {
+            // width: 0.6em;
+            width: 0.73em;
+        }
+    }
+
+    .footer-content{
+        width: 13em;
+
+        &__copyright{
+            @include full-image-width;
+            // padding-bottom: 1.5em;
+            padding-bottom: 0;
+            margin-top: 2.5em;
+        }
     }
 }
