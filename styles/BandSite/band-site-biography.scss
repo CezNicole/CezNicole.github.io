@@ -267,7 +267,24 @@
 
 @include breakpoints.tablet{
     .section-titles {
+        @include mobile-page-header;
         padding-bottom: 0.25em;
+
+        &__footer {
+            // padding-bottom: 0.4em;
+            font-size: 1.8em;
+        }
+    }
+
+    .section-subtitle {
+        // @include mobile-padding-headlines;
+        // @include mobile-subheader;
+        // padding-left: 0;
+
+        &--less-padding {
+            // padding-top: 1em;
+            padding-top: 1.5em;
+        }
     }
     
     .header{
@@ -318,6 +335,36 @@
         @include tablet-margin;
         // margin-top: 1.5em;
         // margin-bottom: 1.5em;
+
+        &__footer{
+            // position: relative;
+            // bottom: 12em;
+            // bottom: 0;
+            // left: 18em;
+            // // margin: 3em 0 1em;
+            // margin: 0.35em 0;
+            // margin: 0;
+            margin-top: 2.5em;
+        }
+
+        &__container{
+            // position: relative;
+            position: absolute;
+            // top: -0.45em;
+            top: 0;
+            // left: 26em;
+            right: 0;
+            // bottom: 12.1em;
+            // bottom: 0;
+            // left: 25em;
+            display: flex;
+            justify-content: flex-end;
+            // align-items: flex-end;
+            // width: 10%;
+            // max-width: 20em;
+            // // margin: 3em 0 1em;
+            // margin: 0.35em 0;
+        }
     }
 
     .hero-banner{
@@ -473,6 +520,92 @@
             // width: 38%;
             // max-width: 10em;
             // height: 6em;
+        }
+    }
+
+    .footer {
+        // @include mobile-padding-headlines;
+        // @include mobile-footer-copy;
+        // background-color: colors.$bandsite-black;
+        // color: colors.$bandsite-white;
+        @include tablet-padding-headlines;
+        padding-top: 1.5em;
+        @include full-image-width;
+        @include tablet-body-copy;
+        font-size: 0.83em;
+        position: relative;
+        bottom: 0;
+
+        &__container{
+            display: flex;
+            justify-content: space-between;
+            // justify-content: space-around;
+            // width: 32em;
+            // width: 12.3em;
+            width: 50%;
+            // max-width: 12em;
+            // width: 28.5%;
+            // width: 15em;
+            // max-width: 14em;
+            max-width: 15em;
+            // max-width: 45%;
+            // max-width: 26vw;
+        }
+
+        &__subcontainer{
+            display: flex;
+            justify-content: space-evenly;
+            // justify-content: flex-start;
+            // @include full-image-width;
+            // width: 33%;
+            // max-width: 24em;
+            // width: 61%;
+            width: 70%;
+            max-width: 35em;
+            // max-width: 10em;
+            // flex-wrap: wrap;
+        }
+    }
+
+    .social-links {
+        &__container {
+            // width: 68%;
+            width: 25%;
+            max-width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            // @extend .full-width;
+            // height: 100%;
+            // display: flex;
+            // justify-content: space-evenly;
+            // justify-content: flex-start;
+            // position: relative;
+            // right: 1.25em;
+            // width: 40%;
+            // right: 1em;
+        }
+    }
+
+    .social-icons {
+        // width: 1em;
+        width: 1.2em;
+        margin-right: 1.5em;
+
+        &--resize {
+            // width: 0.6em;
+            width: 0.73em;
+        }
+    }
+
+    .footer-content{
+        width: 13em;
+
+        &__copyright{
+            @include full-image-width;
+            // padding-bottom: 1.5em;
+            padding-bottom: 0;
+            margin-top: 2.5em;
         }
     }
 }
