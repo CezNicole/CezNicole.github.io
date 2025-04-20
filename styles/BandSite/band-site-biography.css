@@ -351,7 +351,9 @@ body {
     justify-content: flex-end;
   }
   .hero-banner {
-    max-width: 70em;
+    width: 100vw;
+    max-width: 55em;
+    max-height: 25em;
   }
   .hero-banner__title {
     font-family: "Avenir Next", sans-serif;
@@ -360,7 +362,6 @@ body {
     font-size: 2.25em;
     line-height: 2.75em;
     padding: 1.75em 1.5em;
-    font-size: 7vw;
   }
   .about-section {
     padding: 3em 2.25em 2.25em;
@@ -492,12 +493,12 @@ body {
   }
 }
 @media (min-width: 1280px) {
-  body {
-    max-width: 80em;
-    border: 2px solid red;
+  .band-site {
+    max-width: 55em;
   }
   .header {
     padding: 3em 2.25em 2.25em;
+    max-width: 80em;
     padding-top: 1.5em;
   }
   .nav-links {
@@ -519,5 +520,11 @@ body {
   }
   .nav-links--inactive:hover {
     padding: 1.17em 0;
+  }
+  .hero-banner {
+    max-width: 80em;
+  }
+  .hero-banner__title {
+    padding: 0.8em 2.5em;
   }
 }/*# sourceMappingURL=band-site-biography.css.map */
