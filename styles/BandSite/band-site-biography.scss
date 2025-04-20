@@ -609,3 +609,44 @@
         }
     }
 }
+
+@include breakpoints.desktop{
+    body{
+        @include desktop-max-width;
+        border: 2px solid red;
+    }
+
+    .header{
+        @include tablet-padding-headlines;
+        padding-top: 1.5em;
+    }
+
+    .nav-links {
+        @include tablet-labels-and-buttons;        
+        // display: flex;
+        // justify-content: center;
+        // align-items: flex-end;
+        margin-top: 0.35em;
+
+        &--active{
+            padding: 1.17em 0;
+
+            &:hover {
+                // margin-left: 2em;
+                padding: 1.17em 0;
+            }
+        }
+            
+        &--inactive {
+            // @include bandsite-inactive-link;
+            // padding: 1em 0;
+            // margin-right: 1em;
+            padding: 1.17em 0;
+
+            &:hover {
+                // margin-left: 2em;
+                padding: 1.17em 0;
+            }
+        }
+    }
+}

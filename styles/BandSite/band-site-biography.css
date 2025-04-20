@@ -490,4 +490,34 @@ body {
     padding-bottom: 0;
     margin-top: 2.5em;
   }
+}
+@media (min-width: 1280px) {
+  body {
+    max-width: 80em;
+    border: 2px solid red;
+  }
+  .header {
+    padding: 3em 2.25em 2.25em;
+    padding-top: 1.5em;
+  }
+  .nav-links {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 0.75em;
+    line-height: 1.25em;
+    margin-top: 0.35em;
+  }
+  .nav-links--active {
+    padding: 1.17em 0;
+  }
+  .nav-links--active:hover {
+    padding: 1.17em 0;
+  }
+  .nav-links--inactive {
+    padding: 1.17em 0;
+  }
+  .nav-links--inactive:hover {
+    padding: 1.17em 0;
+  }
 }/*# sourceMappingURL=band-site-biography.css.map */
