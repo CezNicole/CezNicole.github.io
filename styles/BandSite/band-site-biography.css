@@ -108,10 +108,6 @@ body {
   padding-bottom: 0.4em;
 }
 
-.full-width, .social-links__container, .biography-images, .about-section, .hero-banner__subcontainer, .hero-banner__container, .hero-banner {
-  width: 100%;
-}
-
 .header {
   background-color: #323232;
   padding: 1.5em 0 0.72em;
@@ -170,7 +166,11 @@ body {
   margin: 3em 0 1em;
 }
 
+.hero-banner {
+  width: 100%;
+}
 .hero-banner__container {
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -184,6 +184,7 @@ body {
   z-index: 1;
 }
 .hero-banner__subcontainer {
+  width: 100%;
   position: absolute;
   top: 23%;
   display: flex;
@@ -197,10 +198,12 @@ body {
 }
 
 .about-section {
+  width: 100%;
   padding: 1.5em 1em 1em;
 }
 
 .biography-images {
+  width: 100%;
   height: 15em;
   max-height: 50vw;
 }
@@ -273,6 +276,7 @@ body {
   text-decoration: none;
 }
 .social-links__container {
+  width: 100%;
   display: flex;
   justify-content: flex-start;
 }
@@ -351,7 +355,9 @@ body {
     justify-content: flex-end;
   }
   .hero-banner {
-    max-width: 70em;
+    width: 100vw;
+    max-width: 55em;
+    max-height: 25em;
   }
   .hero-banner__title {
     font-family: "Avenir Next", sans-serif;
@@ -360,17 +366,16 @@ body {
     font-size: 2.25em;
     line-height: 2.75em;
     padding: 1.75em 1.5em;
-    font-size: 7vw;
   }
   .about-section {
     padding: 3em 2.25em 2.25em;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
+    max-width: 80em;
   }
   .about-section__container {
     margin-left: 2.25em;
     margin-right: 2.25em;
-    border: 2px solid red;
     width: 85%;
     display: flex;
     flex-direction: column;
@@ -416,7 +421,6 @@ body {
     line-height: 1.38em;
     display: block;
     margin: 0 auto;
-    border: 2px solid blue;
   }
   .biography-text-content__quote--block {
     font-family: "Avenir Next", sans-serif;
@@ -460,7 +464,7 @@ body {
     display: flex;
     justify-content: space-between;
     width: 50%;
-    max-width: 15em;
+    max-width: 18em;
   }
   .footer__subcontainer {
     display: flex;
@@ -489,5 +493,110 @@ body {
     width: 100%;
     padding-bottom: 0;
     margin-top: 2.5em;
+  }
+}
+@media (min-width: 1280px) {
+  .section-titles, .hero-banner__title {
+    margin-left: 2.25em;
+    margin-right: 2.25em;
+  }
+  .section-titles__footer {
+    font-size: 1.8em;
+    margin: 0;
+    padding-bottom: 0;
+  }
+  .band-site {
+    max-width: 55em;
+  }
+  .header {
+    padding: 3em 2.25em 2.25em;
+    max-width: 80em;
+    padding-top: 1.5em;
+  }
+  .nav-links {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 0.75em;
+    line-height: 1.25em;
+    margin-top: 0.35em;
+  }
+  .nav-links--active {
+    padding: 1.17em 0;
+  }
+  .nav-links--active:hover {
+    padding: 1.17em 0;
+  }
+  .nav-links--inactive {
+    padding: 1.17em 0;
+  }
+  .nav-links--inactive:hover {
+    padding: 1.17em 0;
+  }
+  .bandsite-logo__container {
+    position: absolute;
+    top: 0;
+    right: 5em;
+  }
+  .hero-banner {
+    max-width: 80em;
+  }
+  .hero-banner__title {
+    padding: 0.85em 0.5em;
+  }
+  .biography-images {
+    width: 33%;
+    max-width: 10.8em;
+    padding: 0;
+    margin-bottom: 1.35em;
+  }
+  .biography-images__musicians {
+    width: 65%;
+    max-width: 35em;
+    height: 18em;
+    padding: 0;
+  }
+  .biography-text-content {
+    max-width: 80em;
+  }
+  .biography-text-content__quote {
+    width: 54%;
+    max-width: 30em;
+    margin: 0 0 0 9.8em;
+  }
+  .biography-text-content__band-info2 {
+    padding: 0;
+  }
+  .about-section__container {
+    margin-left: 2.25em;
+    margin-right: 2.25em;
+    width: 64.5%;
+    max-width: 35em;
+    margin: 0 auto;
+  }
+  .about-section__container--flexbox {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 0.63em;
+    line-height: 1.25em;
+    width: 100%;
+  }
+  .gallery-section__container {
+    width: 78%;
+    max-width: 38em;
+    margin: 0 2.15em;
+  }
+  .footer {
+    padding: 1.5em 7em;
+  }
+  .footer__container {
+    max-width: 18em;
+  }
+  .footer__subcontainer {
+    width: 40em;
+  }
+  .footer-content__copyright {
+    padding-bottom: 1em;
   }
 }/*# sourceMappingURL=band-site-biography.css.map */
