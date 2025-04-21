@@ -15,3 +15,9 @@ btnViewFeaturesTravelSite.addEventListener('click', (event) =>{
     event.preventDefault();
     window.open('pages/travel-site-home.html', '_blank');
 })
+
+const btnViewFeaturesBandSite = document.getElementById('btnViewBandSite');
+btnViewFeaturesBandSite.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.open('pages/band-site-biography.html', '_blank');
+})
