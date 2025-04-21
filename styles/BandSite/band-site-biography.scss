@@ -395,6 +395,7 @@
         @include tablet-padding-headlines;
         padding-top: 1.5em;
         padding-bottom: 1.5em;
+        @include desktop-max-width;
 
         &__container{
             @include tablet-margin;
@@ -402,7 +403,7 @@
             // width: 100%;
             // margin: 0 1em;
             // padding: 0 1em;
-            border: 2px solid red;
+            // border: 2px solid red;
             // @include full-image-width;
             // display: block;
             // margin: 0 auto;
@@ -477,7 +478,7 @@
             line-height: 1.38em;
             display: block;
             margin: 0 auto;
-            border: 2px solid blue;
+            // border: 2px solid blue;
 
             &--block {
                 // display: flex;
@@ -554,7 +555,8 @@
             // width: 28.5%;
             // width: 15em;
             // max-width: 14em;
-            max-width: 15em;
+            // max-width: 15em;
+            max-width: 18em;
             // max-width: 45%;
             // max-width: 26vw;
         }
@@ -618,6 +620,19 @@
 }
 
 @include breakpoints.desktop{
+    .section-titles {
+        // @include mobile-page-header;
+        // padding-bottom: 0.25em;
+        @include tablet-margin;
+
+        &__footer {
+            // padding-bottom: 0.4em;
+            font-size: 1.8em;
+            margin: 0;
+            padding-bottom: 0;
+        }
+    }
+
     .band-site{
         // @include desktop-max-width;
         // border: 2px solid red;
@@ -659,6 +674,33 @@
         }
     }
 
+    .bandsite-logo {
+        // margin: 0 2.25em;
+        // @include tablet-margin;
+        // margin-top: 1.5em;
+        // margin-bottom: 1.5em;
+
+        // &__footer {
+        //     // position: relative;
+        //     // bottom: 12em;
+        //     // bottom: 0;
+        //     // left: 18em;
+        //     // // margin: 3em 0 1em;
+        //     // margin: 0.35em 0;
+        //     // margin: 0;
+        //     margin-top: 2.5em;
+        // }
+
+        &__container {
+            // position: relative;
+            position: absolute;
+            // top: -0.45em;
+            top: 0;
+            // left: 26em;
+            right: 5em;
+        }
+    }
+
     .hero-banner{
         @include desktop-max-width;
         
@@ -666,7 +708,175 @@
             // padding-left: 0.75em;
             // @include tablet-section-header;
             // padding: 1.75em 1.5em;
-            padding: 0.8em 2.5em;
+            padding: 0.85em 0.5em;
+        }
+    }
+
+    .biography-images {
+        // width: 38%;
+        // width: 32%;
+        width: 33%;
+        max-width: 10.8em;
+        // max-width: 10em;
+        // max-width: 9.5em;
+        // height: 6em;
+        // height: 100%;
+        // max-height: 10%;
+        // max-height: 6em;
+        // max-height: 5em;
+        // padding: 0.5em 0.35em;
+        // padding-right: 0.8em;
+        // padding-bottom: 1em;
+        padding: 0;
+        margin-bottom: 1.35em;
+        
+
+        &__musicians {
+            // @extend .full-width;
+            // width: 65%;
+            width: 65%;
+            // width: 64%;
+            // max-width: 65%;
+            // max-width: 40em;
+            max-width: 35em;
+            // max-width: 100%;
+            // max-width: 100%;
+            // display: flex;
+            // margin: 0 auto;
+            // height: 15em;
+            // height: 20em;
+            height: 18em;
+            // max-height: 40vw;
+            // max-height: 15em;
+            // padding: 0;
+            // margin: 0 auto;
+            // height: 50vw;
+            // max-height: 50vw;
+            // max-height: 15em;
+            padding: 0;
+        }
+    }
+
+    .biography-text-content {
+        // @include mobile-body-copy;
+        // width: 94.7%;
+        // @include tablet-body-copy;
+        // border: 2px solid red;
+        @include desktop-max-width;
+
+        &__quote {
+            // @include mobile-subheader;
+            // line-height: 1.8em;
+            // width: 97%;
+            // @include full-image-width;
+            // @include tablet-padding-headlines;
+            // width: 85%;
+            // width: 55%;
+            width: 54%;
+            max-width: 30em;
+            // padding-top: 1.5em;
+            // padding-top: 0.5em;
+            // padding-bottom: 0.5em;
+            // line-height: 1.38em;
+            margin: 0 0 0 9.8em;
+            // display: block;
+            // margin: 0 auto;
+            // text-align: left;
+            
+            // &--block {
+            //     // display: flex;
+            //     @include mobile-body-copy;
+            //     @include avenir-font-demi;
+            //     padding: 0.5em 0;
+            // }
+        }
+
+        // &__band-info1{
+        //     margin-right: 1em;
+        // }
+
+        &__band-info2 {
+            // @include mobile-padding-headlines;
+            // padding-left: 0;
+            // width: 100%;
+            // padding-bottom: 0;
+            padding: 0;
+            // margin: 0 1.42em 0 1.42em;
+            // margin: 0 0 0 2em;
+            // margin: 0;
+        }
+    }
+
+    .about-section {
+        // @include tablet-padding-headlines;
+        // padding-top: 1.5em;
+        // padding-bottom: 1.5em;
+        // @include tablet-margin;
+        // margin: 0 auto;
+
+        &__container {
+            @include tablet-margin;
+            // @include full-image-width;
+            // width: 100%;
+            // margin: 0 1em;
+            // padding: 0 1em;
+            // border: 2px solid red;
+            // @include full-image-width;
+            // display: block;
+            // margin: 0 auto;
+            // width: 85%;
+            // width: 65%;
+            width: 64.5%;
+            max-width: 35em;
+            // display: flex;
+            // flex-direction: column;
+            margin: 0 auto;
+
+            &--flexbox {
+                // width: 100%;
+                // @extend .full-width;
+                // @include tablet-body-copy;
+                // @include mobile-body-copy;
+                @include mobile-labels-and-buttons;
+                @include full-image-width;
+                // display: flex;
+                // justify-content: space-evenly;
+                // align-items: flex-start;
+                // border: 2px solid blue;
+                // width: 38em;
+                // width: 100%;
+                // max-width: 38em;
+            }
+        }
+    }
+
+    .gallery-section {
+        &__container{
+            width: 78%;
+            // width: 75%;
+            max-width: 38em;
+            // width: 85%;
+            // @include tablet-margin;
+            // @include mobile-margin;
+            margin: 0 2.15em;
+        }
+    }
+
+    .footer {
+        // @include mobile-padding-headlines;
+        // @include mobile-footer-copy;
+        // background-color: colors.$bandsite-black;
+        // color: colors.$bandsite-white;
+        padding: 1.5em 7em;
+
+        &__subcontainer{
+            width: 40em;
+        }
+    }
+
+    .footer-content{
+        &__copyright{
+            padding-bottom: 1em;
         }
     }
 }
