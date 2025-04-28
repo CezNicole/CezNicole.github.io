@@ -156,6 +156,57 @@
     }
 }
 
+.comment-section{
+    @include mobile-padding-headlines;
+    padding-top: 0.5em;
+
+    &__container{
+        @include full-image-width;
+        display: flex;
+    }
+
+    &__subcontainer{
+        // display: flex;
+        
+        &--right{
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            border: 2px solid red;
+        }
+    }
+}
+
+.profile-pic{
+    @include mobile-avatar-images;
+    object-fit: cover;
+    object-position: 20% center;
+}
+
+.form{
+    @include mobile-margin;
+    display: flex;
+    flex-direction: column;
+
+    &__labels{
+        // @include mobile-body-copy;
+        // @include mobile-subheader;
+        @include form-field-labels;
+        // @include avenir-font-demi;
+        color: colors.$silver;
+        font-size: 0.7em;
+    }
+
+    &__fields{
+        @include mobile-form-fields;
+        @include form-field-border;
+        // border-color: colors.$mercury;
+        background-color: colors.$alabaster;
+        // color: colors.$bandsite-darkblack;
+        padding: 1.5em 1em;
+    }
+}
+
 .footer{
     @include mobile-padding-headlines;
     background-color: colors.$bandsite-black;
