@@ -269,7 +269,6 @@ body {
   display: flex;
   flex-direction: column;
   width: 90%;
-  border: 2px solid red;
 }
 
 .profile-pic {
@@ -290,17 +289,62 @@ body {
   flex-direction: column;
 }
 .form__labels {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.88em;
+  line-height: 1.38em;
   margin-bottom: 0.25em;
   color: #afafaf;
-  font-size: 0.7em;
+  font-size: 0.63em;
 }
 .form__fields {
   height: 2.25em;
-  border-radius: 0.25em;
+  border-radius: 0.35em;
   padding: 0.75em;
-  border: 0.06em solid #e1e1e1;
+  border: 0.12em solid #e1e1e1;
+  padding: 1.5em 1em 1em;
   background-color: #fafafa;
-  padding: 1.5em 1em;
+  padding: 1.37em 1em;
+  margin-bottom: 1.7em;
+  font-size: 0.75em;
+}
+.form__fields:focus {
+  border: 0.12em solid #323232;
+  outline: none;
+}
+.form__fields::-moz-placeholder {
+  color: #000000;
+}
+.form__fields::placeholder {
+  color: #000000;
+}
+.form__fields--extended {
+  padding-bottom: 6.7em;
+  margin-bottom: 1.3em;
+}
+
+.button {
+  height: 2.25em;
+  border-radius: 0.35em;
+  padding: 0.75em;
+  padding: 1.5em 1em 1em;
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.88em;
+  line-height: 1.38em;
+  padding: 1.47em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #323232;
+  color: #fff;
+  border: none;
+  border-radius: 0.25em;
+}
+.button:hover {
+  background-color: #000000;
 }
 
 .footer {

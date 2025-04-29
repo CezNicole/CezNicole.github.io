@@ -765,7 +765,8 @@ body{
 @mixin mobile-form-fields{
     height: 2.25em;
     // width: spans entire container width
-    border-radius: 0.25em;
+    // border-radius: 0.25em;
+    border-radius: 0.35em;
     padding: 0.75em;
 }
 
@@ -782,11 +783,13 @@ body{
 }
 
 @mixin form-field-border{
-    border: 0.06em solid colors.$mercury;
+    // border: 0.06em solid colors.$mercury;
+    border: 0.12em solid colors.$mercury;
 }
 
 @mixin form-field-border-active {
-    border: 0.06em solid colors.$bandsite-black;
+    // border: 0.06em solid colors.$bandsite-black;
+    border: 0.12em solid colors.$bandsite-black;
 }
 
 @mixin form-field-border-error {
