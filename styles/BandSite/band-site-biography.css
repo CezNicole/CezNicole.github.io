@@ -280,6 +280,8 @@ body {
      object-fit: cover;
   -o-object-position: 20% center;
      object-position: 20% center;
+  position: relative;
+  top: 1em;
 }
 
 .form {
@@ -345,6 +347,10 @@ body {
 }
 .button:hover {
   background-color: #000000;
+}
+
+.error {
+  border: 0.12em solid #d22d2d;
 }
 
 .footer {

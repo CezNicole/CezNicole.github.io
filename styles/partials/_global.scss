@@ -793,7 +793,8 @@ body{
 }
 
 @mixin form-field-border-error {
-    border: 0.06em solid colors.$red;
+    // border: 0.06em solid colors.$red;
+    border: 0.12em solid colors.$red;
 }
 
 @mixin mobile-tables-padding{
