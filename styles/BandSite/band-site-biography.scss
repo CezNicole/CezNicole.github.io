@@ -156,6 +156,166 @@
     }
 }
 
+.comment-section{
+    @include mobile-padding-headlines;
+    padding-top: 0.5em;
+
+    &__container{
+        @include full-image-width;
+        display: flex;
+    }
+
+    &__subcontainer{
+        // display: flex;
+        
+        &--right{
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            // border: 2px solid red;
+        }
+    }
+
+    &__name{
+        @include mobile-subheader;
+        @include form-field-labels;
+        // font-size: 0.63em;
+        // font-size: 0.75em;
+        font-size: 0.8em;
+        // margin: 0 5em;
+        // margin: 0 4.3em;
+        margin: 0 4em;
+        color: colors.$bandsite-black;
+        // position: relative;
+        // bottom: 1.8em;
+        // bottom: 1.5em;
+    }
+
+    &__comment{
+        @include mobile-body-copy;
+        width: 82%;
+        // color: colors.$bandsite-black;
+        margin: 0 4em;
+        position: relative;
+        // bottom: 0.8em;
+        bottom: 1em;
+        line-height: 1.45;
+    }
+
+    &__date{
+        @include mobile-body-copy;
+        @include form-field-labels;
+        // @include avenir-font-demi;
+        color: colors.$silver;
+        // font-size: 0.7em;
+        // font-size: 0.63em;
+        font-size: 0.8em;
+        // position: relative;
+        // bottom: 10.3em;
+        // left: 17em;
+        // left: 0;
+    }
+
+    &__dynamic-container{
+        // @extend .comment-section__container;
+        // border: 2px solid red;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        bottom: 1.2em;
+    }
+}
+
+.profile-pic{
+    @include mobile-avatar-images;
+    object-fit: cover;
+    object-position: 20% center;
+    position: relative;
+    top: 1em;
+}
+
+.form{
+    @include mobile-margin;
+    display: flex;
+    flex-direction: column;
+
+    &__labels{
+        // @include mobile-body-copy;
+        @include mobile-subheader;
+        @include form-field-labels;
+        // @include avenir-font-demi;
+        color: colors.$silver;
+        // font-size: 0.7em;
+        font-size: 0.63em;
+    }
+
+    &__fields{
+        @include mobile-form-fields;
+        @include form-field-border;
+        @include mobile-padding-headlines;
+        @include mobile-body-copy;
+        // border-color: colors.$mercury;
+        background-color: colors.$alabaster;
+        // color: colors.$bandsite-darkblack;
+        // padding: 1.85em 1em;
+        padding: 1.37em 1em;
+        margin-bottom: 1.7em;
+        font-size: 0.75em;
+        
+        &:focus{
+            @include form-field-border-active;
+            outline: none;
+        }
+
+        &::placeholder{
+            // @include mobile-body-copy;
+            // font-size: 1.3em;
+            color: colors.$bandsite-darkblack;
+        }
+        
+        &--extended {
+            padding-bottom: 6.7em;
+            margin-bottom: 1.3em;
+        }
+    }
+}
+
+.button{
+    @include mobile-form-fields;
+    @include mobile-padding-headlines;
+    @include mobile-subheader;
+    padding: 1.47em 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$bandsite-black;
+    color: colors.$white;
+    border: none;
+    border-radius: 0.25em;
+
+    &:hover{
+        background-color: colors.$bandsite-darkblack;
+    }
+}
+
+.error{
+    @include form-field-border-error;
+}
+
+.divider{
+    @include bandsite-divider;
+    width: 100%;
+    padding: 0.5em 0;
+
+    &--bottom{
+        padding: 0;
+    }
+}
+
+
+
 .footer{
     @include mobile-padding-headlines;
     background-color: colors.$bandsite-black;
