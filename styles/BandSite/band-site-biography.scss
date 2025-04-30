@@ -175,6 +175,14 @@
             // border: 2px solid red;
         }
     }
+
+    &__name{
+        @include mobile-subheader;
+        @include form-field-labels;
+        font-size: 0.63em;
+        margin: 0 5em;
+        color: colors.$bandsite-black;
+    }
 }
 
 .profile-pic{
@@ -253,6 +261,13 @@
 .error{
     @include form-field-border-error;
 }
+
+.divider{
+    @include bandsite-divider;
+    width: 100%;
+}
+
+
 
 .footer{
     @include mobile-padding-headlines;

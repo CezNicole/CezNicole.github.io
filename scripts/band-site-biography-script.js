@@ -4,6 +4,8 @@ const comments = [
     {name: 'Isaac Tadesse', date: '10/20/2023', comment:"I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
 ];
 
+console.log(comments);
+
 const form = document.querySelector('.form');
 const nameInput = document.getElementById('commenter');
 const commentInput = document.getElementById('commentText');
@@ -14,7 +16,6 @@ form.addEventListener('submit', (event) => {
     let commenter = nameInput.value.trim();
     let commentText = commentInput.value.trim();
     let hasError = false;
-
 
     if(!commenter){
         nameInput.classList.add('error');
@@ -31,7 +32,38 @@ form.addEventListener('submit', (event) => {
     }
 
     if(!hasError){
-        console.log(commenter, commentText);
+        // console.log(commenter, commentText);
+        let newComment = {
+            name: commenter,
+            date: new Date().toLocaleDateString('en-US'),
+            comment: commentText,
+        };
+
+        comments.push(newComment);
+        comments.forEach(comm => {
+            console.log(comm.name, comm.date, comm.comment);
+        });
+        
         form.reset();
     }
 })
+
+
+const commentsSection = document.querySelector('.comment-section__comments');
+
+comments.forEach(comment => {
+
+    const profilePic = document.createElement('div');
+    profilePic.classList.add('profile-pic');
+    
+    const nameElement = document.createElement('h3');
+    nameElement.classList.add('comment-section__name');
+    nameElement.textContent = comment.name;
+    
+    const divider = document.createElement('div');
+    divider.classList.add('divider');
+    
+    commentsSection.appendChild(profilePic);
+    commentsSection.appendChild(nameElement);
+    commentsSection.appendChild(divider);
+});

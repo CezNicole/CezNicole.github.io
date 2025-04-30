@@ -751,7 +751,8 @@ body{
 
 
 @mixin bandsite-divider{
-    border-bottom: 0.06em solid colors.$mercury;
+    // border-bottom: 0.06em solid colors.$mercury;
+    border-bottom: 0.12em solid colors.$mercury;
     padding: 1em 0;
 }
 
