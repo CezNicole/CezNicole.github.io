@@ -8,6 +8,19 @@ const form = document.querySelector('.form');
 const nameInput = document.getElementById('commenter');
 const commentInput = document.getElementById('commentText');
 
+nameInput.addEventListener('input', () => {
+    if(nameInput.value.trim()){
+        nameInput.classList.remove('error');
+    }
+})
+
+commentInput.addEventListener('input', () => {
+    if(commentInput.value.trim()){
+        commentInput.classList.remove('error');
+    }
+})
+
+
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 

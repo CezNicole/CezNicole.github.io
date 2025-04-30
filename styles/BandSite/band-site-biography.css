@@ -95,6 +95,7 @@ body {
   font-style: normal;
   font-size: 1.5em;
   line-height: 2em;
+  overflow-x: hidden;
 }
 
 .section-titles, .hero-banner__title {
@@ -278,7 +279,7 @@ body {
   line-height: 1.38em;
   margin-bottom: 0.25em;
   font-size: 0.8em;
-  margin: 0 4em;
+  margin: 0 3.5em;
   color: #323232;
 }
 .comment-section__comment {
@@ -288,7 +289,7 @@ body {
   font-size: 0.81em;
   line-height: 1.5em;
   width: 82%;
-  margin: 0 4em;
+  margin: 0 3.5em;
   position: relative;
   bottom: 1em;
   line-height: 1.45;
@@ -346,7 +347,6 @@ body {
   border-radius: 0.35em;
   padding: 0.75em;
   border: 0.12em solid #e1e1e1;
-  padding: 1.5em 1em 1em;
   font-family: "Avenir Next", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -382,7 +382,7 @@ body {
   font-style: normal;
   font-size: 0.88em;
   line-height: 1.38em;
-  padding: 1.47em 1em;
+  padding-bottom: 1.4em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -390,6 +390,7 @@ body {
   color: #fff;
   border: none;
   border-radius: 0.25em;
+  width: 100%;
 }
 .button:hover {
   background-color: #000000;
@@ -599,6 +600,123 @@ body {
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
+  .comment-section {
+    padding: 3em 2.25em 2.25em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+  }
+  .comment-section__container {
+    max-width: 80%;
+    margin: 0 auto 0.5em;
+  }
+  .comment-section__name {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 0.88em;
+    line-height: 1.38em;
+    margin-bottom: 0.25em;
+    font-size: 0.8em;
+    margin: 0 4em;
+    color: #323232;
+  }
+  .comment-section__comment {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.88em;
+    line-height: 1.38em;
+    width: 85%;
+    margin: 0 3.65em;
+    position: relative;
+    bottom: 1.5em;
+  }
+  .comment-section__date {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.81em;
+    line-height: 1.5em;
+    margin-bottom: 0.25em;
+    color: #afafaf;
+    font-size: 0.8em;
+  }
+  .comment-section__dynamic-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    bottom: 1.45em;
+  }
+  .comment-section__comments {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  .profile-pic {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    background-color: #e1e1e1;
+  }
+  .form {
+    margin: 0 0.5em;
+  }
+  .form__fields {
+    height: 3em;
+    border-radius: 0.35em;
+    padding: 1em;
+    border: 0.12em solid #e1e1e1;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.88em;
+    line-height: 1.38em;
+    background-color: #fafafa;
+    padding: 1.5em 1em;
+    margin-bottom: 1.7em;
+    font-size: 0.75em;
+  }
+  .form__fields:focus {
+    border: 0.12em solid #323232;
+    outline: none;
+  }
+  .form__fields::-moz-placeholder {
+    font-size: 0.9em;
+    color: #000000;
+  }
+  .form__fields::placeholder {
+    font-size: 0.9em;
+    color: #000000;
+  }
+  .form__fields--extended {
+    padding-bottom: 4.5em;
+  }
+  .button {
+    height: 3em;
+    border-radius: 0.35em;
+    padding: 1em;
+    padding: 0;
+    width: 10em;
+    height: 2.3em;
+  }
+  .button__container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .error {
+    border: 0.12em solid #d22d2d;
+  }
+  .divider {
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+  }
+  .divider--bottom {
+    width: 100%;
+  }
   .footer {
     padding: 3em 2.25em 2.25em;
     padding-top: 1.5em;
@@ -696,12 +814,6 @@ body {
   .hero-banner__title {
     padding: 0.85em 0.5em;
   }
-  .biography-images {
-    width: 33%;
-    max-width: 10.8em;
-    padding: 0;
-    margin-bottom: 1.35em;
-  }
   .biography-images__musicians {
     width: 65%;
     max-width: 35em;
@@ -736,9 +848,41 @@ body {
     width: 100%;
   }
   .gallery-section__container {
-    width: 78%;
-    max-width: 38em;
-    margin: 0 2.15em;
+    width: 86%;
+    margin: 0 auto;
+  }
+  .comment-section__container {
+    max-width: 50%;
+  }
+  .comment-section__name {
+    font-size: 0.65em;
+    margin: 0 5em;
+  }
+  .comment-section__comment {
+    font-size: 0.65em;
+    margin: 0 4.95em;
+    position: relative;
+    bottom: 1.8em;
+  }
+  .comment-section__date {
+    font-size: 0.65em;
+  }
+  .comment-section__comments {
+    max-width: 50%;
+  }
+  .button {
+    width: 9em;
+    height: 2.3em;
+  }
+  .button__container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .divider {
+    width: 50%;
+  }
+  .divider--bottom {
+    width: 100%;
   }
   .footer {
     padding: 1.5em 7em;
