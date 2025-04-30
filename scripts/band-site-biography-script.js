@@ -30,6 +30,9 @@ form.addEventListener('submit', (event) => {
     }
 
     if(!hasError){
+        nameInput.classList.remove('error');
+        commentInput.classList.remove('error');
+
         let newComment = {
             name: commenter,
             date: new Date().toLocaleDateString('en-US'),

@@ -774,7 +774,8 @@ body{
 @mixin tablet-form-fields{
     height: 3em;
     // width: spans entire container width
-    border-radius: 0.25em;
+    // border-radius: 0.25em;
+    border-radius: 0.35em;
     padding: 1em;
 }
 
@@ -823,7 +824,9 @@ body{
 
 @mixin tablet-avatar-images{
     border-radius: 50%;
-    width: 3em;
-    height: 3em;
+    // width: 3em;
+    // height: 3em;
+    width: 2.5em;
+    height: 2.5em;
     background-color: colors.$mercury;
 }

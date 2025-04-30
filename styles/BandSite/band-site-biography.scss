@@ -87,7 +87,7 @@
     }
 
     &__subcontainer{
-            @include full-image-width;
+        @include full-image-width;
         position: absolute;
         top: 23%;
         display: flex;
@@ -294,6 +294,7 @@
     color: colors.$white;
     border: none;
     border-radius: 0.25em;
+    width: 100%;
 
     &:hover{
         background-color: colors.$bandsite-darkblack;
@@ -501,6 +502,197 @@
             flex-wrap: wrap;
         }
     }
+
+    .comment-section {
+        @include tablet-padding-headlines;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;    
+
+        &__container {
+            // @include full-image-width;
+            // display: flex;
+            max-width: 80%;
+            margin: 0 auto 0.5em;
+            // border: 2px solid red;
+            // padding-bottom: 1em;
+        }
+
+        // &__subcontainer {
+        //     // display: flex;
+
+        //     &--right {
+        //         display: flex;
+        //         flex-direction: column;
+        //         width: 90%;
+        //         // border: 2px solid red;
+        //     }
+        // }
+
+        &__name {
+            @include mobile-subheader;
+            @include form-field-labels;
+            // font-size: 0.63em;
+            // font-size: 0.75em;
+            font-size: 0.8em;
+            // margin: 0 5em;
+            // margin: 0 4.3em;
+            margin: 0 4em;
+            color: colors.$bandsite-black;
+            // position: relative;
+            // bottom: 1.8em;
+            // bottom: 1.5em;
+        }
+
+        &__comment {
+            // @include mobile-body-copy;
+            @include tablet-body-copy;
+            // width: 50.6vw;
+            // width: 100%;
+            // min-width: 50%;
+            width: 83.83%;
+            // max-width: 83.83%;
+            // max-width: 36.71em;
+            // width: 75%;
+            // width: 18.5em;
+            // max-width: 84.05%;
+            // max-width: 150vw;
+            // color: colors.$bandsite-black;
+            margin: 0 3.65em;
+            // position: relative;
+            // bottom: 0.8em;
+            // bottom: 1em;
+            // line-height: 1.45;
+        }
+
+        &__date {
+            @include mobile-body-copy;
+            @include form-field-labels;
+            // @include avenir-font-demi;
+            color: colors.$silver;
+            // font-size: 0.7em;
+            // font-size: 0.63em;
+            font-size: 0.8em;
+            // position: relative;
+            // bottom: 10.3em;
+            // left: 17em;
+            // left: 0;
+        }
+
+        &__dynamic-container {
+            // @extend .comment-section__container;
+            // border: 2px solid red;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            position: relative;
+            bottom: 1.2em;
+        }
+
+        &__comments{
+            max-width: 80%;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+    }
+
+    .profile-pic {
+        // @include mobile-avatar-images;
+        @include tablet-avatar-images;
+        // object-fit: cover;
+        // object-position: 20% center;
+        // position: relative;
+        // top: 1em;
+    }
+
+    .form {
+        // @include mobile-margin;
+        // display: flex;
+        // flex-direction: column;
+        // border: 2px solid red;
+        margin: 0 0.5em;
+
+        // &__labels {
+        //     // @include mobile-body-copy;
+        //     @include mobile-subheader;
+        //     @include form-field-labels;
+        //     // @include avenir-font-demi;
+        //     color: colors.$silver;
+        //     // font-size: 0.7em;
+        //     font-size: 0.63em;
+        // }
+
+        &__fields {
+            @include tablet-form-fields;
+            @include form-field-border;
+            // @include tablet-padding-headlines;
+            @include tablet-body-copy;
+            // border-color: colors.$mercury;
+            background-color: colors.$alabaster;
+            // color: colors.$bandsite-darkblack;
+            // padding: 1.85em 1em;
+            padding: 1.5em 1em;
+            // padding: 1.37em 1em;
+            // padding: 1.43em 1em;
+            // padding: 1.8em 1em;
+            margin-bottom: 1.7em;
+            font-size: 0.75em;
+            // font-size: 0.65em;
+            // border: 0.22em solid;
+
+            &:focus {
+                @include form-field-border-active;
+                outline: none;
+            }
+
+            &::placeholder {
+                // @include mobile-body-copy;
+                // font-size: 1.3em;
+                font-size: 0.9em;
+                color: colors.$bandsite-darkblack;
+            }
+
+            &--extended {
+                padding-bottom: 4.5em;
+                // margin-bottom: 1.3em;
+            }
+        }
+    }
+
+    .button {
+        @include tablet-form-fields;
+        padding: 0;
+        width: 10em;
+        height: 2.3em;
+
+        // &:hover {
+        //     background-color: colors.$bandsite-darkblack;
+        // }
+
+        &__container{
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    .error {
+        @include form-field-border-error;
+    }
+
+    .divider {
+        // @include bandsite-divider;
+        width: 80%;
+        // padding: 0.5em 0;
+        display: flex;
+        margin: 0 auto;
+
+        &--bottom {
+            // padding: 0;
+            width: 100%;
+        }
+    }
+
 
     .footer {
         @include tablet-padding-headlines;
