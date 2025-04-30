@@ -277,9 +277,36 @@ body {
   font-size: 0.88em;
   line-height: 1.38em;
   margin-bottom: 0.25em;
-  font-size: 0.63em;
-  margin: 0 5em;
+  font-size: 0.8em;
+  margin: 0 4.3em;
   color: #323232;
+  position: relative;
+  bottom: 1.5em;
+}
+.comment-section__comment {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.81em;
+  line-height: 1.5em;
+  width: 80%;
+  margin: 0 4em;
+  position: relative;
+  bottom: 0.8em;
+  line-height: 1.45;
+}
+.comment-section__date {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.81em;
+  line-height: 1.5em;
+  margin-bottom: 0.25em;
+  color: #afafaf;
+  font-size: 0.8em;
+  position: relative;
+  bottom: 10.3em;
+  left: 17em;
 }
 
 .profile-pic {
@@ -317,6 +344,11 @@ body {
   padding: 0.75em;
   border: 0.12em solid #e1e1e1;
   padding: 1.5em 1em 1em;
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.81em;
+  line-height: 1.5em;
   background-color: #fafafa;
   padding: 1.37em 1em;
   margin-bottom: 1.7em;
@@ -368,6 +400,10 @@ body {
   border-bottom: 0.12em solid #e1e1e1;
   padding: 1em 0;
   width: 100%;
+  padding: 0.5em 0;
+}
+.divider--bottom {
+  padding: 0;
 }
 
 .footer {

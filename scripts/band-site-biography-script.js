@@ -40,10 +40,6 @@ form.addEventListener('submit', (event) => {
         };
 
         comments.push(newComment);
-        comments.forEach(comm => {
-            console.log(comm.name, comm.date, comm.comment);
-        });
-        
         form.reset();
     }
 })
@@ -56,14 +52,29 @@ comments.forEach(comment => {
     const profilePic = document.createElement('div');
     profilePic.classList.add('profile-pic');
     
-    const nameElement = document.createElement('h3');
+    const nameElement = document.createElement('div');
     nameElement.classList.add('comment-section__name');
     nameElement.textContent = comment.name;
+    console.log(comment.comment);
     
+
+    const commentElement = document.createElement('p');
+    commentElement.classList.add('comment-section__comment');
+    commentElement.textContent = comment.comment;
+
+
+    const dateElement = document.createElement('div');
+    dateElement.classList.add('comment-section__date');
+    dateElement.textContent = comment.date;
+    
+
     const divider = document.createElement('div');
     divider.classList.add('divider');
+    divider.classList.add('divider--bottom');
     
     commentsSection.appendChild(profilePic);
     commentsSection.appendChild(nameElement);
+    commentsSection.appendChild(commentElement);
+    commentsSection.appendChild(dateElement);
     commentsSection.appendChild(divider);
 });
