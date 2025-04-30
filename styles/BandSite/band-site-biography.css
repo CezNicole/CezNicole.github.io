@@ -382,7 +382,7 @@ body {
   font-style: normal;
   font-size: 0.88em;
   line-height: 1.38em;
-  padding: 1.47em 1em;
+  padding-bottom: 1.4em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -626,8 +626,10 @@ body {
     font-style: normal;
     font-size: 0.88em;
     line-height: 1.38em;
-    width: 83.83%;
+    width: 85%;
     margin: 0 3.65em;
+    position: relative;
+    bottom: 1.5em;
   }
   .comment-section__date {
     font-family: "Avenir Next", sans-serif;
@@ -645,7 +647,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     position: relative;
-    bottom: 1.2em;
+    bottom: 1.45em;
   }
   .comment-section__comments {
     max-width: 80%;
@@ -812,12 +814,6 @@ body {
   .hero-banner__title {
     padding: 0.85em 0.5em;
   }
-  .biography-images {
-    width: 33%;
-    max-width: 10.8em;
-    padding: 0;
-    margin-bottom: 1.35em;
-  }
   .biography-images__musicians {
     width: 65%;
     max-width: 35em;
@@ -852,9 +848,41 @@ body {
     width: 100%;
   }
   .gallery-section__container {
-    width: 78%;
-    max-width: 38em;
-    margin: 0 2.15em;
+    width: 86%;
+    margin: 0 auto;
+  }
+  .comment-section__container {
+    max-width: 50%;
+  }
+  .comment-section__name {
+    font-size: 0.65em;
+    margin: 0 5em;
+  }
+  .comment-section__comment {
+    font-size: 0.65em;
+    margin: 0 4.95em;
+    position: relative;
+    bottom: 1.8em;
+  }
+  .comment-section__date {
+    font-size: 0.65em;
+  }
+  .comment-section__comments {
+    max-width: 50%;
+  }
+  .button {
+    width: 9em;
+    height: 2.3em;
+  }
+  .button__container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .divider {
+    width: 50%;
+  }
+  .divider--bottom {
+    width: 100%;
   }
   .footer {
     padding: 1.5em 7em;

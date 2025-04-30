@@ -286,7 +286,8 @@
     @include mobile-form-fields;
     @include mobile-padding-headlines;
     @include mobile-subheader;
-    padding: 1.47em 1em;
+    // padding: 1.47em 1em;
+    padding-bottom: 1.4em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -549,18 +550,18 @@
             // width: 50.6vw;
             // width: 100%;
             // min-width: 50%;
-            width: 83.83%;
+            // width: 83.83%;
             // max-width: 83.83%;
             // max-width: 36.71em;
             // width: 75%;
             // width: 18.5em;
-            // max-width: 84.05%;
+            width: 85%;
             // max-width: 150vw;
             // color: colors.$bandsite-black;
             margin: 0 3.65em;
-            // position: relative;
+            position: relative;
             // bottom: 0.8em;
-            // bottom: 1em;
+            bottom: 1.5em;
             // line-height: 1.45;
         }
 
@@ -586,7 +587,8 @@
             justify-content: space-between;
             align-items: flex-start;
             position: relative;
-            bottom: 1.2em;
+            // bottom: 1.2em;
+            bottom: 1.45em;
         }
 
         &__comments{
@@ -807,10 +809,10 @@
     }
 
     .biography-images {
-        width: 33%;
-        max-width: 10.8em;
-        padding: 0;
-        margin-bottom: 1.35em;
+        // width: 33%;
+        // max-width: 10.8em;
+        // padding: 0;
+        // margin-bottom: 1.35em;
 
         &__musicians {
             width: 65%;
@@ -851,11 +853,156 @@
 
     .gallery-section {
         &__container{
-            width: 78%;
-            max-width: 38em;
-            margin: 0 2.15em;
+            // width: 78%;
+            width: 86%;
+            // max-width: 38em;
+            // margin: 0 2.15em;
+            // border: 2px solid red;
+            // display: flex;
+            margin: 0 auto;
         }
     }
+
+    .comment-section {
+        // @include tablet-padding-headlines;
+        // @include desktop-margin;
+        // padding-top: 1.5em;
+        // padding-bottom: 1.5em;
+
+        &__container {
+            // @include full-image-width;
+            // display: flex;
+            max-width: 50%;
+            // margin: 0 auto 0.5em;
+            // border: 2px solid red;
+            // padding-bottom: 1em;
+        }
+
+        // &__subcontainer {
+        //     // display: flex;
+
+        //     &--right {
+        //         display: flex;
+        //         flex-direction: column;
+        //         width: 90%;
+        //         // border: 2px solid red;
+        //     }
+        // }
+
+        &__name {
+            // @include mobile-subheader;
+            // @include form-field-labels;
+            // font-size: 0.63em;
+            // font-size: 0.75em;
+            // font-size: 0.8em;
+            font-size: 0.65em;
+            // margin: 0 5em;
+            // margin: 0 4.3em;
+            // margin: 0 4em;
+            margin: 0 5em;
+            // color: colors.$bandsite-black;
+            // position: relative;
+            // bottom: 1.8em;
+            // bottom: 1.5em;
+        }
+
+        &__comment {
+            // @include mobile-body-copy;
+            // @include tablet-body-copy;
+            font-size: 0.65em;
+            // width: 50.6vw;
+            // width: 100%;
+            // min-width: 50%;
+            // width: 83.83%;
+            // width: 80%;
+            // max-width: 83.83%;
+            // max-width: 36.71em;
+            // width: 75%;
+            // width: 18.5em;
+            // max-width: 84.05%;
+            // max-width: 150vw;
+            // color: colors.$bandsite-black;
+            // margin: 0 3.65em;
+            margin: 0 4.95em;
+            position: relative;
+            // bottom: 0.8em;
+            bottom: 1.8em;
+            // line-height: 1.45;
+        }
+
+        &__date {
+            // @include mobile-body-copy;
+            // @include form-field-labels;
+            // @include avenir-font-demi;
+            // color: colors.$silver;
+            // font-size: 0.7em;
+            // font-size: 0.63em;
+            // font-size: 0.8em;
+            font-size: 0.65em;
+            // position: relative;
+            // bottom: 10.3em;
+            // left: 17em;
+            // left: 0;
+        }
+
+        // &__dynamic-container {
+        //     // @extend .comment-section__container;
+        //     // border: 2px solid red;
+        //     width: 100%;
+        //     display: flex;
+        //     justify-content: space-between;
+        //     align-items: flex-start;
+        //     position: relative;
+        //     // bottom: 1.2em;
+        //     // bottom: 1.45em;
+        // }
+
+        &__comments {
+            max-width: 50%;
+            // display: flex;
+            // flex-direction: column;
+            // margin: 0 auto;
+        }
+    }
+
+    .button {
+        // @include tablet-form-fields;
+        // padding: 0;
+        // width: 10em;
+        width: 9em;
+        height: 2.3em;
+        // padding-top: 0.2em;
+
+        // &:hover {
+        //     background-color: colors.$bandsite-darkblack;
+        // }
+
+        &__container {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    // .error {
+    //     @include form-field-border-error;
+    // }
+
+    .divider {
+        // @include bandsite-divider;
+        width: 50%;
+        // padding: 0.5em 0;
+        // display: flex;
+        // margin: 0 auto;
+
+        &--bottom {
+            // padding: 0;
+            width: 100%;
+            // border: 2px solid red;
+            // margin: 0;
+        }
+    }
+
+
 
     .footer {
         padding: 1.5em 7em;
