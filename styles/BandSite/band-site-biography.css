@@ -95,6 +95,7 @@ body {
   font-style: normal;
   font-size: 1.5em;
   line-height: 2em;
+  overflow-x: hidden;
 }
 
 .section-titles, .hero-banner__title {
@@ -278,7 +279,7 @@ body {
   line-height: 1.38em;
   margin-bottom: 0.25em;
   font-size: 0.8em;
-  margin: 0 4em;
+  margin: 0 3.5em;
   color: #323232;
 }
 .comment-section__comment {
@@ -288,7 +289,7 @@ body {
   font-size: 0.81em;
   line-height: 1.5em;
   width: 82%;
-  margin: 0 4em;
+  margin: 0 3.5em;
   position: relative;
   bottom: 1em;
   line-height: 1.45;
@@ -346,7 +347,6 @@ body {
   border-radius: 0.35em;
   padding: 0.75em;
   border: 0.12em solid #e1e1e1;
-  padding: 1.5em 1em 1em;
   font-family: "Avenir Next", sans-serif;
   font-weight: 400;
   font-style: normal;

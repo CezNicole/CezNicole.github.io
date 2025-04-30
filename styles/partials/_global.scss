@@ -606,7 +606,6 @@ body{
 }
 
 @mixin mobile-page-header{
-    // @include avenir-font-bold;
     @include avenir-font-demi;
     font-size: 1.5em;
     line-height: 2em;
@@ -625,7 +624,6 @@ body{
 @mixin mobile-body-copy{
     @include avenir-font-regular;
     font-size: 0.81em;
-    // line-height: 1.13em;
     line-height: 1.5em;
 
 }
@@ -643,14 +641,12 @@ body{
 
 
 @mixin tablet-page-header{
-    // @include avenir-font-bold;
     @include avenir-font-demi;
     font-size: 3.75em;
     line-height: 4.25em;
 }
 
 @mixin tablet-section-header{
-    // @include avenir-font-bold;
     @include avenir-font-demi;
     font-size: 2.25em;
     line-height: 2.75em;
@@ -691,7 +687,6 @@ body{
 
 
 
-// NOT SURE ABOUT THESE
 @mixin mobile-margin{
     margin-left: 1em;
     margin-right: 1em;
@@ -719,8 +714,6 @@ body{
     background-color: colors.$bandsite-black;
     color: colors.$bandsite-white;
     height: 2.5em;
-    // mobile: spans entire container width
-    // tablet/desktop: width: 9.38em; padding: auto 2em;
     border-radius: 0.25em;
 }
 
@@ -732,26 +725,21 @@ body{
 @mixin bandsite-active-link{
     @include avenir-font-bold;
     color: colors.$bandsite-white;
-    // border-bottom: 3.75em solid colors.$bandsite-white;  //subject to change
     border-bottom: 0.23em solid colors.$bandsite-white; //subject to change
-    // padding: 1em 2em;
 }
 
 @mixin bandsite-hover-link{
-    @include avenir-font-regular;   //not sure if it's this or demi or the same as bandsite-active-link
+    @include avenir-font-regular;
     color: colors.$bandsite-white;
     border-bottom: 0.23em solid colors.$bandsite-white; //subject to change
-    // padding: 1em 0;
 }
 
 @mixin bandsite-inactive-link{
     color: colors.$mercury;
-    // padding: 1em 0;
 }
 
 
 @mixin bandsite-divider{
-    // border-bottom: 0.06em solid colors.$mercury;
     border-bottom: 0.12em solid colors.$mercury;
     padding: 1em 0;
 }
@@ -765,16 +753,12 @@ body{
 // FOR SPRINT 2
 @mixin mobile-form-fields{
     height: 2.25em;
-    // width: spans entire container width
-    // border-radius: 0.25em;
     border-radius: 0.35em;
     padding: 0.75em;
 }
 
 @mixin tablet-form-fields{
     height: 3em;
-    // width: spans entire container width
-    // border-radius: 0.25em;
     border-radius: 0.35em;
     padding: 1em;
 }
@@ -785,17 +769,14 @@ body{
 }
 
 @mixin form-field-border{
-    // border: 0.06em solid colors.$mercury;
     border: 0.12em solid colors.$mercury;
 }
 
 @mixin form-field-border-active {
-    // border: 0.06em solid colors.$bandsite-black;
     border: 0.12em solid colors.$bandsite-black;
 }
 
 @mixin form-field-border-error {
-    // border: 0.06em solid colors.$red;
     border: 0.12em solid colors.$red;
 }
 
@@ -824,8 +805,6 @@ body{
 
 @mixin tablet-avatar-images{
     border-radius: 50%;
-    // width: 3em;
-    // height: 3em;
     width: 2.5em;
     height: 2.5em;
     background-color: colors.$mercury;
