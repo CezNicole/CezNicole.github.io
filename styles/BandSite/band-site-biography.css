@@ -278,10 +278,8 @@ body {
   line-height: 1.38em;
   margin-bottom: 0.25em;
   font-size: 0.8em;
-  margin: 0 4.3em;
+  margin: 0 4em;
   color: #323232;
-  position: relative;
-  bottom: 1.5em;
 }
 .comment-section__comment {
   font-family: "Avenir Next", sans-serif;
@@ -289,10 +287,10 @@ body {
   font-style: normal;
   font-size: 0.81em;
   line-height: 1.5em;
-  width: 80%;
+  width: 82%;
   margin: 0 4em;
   position: relative;
-  bottom: 0.8em;
+  bottom: 1em;
   line-height: 1.45;
 }
 .comment-section__date {
@@ -304,9 +302,14 @@ body {
   margin-bottom: 0.25em;
   color: #afafaf;
   font-size: 0.8em;
+}
+.comment-section__dynamic-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   position: relative;
-  bottom: 10.3em;
-  left: 17em;
+  bottom: 1.2em;
 }
 
 .profile-pic {

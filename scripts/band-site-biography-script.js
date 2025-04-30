@@ -4,8 +4,6 @@ const comments = [
     {name: 'Isaac Tadesse', date: '10/20/2023', comment:"I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."},
 ];
 
-console.log(comments);
-
 const form = document.querySelector('.form');
 const nameInput = document.getElementById('commenter');
 const commentInput = document.getElementById('commentText');
@@ -32,49 +30,65 @@ form.addEventListener('submit', (event) => {
     }
 
     if(!hasError){
-        // console.log(commenter, commentText);
         let newComment = {
             name: commenter,
             date: new Date().toLocaleDateString('en-US'),
             comment: commentText,
         };
 
-        comments.push(newComment);
+        comments.unshift(newComment);
         form.reset();
+        displayComments();
     }
 })
 
 
 const commentsSection = document.querySelector('.comment-section__comments');
 
-comments.forEach(comment => {
+function displayComments(){
+    commentsSection.innerHTML = '';
 
-    const profilePic = document.createElement('div');
-    profilePic.classList.add('profile-pic');
+    comments.forEach(comment => {
     
-    const nameElement = document.createElement('div');
-    nameElement.classList.add('comment-section__name');
-    nameElement.textContent = comment.name;
-    console.log(comment.comment);
+        const profilePic = document.createElement('div');
+        profilePic.classList.add('profile-pic');
+        
+        const containerDiv = document.createElement('div');
+        containerDiv.classList.add('comment-section__dynamic-container');
     
-
-    const commentElement = document.createElement('p');
-    commentElement.classList.add('comment-section__comment');
-    commentElement.textContent = comment.comment;
-
-
-    const dateElement = document.createElement('div');
-    dateElement.classList.add('comment-section__date');
-    dateElement.textContent = comment.date;
+        const nameElement = document.createElement('div');
+        nameElement.classList.add('comment-section__name');
+        nameElement.textContent = comment.name;
+        console.log(comment.comment);
+        
     
-
-    const divider = document.createElement('div');
-    divider.classList.add('divider');
-    divider.classList.add('divider--bottom');
+        const dateElement = document.createElement('div');
+        dateElement.classList.add('comment-section__date');
+        dateElement.textContent = comment.date;
     
-    commentsSection.appendChild(profilePic);
-    commentsSection.appendChild(nameElement);
-    commentsSection.appendChild(commentElement);
-    commentsSection.appendChild(dateElement);
-    commentsSection.appendChild(divider);
-});
+    
+        containerDiv.appendChild(nameElement);
+        containerDiv.appendChild(dateElement);
+    
+    
+        const commentElement = document.createElement('p');
+        commentElement.classList.add('comment-section__comment');
+        commentElement.textContent = comment.comment;
+    
+    
+        
+    
+        const divider = document.createElement('div');
+        divider.classList.add('divider');
+        divider.classList.add('divider--bottom');
+        
+        commentsSection.appendChild(profilePic);
+        // commentsSection.appendChild(nameElement);
+        // commentsSection.appendChild(dateElement);
+        commentsSection.appendChild(containerDiv);
+        commentsSection.appendChild(commentElement);
+        commentsSection.appendChild(divider);
+    });
+}
+
+displayComments();
