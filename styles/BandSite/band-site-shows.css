@@ -95,6 +95,7 @@ body {
   font-style: normal;
   font-size: 1.5em;
   line-height: 2em;
+  overflow-x: hidden;
 }
 
 .section-titles {
@@ -103,6 +104,14 @@ body {
   font-style: normal;
   font-size: 1.5em;
   line-height: 2em;
+}
+.section-titles__album-name {
+  color: #ffffff;
+  line-height: 1.45;
+  width: 75%;
+  position: relative;
+  top: 0.2em;
+  left: 0.65em;
 }
 .section-titles__footer {
   padding-bottom: 0.4em;
@@ -134,7 +143,7 @@ body {
   font-style: normal;
   color: #ffffff;
   border-bottom: 0.23em solid #ffffff;
-  padding: 1em 2.8em;
+  padding: 1em 2.6em 1em 2.8em;
   margin-right: 0;
 }
 .nav-links--active:hover {
@@ -166,4 +175,90 @@ body {
 }
 .bandsite-logo__footer {
   margin: 3em 0 1em;
+}
+
+.hero-banner {
+  width: 100%;
+  height: 17.25em;
+}
+.hero-banner__title {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.88em;
+  line-height: 1.38em;
+  color: #ffffff;
+  position: relative;
+  bottom: 0.3em;
+  left: 1em;
+  width: 11em;
+}
+.hero-banner__container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 17.25em;
+}
+.hero-banner__container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(50, 50, 50, 0.5);
+  height: 17.25em;
+}
+.hero-banner__subcontainer {
+  width: 100%;
+  position: absolute;
+}
+
+.soundcloud {
+  width: 90%;
+  height: 6em;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  top: 1em;
+}
+
+.footer {
+  padding: 1.5em 1em 1em;
+  background-color: #323232;
+  color: #ffffff;
+}
+
+.social-icons {
+  width: 1.5em;
+  margin-right: 2em;
+}
+.social-icons--resize {
+  width: 0.9em;
+}
+
+.social-links {
+  list-style-type: none;
+  text-decoration: none;
+}
+.social-links__container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer-content {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.81em;
+  line-height: 1.5em;
+  width: 55%;
+}
+.footer-content--extra-padding {
+  padding-top: 1em;
+}
+.footer-content__copyright {
+  width: 100%;
+  font-size: 0.7em;
+  padding-bottom: 1.5em;
 }/*# sourceMappingURL=band-site-shows.css.map */
