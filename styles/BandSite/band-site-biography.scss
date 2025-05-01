@@ -556,7 +556,7 @@
 
     .button {
         @include tablet-form-fields;
-        padding: 0;
+        padding: 0.25em 0 0;
         width: 10em;
         height: 2.3em;
 
