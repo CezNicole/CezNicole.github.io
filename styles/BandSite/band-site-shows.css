@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url(../../assets/fonts/OpenSans-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../../assets/fonts/OpenSans-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../../assets/fonts/OpenSans-Italic.ttf) format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../../assets/fonts/OpenSans-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+/*
+PRIMARY COLORS
+BandSite-Black: Primary text color for dark on light background. Dark background color
+-used for social icons
+-bandsite logo 
+
+Silver: Seconday text color. Inactive CTA text color. 
+
+White: Primary text color for light on dark background. Light background color. Active CTA text color.
+-active and hover links
+
+
+SECONDARY COLORS
+BandSite-DarkBlack: CTA hover state.
+
+Mercury: Divider line. Form field outline.
+-inactive links
+
+Alabaster: Alternative light background color
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.portfolio {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #cad2c5;
+}
+
+.nitro-coffee-shop {
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff0ed;
+  color: #393939;
+}
+
+.travel-site {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #FFFFFF;
+}
+
+.band-site {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+.section-titles {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5em;
+  line-height: 2em;
+}
+.section-titles__footer {
+  padding-bottom: 0.4em;
+}
+
+.header {
+  background-color: #323232;
+  padding: 1.5em 0 0.72em;
+}
+.header__list-item {
+  list-style-type: none;
+  text-decoration: none;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links {
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.nav-links--active {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #ffffff;
+  border-bottom: 0.23em solid #ffffff;
+  padding: 1em 2.8em;
+  margin-right: 0;
+}
+.nav-links--active:hover {
+  margin-right: 2.8em;
+}
+.nav-links--inactive {
+  color: #e1e1e1;
+  padding: 1em 2em;
+}
+.nav-links--inactive:hover {
+  margin-left: 2em;
+}
+.nav-links:hover {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  border-bottom: 0.23em solid #ffffff;
+  padding: 1em 0;
+}
+
+.bandsite-logo {
+  height: 1.25em;
+  width: 7.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1em;
+}
+.bandsite-logo__footer {
+  margin: 3em 0 1em;
+}/*# sourceMappingURL=band-site-shows.css.map */

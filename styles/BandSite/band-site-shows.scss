@@ -1,0 +1,77 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/colors' as colors;
+@use '../../styles/partials/breakpoints' as breakpoints;
+
+.band-site {
+    @include avenir-font-regular;
+    @include mobile-page-header;
+    // overflow-x: hidden;
+}
+
+.section-titles {
+    @include mobile-section-header;
+
+    &__footer {
+        padding-bottom: 0.4em;
+    }
+}
+
+.header {
+    background-color: colors.$bandsite-black;
+    padding: 1.5em 0 0.72em;
+
+    &__list-item {
+        @include remove-link-underline;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        // padding: 0 2em 0 0;
+    }
+}
+
+.nav-links {
+    @include remove-link-underline;
+    @include avenir-font-regular;
+
+    &--active {
+        @include bandsite-active-link;
+        // padding: 1em 2em;
+        padding: 1em 2.8em;
+        margin-right: 0;
+
+        &:hover {
+            // margin-left: 2em;
+            margin-right: 2.8em;
+        }
+    }
+
+    &--inactive {
+        @include bandsite-inactive-link;
+        // padding: 1em 0;
+        padding: 1em 2em;
+        // margin-right: 1em;
+
+        &:hover {
+            margin-left: 2em;
+        }
+    }
+
+    &:hover {
+        @include bandsite-hover-link;
+        padding: 1em 0;
+    }
+}
+
+.bandsite-logo {
+    @include bandsite-logo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1em;
+
+    &__footer {
+        margin: 3em 0 1em;
+    }
+}
