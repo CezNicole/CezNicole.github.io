@@ -27,6 +27,11 @@
     &__footer {
         padding-bottom: 0.4em;
     }
+
+    &__shows{
+        // @include mobile-padding-headlines;
+        margin: 1em 0.7em 0;
+    }
 }
 
 .header {
@@ -138,13 +143,68 @@
 
 .soundcloud{
     width: 90%;
+    // max-width: 18em;
+    max-width: 20em;
     height: 6em;
     display: flex;
-    margin: 0 auto;
+    // margin: 0 auto;
+    margin-left: 1em;
     position: relative;
     top: 1em;
 }
 
+.shows-section{
+    @include mobile-padding-headlines;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    &__headings{
+        @include mobile-subheader;
+        @include mobile-padding-headlines;
+        padding-left: 0;
+        padding-bottom: 0.5em;
+        color: colors.$silver;
+        font-size: 0.7em;
+    }
+
+    &__shows-info{
+        @include mobile-body-copy;
+
+        &--bold{
+            @include avenir-font-demi;
+        }
+    }
+}
+
+.button {
+    @include mobile-form-fields;
+    @include mobile-padding-headlines;
+    @include mobile-subheader;
+    padding-bottom: 1.4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$bandsite-black;
+    color: colors.$white;
+    border: none;
+    border-radius: 0.25em;
+    width: 100%;
+    margin: 1.25em auto;
+
+    &:hover {
+        background-color: colors.$bandsite-darkblack;
+    }
+}
+
+.divider {
+    @include bandsite-divider;
+    width: 100%;
+    padding: 0;
+
+    &:last-child{
+        margin-bottom: 1em;
+    }
+}
 
 
 

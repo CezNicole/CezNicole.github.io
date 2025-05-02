@@ -116,6 +116,9 @@ body {
 .section-titles__footer {
   padding-bottom: 0.4em;
 }
+.section-titles__shows {
+  margin: 1em 0.7em 0;
+}
 
 .header {
   background-color: #323232;
@@ -215,11 +218,77 @@ body {
 
 .soundcloud {
   width: 90%;
+  max-width: 20em;
   height: 6em;
   display: flex;
-  margin: 0 auto;
+  margin-left: 1em;
   position: relative;
   top: 1em;
+}
+
+.shows-section {
+  padding: 1.5em 1em 1em;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.shows-section__headings {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.88em;
+  line-height: 1.38em;
+  padding: 1.5em 1em 1em;
+  padding-left: 0;
+  padding-bottom: 0.5em;
+  color: #afafaf;
+  font-size: 0.7em;
+}
+.shows-section__shows-info {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.81em;
+  line-height: 1.5em;
+}
+.shows-section__shows-info--bold {
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.button {
+  height: 2.25em;
+  border-radius: 0.35em;
+  padding: 0.75em;
+  padding: 1.5em 1em 1em;
+  font-family: "Avenir Next", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 0.88em;
+  line-height: 1.38em;
+  padding-bottom: 1.4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #323232;
+  color: #fff;
+  border: none;
+  border-radius: 0.25em;
+  width: 100%;
+  margin: 1.25em auto;
+}
+.button:hover {
+  background-color: #000000;
+}
+
+.divider {
+  border-bottom: 0.12em solid #e1e1e1;
+  padding: 1em 0;
+  width: 100%;
+  padding: 0;
+}
+.divider:last-child {
+  margin-bottom: 1em;
 }
 
 .footer {
