@@ -38,9 +38,11 @@
     &--active{
         @include bandsite-active-link;
         padding: 1em 2em;
+        // padding: 1em 0;
 
         &:hover{
             margin-left: 2em;
+            // margin-left: 2.25em;
         }
     }
 
@@ -366,6 +368,7 @@
         &--active {
             @include tablet-margin;
             padding: 1em 0;
+            margin-left: 2em;
         }
     }
 

@@ -146,7 +146,7 @@ body {
   font-style: normal;
   color: #ffffff;
   border-bottom: 0.23em solid #ffffff;
-  padding: 1em 2.6em 1em 2.8em;
+  padding: 1em 2.8em;
   margin-right: 0;
 }
 .nav-links--active:hover {
@@ -330,4 +330,113 @@ body {
   width: 100%;
   font-size: 0.7em;
   padding-bottom: 1.5em;
+}
+
+@media (min-width: 768px) {
+  body {
+    border: 2px solid red;
+  }
+  .section-titles {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.5em;
+    line-height: 2em;
+    padding-bottom: 0.25em;
+  }
+  .section-titles__footer {
+    font-size: 1.8em;
+  }
+  .header {
+    height: 3.8em;
+  }
+  .header__navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    position: relative;
+    bottom: 3.1em;
+    left: 2em;
+    width: 30em;
+  }
+  .nav-links {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 0.88em;
+    line-height: 1.38em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-links--active {
+    margin-left: 2.25em;
+    margin-right: 2.25em;
+    padding: 1em 0;
+    margin-left: 2em;
+  }
+  .nav-links:hover {
+    margin: 0;
+  }
+  .bandsite-logo {
+    margin-left: 2.25em;
+    margin-right: 2.25em;
+  }
+  .bandsite-logo__footer {
+    margin-top: 2.5em;
+  }
+  .bandsite-logo__container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .footer {
+    padding: 3em 2.25em 2.25em;
+    padding-top: 1.5em;
+    width: 100%;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.88em;
+    line-height: 1.38em;
+    font-size: 0.83em;
+    position: relative;
+    bottom: 0;
+  }
+  .footer__container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    max-width: 18em;
+  }
+  .footer__subcontainer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    max-width: 35em;
+  }
+  .social-links__container {
+    width: 25%;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .social-icons {
+    width: 1.2em;
+    margin-right: 1.5em;
+  }
+  .social-icons--resize {
+    width: 0.73em;
+  }
+  .footer-content {
+    width: 13em;
+  }
+  .footer-content__copyright {
+    width: 100%;
+    padding-bottom: 0;
+    margin-top: 2.5em;
+  }
 }/*# sourceMappingURL=band-site-shows.css.map */

@@ -56,8 +56,8 @@
     &--active {
         @include bandsite-active-link;
         // padding: 1em 2em;
-        // padding: 1em 2.8em;
-        padding: 1em 2.6em 1em 2.8em;
+        padding: 1em 2.8em;
+        // padding: 1em 2.6em 1em 2.8em;
         margin-right: 0;
 
         &:hover {
@@ -245,5 +245,125 @@
         @include full-image-width;
         font-size: 0.7em;
         padding-bottom: 1.5em;
+    }
+}
+
+
+@include breakpoints.tablet {
+    body{
+        border: 2px solid red;
+    }
+
+    .section-titles {
+        @include mobile-page-header;
+        padding-bottom: 0.25em;
+
+        &__footer {
+            font-size: 1.8em;
+        }
+    }
+
+    .header {
+        height: 3.8em;
+
+        &__navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            position: relative;
+            bottom: 3.1em;
+            left: 2em;
+            width: 30em;
+        }
+    }
+
+    .nav-links {
+        @include mobile-subheader;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--active {
+            @include tablet-margin;
+            padding: 1em 0;
+            margin-left: 2em;
+        }
+
+        &:hover{
+            margin: 0;
+        }
+    }
+
+    .bandsite-logo {
+        @include tablet-margin;
+
+        &__footer {
+            margin-top: 2.5em;
+        }
+
+        &__container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+
+
+
+
+    .footer {
+        @include tablet-padding-headlines;
+        padding-top: 1.5em;
+        @include full-image-width;
+        @include tablet-body-copy;
+        font-size: 0.83em;
+        position: relative;
+        bottom: 0;
+
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            max-width: 18em;
+        }
+
+        &__subcontainer {
+            display: flex;
+            justify-content: space-evenly;
+            width: 70%;
+            max-width: 35em;
+        }
+    }
+
+    .social-links {
+        &__container {
+            width: 25%;
+            max-width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+
+    .social-icons {
+        width: 1.2em;
+        margin-right: 1.5em;
+
+        &--resize {
+            width: 0.73em;
+        }
+    }
+
+    .footer-content {
+        width: 13em;
+
+        &__copyright {
+            @include full-image-width;
+            padding-bottom: 0;
+            margin-top: 2.5em;
+        }
     }
 }
