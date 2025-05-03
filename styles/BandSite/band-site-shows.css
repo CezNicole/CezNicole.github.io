@@ -274,6 +274,7 @@ body {
   border: none;
   border-radius: 0.25em;
   width: 100%;
+  max-width: 34em;
   margin: 1.25em auto;
 }
 .button:hover {
