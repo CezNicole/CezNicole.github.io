@@ -109,6 +109,7 @@ body {
   color: #ffffff;
   line-height: 1.45;
   width: 75%;
+  max-width: 10em;
   position: relative;
   top: 0.2em;
   left: 0.65em;
@@ -117,7 +118,7 @@ body {
   padding-bottom: 0.4em;
 }
 .section-titles__shows {
-  margin: 1em 0.7em 0;
+  margin: 1em 0.33em 0;
 }
 
 .header {
@@ -218,7 +219,7 @@ body {
 
 .soundcloud {
   width: 90%;
-  max-width: 20em;
+  max-width: 17em;
   height: 6em;
   display: flex;
   margin-left: 1em;
@@ -227,9 +228,7 @@ body {
 }
 
 .shows-section {
-  padding: 1.5em 1em 1em;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0 0.5em;
 }
 .shows-section__headings {
   font-family: "Avenir Next", sans-serif;
@@ -284,8 +283,10 @@ body {
 .divider {
   border-bottom: 0.12em solid #e1e1e1;
   padding: 1em 0;
-  width: 100%;
+  width: 110%;
   padding: 0;
+  position: relative;
+  right: 1em;
 }
 .divider:last-child {
   margin-bottom: 1em;
@@ -344,6 +345,9 @@ body {
     line-height: 2em;
     padding-bottom: 0.25em;
   }
+  .section-titles__album-name {
+    line-height: 1.45;
+  }
   .section-titles__footer {
     font-size: 1.8em;
   }
@@ -391,6 +395,10 @@ body {
     right: 0;
     display: flex;
     justify-content: flex-end;
+  }
+  .soundcloud {
+    position: relative;
+    top: 0.6em;
   }
   .footer {
     padding: 3em 2.25em 2.25em;

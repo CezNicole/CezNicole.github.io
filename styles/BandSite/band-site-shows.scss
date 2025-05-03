@@ -16,6 +16,7 @@
         line-height: 1.45;
         // width: 65%;
         width: 75%;
+        max-width: 10em;
         position: relative;
         // bottom: 10em;
         // top: 0.5em;
@@ -30,7 +31,9 @@
 
     &__shows{
         // @include mobile-padding-headlines;
-        margin: 1em 0.7em 0;
+        // margin: 1em 0.7em 0;
+        // margin: 1em 0 0;
+        margin: 1em 0.33em 0;
     }
 }
 
@@ -143,8 +146,8 @@
 
 .soundcloud{
     width: 90%;
-    // max-width: 18em;
-    max-width: 20em;
+    max-width: 17em;
+    // max-width: 20em;
     height: 6em;
     display: flex;
     // margin: 0 auto;
@@ -154,9 +157,10 @@
 }
 
 .shows-section{
-    @include mobile-padding-headlines;
-    padding-top: 0;
-    padding-bottom: 0;
+    // @include mobile-padding-headlines;
+    // padding-top: 0;
+    // padding-bottom: 0;
+    padding: 0 0.5em;
 
     &__headings{
         @include mobile-subheader;
@@ -198,8 +202,10 @@
 
 .divider {
     @include bandsite-divider;
-    width: 100%;
+    width: 110%;
     padding: 0;
+    position: relative;
+    right: 1em;
 
     &:last-child{
         margin-bottom: 1em;
@@ -258,6 +264,10 @@
         @include mobile-page-header;
         padding-bottom: 0.25em;
 
+        &__album-name {
+            line-height: 1.45;
+        }
+
         &__footer {
             font-size: 1.8em;
         }
@@ -308,6 +318,11 @@
             display: flex;
             justify-content: flex-end;
         }
+    }
+
+    .soundcloud {
+        position: relative;
+        top: 0.6em;
     }
 
 
