@@ -255,6 +255,10 @@ body {
   font-style: normal;
 }
 
+.shows__subcontainer {
+  padding: 0 0.5em;
+}
+
 .button {
   height: 2.25em;
   border-radius: 0.35em;
@@ -284,7 +288,7 @@ body {
 .divider {
   border-bottom: 0.12em solid #e1e1e1;
   padding: 1em 0;
-  width: 110%;
+  width: 130%;
   padding: 0;
   position: relative;
   right: 1em;
@@ -400,6 +404,44 @@ body {
   .soundcloud {
     position: relative;
     top: 0.6em;
+  }
+  .shows__subcontainer {
+    display: flex;
+  }
+  .shows__subcontainer--column {
+    width: 100%;
+  }
+  .shows-section {
+    padding-bottom: 0.6em;
+  }
+  .shows-section--flex {
+    display: flex;
+  }
+  .shows-section__shows-info--first {
+    margin: 1.5em 0;
+  }
+  .shows-section__shows-info--center {
+    position: relative;
+    top: 0.6em;
+  }
+  .button {
+    width: 9em;
+    padding: 1em 0 0.8em;
+  }
+  .button--first {
+    position: relative;
+    top: 2.3em;
+  }
+  .button--remaining {
+    margin: 0 auto 1.2em;
+  }
+  .divider {
+    width: 100%;
+    position: relative;
+    right: 0;
+  }
+  .hidden {
+    display: none;
   }
   .footer {
     padding: 3em 2.25em 2.25em;

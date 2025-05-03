@@ -180,6 +180,12 @@
     }
 }
 
+.shows{
+    &__subcontainer{
+        padding: 0 0.5em;
+    }
+}
+
 .button {
     @include mobile-form-fields;
     @include mobile-padding-headlines;
@@ -204,7 +210,7 @@
 
 .divider {
     @include bandsite-divider;
-    width: 110%;
+    width: 130%;
     padding: 0;
     position: relative;
     right: 1em;
@@ -325,6 +331,83 @@
     .soundcloud {
         position: relative;
         top: 0.6em;
+    }
+
+    .shows{
+        // &__container{
+        //     // display: flex;
+        //     // flex-wrap: wrap;
+        //     // border: 2px solid red;
+        // }
+
+        &__subcontainer{
+            display: flex;
+
+            &--column{
+                // display: flex;
+                // flex-direction: column;
+                // border: 2px solid blue;
+                // width: 100%;
+                @include full-image-width;
+            }
+        }
+    }
+
+    .shows-section {
+        padding-bottom: 0.6em;
+        // border: 2px solid blue;
+
+        &--flex{
+            display: flex;
+        }
+
+        &__shows-info {
+            // @include mobile-body-copy;
+            
+            &--first{
+                // border: 2px solid blue;
+                margin: 1.5em 0;
+            }
+
+            &--center{
+                position: relative;
+                top: 0.6em;
+                // left: 2.5em;
+            }
+        }
+    }
+
+    .button {
+        width: 9em;
+        padding: 1em 0 0.8em;
+
+        &--first{
+            // margin: 0 auto;
+            // margin-bottom: 0;
+            position: relative;
+            // bottom: 0;
+            top: 2.3em;
+            // left: -10em;
+        }
+
+        &--remaining{
+            margin: 0 auto 1.2em;
+        }
+    }
+
+    .divider {
+        // @include bandsite-divider;
+        width: 100%;
+        // display: flex;
+        // margin: 0 auto;
+        // padding: 0;
+        position: relative;
+        right: 0;
+    }
+
+    .hidden{
+        // visibility: hidden;
+        display: none;
     }
 
 
