@@ -13,7 +13,10 @@ const showsContainer = document.querySelector('.shows__container');
 
 shows.forEach((show) => {
     const showsSubcontainer = document.createElement('div');
-    showsSubcontainer.classList.add('shows-section');
+    showsSubcontainer.classList.add('shows__subcontainer');
+
+    const dateContainer = document.createElement('div');
+    dateContainer.classList.add('shows__subcontainer--column');
 
     const dateHeading = document.createElement('h3');
     dateHeading.innerHTML = 'DATE';
@@ -24,6 +27,12 @@ shows.forEach((show) => {
     dateValue.classList.add('shows-section__shows-info');
     dateValue.classList.add('shows-section__shows-info--bold');
 
+    dateContainer.appendChild(dateHeading);
+    dateContainer.appendChild(dateValue);
+
+
+    const venueContainer = document.createElement('div');
+    venueContainer.classList.add('shows__subcontainer--column');
 
     const venueHeading = document.createElement('h3');
     venueHeading.innerHTML = 'VENUE';
@@ -32,7 +41,13 @@ shows.forEach((show) => {
     const venueValue = document.createElement('div');
     venueValue.innerHTML = show.venue;
     venueValue.classList.add('shows-section__shows-info');
+
+    venueContainer.appendChild(venueHeading);
+    venueContainer.appendChild(venueValue);
     
+
+    const locationContainer = document.createElement('div');
+    locationContainer.classList.add('shows__subcontainer--column');
 
     const locationHeading = document.createElement('h3');
     locationHeading.innerHTML = 'LOCATION';
@@ -42,19 +57,30 @@ shows.forEach((show) => {
     locationValue.innerHTML = show.location;
     locationValue.classList.add('shows-section__shows-info');
 
+    locationContainer.appendChild(locationHeading);
+    locationContainer.appendChild(locationValue);
+
+
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('shows__subcontainer--column');
 
     const button = document.createElement('button');
     button.textContent = 'BUY TICKETS';
     button.classList.add('button');
 
+    buttonContainer.appendChild(button);
+
     
-    showsSubcontainer.appendChild(dateHeading);
-    showsSubcontainer.appendChild(dateValue);
-    showsSubcontainer.appendChild(venueHeading);
-    showsSubcontainer.appendChild(venueValue);
-    showsSubcontainer.appendChild(locationHeading);
-    showsSubcontainer.appendChild(locationValue);
-    showsSubcontainer.appendChild(button);
+    // showsSubcontainer.appendChild(dateHeading);
+    // showsSubcontainer.appendChild(dateValue);
+    showsSubcontainer.appendChild(dateContainer);
+    // showsSubcontainer.appendChild(venueHeading);
+    // showsSubcontainer.appendChild(venueValue);
+    showsSubcontainer.appendChild(venueContainer);
+    // showsSubcontainer.appendChild(locationHeading);
+    // showsSubcontainer.appendChild(locationValue);
+    showsSubcontainer.appendChild(locationContainer);
+    showsSubcontainer.appendChild(buttonContainer);
 
 
     const dividerContainer = document.createElement('div');
@@ -65,6 +91,24 @@ shows.forEach((show) => {
 
     showsContainer.appendChild(showsSubcontainer);
     showsContainer.appendChild(dividerContainer);
+
+
+    if(dateValue.innerHTML === shows[0].date && venueValue.innerHTML === shows[0].venue && locationValue.innerHTML === shows[0].location){
+        dateValue.classList.add('shows-section__shows-info--first');
+        venueValue.classList.add('shows-section__shows-info--first');
+        locationValue.classList.add('shows-section__shows-info--first');
+        button.classList.add('button--first');
+    }  else{
+        dateHeading.classList.add('hidden');
+        venueHeading.classList.add('hidden');
+        locationHeading.classList.add('hidden');
+
+        dateValue.classList.add('shows-section__shows-info--center');
+        venueValue.classList.add('shows-section__shows-info--center');
+        locationValue.classList.add('shows-section__shows-info--center');
+        button.classList.add('button--remaining');
+    }
+    
 })
 
     
