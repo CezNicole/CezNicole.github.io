@@ -219,7 +219,6 @@ body {
 
 .soundcloud {
   width: 90%;
-  max-width: 17em;
   height: 6em;
   display: flex;
   margin-left: 1em;
@@ -424,6 +423,7 @@ body {
     justify-content: flex-end;
   }
   .soundcloud {
+    width: 17em;
     position: relative;
     top: 0.6em;
   }
@@ -437,7 +437,7 @@ body {
     padding-bottom: 0.6em;
     position: relative;
     bottom: 9em;
-    height: 23em;
+    height: 22.75em;
   }
   .shows-section--flex {
     display: flex;

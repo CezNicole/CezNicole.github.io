@@ -149,7 +149,7 @@
 
 .soundcloud{
     width: 90%;
-    max-width: 17em;
+    // max-width: 17em;
     // max-width: 20em;
     height: 6em;
     display: flex;
@@ -418,6 +418,7 @@
     }
 
     .soundcloud {
+        width: 17em;
         position: relative;
         top: 0.6em;
         // border-radius: 0.25em;
@@ -448,7 +449,8 @@
         // margin-top: 4.5em;
         position: relative;
         bottom: 9em;
-        height: 23em;
+        // height: 23em;
+        height: 22.75em;
         // margin-top: 20.4em;
         // margin-top: 19em;
         // border: 2px solid blue;
