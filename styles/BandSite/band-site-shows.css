@@ -183,7 +183,7 @@ body {
 
 .hero-banner {
   width: 100%;
-  height: 17.25em;
+  height: 18em;
 }
 .hero-banner__title {
   font-family: "Avenir Next", sans-serif;
@@ -203,14 +203,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 17.25em;
+  height: 18em;
 }
 .hero-banner__container::before {
   content: "";
   position: absolute;
   inset: 0;
   background-color: rgba(50, 50, 50, 0.5);
-  height: 17.25em;
+  height: 18em;
 }
 .hero-banner__subcontainer {
   width: 100%;
@@ -225,6 +225,7 @@ body {
   margin-left: 1em;
   position: relative;
   top: 1em;
+  border-radius: 0.25em;
 }
 
 .shows-section {
@@ -339,8 +340,18 @@ body {
 }
 
 @media (min-width: 768px) {
-  body {
-    border: 2px solid red;
+  .hero-banner {
+    height: 85vh;
+  }
+  .hero-banner__container {
+    height: 85vh;
+  }
+  .hero-banner__container::before {
+    height: 100%;
+  }
+  .hero-banner__subcontainer {
+    padding: 1.5em 1em 1em;
+    padding-left: 0.5em;
   }
   .section-titles {
     font-family: "Avenir Next", sans-serif;
@@ -351,13 +362,22 @@ body {
     padding-bottom: 0.25em;
   }
   .section-titles__album-name {
-    line-height: 1.45;
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.25em;
+    line-height: 2.75em;
+    line-height: 1.2;
+    position: relative;
+    left: 0.4em;
   }
   .section-titles__footer {
     font-size: 1.8em;
   }
   .header {
     height: 3.8em;
+    position: relative;
+    z-index: 1;
   }
   .header__navbar {
     display: flex;

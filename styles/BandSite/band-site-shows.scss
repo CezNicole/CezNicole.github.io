@@ -100,7 +100,8 @@
 
 .hero-banner{
     width: 100%;
-    height: 17.25em;
+    // height: 17.25em;
+    height: 18em;
     // position: relative;
     // z-index: 1;
 
@@ -124,7 +125,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 17.25em;
+        // height: 17.25em;
+        height: 18em;
 
         &::before {
             content: '';
@@ -132,7 +134,8 @@
             inset: 0;
             background-color: rgba(colors.$bandsite-black, 0.5); // 50% dark overlay
             // z-index: 1;
-            height: 17.25em;
+            // height: 17.25em;
+            height: 18em;
         }
     }
 
@@ -154,6 +157,7 @@
     margin-left: 1em;
     position: relative;
     top: 1em;
+    border-radius: 0.25em;
 }
 
 .shows-section{
@@ -264,8 +268,64 @@
 
 
 @include breakpoints.tablet {
-    body{
-        border: 2px solid red;
+    .hero-banner {
+        // width: 100%;
+        // height: 17.25em;
+        // height: 100vh;
+        // max-height: 100%;
+        // border: 2px solid blue;
+        // height: 100vh;
+        // height: 35em;
+        // height: 26em;
+        height: 85vh;
+        // position: relative;
+        // z-index: 1;
+
+        // &__title {
+        //     // @include mobile-footer-copy;
+        //     // @include avenir-font-demi;
+        //     @include mobile-subheader;
+        //     color: colors.$bandsite-white;
+        //     position: relative;
+        //     // bottom: 18em;
+        //     bottom: 0.3em;
+        //     // top: 0;
+        //     left: 1em;
+        //     width: 11em;
+        //     // z-index: 1;
+        // }
+
+        &__container {
+            // @include full-image-width;
+            // position: relative;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // height: 17.25em;
+            // height: 100vh;
+            // height: 75vh;
+            height: 85vh;
+            // height: 26em;
+            // border: 2px solid blue;
+
+            &::before {
+                // content: '';
+                // position: absolute;
+                // inset: 0;
+                // background-color: rgba(colors.$bandsite-black, 0.5); // 50% dark overlay
+                // z-index: 1;
+                // height: 17.25em;
+                // height: 116.5%;
+                height: 100%;
+                // height: 100vh;
+                // height: 87.5vh;
+            }
+        }
+
+        &__subcontainer{
+            @include mobile-padding-headlines;
+            padding-left: 0.5em;
+        }
     }
 
     .section-titles {
@@ -273,7 +333,10 @@
         padding-bottom: 0.25em;
 
         &__album-name {
-            line-height: 1.45;
+            @include tablet-section-header;
+            line-height: 1.2;
+            position: relative;
+            left: 0.4em;
         }
 
         &__footer {
@@ -283,6 +346,8 @@
 
     .header {
         height: 3.8em;
+        position: relative;
+        z-index: 1;
 
         &__navbar {
             display: flex;
@@ -331,6 +396,7 @@
     .soundcloud {
         position: relative;
         top: 0.6em;
+        // border-radius: 0.25em;
     }
 
     .shows{
@@ -355,6 +421,7 @@
 
     .shows-section {
         padding-bottom: 0.6em;
+        // margin-top: 4.5em;
         // border: 2px solid blue;
 
         &--flex{
