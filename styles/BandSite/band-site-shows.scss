@@ -58,10 +58,8 @@
 
     &--active {
         @include bandsite-active-link;
-        // padding: 1em 2em;
         padding: 1em 2.8em;
-        // padding: 1em 2.6em 1em 2.8em;
-        margin-right: 0;
+        // padding: 1em 0;
 
         &:hover {
             // margin-left: 2em;
@@ -71,19 +69,45 @@
 
     &--inactive {
         @include bandsite-inactive-link;
-        // padding: 1em 0;
-        padding: 1em 2em;
-        // margin-right: 1em;
-
-        &:hover {
-            margin-left: 2em;
-        }
+        padding: 1em 0;
+        margin-left: 2em;
     }
 
     &:hover {
         @include bandsite-hover-link;
         padding: 1em 0;
+        
     }
+
+    // &--active {
+    //     @include bandsite-active-link;
+    //     // padding: 1em 2em;
+    //     // padding: 1em 2.8em 1em 1.9em;
+    //     padding: 1em 2.8em;
+    //     // padding: 1em 2.6em 1em 2.8em;
+    //     margin-right: 0;
+
+    //     &:hover {
+    //         // margin-left: 2em;
+    //         margin-right: 2.8em;
+    //     }
+    // }
+
+    // &--inactive {
+    //     @include bandsite-inactive-link;
+    //     // padding: 1em 0;
+    //     padding: 1em 2em;
+    //     // margin-right: 1em;
+
+    //     &:hover {
+    //         margin-left: 2em;
+    //     }
+    // }
+
+    // &:hover {
+    //     @include bandsite-hover-link;
+    //     padding: 1em 0;
+    // }
 }
 
 .bandsite-logo {
@@ -372,6 +396,10 @@
         height: 3.8em;
         position: relative;
         z-index: 1;
+        // display: flex;
+        // justify-content: space-between;
+        // border: 2px solid red;
+        // width: 100%;
 
         &__navbar {
             display: flex;
@@ -393,11 +421,20 @@
         &--active {
             @include tablet-margin;
             padding: 1em 0;
-            margin-left: 2em;
+            // margin-left: 2em;
+            margin: 0 2em;
+            // margin-left: 0.35em;
+            // margin-right: 3.2em;
+            // margin: 0 1.25em;
+
+            &:hover{
+                margin: 0 2em;
+            }
         }
 
-        &:hover{
-            margin: 0;
+        &--inactive{
+            // margin: 0 0.7em;
+            margin: 0 0.2em 0 0.8em;
         }
     }
 

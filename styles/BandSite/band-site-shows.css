@@ -148,16 +148,13 @@ body {
   color: #ffffff;
   border-bottom: 0.23em solid #ffffff;
   padding: 1em 2.8em;
-  margin-right: 0;
 }
 .nav-links--active:hover {
   margin-right: 2.8em;
 }
 .nav-links--inactive {
   color: #e1e1e1;
-  padding: 1em 2em;
-}
-.nav-links--inactive:hover {
+  padding: 1em 0;
   margin-left: 2em;
 }
 .nav-links:hover {
@@ -403,10 +400,13 @@ body {
     margin-left: 2.25em;
     margin-right: 2.25em;
     padding: 1em 0;
-    margin-left: 2em;
+    margin: 0 2em;
   }
-  .nav-links:hover {
-    margin: 0;
+  .nav-links--active:hover {
+    margin: 0 2em;
+  }
+  .nav-links--inactive {
+    margin: 0 0.2em 0 0.8em;
   }
   .bandsite-logo {
     margin-left: 2.25em;
