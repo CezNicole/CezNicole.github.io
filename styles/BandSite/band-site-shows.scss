@@ -271,13 +271,17 @@
     .hero-banner {
         // width: 100%;
         // height: 17.25em;
-        // height: 100vh;
+        // height: 100%;
+        height: 24em;
         // max-height: 100%;
         // border: 2px solid blue;
         // height: 100vh;
         // height: 35em;
         // height: 26em;
-        height: 89%;
+        // height: 89%;
+        // height: 88%;
+        // height: 55vh;
+        // height: 131%;
         // height: 85vh;
         // position: relative;
         // z-index: 1;
@@ -311,10 +315,15 @@
             // height: 100vh;
             // position: relative;
             // top: 0;
-            height: 100%;
+            // height: 100%;
+            // height: 42vh;
+            // height: 30em;
+            height: 30em;
+            position: relative;
+            bottom: 6em;
             // max-height: 85vh;
-            position: absolute;
-            top: 0;
+            // position: absolute;
+            // top: 0;
             // height: 26em;
             // border: 2px solid blue;
 
@@ -327,7 +336,10 @@
                 // height: 17.25em;
                 // height: 116.5%;
                 // height: 100%;
-                height: 94.5%;
+                height: 90%;
+                // height: 115.7%;
+                // height: 94.5%;
+                // height: 94%;
                 // height: 21.45em;
                 // height: 100vh;
                 // height: 87.5vh;
@@ -434,8 +446,11 @@
     .shows-section {
         padding-bottom: 0.6em;
         // margin-top: 4.5em;
+        position: relative;
+        bottom: 9em;
+        height: 23em;
         // margin-top: 20.4em;
-        margin-top: 19em;
+        // margin-top: 19em;
         // border: 2px solid blue;
 
         &--flex{

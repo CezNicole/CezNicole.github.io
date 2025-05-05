@@ -341,15 +341,15 @@ body {
 
 @media (min-width: 768px) {
   .hero-banner {
-    height: 89%;
+    height: 24em;
   }
   .hero-banner__container {
-    height: 100%;
-    position: absolute;
-    top: 0;
+    height: 30em;
+    position: relative;
+    bottom: 6em;
   }
   .hero-banner__container::before {
-    height: 94.5%;
+    height: 90%;
   }
   .hero-banner__subcontainer {
     padding: 1.5em 1em 1em;
@@ -435,7 +435,9 @@ body {
   }
   .shows-section {
     padding-bottom: 0.6em;
-    margin-top: 19em;
+    position: relative;
+    bottom: 9em;
+    height: 23em;
   }
   .shows-section--flex {
     display: flex;
