@@ -341,10 +341,10 @@ body {
 
 @media (min-width: 768px) {
   .hero-banner {
-    height: 85vh;
+    height: 90vh;
   }
   .hero-banner__container {
-    height: 85vh;
+    height: 90vh;
   }
   .hero-banner__container::before {
     height: 100%;
