@@ -434,7 +434,7 @@
 
         &--inactive{
             // margin: 0 0.7em;
-            margin: 0 0.2em 0 0.8em;
+            margin: 0 0.2em 0 0.7em;
         }
     }
 
@@ -599,6 +599,126 @@
             @include full-image-width;
             padding-bottom: 0;
             margin-top: 2.5em;
+        }
+    }
+}
+
+
+@include breakpoints.desktop {
+    .section-titles {
+        @include tablet-margin;
+
+        &__footer {
+            font-size: 1.8em;
+            margin: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    .band-site {
+        max-width: 55em;
+    }
+
+    .header {
+        @include tablet-padding-headlines;
+        @include desktop-max-width;
+        padding-top: 1.5em;
+    }
+
+    .nav-links {
+        @include tablet-labels-and-buttons;
+        // margin-top: 0.35em;
+        // border: 2px solid red;
+        position: relative;
+        top: 0.35em;
+        right: 0.2em;
+
+        &--active {
+            padding: 1.17em 0;
+
+            &:hover {
+                padding: 1.17em 0;
+            }
+        }
+
+        &--inactive {
+            padding: 1.17em 0;
+
+            &:hover {
+                padding: 1.17em 0;
+            }
+        }
+    }
+
+    .bandsite-logo {
+        &__container {
+            position: absolute;
+            top: 0;
+            right: 5em;
+        }
+    }
+
+    .hero-banner {
+        @include desktop-max-width;
+        // height: 40em;
+        // height: 100vh;
+        // height: 24em;
+        height: 30em;
+        // background-size: contain;
+
+        &__container {
+            // height: 30em;
+            // height: 10%;
+            position: relative;
+            bottom: 6em;
+            // bottom: 0;
+    
+            &::before {
+                // height: 90%;
+                height: 100%;
+            }
+        }
+
+        // &__title {
+        //     // padding: 0.85em 0.5em;
+        // }
+    }
+
+    .biography-images {
+        &__musicians {
+            width: 65%;
+            max-width: 35em;
+            height: 18em;
+            padding: 0;
+        }
+    }
+
+    .biography-text-content {
+        @include desktop-max-width;
+
+        &__quote {
+            width: 54%;
+            max-width: 30em;
+            margin: 0 0 0 9.8em;
+            padding-top: 0;
+        }
+
+        &__band-info2 {
+            padding: 0;
+        }
+    }
+
+    .about-section {
+        &__container {
+            @include tablet-margin;
+            width: 64.5%;
+            max-width: 35em;
+            margin: 0 auto;
+
+            &--flexbox {
+                @include mobile-labels-and-buttons;
+                @include full-image-width;
+            }
         }
     }
 }

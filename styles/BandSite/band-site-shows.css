@@ -406,7 +406,7 @@ body {
     margin: 0 2em;
   }
   .nav-links--inactive {
-    margin: 0 0.2em 0 0.8em;
+    margin: 0 0.2em 0 0.7em;
   }
   .bandsite-logo {
     margin-left: 2.25em;
@@ -514,5 +514,95 @@ body {
     width: 100%;
     padding-bottom: 0;
     margin-top: 2.5em;
+  }
+}
+@media (min-width: 1280px) {
+  .section-titles {
+    margin-left: 2.25em;
+    margin-right: 2.25em;
+  }
+  .section-titles__footer {
+    font-size: 1.8em;
+    margin: 0;
+    padding-bottom: 0;
+  }
+  .band-site {
+    max-width: 55em;
+  }
+  .header {
+    padding: 3em 2.25em 2.25em;
+    max-width: 80em;
+    padding-top: 1.5em;
+  }
+  .nav-links {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 0.75em;
+    line-height: 1.25em;
+    position: relative;
+    top: 0.35em;
+    right: 0.2em;
+  }
+  .nav-links--active {
+    padding: 1.17em 0;
+  }
+  .nav-links--active:hover {
+    padding: 1.17em 0;
+  }
+  .nav-links--inactive {
+    padding: 1.17em 0;
+  }
+  .nav-links--inactive:hover {
+    padding: 1.17em 0;
+  }
+  .bandsite-logo__container {
+    position: absolute;
+    top: 0;
+    right: 5em;
+  }
+  .hero-banner {
+    max-width: 80em;
+    height: 30em;
+  }
+  .hero-banner__container {
+    position: relative;
+    bottom: 6em;
+  }
+  .hero-banner__container::before {
+    height: 100%;
+  }
+  .biography-images__musicians {
+    width: 65%;
+    max-width: 35em;
+    height: 18em;
+    padding: 0;
+  }
+  .biography-text-content {
+    max-width: 80em;
+  }
+  .biography-text-content__quote {
+    width: 54%;
+    max-width: 30em;
+    margin: 0 0 0 9.8em;
+    padding-top: 0;
+  }
+  .biography-text-content__band-info2 {
+    padding: 0;
+  }
+  .about-section__container {
+    margin-left: 2.25em;
+    margin-right: 2.25em;
+    width: 64.5%;
+    max-width: 35em;
+    margin: 0 auto;
+  }
+  .about-section__container--flexbox {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 0.63em;
+    line-height: 1.25em;
+    width: 100%;
   }
 }/*# sourceMappingURL=band-site-shows.css.map */
