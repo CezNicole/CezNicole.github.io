@@ -523,6 +523,10 @@ body {
     margin-left: 2.25em;
     margin-right: 2.25em;
   }
+  .section-titles__album-name {
+    margin: 0;
+    width: 8em;
+  }
   .section-titles__footer {
     font-size: 1.8em;
     margin: 0;
@@ -565,46 +569,68 @@ body {
   }
   .hero-banner {
     max-width: 80em;
-    height: 30em;
+    height: 85%;
   }
   .hero-banner__container {
+    height: 50em;
     position: relative;
-    bottom: 6em;
+    bottom: 9.3em;
   }
   .hero-banner__container::before {
-    height: 100%;
+    height: 92.5%;
   }
-  .biography-images__musicians {
-    width: 65%;
-    max-width: 35em;
-    height: 18em;
-    padding: 0;
+  .hero-banner__subcontainer {
+    padding: 3em 2.25em 2.25em;
+    padding-left: 3.6em;
+    position: absolute;
+    top: 14.4em;
   }
-  .biography-text-content {
-    max-width: 80em;
-  }
-  .biography-text-content__quote {
-    width: 54%;
-    max-width: 30em;
-    margin: 0 0 0 9.8em;
-    padding-top: 0;
-  }
-  .biography-text-content__band-info2 {
-    padding: 0;
-  }
-  .about-section__container {
-    margin-left: 2.25em;
-    margin-right: 2.25em;
-    width: 64.5%;
-    max-width: 35em;
-    margin: 0 auto;
-  }
-  .about-section__container--flexbox {
-    font-family: "Avenir Next", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 0.63em;
-    line-height: 1.25em;
+  .hero-banner__subcontainer--flex {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .soundcloud {
+    position: relative;
+    top: 0.35em;
+    margin-right: 3em;
+  }
+  .shows__subcontainer {
+    display: flex;
+  }
+  .shows__subcontainer--column {
+    width: 100%;
+  }
+  .shows-section {
+    padding-bottom: 0.6em;
+    position: relative;
+    bottom: 8.5em;
+    height: 22.75em;
+  }
+  .shows-section--flex {
+    display: flex;
+  }
+  .shows-section__shows-info--first {
+    margin: 1.5em 0;
+  }
+  .shows-section__shows-info--center {
+    position: relative;
+    top: 0.6em;
+  }
+  .button {
+    width: 9em;
+    padding: 1em 0 0.8em;
+  }
+  .button--first {
+    position: relative;
+    top: 2.3em;
+  }
+  .button--remaining {
+    margin: 0 auto 1.2em;
+  }
+  .divider {
+    width: 100%;
+    position: relative;
+    right: 0;
   }
 }/*# sourceMappingURL=band-site-shows.css.map */
