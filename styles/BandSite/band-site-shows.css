@@ -285,7 +285,7 @@ body {
 .divider {
   border-bottom: 0.12em solid #e1e1e1;
   padding: 1em 0;
-  width: 103vw;
+  width: 102.7vw;
   padding: 0;
   position: relative;
   right: 1em;
@@ -408,7 +408,7 @@ body {
     margin: 0 2em;
   }
   .nav-links--inactive {
-    margin: 0 0.2em 0 0.7em;
+    margin: 0 0.2em 0 1.7em;
   }
   .bandsite-logo {
     margin-left: 2.25em;
