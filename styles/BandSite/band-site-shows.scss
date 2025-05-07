@@ -14,15 +14,11 @@
     &__album-name{
         color: colors.$bandsite-white;
         line-height: 1.45;
-        // width: 65%;
         width: 75%;
         max-width: 10em;
         position: relative;
-        // bottom: 10em;
-        // top: 0.5em;
         top: 0.2em;
         left: 0.65em;
-        // z-index: 1;
     }
 
     &__footer {
@@ -30,9 +26,6 @@
     }
 
     &__shows{
-        // @include mobile-padding-headlines;
-        // margin: 1em 0.7em 0;
-        // margin: 1em 0 0;
         margin: 1em 0.33em 0;
     }
 }
@@ -48,7 +41,6 @@
     &__container {
         display: flex;
         justify-content: space-between;
-        // padding: 0 2em 0 0;
     }
 }
 
@@ -59,10 +51,8 @@
     &--active {
         @include bandsite-active-link;
         padding: 1em 2.8em;
-        // padding: 1em 0;
 
         &:hover {
-            // margin-left: 2em;
             margin-right: 2.8em;
         }
     }
@@ -78,36 +68,6 @@
         padding: 1em 0;
         
     }
-
-    // &--active {
-    //     @include bandsite-active-link;
-    //     // padding: 1em 2em;
-    //     // padding: 1em 2.8em 1em 1.9em;
-    //     padding: 1em 2.8em;
-    //     // padding: 1em 2.6em 1em 2.8em;
-    //     margin-right: 0;
-
-    //     &:hover {
-    //         // margin-left: 2em;
-    //         margin-right: 2.8em;
-    //     }
-    // }
-
-    // &--inactive {
-    //     @include bandsite-inactive-link;
-    //     // padding: 1em 0;
-    //     padding: 1em 2em;
-    //     // margin-right: 1em;
-
-    //     &:hover {
-    //         margin-left: 2em;
-    //     }
-    // }
-
-    // &:hover {
-    //     @include bandsite-hover-link;
-    //     padding: 1em 0;
-    // }
 }
 
 .bandsite-logo {
@@ -124,23 +84,15 @@
 
 .hero-banner{
     width: 100%;
-    // height: 17.25em;
     height: 18em;
-    // position: relative;
-    // z-index: 1;
 
     &__title{
-        // @include mobile-footer-copy;
-        // @include avenir-font-demi;
         @include mobile-subheader;
         color: colors.$bandsite-white;
         position: relative;
-        // bottom: 18em;
         bottom: 0.3em;
-        // top: 0;
         left: 1em;
         width: 11em;
-        // z-index: 1;
     }
 
     &__container {
@@ -149,7 +101,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        // height: 17.25em;
         height: 18em;
 
         &::before {
@@ -157,8 +108,6 @@
             position: absolute;
             inset: 0;
             background-color: rgba(colors.$bandsite-black, 0.5); // 50% dark overlay
-            // z-index: 1;
-            // height: 17.25em;
             height: 18em;
         }
     }
@@ -166,18 +115,13 @@
     &__subcontainer {
         @include full-image-width;
         position: absolute;
-        // top: 23%;
-        // display: flex;
     }
 }
 
 .soundcloud{
     width: 90%;
-    // max-width: 17em;
-    // max-width: 20em;
     height: 6em;
     display: flex;
-    // margin: 0 auto;
     margin-left: 1em;
     position: relative;
     top: 1em;
@@ -185,9 +129,6 @@
 }
 
 .shows-section{
-    // @include mobile-padding-headlines;
-    // padding-top: 0;
-    // padding-bottom: 0;
     padding: 0 0.5em;
 
     &__headings{
@@ -227,7 +168,6 @@
     border: none;
     border-radius: 0.25em;
     width: 100%;
-    // max-width: 21em;
     max-width: 34em;
     margin: 1.25em auto;
 
@@ -247,8 +187,6 @@
         margin-bottom: 1em;
     }
 }
-
-
 
 .footer {
     @include mobile-padding-headlines;
@@ -293,84 +231,14 @@
 
 @include breakpoints.tablet {
     .hero-banner {
-        // width: 100%;
-        // height: 17.25em;
-        // height: 100%;
-        // height: 24em;
-        // height: 30em;
         height: 28em;
-        // max-height: 28em;
-        // max-height: 100%;
-        // border: 2px solid blue;
-        // height: 100vh;
-        // height: 35em;
-        // height: 26em;
-        // height: 89%;
-        // height: 88%;
-        // height: 55vh;
-        // height: 131%;
-        // height: 85vh;
-        // position: relative;
-        // z-index: 1;
-
-        // &__title {
-        //     // @include mobile-footer-copy;
-        //     // @include avenir-font-demi;
-        //     @include mobile-subheader;
-        //     color: colors.$bandsite-white;
-        //     position: relative;
-        //     // bottom: 18em;
-        //     bottom: 0.3em;
-        //     // top: 0;
-        //     left: 1em;
-        //     width: 11em;
-        //     // z-index: 1;
-        // }
 
         &__container {
-            // @include full-image-width;
-            // position: relative;
-            // display: flex;
-            // justify-content: center;
-            // align-items: center;
-            // height: 17.25em;
-            // height: 100vh;
-            // height: 75vh;
-            // height: 90vh;
-            // height: 82vh;
-            // height: 110vh;
-            // height: 100vh;
-            // position: relative;
-            // top: 0;
-            // height: 100%;
-            // height: 42vh;
-            // height: 30em;
             height: 33em;
             position: relative;
             bottom: 6em;
-            // max-height: 85vh;
-            // position: absolute;
-            // top: 0;
-            // height: 26em;
-            // border: 2px solid blue;
 
             &::before {
-                // content: '';
-                // position: absolute;
-                // inset: 0;
-                // background-color: rgba(colors.$bandsite-black, 0.5); // 50% dark overlay
-                // z-index: 1;
-                // height: 17.25em;
-                // height: 116.5%;
-                // height: 100%;
-                // height: 90%;
-                // height: 100%;
-                // height: 115.7%;
-                // height: 94.5%;
-                // height: 94%;
-                // height: 21.45em;
-                // height: 100vh;
-                // height: 87.5vh;
                 height: 30.5em;
             }
         }
@@ -378,7 +246,6 @@
         &__subcontainer{
             @include mobile-padding-headlines;
             padding-left: 0.5em;
-            // padding-top: 0;
             position: absolute;
             top: 7.5em;
         }
@@ -404,10 +271,6 @@
         height: 3.8em;
         position: relative;
         z-index: 1;
-        // display: flex;
-        // justify-content: space-between;
-        // border: 2px solid red;
-        // width: 100%;
 
         &__navbar {
             display: flex;
@@ -429,11 +292,7 @@
         &--active {
             @include tablet-margin;
             padding: 1em 0;
-            // margin-left: 2em;
             margin: 0 2em;
-            // margin-left: 0.35em;
-            // margin-right: 3.2em;
-            // margin: 0 1.25em;
 
             &:hover{
                 margin: 0 2em;
@@ -441,7 +300,6 @@
         }
 
         &--inactive{
-            // margin: 0 0.7em;
             margin: 0 0.2em 0 0.7em;
         }
     }
@@ -466,24 +324,13 @@
         width: 17em;
         position: relative;
         top: 0.6em;
-        // border-radius: 0.25em;
     }
 
     .shows{
-        // &__container{
-        //     // display: flex;
-        //     // flex-wrap: wrap;
-        //     // border: 2px solid red;
-        // }
-
         &__subcontainer{
             display: flex;
 
             &--column{
-                // display: flex;
-                // flex-direction: column;
-                // border: 2px solid blue;
-                // width: 100%;
                 @include full-image-width;
             }
         }
@@ -491,32 +338,22 @@
 
     .shows-section {
         padding-bottom: 0.6em;
-        // margin-top: 4.5em;
         position: relative;
-        // bottom: 9em;
         bottom: 8.5em;
-        // height: 23em;
         height: 22.75em;
-        // margin-top: 20.4em;
-        // margin-top: 19em;
-        // border: 2px solid blue;
 
         &--flex{
             display: flex;
         }
 
         &__shows-info {
-            // @include mobile-body-copy;
-            
             &--first{
-                // border: 2px solid blue;
                 margin: 1.5em 0;
             }
 
             &--center{
                 position: relative;
                 top: 0.6em;
-                // left: 2.5em;
             }
         }
     }
@@ -526,12 +363,8 @@
         padding: 1em 0 0.8em;
 
         &--first{
-            // margin: 0 auto;
-            // margin-bottom: 0;
             position: relative;
-            // bottom: 0;
             top: 2.3em;
-            // left: -10em;
         }
 
         &--remaining{
@@ -540,23 +373,14 @@
     }
 
     .divider {
-        // @include bandsite-divider;
         width: 100%;
-        // display: flex;
-        // margin: 0 auto;
-        // padding: 0;
         position: relative;
         right: 0;
     }
 
     .hidden{
-        // visibility: hidden;
         display: none;
     }
-
-
-
-
 
     .footer {
         @include tablet-padding-headlines;
