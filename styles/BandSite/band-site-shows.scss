@@ -296,7 +296,10 @@
         // width: 100%;
         // height: 17.25em;
         // height: 100%;
-        height: 24em;
+        // height: 24em;
+        // height: 30em;
+        height: 28em;
+        // max-height: 28em;
         // max-height: 100%;
         // border: 2px solid blue;
         // height: 100vh;
@@ -342,7 +345,7 @@
             // height: 100%;
             // height: 42vh;
             // height: 30em;
-            height: 30em;
+            height: 33em;
             position: relative;
             bottom: 6em;
             // max-height: 85vh;
@@ -360,19 +363,24 @@
                 // height: 17.25em;
                 // height: 116.5%;
                 // height: 100%;
-                height: 90%;
+                // height: 90%;
+                // height: 100%;
                 // height: 115.7%;
                 // height: 94.5%;
                 // height: 94%;
                 // height: 21.45em;
                 // height: 100vh;
                 // height: 87.5vh;
+                height: 30.5em;
             }
         }
 
         &__subcontainer{
             @include mobile-padding-headlines;
             padding-left: 0.5em;
+            // padding-top: 0;
+            position: absolute;
+            top: 7.5em;
         }
     }
 
