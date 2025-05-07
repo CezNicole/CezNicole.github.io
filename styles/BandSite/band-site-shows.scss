@@ -729,82 +729,86 @@
     }
 
     .shows {
-        // &__container{
-        //     // display: flex;
-        //     // flex-wrap: wrap;
-        //     // border: 2px solid red;
-        // }
-
-        &__subcontainer {
-            display: flex;
-
-            &--column {
-                // display: flex;
-                // flex-direction: column;
-                // border: 2px solid blue;
-                // width: 100%;
-                @include full-image-width;
-            }
+        &__container{
+            // display: flex;
+            // flex-wrap: wrap;
+            // border: 2px solid red;
+            @include mobile-body-copy;
+            width: 40em;
+            @include desktop-margin;
+            margin-top: 2.25em;
+            margin-bottom: 2.25em;
         }
+
+        // &__subcontainer {
+        //         border: 2px solid blue;
+        //     display: flex;
+
+        //     &--column {
+        //         // display: flex;
+        //         // flex-direction: column;
+        //         // border: 2px solid blue;
+        //         // width: 100%;
+        //         @include full-image-width;
+        //     }
+        // }
     }
 
     .shows-section {
-        padding-bottom: 0.6em;
-        // margin-top: 4.5em;
+        // padding-bottom: 0.6em;
         position: relative;
-        // bottom: 9em;
-        bottom: 8.5em;
-        // height: 23em;
-        height: 22.75em;
-        // margin-top: 20.4em;
-        // margin-top: 19em;
-        // border: 2px solid blue;
+        // bottom: 8.5em;
+        bottom: 13em;
+        // height: 22.75em;
+        display: flex;
+        justify-content: space-between;
+        height: 11.75em;
 
-        &--flex {
-            display: flex;
-        }
+        // &--flex {
+        //     display: flex;
+        // }
 
-        &__shows-info {
-            // @include mobile-body-copy;
+        // &__shows-info {
+        //     // @include mobile-body-copy;
 
-            &--first {
-                // border: 2px solid blue;
-                margin: 1.5em 0;
-            }
+        //     &--first {
+        //         // border: 2px solid blue;
+        //         margin: 1.5em 0;
+        //     }
 
-            &--center {
-                position: relative;
-                top: 0.6em;
-                // left: 2.5em;
-            }
-        }
+        //     &--center {
+        //         position: relative;
+        //         top: 0.6em;
+        //         // left: 2.5em;
+        //     }
+        // }
     }
 
-    .button {
-        width: 9em;
-        padding: 1em 0 0.8em;
+    // .button {
+    //     width: 9em;
+    //     padding: 1em 0 0.8em;
 
-        &--first {
-            // margin: 0 auto;
-            // margin-bottom: 0;
-            position: relative;
-            // bottom: 0;
-            top: 2.3em;
-            // left: -10em;
-        }
+    //     &--first {
+    //         // margin: 0 auto;
+    //         // margin-bottom: 0;
+    //         position: relative;
+    //         // bottom: 0;
+    //         top: 2.3em;
+    //         // left: -10em;
+    //     }
 
-        &--remaining {
-            margin: 0 auto 1.2em;
-        }
-    }
+    //     &--remaining {
+    //         margin: 0 auto 1.2em;
+    //     }
+    // }
 
-    .divider {
-        // @include bandsite-divider;
-        width: 100%;
-        // display: flex;
-        // margin: 0 auto;
-        // padding: 0;
-        position: relative;
-        right: 0;
-    }
+    // .divider {
+    //     // @include bandsite-divider;
+    //     width: 100%;
+    //     // display: flex;
+    //     // margin: 0 auto;
+    //     // padding: 0;
+    //     position: relative;
+    //     right: 0;
+    // }
 }

@@ -595,42 +595,23 @@ body {
     top: 0.35em;
     margin-right: 3em;
   }
-  .shows__subcontainer {
-    display: flex;
-  }
-  .shows__subcontainer--column {
-    width: 100%;
+  .shows__container {
+    font-family: "Avenir Next", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.81em;
+    line-height: 1.5em;
+    width: 40em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2.25em;
+    margin-bottom: 2.25em;
   }
   .shows-section {
-    padding-bottom: 0.6em;
     position: relative;
-    bottom: 8.5em;
-    height: 22.75em;
-  }
-  .shows-section--flex {
+    bottom: 13em;
     display: flex;
-  }
-  .shows-section__shows-info--first {
-    margin: 1.5em 0;
-  }
-  .shows-section__shows-info--center {
-    position: relative;
-    top: 0.6em;
-  }
-  .button {
-    width: 9em;
-    padding: 1em 0 0.8em;
-  }
-  .button--first {
-    position: relative;
-    top: 2.3em;
-  }
-  .button--remaining {
-    margin: 0 auto 1.2em;
-  }
-  .divider {
-    width: 100%;
-    position: relative;
-    right: 0;
+    justify-content: space-between;
+    height: 11.75em;
   }
 }/*# sourceMappingURL=band-site-shows.css.map */
