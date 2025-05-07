@@ -50,10 +50,12 @@
 
     &--active {
         @include bandsite-active-link;
-        padding: 1em 2.8em;
+        // padding: 1em 2.8em;
+        padding: 1em 2.2em;
 
         &:hover {
-            margin-right: 2.8em;
+            // margin-right: 2.8em;
+            margin-right: 2.2em;
         }
     }
 
@@ -178,7 +180,8 @@
 
 .divider {
     @include bandsite-divider;
-    width: 130%;
+    // width: 130%;
+    width: 103vw;
     padding: 0;
     position: relative;
     right: 1em;

@@ -144,7 +144,6 @@ body {
 .nav-links--inactive {
   color: #e1e1e1;
   padding: 1em 0;
-  margin-right: 1em;
 }
 .nav-links:hover {
   font-family: "Avenir Next", sans-serif;
