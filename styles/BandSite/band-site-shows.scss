@@ -50,11 +50,9 @@
 
     &--active {
         @include bandsite-active-link;
-        // padding: 1em 2.8em;
         padding: 1em 2.2em;
 
         &:hover {
-            // margin-right: 2.8em;
             margin-right: 2.2em;
         }
     }
@@ -180,8 +178,7 @@
 
 .divider {
     @include bandsite-divider;
-    // width: 130%;
-    width: 103vw;
+    width: 102.7vw;
     padding: 0;
     position: relative;
     right: 1em;
@@ -303,7 +300,7 @@
         }
 
         &--inactive{
-            margin: 0 0.2em 0 0.7em;
+            margin: 0 0.2em 0 1.7em;
         }
     }
 
@@ -445,12 +442,7 @@
         @include tablet-margin;
 
         &__album-name {
-            // @include tablet-section-header;
-            // line-height: 1.2;
-            // position: relative;
-            // left: 0.4em;
             margin: 0;
-            // width: 40%;
             width: 8em;
         }
 
@@ -473,8 +465,6 @@
 
     .nav-links {
         @include tablet-labels-and-buttons;
-        // margin-top: 0.35em;
-        // border: 2px solid red;
         position: relative;
         top: 0.35em;
         right: 0.2em;
@@ -506,38 +496,23 @@
 
     .hero-banner {
         @include desktop-max-width;
-        // height: 40em;
-        // height: 100vh;
-        // height: 24em;
         height: 85%;
-        // max-height: 50em;
-        // background-size: contain;
-        // z-index: 1;
 
         &__container {
             height: 50em;
-            // height: 85%;
-            // height: 10%;
             position: relative;
             bottom: 9.3em;
-            // bottom: 0;
     
             &::before {
-                // height: 90%;
                 height: 92.5%;
             }
         }
 
         &__subcontainer {
-            // @include mobile-padding-headlines;
             @include tablet-padding-headlines;
             padding-left: 3.6em;
-            // padding-top: 0;
             position: absolute;
-            // top: 7.5em;
             top: 14.4em;
-            // top: 5em;
-            // z-index: 1;
 
             &--flex{
                 @include full-image-width;
@@ -548,94 +523,26 @@
     }
 
     .soundcloud {
-        // width: 17em;
         position: relative;
         top: 0.35em;
-        // border-radius: 0.25em;
         margin-right: 3em;
     }
 
     .shows {
         &__container{
-            // display: flex;
-            // flex-wrap: wrap;
-            // border: 2px solid red;
             @include mobile-body-copy;
             width: 40em;
             @include desktop-margin;
             margin-top: 2.25em;
             margin-bottom: 2.25em;
         }
-
-        // &__subcontainer {
-        //         border: 2px solid blue;
-        //     display: flex;
-
-        //     &--column {
-        //         // display: flex;
-        //         // flex-direction: column;
-        //         // border: 2px solid blue;
-        //         // width: 100%;
-        //         @include full-image-width;
-        //     }
-        // }
     }
 
     .shows-section {
-        // padding-bottom: 0.6em;
         position: relative;
-        // bottom: 8.5em;
         bottom: 13em;
-        // height: 22.75em;
         display: flex;
         justify-content: space-between;
         height: 11.75em;
-
-        // &--flex {
-        //     display: flex;
-        // }
-
-        // &__shows-info {
-        //     // @include mobile-body-copy;
-
-        //     &--first {
-        //         // border: 2px solid blue;
-        //         margin: 1.5em 0;
-        //     }
-
-        //     &--center {
-        //         position: relative;
-        //         top: 0.6em;
-        //         // left: 2.5em;
-        //     }
-        // }
     }
-
-    // .button {
-    //     width: 9em;
-    //     padding: 1em 0 0.8em;
-
-    //     &--first {
-    //         // margin: 0 auto;
-    //         // margin-bottom: 0;
-    //         position: relative;
-    //         // bottom: 0;
-    //         top: 2.3em;
-    //         // left: -10em;
-    //     }
-
-    //     &--remaining {
-    //         margin: 0 auto 1.2em;
-    //     }
-    // }
-
-    // .divider {
-    //     // @include bandsite-divider;
-    //     width: 100%;
-    //     // display: flex;
-    //     // margin: 0 auto;
-    //     // padding: 0;
-    //     position: relative;
-    //     right: 0;
-    // }
 }
