@@ -30,7 +30,7 @@ async function getComments(){
             const nameElement = document.createElement('div');
             nameElement.classList.add('comment-section__name');
             nameElement.textContent = comment.name;
-            console.log(comment.comment);
+            // console.log(comment.comment);
             
         
             const dateElement = document.createElement('div');
@@ -66,6 +66,29 @@ async function getComments(){
     }
 }
 
+async function postComment(comment){
+    // comment = {};
+    // comment = [];
+
+    const nameInput = document.getElementById('commenter').value;
+    const commentInput = document.getElementById('commentText').value;
+
+    try {
+        if(nameInput && commentInput){
+            const response = await axios.post(`${baseUrl}comments?api_key=${apiKey}`, {
+                name: nameInput,
+                comment: commentInput,
+            });
+    
+            const newComment = response.data;
+            comment.unshift(newComment);
+            console.log(comment);
+        }
+    } catch (error) {
+        console.error('Error submitting comment:', error);
+    }
+}
+
 const form = document.querySelector('.form');
 const nameInput = document.getElementById('commenter');
 const commentInput = document.getElementById('commentText');
@@ -86,6 +109,8 @@ commentInput.addEventListener('input', () => {
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
+    // postComment();
+
     let commenter = nameInput.value.trim();
     let commentText = commentInput.value.trim();
     let hasError = false;
@@ -105,15 +130,18 @@ form.addEventListener('submit', (event) => {
     }
 
     if(!hasError){
-        let newComment = {
-            name: commenter,
-            date: new Date().toLocaleDateString('en-US'),
-            comment: commentText,
-        };
+        // let newComment = {
+        //     name: commenter,
+        //     date: new Date().toLocaleDateString('en-US'),
+        //     comment: commentText,
+        // };
 
-        comments.unshift(newComment);
+        // comments.unshift(newComment);
         form.reset();
-        displayComments();
+        // displayComments();
+
+        postComment();
+        getComments();
     }
 })
 
