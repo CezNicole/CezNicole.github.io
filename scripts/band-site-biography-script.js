@@ -9,57 +9,15 @@
 const apiKey = 'cb73002f-6277-4e76-9845-fec9cc772c30';
 const baseUrl = 'https://unit-2-project-api-25c1595833b2.herokuapp.com/';
 
+let allComments = [];
+
 async function getComments(){
     try {
         const response = await axios.get(`${baseUrl}comments?api_key=${apiKey}`);
-        const comments = response.data;
-        console.log('Loading comments:', comments);
+        allComments = response.data;
+        console.log('Loading comments:', allComments);
 
-        const commentsSection = document.querySelector('.comment-section__comments');
-
-        commentsSection.innerHTML = '';
-
-        comments.forEach(comment => {
-        
-            const profilePic = document.createElement('div');
-            profilePic.classList.add('profile-pic');
-            
-            const containerDiv = document.createElement('div');
-            containerDiv.classList.add('comment-section__dynamic-container');
-        
-            const nameElement = document.createElement('div');
-            nameElement.classList.add('comment-section__name');
-            nameElement.textContent = comment.name;
-            // console.log(comment.comment);
-            
-        
-            const dateElement = document.createElement('div');
-            dateElement.classList.add('comment-section__date');
-            dateElement.textContent = comment.date;
-        
-        
-            containerDiv.appendChild(nameElement);
-            containerDiv.appendChild(dateElement);
-        
-        
-            const commentElement = document.createElement('p');
-            commentElement.classList.add('comment-section__comment');
-            commentElement.textContent = comment.comment;
-        
-        
-            
-        
-            const divider = document.createElement('div');
-            divider.classList.add('divider');
-            divider.classList.add('divider--bottom');
-            
-            commentsSection.appendChild(profilePic);
-            // commentsSection.appendChild(nameElement);
-            // commentsSection.appendChild(dateElement);
-            commentsSection.appendChild(containerDiv);
-            commentsSection.appendChild(commentElement);
-            commentsSection.appendChild(divider);
-        });
+        displayComments(allComments);
 
     } catch (error) {
         console.error('Error loading comments:', error)
@@ -68,22 +26,28 @@ async function getComments(){
 
 async function postComment(comment){
     // comment = {};
-    // comment = [];
+    
+    const nameInput = document.getElementById('commenter').value.trim();
+    const commentInput = document.getElementById('commentText').value.trim();
 
-    const nameInput = document.getElementById('commenter').value;
-    const commentInput = document.getElementById('commentText').value;
-
+    // comment = {
+    //     name: nameInput,
+    //     comment: commentInput
+    // }
+    
     try {
+        // let comments = [];
+
         if(nameInput && commentInput){
-            const response = await axios.post(`${baseUrl}comments?api_key=${apiKey}`, {
-                name: nameInput,
-                comment: commentInput,
-            });
+            const response = await axios.post(`${baseUrl}comments?api_key=${apiKey}`, comment);
     
             const newComment = response.data;
-            comment.unshift(newComment);
-            console.log(comment);
-        }
+            allComments.unshift(newComment);
+            console.log(allComments);
+
+            // getComments();
+            displayComments(allComments);
+        } 
     } catch (error) {
         console.error('Error submitting comment:', error);
     }
@@ -109,8 +73,6 @@ commentInput.addEventListener('input', () => {
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    // postComment();
-
     let commenter = nameInput.value.trim();
     let commentText = commentInput.value.trim();
     let hasError = false;
@@ -130,20 +92,70 @@ form.addEventListener('submit', (event) => {
     }
 
     if(!hasError){
-        // let newComment = {
-        //     name: commenter,
-        //     date: new Date().toLocaleDateString('en-US'),
-        //     comment: commentText,
-        // };
+        let newComment = {
+            name: commenter,
+            comment: commentText,
+        };
 
         // comments.unshift(newComment);
-        form.reset();
         // displayComments();
-
-        postComment();
-        getComments();
+        
+        postComment(newComment);
+        form.reset();
+        // getComments();
     }
 })
+
+
+function displayComments(comments){
+    const commentsSection = document.querySelector('.comment-section__comments');
+
+    commentsSection.innerHTML = '';
+
+    comments.forEach(comment => {
+    
+        const profilePic = document.createElement('div');
+        profilePic.classList.add('profile-pic');
+        
+        const containerDiv = document.createElement('div');
+        containerDiv.classList.add('comment-section__dynamic-container');
+    
+        const nameElement = document.createElement('div');
+        nameElement.classList.add('comment-section__name');
+        nameElement.textContent = comment.name;
+        // console.log(comment.comment);
+        
+    
+        const dateElement = document.createElement('div');
+        dateElement.classList.add('comment-section__date');
+        dateElement.textContent = comment.date;
+    
+    
+        containerDiv.appendChild(nameElement);
+        containerDiv.appendChild(dateElement);
+    
+    
+        const commentElement = document.createElement('p');
+        commentElement.classList.add('comment-section__comment');
+        commentElement.textContent = comment.comment;
+    
+    
+        
+    
+        const divider = document.createElement('div');
+        divider.classList.add('divider');
+        divider.classList.add('divider--bottom');
+        
+        commentsSection.appendChild(profilePic);
+        // commentsSection.appendChild(nameElement);
+        // commentsSection.appendChild(dateElement);
+        commentsSection.appendChild(containerDiv);
+        commentsSection.appendChild(commentElement);
+        commentsSection.appendChild(divider);
+
+        // allComments.push(comments);
+    });
+}
 
 
 // const commentsSection = document.querySelector('.comment-section__comments');
