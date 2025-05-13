@@ -109,7 +109,7 @@ function displayComments(comments){
 
         const dateElement = document.createElement('div');
         dateElement.classList.add('comment-section__date');
-        dateElement.textContent = comment.date;
+        dateElement.textContent = new Date(comment.timestamp).toLocaleDateString();
     
     
         containerDiv.appendChild(nameElement);
