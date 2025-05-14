@@ -1,62 +1,26 @@
+import {getComments, postComment} from "./band-site-api.js";
+
 // Refactoring code to use axios
-const apiKey = 'cb73002f-6277-4e76-9845-fec9cc772c30';
-const baseUrl = 'https://unit-2-project-api-25c1595833b2.herokuapp.com/';
+const form = document.querySelector('.form');
+const nameInput = document.getElementById('commenter');
+const commentInput = document.getElementById('commentText');
+const commentsSection = document.querySelector('.comment-section__comments');
 
 let allComments = [];
 
 
-async function getComments(){
+async function loadAllComments(){
     try {
-        const response = await axios.get(`${baseUrl}comments?api_key=${apiKey}`);
-        allComments = response.data;
-        console.log('Loading comments:', allComments);
-
-        displayComments(allComments);
-
+        allComments = await getComments();
+        // allComments.sort((a, b) => b.timestamp - a.timestamp);
+        renderComments(allComments);
     } catch (error) {
-        console.error('Error loading comments:', error)
+        console.error(`Error loading comments:`, error.response?.status, error.message);
     }
 }
 
 
-async function postComment(comment){
-    const nameInput = document.getElementById('commenter').value.trim();
-    const commentInput = document.getElementById('commentText').value.trim();
-
-    try {
-        if(nameInput && commentInput){
-            const response = await axios.post(`${baseUrl}comments?api_key=${apiKey}`, comment);
-    
-            const newComment = response.data;
-            allComments.unshift(newComment);
-            console.log(allComments);
-
-            displayComments(allComments);
-        } 
-    } catch (error) {
-        console.error('Error submitting comment:', error);
-    }
-}
-
-
-const form = document.querySelector('.form');
-const nameInput = document.getElementById('commenter');
-const commentInput = document.getElementById('commentText');
-
-nameInput.addEventListener('input', () => {
-    if(nameInput.value.trim()){
-        nameInput.classList.remove('error');
-    }
-})
-
-commentInput.addEventListener('input', () => {
-    if(commentInput.value.trim()){
-        commentInput.classList.remove('error');
-    }
-})
-
-
-form.addEventListener('submit', (event) => {
+async function handleFormSubmit(event){
     event.preventDefault();
 
     let commenter = nameInput.value.trim();
@@ -83,15 +47,21 @@ form.addEventListener('submit', (event) => {
             comment: commentText,
         };
 
-        postComment(newComment);
-        form.reset();
+        try {
+            const postedComment = await postComment(newComment);
+            // await postComment(newComment);
+            allComments.unshift(postedComment);
+            // await loadAllComments();
+            renderComments(allComments)
+            form.reset();
+        } catch (error) {
+            console.error(`Error submitting comment:`, error.response?.status, error.message);
+        }
     }
-})
+}
 
 
-function displayComments(comments){
-    const commentsSection = document.querySelector('.comment-section__comments');
-
+function renderComments(comments){
     commentsSection.innerHTML = '';
 
     comments.forEach(comment => {
@@ -109,7 +79,7 @@ function displayComments(comments){
 
         const dateElement = document.createElement('div');
         dateElement.classList.add('comment-section__date');
-        dateElement.textContent = comment.date;
+        dateElement.textContent = new Date(comment.timestamp).toLocaleDateString();
     
     
         containerDiv.appendChild(nameElement);
@@ -133,4 +103,21 @@ function displayComments(comments){
 }
 
 
-getComments();
+// Form Validation
+nameInput.addEventListener('input', () => {
+    if(nameInput.value.trim()){
+        nameInput.classList.remove('error');
+    }
+})
+
+commentInput.addEventListener('input', () => {
+    if(commentInput.value.trim()){
+        commentInput.classList.remove('error');
+    }
+})
+
+
+form.addEventListener('submit', handleFormSubmit);
+
+
+loadAllComments();
