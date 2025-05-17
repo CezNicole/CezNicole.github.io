@@ -15,9 +15,24 @@ export async function getComments(){
 export async function postComment(comment){
     try {
         const response = await axios.post(`${baseUrl}comments?api_key=${apiKey}`, comment);
+
+        const newComment = response.data;
+        newComment.isUserAdded = true;        
+        
         console.log('Posting comment:', response.data);
-        return response.data;
+        return newComment;
     } catch (error) {
         console.error('Error posting comment:', error.response?.status, error.message);
+    }
+}
+
+
+export async function deleteComment(commentId){
+    try {
+        const response = await axios.delete(`${baseUrl}comments/${commentId}?api_key=${apiKey}`);
+        console.log('Deleting comment:', response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error deleting comment:', error.response?.status, error.message);
     }
 }

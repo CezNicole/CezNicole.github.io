@@ -311,6 +311,18 @@ body {
   position: relative;
   bottom: 1.2em;
 }
+.comment-section__dynamic-parent-container {
+  width: 100%;
+  display: flex;
+}
+.comment-section__delete-button {
+  background-image: url(../../assets/icons/BandSite/SVG/icon-delete.svg);
+  background-repeat: no-repeat;
+  width: 0.75em;
+  margin-left: 1em;
+  position: relative;
+  bottom: 1.15em;
+}
 
 .profile-pic {
   border-radius: 50%;
@@ -448,6 +460,10 @@ body {
   width: 100%;
   font-size: 0.7em;
   padding-bottom: 1.5em;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (min-width: 768px) {

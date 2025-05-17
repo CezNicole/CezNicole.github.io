@@ -1,4 +1,4 @@
-import {getComments, postComment} from "./band-site-api.js";
+import {getComments, postComment, deleteComment} from "./band-site-api.js";
 
 // Refactoring code to use axios
 const form = document.querySelector('.form');
@@ -49,10 +49,10 @@ async function handleFormSubmit(event){
 
         try {
             const postedComment = await postComment(newComment);
-            // await postComment(newComment);
             allComments.unshift(postedComment);
-            // await loadAllComments();
             renderComments(allComments)
+            // await postComment(newComment);
+            // await loadAllComments();
             form.reset();
         } catch (error) {
             console.error(`Error submitting comment:`, error.response?.status, error.message);
@@ -64,8 +64,12 @@ async function handleFormSubmit(event){
 function renderComments(comments){
     commentsSection.innerHTML = '';
 
-    comments.forEach(comment => {
+    comments.forEach((comment, index) => {
     
+        const parentContainerDiv = document.createElement('div');
+        parentContainerDiv.classList.add('comment-section__dynamic-parent-container');
+
+
         const profilePic = document.createElement('div');
         profilePic.classList.add('profile-pic');
         
@@ -80,11 +84,25 @@ function renderComments(comments){
         const dateElement = document.createElement('div');
         dateElement.classList.add('comment-section__date');
         dateElement.textContent = new Date(comment.timestamp).toLocaleDateString();
-    
-    
+
+        
+        const btnDelete = document.createElement('a');
+        btnDelete.href = '#';
+        btnDelete.classList.add('comment-section__delete-button');
+        
+        if(dateElement.textContent <= '2/17/2021'){
+            btnDelete.classList.add('hidden');
+        }
+
+        btnDelete.addEventListener('click', (event) => deletePostedComment(event, comment.id));
+
+
         containerDiv.appendChild(nameElement);
         containerDiv.appendChild(dateElement);
-    
+
+        parentContainerDiv.appendChild(containerDiv);
+        parentContainerDiv.appendChild(btnDelete);
+
     
         const commentElement = document.createElement('p');
         commentElement.classList.add('comment-section__comment');
@@ -96,7 +114,9 @@ function renderComments(comments){
         divider.classList.add('divider--bottom');
         
         commentsSection.appendChild(profilePic);
-        commentsSection.appendChild(containerDiv);
+        
+        commentsSection.appendChild(parentContainerDiv);
+
         commentsSection.appendChild(commentElement);
         commentsSection.appendChild(divider);
     });
@@ -121,3 +141,16 @@ form.addEventListener('submit', handleFormSubmit);
 
 
 loadAllComments();
+
+
+async function deletePostedComment(event, commentId){
+    event.preventDefault();
+
+    try {
+        await deleteComment(commentId);
+        allComments = allComments.filter(comment => commentId !== comment.id);
+        renderComments(allComments);
+    } catch (error) {
+        console.error('Failed to delete comment:', error.response?.status, error.message);
+    }
+}
