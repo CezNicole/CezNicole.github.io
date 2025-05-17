@@ -90,7 +90,7 @@ function renderComments(comments){
         btnDelete.href = '#';
         btnDelete.classList.add('comment-section__delete-button');
         
-        if(index < 3){
+        if(dateElement.textContent <= '2/17/2021'){
             btnDelete.classList.add('hidden');
         }
 
