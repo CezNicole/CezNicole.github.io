@@ -8,11 +8,21 @@ const commentsSection = document.querySelector('.comment-section__comments');
 
 let allComments = [];
 
+// const pageLoad = Date.now();
+// const maxTimestamp = await checkMaxTimestamp();
+
 
 async function loadAllComments(){
     try {
         allComments = await getComments();
-        // allComments.sort((a, b) => b.timestamp - a.timestamp);
+
+        // allComments = allComments.map(comment => {
+        //     return {
+        //         ...comment,
+        //         isOriginal: new Date(comment.timestamp).getTime() <= maxTimestamp.getTime()
+        //     }
+        // })
+
         renderComments(allComments);
     } catch (error) {
         console.error(`Error loading comments:`, error.response?.status, error.message);
@@ -49,6 +59,7 @@ async function handleFormSubmit(event){
 
         try {
             const postedComment = await postComment(newComment);
+            // postedComment.isOriginal = false;
             allComments.unshift(postedComment);
             renderComments(allComments)
             // await postComment(newComment);
@@ -64,7 +75,7 @@ async function handleFormSubmit(event){
 function renderComments(comments){
     commentsSection.innerHTML = '';
 
-    comments.forEach((comment, index) => {
+    comments.forEach(comment => {
     
         const parentContainerDiv = document.createElement('div');
         parentContainerDiv.classList.add('comment-section__dynamic-parent-container');
@@ -90,9 +101,22 @@ function renderComments(comments){
         btnDelete.href = '#';
         btnDelete.classList.add('comment-section__delete-button');
         
+
+        // Add delete button only on newly added comments via POST method
         if(dateElement.textContent <= '2/17/2021'){
+        // if(dateElement.textContent <= convertedMaxTimestamp){
+            // console.log('Converted max timestamp:', convertedMaxTimestamp);
             btnDelete.classList.add('hidden');
         }
+
+        // if(new Date(comment.timestamp).getTime() <= maxTimestamp.getTime()){
+        //     console.log('Original max timestamp:', comment.timestamp);
+        //     btnDelete.classList.add('hidden');   
+        // }
+
+        // if(comment.isOriginal){
+        //     btnDelete.classList.add('hidden');   
+        // }
 
         btnDelete.addEventListener('click', (event) => deletePostedComment(event, comment.id));
 
@@ -154,3 +178,19 @@ async function deletePostedComment(event, commentId){
         console.error('Failed to delete comment:', error.response?.status, error.message);
     }
 }
+
+
+// async function checkMaxTimestamp(){
+//     const allApiComments = await getComments();
+//     const originalApiComments = allApiComments.filter(comment => {
+//         return new Date(comment.timestamp).getTime() < pageLoad;
+//     });
+//     console.log('Original API Comments:', originalApiComments);
+
+//     const timestamps = originalApiComments.map(comment => new Date(comment.timestamp));
+//     const maxTimestamp = new Date(Math.max(...timestamps));
+//     const convertedMaxTimestamp = maxTimestamp.toLocaleDateString('en-US');
+//     console.log('Converted Max Timestamp:', convertedMaxTimestamp);
+
+//     return maxTimestamp;
+// }
