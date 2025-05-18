@@ -36,3 +36,13 @@ export async function deleteComment(commentId){
         console.error('Error deleting comment:', error.response?.status, error.message);
     }
 }
+
+
+export async function getShows(){
+    try {
+        const response = await axios.get(`${baseUrl}showdates?api_key=${apiKey}`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching show dates:', error.response?.status, error.message);
+    }
+}
