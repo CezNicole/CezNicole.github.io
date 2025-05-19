@@ -195,16 +195,12 @@
         @include form-field-labels;
         color: colors.$silver;
         font-size: 0.8em;
-        // display: flex;
-        // justify-content: flex-end;
-        // align-items: flex-end;
-        // position: relative;
-        // left: 1em;
+        position: relative;
+        right: 1em;
     }
 
     &__dynamic-container{
         @include full-image-width;
-        // width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -213,25 +209,9 @@
     }
 
     &__dynamic-parent-container{
-        // width: 100%;
         @include full-image-width;
         display: flex;
-        // justify-content: space-between;
-        // align-items: flex-start;
-        // align-items: flex-start;
-        // position: relative;
-        // bottom: 1.2em;
-        // bottom: 1em;
     }
-
-    // &__delete-button-container{
-    //     width: 0.75em;
-    //     // border: 2px solid red;
-    //     position: relative;
-    //     // left: 17.5em;
-    //     // bottom: 9em;
-    //     // bottom: 0.45em;
-    // }
 
     &__delete-button{
         background-image: url(../../assets/icons/BandSite/SVG/icon-delete.svg);
@@ -240,7 +220,18 @@
         margin-left: 1em;
         position: relative;
         bottom: 1.15em;
-        // right: 15em;
+    }
+
+    &__like-button{
+        background-image: url(../../assets/icons/BandSite/SVG/icon-like.svg);
+        background-repeat: no-repeat;
+        width: 1em;
+        position: relative;
+        bottom: 1.15em;
+
+        &--liked{
+            filter: brightness(0) saturate(100%) invert(22%) sepia(93%) saturate(6434%) hue-rotate(210deg) brightness(94%) contrast(105%);
+        }
     }
 }
 

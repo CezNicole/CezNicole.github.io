@@ -1,4 +1,4 @@
-import {getComments, postComment, deleteComment} from "./band-site-api.js";
+import {getComments, postComment, deleteComment, likeComment} from "./band-site-api.js";
 
 // Refactoring code to use axios
 const form = document.querySelector('.form');
@@ -96,6 +96,15 @@ function renderComments(comments){
         dateElement.classList.add('comment-section__date');
         dateElement.textContent = new Date(comment.timestamp).toLocaleDateString();
 
+
+        const btnLike = document.createElement('a');
+        btnLike.href = '#';
+        btnLike.classList.add('comment-section__like-button');
+        btnLike.addEventListener('click', (event) => {
+            likeExistingComment(event, comment.id);
+            btnLike.classList.add('comment-section__like-button--liked');
+        });
+
         
         const btnDelete = document.createElement('a');
         btnDelete.href = '#';
@@ -125,6 +134,7 @@ function renderComments(comments){
         containerDiv.appendChild(dateElement);
 
         parentContainerDiv.appendChild(containerDiv);
+        parentContainerDiv.appendChild(btnLike);
         parentContainerDiv.appendChild(btnDelete);
 
     
@@ -176,6 +186,26 @@ async function deletePostedComment(event, commentId){
         renderComments(allComments);
     } catch (error) {
         console.error('Failed to delete comment:', error.response?.status, error.message);
+    }
+}
+
+
+async function likeExistingComment(event, commentId){
+    event.preventDefault();
+    
+    try {
+        await likeComment(commentId);
+        allComments = allComments.map(comment => {
+            if(comment.id === commentId){
+                comment.like++;
+            } else{
+                console.log('Comment ID not found', error);
+            }
+        })
+       
+        renderComments(allComments);
+    } catch (error) {
+        console.error('Failed to like comment:', error.response?.status, error.message);
     }
 }
 
