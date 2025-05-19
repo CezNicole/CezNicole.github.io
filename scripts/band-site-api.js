@@ -38,6 +38,17 @@ export async function deleteComment(commentId){
 }
 
 
+export async function likeComment(commentId){
+    try {
+        const response = await axios.put(`${baseUrl}comments/${commentId}/like?api_key=${apiKey}`);
+        console.log('Liking comment:', response.data);
+        return response.data;
+    } catch (error) {
+        console.error('Error liking comment:', error.respons?.status, error.message);
+    }
+}
+
+
 export async function getShows(){
     try {
         const response = await axios.get(`${baseUrl}showdates?api_key=${apiKey}`);

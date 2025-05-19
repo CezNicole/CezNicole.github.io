@@ -302,6 +302,8 @@ body {
   margin-bottom: 0.25em;
   color: #afafaf;
   font-size: 0.8em;
+  position: relative;
+  right: 1em;
 }
 .comment-section__dynamic-container {
   width: 100%;
@@ -322,6 +324,16 @@ body {
   margin-left: 1em;
   position: relative;
   bottom: 1.15em;
+}
+.comment-section__like-button {
+  background-image: url(../../assets/icons/BandSite/SVG/icon-like.svg);
+  background-repeat: no-repeat;
+  width: 1em;
+  position: relative;
+  bottom: 1.15em;
+}
+.comment-section__like-button--liked {
+  filter: brightness(0) saturate(100%) invert(22%) sepia(93%) saturate(6434%) hue-rotate(210deg) brightness(94%) contrast(105%);
 }
 
 .profile-pic {
