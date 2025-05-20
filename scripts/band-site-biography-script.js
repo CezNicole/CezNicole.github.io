@@ -1,4 +1,6 @@
-import {getComments, postComment, deleteComment, likeComment} from "./band-site-api.js";
+// import {getComments, postComment, deleteComment, likeComment} from "./band-site-api.js";
+import BandSiteApi from "./band-site-api.js";
+
 
 // Refactoring code to use axios
 const form = document.querySelector('.form');
@@ -12,9 +14,15 @@ let allComments = [];
 // const maxTimestamp = await checkMaxTimestamp();
 
 
+// Creating an instance of BandSiteApi class
+const bandSiteApi = new BandSiteApi();
+
+
 async function loadAllComments(){
     try {
-        allComments = await getComments();
+        // allComments = await getComments();
+        allComments = await bandSiteApi.getComments();
+        
 
         // allComments = allComments.map(comment => {
         //     return {
@@ -58,7 +66,9 @@ async function handleFormSubmit(event){
         };
 
         try {
-            const postedComment = await postComment(newComment);
+            // const postedComment = await postComment(newComment);
+            const postedComment = bandSiteApi.postComment(newComment);
+
             // postedComment.isOriginal = false;
             allComments.unshift(postedComment);
             renderComments(allComments)
@@ -181,7 +191,8 @@ async function deletePostedComment(event, commentId){
     event.preventDefault();
 
     try {
-        await deleteComment(commentId);
+        // await deleteComment(commentId);
+        bandSiteApi.deleteComment(commentId)
         allComments = allComments.filter(comment => commentId !== comment.id);
         renderComments(allComments);
     } catch (error) {
@@ -194,7 +205,8 @@ async function likeExistingComment(event, commentId){
     event.preventDefault();
     
     try {
-        await likeComment(commentId);
+        // await likeComment(commentId);
+        bandSiteApi.likeComment(commentId)
         allComments = allComments.map(comment => {
             if(comment.id === commentId){
                 comment.like++;
