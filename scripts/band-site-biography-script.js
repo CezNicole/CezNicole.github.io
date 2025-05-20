@@ -67,7 +67,7 @@ async function handleFormSubmit(event){
 
         try {
             // const postedComment = await postComment(newComment);
-            const postedComment = bandSiteApi.postComment(newComment);
+            const postedComment = await bandSiteApi.postComment(newComment);
 
             // postedComment.isOriginal = false;
             allComments.unshift(postedComment);
