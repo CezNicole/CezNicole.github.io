@@ -10,9 +10,6 @@ const commentsSection = document.querySelector('.comment-section__comments');
 
 let allComments = [];
 
-// const pageLoad = Date.now();
-// const maxTimestamp = await checkMaxTimestamp();
-
 
 // Creating an instance of BandSiteApi class
 const bandSiteApi = new BandSiteApi();
@@ -23,14 +20,6 @@ async function loadAllComments(){
         // allComments = await getComments();
         allComments = await bandSiteApi.getComments();
         
-
-        // allComments = allComments.map(comment => {
-        //     return {
-        //         ...comment,
-        //         isOriginal: new Date(comment.timestamp).getTime() <= maxTimestamp.getTime()
-        //     }
-        // })
-
         renderComments(allComments);
     } catch (error) {
         console.error(`Error loading comments:`, error.response?.status, error.message);
@@ -69,11 +58,8 @@ async function handleFormSubmit(event){
             // const postedComment = await postComment(newComment);
             const postedComment = await bandSiteApi.postComment(newComment);
 
-            // postedComment.isOriginal = false;
             allComments.unshift(postedComment);
             renderComments(allComments)
-            // await postComment(newComment);
-            // await loadAllComments();
             form.reset();
         } catch (error) {
             console.error(`Error submitting comment:`, error.response?.status, error.message);
@@ -123,20 +109,10 @@ function renderComments(comments){
 
         // Add delete button only on newly added comments via POST method
         if(dateElement.textContent <= '2/17/2021'){
-        // if(dateElement.textContent <= convertedMaxTimestamp){
-            // console.log('Converted max timestamp:', convertedMaxTimestamp);
             btnDelete.classList.add('hidden');
         }
 
-        // if(new Date(comment.timestamp).getTime() <= maxTimestamp.getTime()){
-        //     console.log('Original max timestamp:', comment.timestamp);
-        //     btnDelete.classList.add('hidden');   
-        // }
-
-        // if(comment.isOriginal){
-        //     btnDelete.classList.add('hidden');   
-        // }
-
+        
         btnDelete.addEventListener('click', (event) => deletePostedComment(event, comment.id));
 
 
@@ -193,6 +169,7 @@ async function deletePostedComment(event, commentId){
     try {
         // await deleteComment(commentId);
         bandSiteApi.deleteComment(commentId)
+        
         allComments = allComments.filter(comment => commentId !== comment.id);
         renderComments(allComments);
     } catch (error) {
@@ -207,6 +184,7 @@ async function likeExistingComment(event, commentId){
     try {
         // await likeComment(commentId);
         bandSiteApi.likeComment(commentId)
+        
         allComments = allComments.map(comment => {
             if(comment.id === commentId){
                 comment.like++;
@@ -220,19 +198,3 @@ async function likeExistingComment(event, commentId){
         console.error('Failed to like comment:', error.response?.status, error.message);
     }
 }
-
-
-// async function checkMaxTimestamp(){
-//     const allApiComments = await getComments();
-//     const originalApiComments = allApiComments.filter(comment => {
-//         return new Date(comment.timestamp).getTime() < pageLoad;
-//     });
-//     console.log('Original API Comments:', originalApiComments);
-
-//     const timestamps = originalApiComments.map(comment => new Date(comment.timestamp));
-//     const maxTimestamp = new Date(Math.max(...timestamps));
-//     const convertedMaxTimestamp = maxTimestamp.toLocaleDateString('en-US');
-//     console.log('Converted Max Timestamp:', convertedMaxTimestamp);
-
-//     return maxTimestamp;
-// }
