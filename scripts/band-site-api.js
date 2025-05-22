@@ -61,7 +61,7 @@
 
 // Refactor functions into a class
 export default class BandSiteApi{
-    apiKey = 'cb73002f-6277-4e76-9845-fec9cc772c30';
+    #apiKey = 'cb73002f-6277-4e76-9845-fec9cc772c30';
     
     
     constructor(apiKey){
