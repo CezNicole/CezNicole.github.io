@@ -1,12 +1,18 @@
-import { getShows } from "./band-site-api.js";
+// import { getShows } from "./band-site-api.js";
+import BandSiteApi from "./band-site-api.js";
 
 
 let shows = [];
 
 
+// Creating instance of BandSiteApi class
+const bandSiteApi = new BandSiteApi();
+
+
 async function loadShows(){
     try {
-        shows = await getShows();
+        // shows = await getShows();
+        shows = await bandSiteApi.getShows();
         displayShows(shows);
     } catch (error) {
         console.error('Error loading show dates:', error.response?.status, error.message);
