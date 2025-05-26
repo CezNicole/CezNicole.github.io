@@ -1,0 +1,80 @@
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/colors' as colors;
+@use '../../styles/partials/breakpoints' as breakpoints;
+
+.travel-bloom{
+    background-image: url(../../assets/images/TravelBloom/images/downtown-nyc.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: colors.$travelbloom-black;
+    color: colors.$white;
+    width: 100%;
+    padding: 0.5em;
+
+    &__container{
+        display: flex;
+    }
+
+    &__site-name{
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-size: 1.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 1em;
+    }
+}
+
+.nav-bar{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 25%;
+    
+    &__links{
+        text-decoration: none;
+        color: colors.$white;
+        font-weight: 600;
+    }
+}
+
+.search-bar{
+    width: 30%;
+    height: 2.8em;
+    background-color: colors.$white;
+    border-radius: 2em;
+    padding: 0.75em;
+    margin: auto 0;
+}
+
+#searchInput{
+    border: none;
+    width: 60%;
+}
+
+.icons{
+    &__logo{
+        filter:
+            brightness(0) invert(1) /* Turns black to white */
+            drop-shadow(0.5px 0 white)    /* Adds white outline */
+            drop-shadow(-0.5px 0 white) drop-shadow(0 0.5px white) drop-shadow(0 -0.5px white);
+    }
+
+    &__search{
+        width: 1em;
+    }
+}
+
+.buttons{
+    background-color: colors.$travelbloom-teal;
+    color: colors.$white;
+    border: colors.$travelbloom-teal;
+}

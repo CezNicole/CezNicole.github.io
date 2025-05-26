@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url(../../assets/fonts/OpenSans-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../../assets/fonts/OpenSans-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../../assets/fonts/OpenSans-Italic.ttf) format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url(../../assets/fonts/OpenSans-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTPro.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProDemi.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype"), url(../../assets/fonts/Alternative-files/AvenirNextLTProBold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+/*
+PRIMARY COLORS
+BandSite-Black: Primary text color for dark on light background. Dark background color
+-used for social icons
+-bandsite logo 
+
+Silver: Seconday text color. Inactive CTA text color. 
+
+White: Primary text color for light on dark background. Light background color. Active CTA text color.
+-active and hover links
+
+
+SECONDARY COLORS
+BandSite-DarkBlack: CTA hover state.
+
+Mercury: Divider line. Form field outline.
+-inactive links
+
+Alabaster: Alternative light background color
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.portfolio {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #cad2c5;
+}
+
+.nitro-coffee-shop {
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff0ed;
+  color: #393939;
+}
+
+.travel-site {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #FFFFFF;
+}
+
+.travel-bloom {
+  background-image: url(../../assets/images/TravelBloom/images/downtown-nyc.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #191d1a;
+  color: #fff;
+  width: 100%;
+  padding: 0.5em;
+}
+.header__container {
+  display: flex;
+}
+.header__site-name {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1em;
+}
+
+.nav-bar {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 25%;
+}
+.nav-bar__links {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.search-bar {
+  width: 30%;
+  height: 2.8em;
+  background-color: #fff;
+  border-radius: 2em;
+  padding: 0.75em;
+  margin: auto 0;
+}
+
+#searchInput {
+  border: none;
+  width: 60%;
+}
+
+.icons__logo {
+  filter: brightness(0) invert(1) drop-shadow(0.5px 0 white) drop-shadow(-0.5px 0 white) drop-shadow(0 0.5px white) drop-shadow(0 -0.5px white);
+}
+.icons__search {
+  width: 1em;
+}
+
+.buttons {
+  background-color: #006666;
+  color: #fff;
+  border: #006666;
+}/*# sourceMappingURL=travel-bloom-home.css.map */
