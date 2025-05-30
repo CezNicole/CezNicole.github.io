@@ -10,13 +10,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: colors.$white;
 }
 
 .header{
     display: flex;
     justify-content: space-between;
     background-color: colors.$travelbloom-black;
-    color: colors.$white;
+    // color: colors.$white;
     width: 100%;
     padding: 0.5em;
     position: fixed;
@@ -50,7 +51,7 @@
     top: 3.7em;
     left: 0;
     background-color: colors.$travelbloom-black;
-    color: colors.$white;
+    // color: colors.$white;
     width: 100%;
     padding: 1em 0 0;
     display: flex;
@@ -82,7 +83,9 @@
         }
 
         &:active{
-            color: colors.$light-blue;
+            // color: colors.$light-blue;
+            background-color: colors.$secondary-teal;
+            // color: colors.$travelbloom-teal;
         }
     }
 }
@@ -129,14 +132,14 @@
 }
 
 .icons{
-    width: 12em;
-    border: 2px solid red;
+    width: 1.5em;
 
     &__logo{
         filter:
             brightness(0) invert(1) /* Turns black to white */
             drop-shadow(0.5px 0 white)    /* Adds white outline */
             drop-shadow(-0.5px 0 white) drop-shadow(0 0.5px white) drop-shadow(0 -0.5px white);
+        // width: 2.5em;
         width: 2.5em;
     }
 
@@ -148,27 +151,134 @@
         // width: 1.3em;
         width: 1em;
     }
+
+    &--smaller{
+        width: 1em;
+    }
+
+    &--bigger{
+        width: 1.6em;
+    }
 }
 
 .buttons{
-    background-color: colors.$travelbloom-teal;
+    background-color: colors.$secondary-teal;
     color: colors.$white;
     border: colors.$travelbloom-teal;
-    padding: 0 1em;
-    display: none;
+    padding: 0.75em 0;
+    width: 9em;
+    border-radius: 0.4em;
+    font-size: 1em;
+    font-weight: 600;
+    
+    &--hidden{
+        display: none;
+    }
+
+    &:hover{
+        background-color: colors.$travelbloom-teal;
+    }
+
+    &:active{
+        background-color: colors.$darkslategray;
+    }
 }
 
 .main{
     background-image: url(../../assets/images/TravelBloom/images/downtown-nyc.jpg);
     background-repeat: no-repeat;
     // background-size: 100vw;
-    background-size: 100% 45em;
-    /* position: relative; */
-    /* top: 12em; */
-    height: 100vh;
+    // background-size: 100% 45em;
+    background-size: 100% 60em;
+    // background-size: cover;
+    // height: 100vh;
+    height: 60em;
+    // height: 100%;
+    // height: 100em;
+    // position: relative;
+    // top: 12em;
 
-    // &__background{
-    //     width: 100%;
-    //     height: 100vh;
-    // }
+    &::before{
+        content: '';
+        background-color: rgba($color: colors.$darkslategray, $alpha: 0.6);
+        position: absolute;
+        top: 14.2em;
+        left: 0;
+        width: 100%;
+        // height: 100%;
+        // height: 140.5%;
+        height: 47.8em;
+        // z-index: 1;
+    }
+
+    &__container{
+        position: relative;
+        top: 15em;
+        margin: 2em 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__socials-section{
+        width: 10%;
+        // border: 2px solid red;
+    }
+
+    &__main-section{
+        width: 90%;
+        margin: 1em 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    &__title{
+        // color: colors.$white;
+        font-size: 2.6em;
+        // font-size: 10vw;
+        font-weight: 900;
+        // margin: 1em 0.5em;
+        width: 9em;
+        line-height: 1.3em;
+    }
+
+    &__description{
+        width: 75%;
+        line-height: 1.5em;
+        color: colors.$travelbloom-gray;
+    }
+}
+
+.vertical-line{
+    border-left: 0.15em solid colors.$white;
+    height: 11.5em;
+    margin: 0 1.75em;
+}
+
+.socials{
+    list-style-type: none;
+    margin: 4em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 15em;
+
+    &__links{
+        text-decoration: none;
+    }
+}
+
+.search-results{
+    position: absolute;    
+    top: 35em;
+    margin: 0 3.5em;
+
+    &__container{
+        background-color: colors.$darkslategray;
+        padding: 1em 2em;
+        width: 100%;
+        border-radius: 0.5em;
+        font-weight: 600;
+    }
 }
