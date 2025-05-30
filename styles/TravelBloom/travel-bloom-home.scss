@@ -105,6 +105,9 @@
 }
 
 .icons{
+    width: 12em;
+    border: 2px solid red;
+
     &__logo{
         filter:
             brightness(0) invert(1) /* Turns black to white */

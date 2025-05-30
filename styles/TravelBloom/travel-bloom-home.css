@@ -166,6 +166,10 @@ body {
   color: #006666;
 }
 
+.icons {
+  width: 12em;
+  border: 2px solid red;
+}
 .icons__logo {
   filter: brightness(0) invert(1) drop-shadow(0.5px 0 white) drop-shadow(-0.5px 0 white) drop-shadow(0 0.5px white) drop-shadow(0 -0.5px white);
   width: 2.5em;
