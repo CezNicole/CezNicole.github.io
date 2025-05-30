@@ -87,10 +87,10 @@ body {
 }
 
 .travel-bloom {
-  background-image: url(../../assets/images/TravelBloom/images/downtown-nyc.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100vh;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .header {
@@ -100,6 +100,9 @@ body {
   color: #fff;
   width: 100%;
   padding: 0.5em;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 .header__container {
   display: flex;
@@ -122,19 +125,26 @@ body {
   background-color: #191d1a;
   color: #fff;
   width: 100%;
-  padding: 1em 0;
+  padding: 1em 0 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-.nav-bar__list-item {
-  margin: 0.5em 0;
+  align-items: stretch;
 }
 .nav-bar__links {
   text-decoration: none;
   color: #fff;
   font-weight: 600;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-bar__links:hover {
+  background-color: #006666;
+}
+.nav-bar__links:active {
+  color: #B3E5FC;
 }
 
 .search-bar {
@@ -184,4 +194,13 @@ body {
   border: #006666;
   padding: 0 1em;
   display: none;
+}
+
+.main {
+  background-image: url(../../assets/images/TravelBloom/images/downtown-nyc.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 45em;
+  /* position: relative; */
+  /* top: 12em; */
+  height: 100vh;
 }/*# sourceMappingURL=travel-bloom-home.css.map */
