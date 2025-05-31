@@ -140,7 +140,7 @@ body {
   align-items: center;
 }
 .nav-bar__links:hover {
-  background-color: #006666;
+  background-color: #0a3f3f;
 }
 .nav-bar__links:active {
   background-color: #007c8c;
@@ -162,17 +162,17 @@ body {
 #searchInput {
   border: #fff;
   width: 100%;
-  color: #006666;
+  color: #0a3f3f;
   border-radius: 2em;
   position: relative;
   right: 0.7em;
   padding: 0 1em;
 }
 #searchInput::-moz-placeholder {
-  color: #006666;
+  color: #0a3f3f;
 }
 #searchInput::placeholder {
-  color: #006666;
+  color: #0a3f3f;
 }
 
 .icons {
@@ -195,7 +195,7 @@ body {
 .buttons {
   background-color: #007c8c;
   color: #fff;
-  border: #006666;
+  border: #0a3f3f;
   padding: 0.75em 0;
   width: 9em;
   border-radius: 0.4em;
@@ -206,7 +206,7 @@ body {
   display: none;
 }
 .buttons:hover {
-  background-color: #006666;
+  background-color: #0a3f3f;
 }
 .buttons:active {
   background-color: #023638;
@@ -278,12 +278,17 @@ body {
 .search-results {
   position: absolute;
   top: 35em;
-  margin: 0 3.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin: 0 2.5em;
+  width: 90%;
 }
-.search-results__container {
-  background-color: #023638;
+.search-results__local-time {
+  background-color: #0a3f3f;
   padding: 1em 2em;
-  width: 100%;
+  width: 25em;
   border-radius: 0.5em;
   font-weight: 600;
 }/*# sourceMappingURL=travel-bloom-home.css.map */
