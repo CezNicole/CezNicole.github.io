@@ -248,7 +248,7 @@ body {
 .main__title {
   font-size: 2.6em;
   font-weight: 900;
-  width: 9em;
+  width: 90%;
   line-height: 1.3em;
 }
 .main__description {
@@ -278,17 +278,27 @@ body {
 .search-results {
   position: absolute;
   top: 35em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  margin: 0 2.5em;
-  width: 90%;
+  width: 80%;
+  max-width: 28em;
 }
 .search-results__local-time {
   background-color: #0a3f3f;
   padding: 1em 2em;
-  width: 25em;
   border-radius: 0.5em;
   font-weight: 600;
+}
+.search-results__cards {
+  width: 100%;
+  margin: 1em 0;
+  border-radius: 2em;
+}
+.search-results__card-images {
+  width: 100%;
+  border-radius: 0.5em;
+  height: 15em;
+}
+.search-results__card-details {
+  background-color: #fff;
+  color: #333333;
+  padding: 1em;
 }/*# sourceMappingURL=travel-bloom-home.css.map */
