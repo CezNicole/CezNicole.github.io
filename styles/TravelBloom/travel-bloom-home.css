@@ -140,7 +140,7 @@ body {
   align-items: center;
 }
 .nav-bar__links:hover {
-  background-color: #0a3f3f;
+  background-color: #053d41;
 }
 .nav-bar__links:active {
   background-color: #007c8c;
@@ -162,17 +162,17 @@ body {
 #searchInput {
   border: #fff;
   width: 100%;
-  color: #0a3f3f;
+  color: #053d41;
   border-radius: 2em;
   position: relative;
   right: 0.7em;
   padding: 0 1em;
 }
 #searchInput::-moz-placeholder {
-  color: #0a3f3f;
+  color: #053d41;
 }
 #searchInput::placeholder {
-  color: #0a3f3f;
+  color: #053d41;
 }
 
 .icons {
@@ -195,7 +195,7 @@ body {
 .buttons {
   background-color: #007c8c;
   color: #fff;
-  border: #0a3f3f;
+  border: #053d41;
   padding: 0.75em 0;
   width: 9em;
   border-radius: 0.4em;
@@ -206,17 +206,22 @@ body {
   display: none;
 }
 .buttons:hover {
-  background-color: #0a3f3f;
+  background-color: #053d41;
 }
 .buttons:active {
   background-color: #023638;
+}
+.buttons__visit {
+  padding: 0.5em 0;
+  font-weight: 300;
+  width: 4em;
 }
 
 .main {
   background-image: url(../../assets/images/TravelBloom/images/downtown-nyc.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 60em;
-  height: 60em;
+  background-size: cover;
+  height: 100em;
 }
 .main::before {
   content: "";
@@ -225,7 +230,7 @@ body {
   top: 14.2em;
   left: 0;
   width: 100%;
-  height: 47.8em;
+  height: 88em;
 }
 .main__container {
   position: relative;
@@ -249,6 +254,7 @@ body {
   font-size: 2.6em;
   font-weight: 900;
   width: 90%;
+  max-width: 9em;
   line-height: 1.3em;
 }
 .main__description {
@@ -282,7 +288,7 @@ body {
   max-width: 28em;
 }
 .search-results__local-time {
-  background-color: #0a3f3f;
+  background-color: #053d41;
   padding: 1em 2em;
   border-radius: 0.5em;
   font-weight: 600;
@@ -294,11 +300,25 @@ body {
 }
 .search-results__card-images {
   width: 100%;
-  border-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
   height: 15em;
 }
 .search-results__card-details {
   background-color: #fff;
   color: #333333;
   padding: 1em;
+  position: relative;
+  bottom: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 11.5em;
+}
+.search-results__description {
+  line-height: 1.5em;
+  margin: 0.3em 0 0.8em;
+  color: rgb(197, 197, 197);
 }/*# sourceMappingURL=travel-bloom-home.css.map */

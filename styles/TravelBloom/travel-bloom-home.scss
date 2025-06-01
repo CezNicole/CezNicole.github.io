@@ -182,6 +182,17 @@
     &:active{
         background-color: colors.$darkslategray;
     }
+
+    &__visit{
+        padding: 0.5em 0;
+        font-weight: 300;
+        width: 4em;
+        // background-color: colors.$travelbloom-teal;
+
+        // &:hover{
+        //     background-color: colors.$secondary-teal;
+        // }
+    }
 }
 
 .main{
@@ -189,10 +200,12 @@
     background-repeat: no-repeat;
     // background-size: 100vw;
     // background-size: 100% 45em;
-    background-size: 100% 60em;
+    // background-size: 100% 60em;
+    // height: 60em;
+    background-size: cover;
+    height: 100em;
     // background-size: cover;
     // height: 100vh;
-    height: 60em;
     // height: 100%;
     // height: 100em;
     // position: relative;
@@ -207,7 +220,8 @@
         width: 100%;
         // height: 100%;
         // height: 140.5%;
-        height: 47.8em;
+        // height: 47.8em;
+        height: 88em;
         // z-index: 1;
     }
 
@@ -241,6 +255,7 @@
         // margin: 1em 0.5em;
         // width: 9em;
         width: 90%;
+        max-width: 9em;
         line-height: 1.3em;
     }
 
@@ -294,7 +309,8 @@
 
     &__card-images{
         width: 100%;
-        border-radius: 0.5em;
+        border-top-left-radius: 0.5em;
+        border-top-right-radius: 0.5em;
         height: 15em;
     }
 
@@ -302,5 +318,20 @@
         background-color: colors.$white;
         color: colors.$travelbloom-charcoal;
         padding: 1em;
+        position: relative;
+        bottom: 0.5em;
+        border-bottom-left-radius: 0.5em;
+        border-bottom-right-radius: 0.5em;
+        // line-height: 3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 11.5em;
+    }
+
+    &__description{
+        line-height: 1.5em;
+        margin: 0.3em 0 0.8em;
+        color: colors.$travelbloom-gray;
     }
 }
