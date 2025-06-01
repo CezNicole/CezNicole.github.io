@@ -102,7 +102,7 @@ body {
   padding: 0.5em;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
 .header__container {
   display: flex;
@@ -220,8 +220,10 @@ body {
 .main {
   background-image: url(../../assets/images/TravelBloom/images/downtown-nyc.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 100em;
+  background-size: 100vw 100%;
+  height: 150%;
+  position: absolute;
+  z-index: 1;
 }
 .main::before {
   content: "";
@@ -230,7 +232,7 @@ body {
   top: 14.2em;
   left: 0;
   width: 100%;
-  height: 88em;
+  height: 72.5%;
 }
 .main__container {
   position: relative;
