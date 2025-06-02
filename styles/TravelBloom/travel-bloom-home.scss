@@ -196,64 +196,67 @@
 }
 
 .main{
+    position: relative;
+    top: 14em;
+    // top: 17.3em;
+    width: 100%;
+    max-width: 80em;
+    min-height: 100vh;
     background-image: url(../../assets/images/TravelBloom/images/downtown-nyc.jpg);
-    background-repeat: no-repeat;
-    // background-size: 100vw;
-    // background-size: 100% 45em;
-    // background-size: 100% 60em;
-    // height: 60em;
-    // background-size: cover;
-    // height: 100em;
-    // background-size: 100% 60%;
-    // height: 200vh;
-    // height: 100%;
-    // background-size: cover;
-    // height: 100vh;
-    // background-size: 100% 85em;
-    // height: 85em;
-    // height: 200%;
-    // background-size: 100% 55em;
-    // height: 55em;
-    background-size: 100vw 100%;
-    height: 150%;
-    position: absolute;
-    // top: 12em;
-    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    // z-index: 0;
 
     &::before{
         content: '';
-        background-color: rgba($color: colors.$darkslategray, $alpha: 0.6);
         position: absolute;
-        top: 14.2em;
-        left: 0;
-        width: 100%;
-        // height: 100%;
-        // height: 83.3%;
-        height: 72.5%;
-        // height: 59.43%;
-        // height: 140.5%;
-        // height: 47.8em;
-        // height: 88em;
-        // z-index: 1;
+        inset: 0;
+        background-color: rgba($color: colors.$travelbloom-teal, $alpha: 0.5);
     }
 
     &__container{
-        position: relative;
-        top: 15em;
-        margin: 2em 0;
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        position: relative;
+        // padding: 5.25em 0;
+        padding: 3em 0;
+        // padding: 4em 0;
+        // bottom: 17.4em;
+        // z-index: 1;
     }
+
+    &__subcontainer{
+        &--top{
+            display: flex;
+            width: 100%;
+        }
+    }
+
+    // &__background{
+    //     width: 100%;
+    //     min-height: 100vh;
+    //     height: 100%;
+    //     position: relative;
+    //     // top: 14em;
+    //     top: 5em;
+    //     z-index: -1;
+    // }
 
     &__socials-section{
         width: 10%;
+        // width: 15%;
         // border: 2px solid red;
+        padding: 0 0.5em;
     }
 
     &__main-section{
         width: 90%;
+        // width: 85%;
         margin: 1em 0.5em;
+        // margin: 1em auto;
+        // margin: 1em;
+        padding: 0.15em;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -261,32 +264,42 @@
 
     &__title{
         // color: colors.$white;
-        font-size: 2.6em;
+        // font-size: 2.6em;
+        font-size: 2.4em;
+        // font-size: 10vw;
+        // font-size: 210%;
         // font-size: 10vw;
         font-weight: 900;
         // margin: 1em 0.5em;
         // width: 9em;
-        width: 90%;
+        // width: 90%;
+        // width: 80%;
+        width: 100%;
         max-width: 9em;
         line-height: 1.3em;
     }
 
     &__description{
-        width: 75%;
+        // width: 75%;
+        width: 100%;
+        // max-width: 60vw;
+        max-width: 20em;
         line-height: 1.5em;
-        color: colors.$travelbloom-gray;
+        // color: colors.$travelbloom-gray;
     }
 }
 
 .vertical-line{
     border-left: 0.15em solid colors.$white;
     height: 11.5em;
-    margin: 0 1.75em;
+    // margin: 0 1.75em;
+    margin: 0 0.7em;
 }
 
 .socials{
     list-style-type: none;
-    margin: 4em 1em;
+    // margin: 4em 1em;
+    margin: 4em auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -298,10 +311,10 @@
 }
 
 .search-results{
-    position: absolute;    
-    top: 35em;
-    width: 80%;
-    max-width: 28em;
+    // position: absolute;    
+    // top: 35em;
+    // width: 80%;
+    // max-width: 28em;
 
     &__local-time{
         background-color: colors.$travelbloom-teal;
