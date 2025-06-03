@@ -224,12 +224,14 @@
         // padding: 4em 0;
         // bottom: 17.4em;
         // z-index: 1;
+        // flex-wrap: wrap;
     }
 
     &__subcontainer{
         &--top{
             display: flex;
             width: 100%;
+            // width: 60%;
         }
     }
 
@@ -314,7 +316,10 @@
     // position: absolute;    
     // top: 35em;
     // width: 80%;
-    // max-width: 28em;
+    width: 92%;
+    // width: 100%;
+    max-width: 28em;
+    margin: 0 auto;
 
     &__local-time{
         background-color: colors.$travelbloom-teal;
@@ -336,7 +341,8 @@
         width: 100%;
         border-top-left-radius: 0.5em;
         border-top-right-radius: 0.5em;
-        height: 15em;
+        // height: 15em;
+        height: 15.65em;
     }
 
     &__card-details{
@@ -351,7 +357,8 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        height: 11.5em;
+        // height: 11.5em;
+        height: 12em;
     }
 
     &__description{

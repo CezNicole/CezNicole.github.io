@@ -287,6 +287,11 @@ body {
   text-decoration: none;
 }
 
+.search-results {
+  width: 92%;
+  max-width: 28em;
+  margin: 0 auto;
+}
 .search-results__local-time {
   background-color: #09565c;
   padding: 1em 2em;
@@ -302,7 +307,7 @@ body {
   width: 100%;
   border-top-left-radius: 0.5em;
   border-top-right-radius: 0.5em;
-  height: 15em;
+  height: 15.65em;
 }
 .search-results__card-details {
   background-color: #fff;
@@ -315,7 +320,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 11.5em;
+  height: 12em;
 }
 .search-results__description {
   line-height: 1.5em;
