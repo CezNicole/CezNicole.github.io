@@ -33,7 +33,6 @@ export function search(){
     console.log(searchText);
 
     if(!searchText){
-        
         searchInput.classList.add('error');
         console.log('Please enter a valid destination / keyword.');
     } else{

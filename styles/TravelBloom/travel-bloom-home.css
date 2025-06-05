@@ -106,21 +106,22 @@ body {
 }
 .header__container {
   display: flex;
+  width: 40%;
+  z-index: 1;
 }
 .header__site-name {
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: 1.5em;
+  font-size: 1.25em;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 0.25em;
 }
 
 .nav-bar {
   list-style-type: none;
   position: absolute;
-  top: 3.7em;
+  top: 3.5em;
   left: 0;
   background-color: #191d1a;
   width: 100%;
@@ -147,20 +148,32 @@ body {
 }
 
 .search-bar {
-  width: 60%;
-  height: 2.8em;
+  width: 70%;
   background-color: #fff;
   border-radius: 2em;
-  padding: 0 0.75em;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.25em 0;
 }
-.search-bar__input:focus {
+.search-bar__container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.search-bar__subcontainer {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
   border: 2px solid red;
+}
+.search-bar__input {
+  width: 100%;
+  border: 2px solid blue;
 }
 
 #searchInput {
-  border: #fff;
+  border: none;
   width: 100%;
   color: #09565c;
   border-radius: 2em;
@@ -211,10 +224,23 @@ body {
 .buttons:active {
   background-color: #023638;
 }
+.buttons__form {
+  padding: 0.3em 0;
+  font-weight: 300;
+  width: 4.5em;
+  background-color: #09565c;
+}
+.buttons__form:hover {
+  background-color: #007c8c;
+}
 .buttons__visit {
   padding: 0.5em 0;
   font-weight: 300;
   width: 4em;
+  background-color: #09565c;
+}
+.buttons__visit:hover {
+  background-color: #007c8c;
 }
 
 .main {
@@ -223,7 +249,7 @@ body {
   width: 100%;
   max-width: 80em;
   min-height: 100vh;
-  background-image: url(../../assets/images/TravelBloom/images/downtown-nyc.jpg);
+  background-image: url(../../assets/images/TravelBloom/downtown-nyc.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -240,7 +266,7 @@ body {
   position: relative;
   padding: 3em 0;
 }
-.main__subcontainer--top {
+.main__subcontainer {
   display: flex;
   width: 100%;
 }
@@ -326,4 +352,8 @@ body {
   line-height: 1.5em;
   margin: 0.3em 0 0.8em;
   color: rgb(197, 197, 197);
+}
+
+.error {
+  border: 2px solid red;
 }/*# sourceMappingURL=travel-bloom-home.css.map */
