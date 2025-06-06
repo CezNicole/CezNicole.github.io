@@ -171,7 +171,7 @@ body {
   justify-content: space-evenly;
 }
 .search-bar__input {
-  border: 0.14em solid #fff;
+  border: 0.14em solid #09565c;
   width: 50%;
   max-width: 35vw;
   border-radius: 2em;
@@ -183,13 +183,16 @@ body {
 .search-bar__input::placeholder {
   color: #09565c;
 }
+.search-bar__input:focus {
+  border: 0.14em solid #09565c;
+}
 
 .icons {
   width: 1.5em;
 }
 .icons__logo {
   filter: brightness(0) invert(1) drop-shadow(0.5px 0 white) drop-shadow(-0.5px 0 white) drop-shadow(0 0.5px white) drop-shadow(0 -0.5px white);
-  width: 1.5em;
+  width: 2em;
 }
 .icons__search {
   width: 1em;
@@ -353,5 +356,5 @@ body {
 }
 
 .error {
-  border: 2px solid red;
+  border: 0.14em solid rgb(150, 5, 5);
 }/*# sourceMappingURL=travel-bloom-home.css.map */

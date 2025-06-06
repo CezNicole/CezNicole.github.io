@@ -134,7 +134,8 @@
 
 
     &__input{
-        border: 0.14em solid colors.$white;
+        // border: 0.14em solid colors.$white;
+        border: 0.14em solid colors.$travelbloom-teal;
         // width: 60%;
         width: 50%;
         // width: 35%;
@@ -155,9 +156,9 @@
             color: colors.$travelbloom-teal;
         }
 
-        // &:focus {
-            // border: 2px solid red;
-        // }
+        &:focus {
+            border: 0.14em solid colors.$travelbloom-teal;
+        }
     }
 }
 
@@ -185,7 +186,8 @@
             drop-shadow(0.5px 0 white)    /* Adds white outline */
             drop-shadow(-0.5px 0 white) drop-shadow(0 0.5px white) drop-shadow(0 -0.5px white);
         // width: 2.5em;
-        width: 1.5em;
+        // width: 1.5em;
+        width: 2em;
     }
 
     // &__burger{
@@ -398,5 +400,5 @@
 }
 
 .error{
-    border: 2px solid red;
+    border: 0.14em solid rgb(150, 5, 5);
 }
