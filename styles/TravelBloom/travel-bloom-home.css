@@ -99,23 +99,24 @@ body {
   justify-content: space-between;
   background-color: #191d1a;
   width: 100%;
-  padding: 0.5em;
+  padding: 0.8em 0.5em;
   position: fixed;
   top: 0;
   z-index: 2;
 }
 .header__container {
   display: flex;
-  width: 40%;
+  width: 35%;
   z-index: 1;
 }
 .header__site-name {
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: 1.25em;
+  font-size: 1.05em;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 0.25em;
 }
 
 .nav-bar {
@@ -148,7 +149,7 @@ body {
 }
 
 .search-bar {
-  width: 60%;
+  width: 80%;
   max-width: 30em;
   background-color: #fff;
   border-radius: 2em;
@@ -157,19 +158,22 @@ body {
   align-items: center;
 }
 .search-bar__container {
-  width: 95%;
+  width: 100%;
+  max-width: 30em;
   display: flex;
   justify-content: space-between;
-  margin: 0.15em auto;
+  margin: 0.15em;
 }
 .search-bar__subcontainer {
   width: 65%;
+  max-width: 10em;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .search-bar__input {
   border: 0.14em solid #fff;
-  width: 35%;
+  width: 50%;
+  max-width: 35vw;
   border-radius: 2em;
   padding: 0 0.5em;
 }
