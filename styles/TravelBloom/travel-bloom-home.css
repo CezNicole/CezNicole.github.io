@@ -171,7 +171,7 @@ body {
   justify-content: space-evenly;
 }
 .search-bar__input {
-  border: 0.14em solid #09565c;
+  border: 0.14em solid #fff;
   width: 50%;
   max-width: 35vw;
   border-radius: 2em;
@@ -189,6 +189,10 @@ body {
 
 .icons {
   width: 1.5em;
+}
+.icons:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.4);
 }
 .icons__logo {
   filter: brightness(0) invert(1) drop-shadow(0.5px 0 white) drop-shadow(-0.5px 0 white) drop-shadow(0 0.5px white) drop-shadow(0 -0.5px white);
@@ -357,4 +361,8 @@ body {
 
 .error {
   border: 0.14em solid rgb(150, 5, 5);
+}
+
+.focus {
+  border: 0.14em solid #09565c;
 }/*# sourceMappingURL=travel-bloom-home.css.map */

@@ -1,11 +1,14 @@
 import { getJsonData } from "./travel-bloom-api.js";
 
-let destinations = [];
+let destinations = {};
 
 export async function loadData(){
     try {
         const response = await getJsonData();
-        destinations.push(response);
+        destinations = response;
+        console.log('Printing all destinations:', destinations);
+        
+        return destinations;
     } catch (error) {
         console.error('Error loading data:', error);
     }
@@ -14,7 +17,7 @@ export async function loadData(){
 // WIP here
 const searchInput = document.querySelector('.search-bar__input');
 
-export function search(){
+export async function search(){
     /*
     // 1. user enters destination / keyword from input field
     // 2. search function functionality
@@ -31,9 +34,11 @@ export function search(){
     const searchInputText = searchInput.value.trim();
     console.log(searchInputText);
 
+
+    // Form Validation
     if(searchInputText){
         searchInput.classList.remove('error');
-        loadData();
+        destinations = await loadData();
     } else{
         searchInput.classList.add('error');
         console.log('Please enter a valid destination / keyword.');
@@ -46,35 +51,33 @@ export function search(){
     })
 
     searchInput.addEventListener('focus', () => {
-        searchInput.classList.add('search-bar__input');
+        searchInput.classList.add('focus');
         searchInput.classList.remove('error');
     })
 
 
+    // Search Filter
+    // For Testing
+    console.log('Displaying search results:');
+    for (let key in destinations) {
+        const locations = destinations[key];
 
-    // nameInput.addEventListener('input', () => {
-    //     if(nameInput.value.trim()){
-    //         nameInput.classList.remove('error');
-    //     }
-    // })
+        locations.forEach(location => {
+            if(key === 'countries'){
+                console.log('Country:', location.name);
+                
+                location.cities.forEach(city => {
+                    console.log('Cities:', city.name);
+                })
+            } else if(key === 'temples'){
+                console.log('Temples:', location.name);
+            } else {
+                console.log('Beaches:', location.name);
+            }
+        });
+    }
+
     
-    // commentInput.addEventListener('input', () => {
-    //     if(commentInput.value.trim()){
-    //         commentInput.classList.remove('error');
-    //     }
-    // })
-    
-
-    
-    // const form = document.querySelector('.search-bar');
-    // form.addEventListener('submit', (event) => {
-    //     event.preventDefault();
-
-        
-    // })
-
-
-
 
 }
 
