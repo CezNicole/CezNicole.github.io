@@ -17,26 +17,33 @@ export async function loadData(){
 // WIP here
 const searchInput = document.querySelector('.search-bar__input');
 
-export async function search(){
+const mainSection = document.querySelector('.main__main-section');
+
+export async function search(input){
     /*
     // 1. user enters destination / keyword from input field
     // 2. search function functionality
-        // a) when Search button is clicked, the form submits
+    // a) when Search button is clicked, the form submits
     3. when user input matches the keyword on the JSON data, search results w/ the destination cards are displayed on the DOM
-        a) JSON data is filtered to display only the matched keyword / destination
-        b) dynamic DOM elements are created w/ styling
+    a) JSON data is filtered to display only the matched keyword / destination
+    b) dynamic DOM elements are created w/ styling
     4. Timezone API functionality
-        a) if a country is searched, display the appropriate current local time from Timezone API
-        b) else, only show the aqua div container w/ no text
-
+    a) if a country is searched, display the appropriate current local time from Timezone API
+    b) else, only show the aqua div container w/ no text
+    
     */
+   
+   
+   
+//    const searchInputText = searchInput.value.trim();
+//    console.log(searchInputText);
 
-    const searchInputText = searchInput.value.trim();
-    console.log(searchInputText);
-
+    input = searchInput.value.trim().toLowerCase();
+    console.log(input);
+    
 
     // Form Validation
-    if(searchInputText){
+    if(input){
         searchInput.classList.remove('error');
         destinations = await loadData();
     } else{
@@ -45,7 +52,7 @@ export async function search(){
     }
 
     searchInput.addEventListener('input', () => {
-        if(searchInputText){
+        if(input){
             searchInput.classList.remove('error');
         }
     })
@@ -58,22 +65,87 @@ export async function search(){
 
     // Search Filter
     // For Testing
-    console.log('Displaying search results:');
+    console.log('Displaying search results:', input);
+    
     for (let key in destinations) {
         const locations = destinations[key];
+        
+        // const divLocalTime = document.createElement('div');
+        // divLocalTime.classList.add('search-results__local-time');
+        // divLocalTime.textContent = location.name;
 
         locations.forEach(location => {
-            if(key === 'countries'){
-                console.log('Country:', location.name);
-                
-                location.cities.forEach(city => {
-                    console.log('Cities:', city.name);
-                })
-            } else if(key === 'temples'){
-                console.log('Temples:', location.name);
-            } else {
-                console.log('Beaches:', location.name);
+            
+            if(input.includes('countries')){
+                if(input.includes(key)){
+                    // console.log('Key:', key);
+                    const searchResultsSection = document.createElement('section');
+                    
+                    // const divLocalTime = document.createElement('div');
+                    // divLocalTime.classList.add('search-results__local-time');
+                    // divLocalTime.textContent = location.name;
+
+                    const divSearchResultsCards = document.createElement('div');
+                    divSearchResultsCards.classList.add('search-results__cards');
+
+                    const imgCard = document.createElement('img');
+
+                    const divCardDetails = document.createElement('div');
+                        divCardDetails.classList.add('search-results__card-details');
+
+                    location.cities.forEach(city => {
+                        // console.log('Cities:', city.name);
+                        imgCard.src = city.imageUrl;
+                        imgCard.alt = city.name;
+                        imgCard.classList.add('search-results__card-images');
+
+                        
+
+                        const destinationName = document.createElement('h3');
+                        destinationName.classList.add('search-results__destination');
+                        destinationName.innerHTML = city.name;
+
+                        const destinationDescription = document.createElement('p');
+                        destinationDescription.classList.add('search-results__description');
+                        destinationDescription.textContent = city.description;
+
+                        const btnVisit = document.createElement('button');
+                        btnVisit.classList.add('buttons');
+                        btnVisit.classList.add('buttons__visit');
+                        btnVisit.innerHTML = 'Visit';
+
+                        divCardDetails.appendChild(destinationName);
+                        divCardDetails.appendChild(destinationDescription);
+                        divCardDetails.appendChild(btnVisit);
+                    })
+                    const divLocalTime = document.createElement('div');
+                    divLocalTime.classList.add('search-results__local-time');
+                    divLocalTime.textContent = location.name;
+
+                    
+                    divSearchResultsCards.appendChild(imgCard);
+                    divSearchResultsCards.appendChild(divCardDetails);
+
+
+
+                    searchResultsSection.appendChild(divLocalTime);
+                    searchResultsSection.appendChild(divSearchResultsCards);
+
+
+                    // mainSection.appendChild(divLocalTime);
+                    mainSection.appendChild(searchResultsSection);
+
+                    // console.log('Country:', location.name);
+                    
+                } 
+            } else{
+                console.log('Modify your input');
             }
+            // else if(key === 'temples'){
+            //     console.log('Temples:', location.name);
+            // } else {
+            //     console.log('Beaches:', location.name);
+            // }
         });
     }
 
