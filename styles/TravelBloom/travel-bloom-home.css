@@ -358,6 +358,11 @@ body {
   margin: 0.3em 0 0.8em;
   color: rgb(197, 197, 197);
 }
+.search-results__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 .error {
   border: 0.14em solid rgb(150, 5, 5);

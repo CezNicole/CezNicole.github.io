@@ -14,11 +14,16 @@ export async function loadData(){
     }
 }
 
-// WIP here
 const searchInput = document.querySelector('.search-bar__input');
 
-const mainSection = document.querySelector('.main__main-section');
+const divContainer = document.querySelector('.search-results');
 
+const searchResultsSection = document.createElement('section');
+
+const divLocalTime = document.createElement('div');
+
+
+// WIP here
 export async function search(input){
     /*
     // 1. user enters destination / keyword from input field
@@ -35,9 +40,6 @@ export async function search(input){
    
    
    
-//    const searchInputText = searchInput.value.trim();
-//    console.log(searchInputText);
-
     input = searchInput.value.trim().toLowerCase();
     console.log(input);
     
@@ -46,6 +48,13 @@ export async function search(input){
     if(input){
         searchInput.classList.remove('error');
         destinations = await loadData();
+
+        divContainer.innerHTML = '';
+
+        divLocalTime.classList.add('search-results__local-time');
+        // divLocalTime.textContent = location.name;
+
+        divContainer.appendChild(divLocalTime);
     } else{
         searchInput.classList.add('error');
         console.log('Please enter a valid destination / keyword.');
@@ -67,39 +76,33 @@ export async function search(input){
     // For Testing
     console.log('Displaying search results:', input);
     
+    // divContainer.innerHTML = '';
+
+    // const divLocalTime = document.createElement('div');
+    // divLocalTime.classList.add('search-results__local-time');
+    // // divLocalTime.textContent = location.name;
+
+    // divContainer.appendChild(divLocalTime);
+
+    
     for (let key in destinations) {
         const locations = destinations[key];
-        
-        // const divLocalTime = document.createElement('div');
-        // divLocalTime.classList.add('search-results__local-time');
-        // divLocalTime.textContent = location.name;
 
         locations.forEach(location => {
-            
             if(input.includes('countries')){
                 if(input.includes(key)){
-                    // console.log('Key:', key);
-                    const searchResultsSection = document.createElement('section');
-                    
-                    // const divLocalTime = document.createElement('div');
-                    // divLocalTime.classList.add('search-results__local-time');
-                    // divLocalTime.textContent = location.name;
-
-                    const divSearchResultsCards = document.createElement('div');
-                    divSearchResultsCards.classList.add('search-results__cards');
-
-                    const imgCard = document.createElement('img');
-
-                    const divCardDetails = document.createElement('div');
-                        divCardDetails.classList.add('search-results__card-details');
-
                     location.cities.forEach(city => {
-                        // console.log('Cities:', city.name);
+                        const divSearchResultsCards = document.createElement('div');
+                        divSearchResultsCards.classList.add('search-results__cards');
+    
+                        const imgCard = document.createElement('img');
                         imgCard.src = city.imageUrl;
                         imgCard.alt = city.name;
                         imgCard.classList.add('search-results__card-images');
+    
 
-                        
+                        const divCardDetails = document.createElement('div');
+                        divCardDetails.classList.add('search-results__card-details');
 
                         const destinationName = document.createElement('h3');
                         destinationName.classList.add('search-results__destination');
@@ -110,33 +113,23 @@ export async function search(input){
                         destinationDescription.textContent = city.description;
 
                         const btnVisit = document.createElement('button');
-                        btnVisit.classList.add('buttons');
-                        btnVisit.classList.add('buttons__visit');
+                        btnVisit.classList.add('buttons', 'buttons__visit');
                         btnVisit.innerHTML = 'Visit';
+
 
                         divCardDetails.appendChild(destinationName);
                         divCardDetails.appendChild(destinationDescription);
                         divCardDetails.appendChild(btnVisit);
+
+
+                        divSearchResultsCards.appendChild(imgCard);
+                        divSearchResultsCards.appendChild(divCardDetails);
+
+                        
+                        searchResultsSection.appendChild(divSearchResultsCards);
                     })
-                    const divLocalTime = document.createElement('div');
-                    divLocalTime.classList.add('search-results__local-time');
-                    divLocalTime.textContent = location.name;
 
-                    
-                    divSearchResultsCards.appendChild(imgCard);
-                    divSearchResultsCards.appendChild(divCardDetails);
-
-
-
-                    searchResultsSection.appendChild(divLocalTime);
-                    searchResultsSection.appendChild(divSearchResultsCards);
-
-
-                    // mainSection.appendChild(divLocalTime);
-                    mainSection.appendChild(searchResultsSection);
-
-                    // console.log('Country:', location.name);
-                    
+                    divContainer.appendChild(searchResultsSection);
                 } 
             } else{
                 console.log('Modify your input');
@@ -164,6 +157,7 @@ export async function search(input){
 
 export function clear(){
     searchInput.value = '';
+    divContainer.innerHTML = '';
 }
 
 const btnSearch = document.getElementById('btnSearch');
