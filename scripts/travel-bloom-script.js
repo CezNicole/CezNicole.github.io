@@ -6,7 +6,7 @@ export async function loadData(){
     try {
         const response = await getJsonData();
         destinations = response;
-        console.log('Printing all destinations:', destinations);
+        console.log('Printing contents of the destinations array:', destinations);
         
         return destinations;
     } catch (error) {
@@ -23,12 +23,16 @@ const searchResultsSection = document.createElement('section');
 const divLocalTime = document.createElement('div');
 
 
+
+
+
 // WIP here
 export async function search(input){
     /*
     // 1. user enters destination / keyword from input field
     // 2. search function functionality
         // a) when Search button is clicked, the form submits
+        // b) when a valid input is entered, JSON data is loaded / accessed
     3. when user input matches the keyword on the JSON data, search results w/ the destination cards are displayed on the DOM
         a) JSON data is filtered to display only the matched keyword / destination
         b) dynamic DOM elements are created w/ styling
@@ -37,11 +41,11 @@ export async function search(input){
         b) else, only show the aqua div container w/ no text
     
     */
-   
+    
    
    
     input = searchInput.value.trim().toLowerCase();
-    console.log(input);
+    console.log('Inside the search function, the input value is:', input);
     
 
     // Form Validation
@@ -74,91 +78,94 @@ export async function search(input){
 
 
 
+
+
     // Search Filter
     divParentContainer.innerHTML = '';
+    searchResultsSection.innerHTML = '';
     
-    for(const [key, locations] of Object.entries(destinations)){
+    // for(const [key, locations] of Object.entries(destinations)){
 
-        locations.forEach(location => {
-            const divSearchResultsCards = document.createElement('div');
-            divSearchResultsCards.classList.add('search-results__cards');
+    //     locations.forEach(location => {
+    //         const divSearchResultsCards = document.createElement('div');
+    //         divSearchResultsCards.classList.add('search-results__cards');
+
+            
+    //         const imgCard = document.createElement('img');
+    //         imgCard.src = location.imageUrl;
+    //         imgCard.alt = location.name;
+    //         imgCard.classList.add('search-results__card-images');
+    
+    
+    //         const divCardDetails = document.createElement('div');
+    //         divCardDetails.classList.add('search-results__card-details');
+    
+    //         const destinationName = document.createElement('h3');
+    //         destinationName.classList.add('search-results__destination');
+    //         destinationName.innerHTML = location.name;
+    
+    //         const destinationDescription = document.createElement('p');
+    //         destinationDescription.classList.add('search-results__description');
+    //         destinationDescription.textContent = location.description;
+    
+    //         const btnVisit = document.createElement('button');
+    //         btnVisit.classList.add('buttons', 'buttons__visit');
+    //         btnVisit.innerHTML = 'Visit';
+    
+    
+    //         divCardDetails.appendChild(destinationName);
+    //         divCardDetails.appendChild(destinationDescription);
+    //         divCardDetails.appendChild(btnVisit);
+    
+    
+    //         divSearchResultsCards.appendChild(imgCard);
+    //         divSearchResultsCards.appendChild(divCardDetails);
+    
+            
+    //         searchResultsSection.appendChild(divSearchResultsCards);
+            
 
 
-            const imgCard = document.createElement('img');
-            imgCard.src = location.imageUrl;
-            imgCard.alt = location.name;
-            imgCard.classList.add('search-results__card-images');
-    
-    
-            const divCardDetails = document.createElement('div');
-            divCardDetails.classList.add('search-results__card-details');
-    
-            const destinationName = document.createElement('h3');
-            destinationName.classList.add('search-results__destination');
-            destinationName.innerHTML = location.name;
-    
-            const destinationDescription = document.createElement('p');
-            destinationDescription.classList.add('search-results__description');
-            destinationDescription.textContent = location.description;
-    
-            const btnVisit = document.createElement('button');
-            btnVisit.classList.add('buttons', 'buttons__visit');
-            btnVisit.innerHTML = 'Visit';
-    
-    
-            divCardDetails.appendChild(destinationName);
-            divCardDetails.appendChild(destinationDescription);
-            divCardDetails.appendChild(btnVisit);
-    
-    
-            divSearchResultsCards.appendChild(imgCard);
-            divSearchResultsCards.appendChild(divCardDetails);
-    
-            
-            searchResultsSection.appendChild(divSearchResultsCards);
-            
-
-
-            if(key === 'countries'){
-                location.cities.forEach(city => {
-                    const imgCard = document.createElement('img');
-                    imgCard.src = city.imageUrl;
-                    imgCard.alt = city.name;
-                    imgCard.classList.add('search-results__card-images');
+    //         if(key === 'countries'){
+    //             location.cities.forEach(city => {
+    //                 const imgCard = document.createElement('img');
+    //                 imgCard.src = city.imageUrl;
+    //                 imgCard.alt = city.name;
+    //                 imgCard.classList.add('search-results__card-images');
             
             
-                    const divCardDetails = document.createElement('div');
-                    divCardDetails.classList.add('search-results__card-details');
+    //                 const divCardDetails = document.createElement('div');
+    //                 divCardDetails.classList.add('search-results__card-details');
             
-                    const destinationName = document.createElement('h3');
-                    destinationName.classList.add('search-results__destination');
-                    destinationName.innerHTML = city.name;
+    //                 const destinationName = document.createElement('h3');
+    //                 destinationName.classList.add('search-results__destination');
+    //                 destinationName.innerHTML = city.name;
             
-                    const destinationDescription = document.createElement('p');
-                    destinationDescription.classList.add('search-results__description');
-                    destinationDescription.textContent = city.description;
+    //                 const destinationDescription = document.createElement('p');
+    //                 destinationDescription.classList.add('search-results__description');
+    //                 destinationDescription.textContent = city.description;
             
-                    const btnVisit = document.createElement('button');
-                    btnVisit.classList.add('buttons', 'buttons__visit');
-                    btnVisit.innerHTML = 'Visit';
-            
-            
-                    divCardDetails.appendChild(destinationName);
-                    divCardDetails.appendChild(destinationDescription);
-                    divCardDetails.appendChild(btnVisit);
+    //                 const btnVisit = document.createElement('button');
+    //                 btnVisit.classList.add('buttons', 'buttons__visit');
+    //                 btnVisit.innerHTML = 'Visit';
             
             
-                    divSearchResultsCards.appendChild(imgCard);
-                    divSearchResultsCards.appendChild(divCardDetails);
+    //                 divCardDetails.appendChild(destinationName);
+    //                 divCardDetails.appendChild(destinationDescription);
+    //                 divCardDetails.appendChild(btnVisit);
+            
+            
+    //                 divSearchResultsCards.appendChild(imgCard);
+    //                 divSearchResultsCards.appendChild(divCardDetails);
             
                     
-                    searchResultsSection.appendChild(divSearchResultsCards);
-                })
-            }
-        });
-    }
+    //                 searchResultsSection.appendChild(divSearchResultsCards);
+    //             })
+    //         }
+    //     });
+    // }
 
-    divParentContainer.appendChild(searchResultsSection);
+    // divParentContainer.appendChild(searchResultsSection);
 }
 
 // export async function getLocalTimezone(area){
