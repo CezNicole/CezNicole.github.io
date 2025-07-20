@@ -178,9 +178,11 @@ body {
 }
 .search-bar__input::-moz-placeholder {
   color: #09565c;
+  font-size: 0.85em;
 }
 .search-bar__input::placeholder {
   color: #09565c;
+  font-size: 0.85em;
 }
 .search-bar__input:focus {
   border: 0.14em solid #09565c;
