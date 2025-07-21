@@ -164,10 +164,11 @@ body {
   margin: 0.15em;
 }
 .search-bar__subcontainer {
-  width: 50%;
+  width: 47%;
   max-width: 10em;
   display: flex;
   justify-content: space-evenly;
+  margin-right: 0.15em;
 }
 .search-bar__input {
   border: 0.14em solid #fff;
