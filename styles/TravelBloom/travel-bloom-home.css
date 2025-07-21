@@ -373,4 +373,14 @@ body {
 
 .focus {
   border: 0.14em solid #09565c;
+}
+
+.active {
+  background-color: #007c8c;
+}
+
+.invalid-search {
+  color: rgb(150, 5, 5);
+  font-size: 1.05em;
+  font-weight: 800;
 }/*# sourceMappingURL=travel-bloom-home.css.map */

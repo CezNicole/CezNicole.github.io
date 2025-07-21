@@ -425,3 +425,13 @@
 .focus {
     border: 0.14em solid colors.$travelbloom-teal;
 }
+
+.active {
+    background-color: colors.$secondary-teal;
+}
+
+.invalid-search{
+    color: rgb(150, 5, 5);
+    font-size: 1.05em;
+    font-weight: 800;
+}
