@@ -33,10 +33,10 @@ export async function search(input){
     // 2. search function functionality
         // a) when Search button is clicked, the form submits
         // b) when a valid input is entered, JSON data is loaded / accessed
-    3. when user input matches the keyword on the JSON data (countries, temples, beaches, or actual 'name' value)
-        a) JSON data is filtered to display only the matched keyword / destination
-        b) search results are displayed on the DOM via the destination cards
-        c) dynamic DOM elements are created w/ styling
+    // 3. when user input matches the keyword on the JSON data (countries, temples, beaches, or actual 'name' value)
+    //     a) JSON data is filtered to display only the matched keyword / destination
+    //     b) search results are displayed on the DOM via the destination cards
+    //     c) dynamic DOM elements are created w/ styling
     4. Timezone API functionality
         a) if a country is searched, display the appropriate current local time from Timezone API
         b) else, only show the aqua div container w/ no text
@@ -219,13 +219,13 @@ export async function search(input){
             console.log(beach);
         })
     } else{
-        divParentContainer.innerHTML = 'Data not found. Please modify your search.';
+        divParentContainer.innerHTML = 'Data not found. Please modify your search (e.g. countries, temples, or beaches).';
         divParentContainer.classList.add('invalid-search');
 
 
 
 
-        console.log('Data not found. Please modify your search.');
+        console.log('Data not found. Please modify your search (e.g. countries, temples, or beaches).');
     }
     
     // for(const [key, locations] of Object.entries(destinations)){

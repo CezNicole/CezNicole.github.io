@@ -380,7 +380,14 @@ body {
 }
 
 .invalid-search {
-  color: rgb(150, 5, 5);
-  font-size: 1.05em;
+  color: rgb(155, 34, 34);
+  font-size: 1.25em;
   font-weight: 800;
+  line-height: 1.5;
+  background-color: hsla(0, 0%, 100%, 0.4);
+  padding: 0.25em;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=travel-bloom-home.css.map */

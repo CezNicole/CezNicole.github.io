@@ -431,7 +431,16 @@
 }
 
 .invalid-search{
-    color: rgb(150, 5, 5);
-    font-size: 1.05em;
+    color: rgb(155, 34, 34);
+    // font-size: 1.05em;
+    font-size: 1.25em;
     font-weight: 800;
+    // font-weight: 300;
+    line-height: 1.5;
+    background-color: hsla(0, 0%, 100%, 40%);
+    padding: 0.25em;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
