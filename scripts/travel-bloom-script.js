@@ -26,6 +26,7 @@ const divLocalTime = document.createElement('div');
 
 
 
+
 // WIP here
 export async function search(input){
     /*
@@ -47,6 +48,9 @@ export async function search(input){
    
     input = searchInput.value.trim().toLowerCase();
     console.log('Inside the search function, the input value is:', input);
+
+    
+    
     
 
     // Form Validation
@@ -60,6 +64,25 @@ export async function search(input){
         // divLocalTime.textContent = location.name;
 
         divParentContainer.appendChild(divLocalTime);
+
+
+
+
+
+            // const countriesData = [];
+
+            // destinations.countries.forEach(country => {
+            //     country.cities.forEach(city => {
+            //         countriesData.push({
+            //             countryName: country.name,
+            //             cityName: city.name
+            //         })
+            //         // console.log('Country Name:', country.name, " and City Name:", city.name);
+            //     })
+            // })
+
+            // console.log('Countries Data:', countriesData);
+
     } else{
         searchInput.classList.add('error');
         console.log('Please enter a valid destination / keyword.');
@@ -227,6 +250,51 @@ export async function search(input){
 
         console.log('Data not found. Please modify your search (e.g. countries, temples, or beaches).');
     }
+
+
+    /*
+    TO-DO'S:
+    ---------
+    COUNTRIES
+    -check if search input includes country name (e.g. Australia / Japan / Brazil)
+    -if yes, display all cities
+    -if no, return error message
+
+    CITIES (similar w/ TEMPLES, BEACHES)
+    -check if search input includes cities name (e.g. Sydney / Tokyo / Rio de Janeiro)
+    -if yes, display the matched data
+    -if no, return error message
+
+    Bonus: handle a keyword from the description
+
+
+    Create styling for tablet, desktop
+    Make the code DRY (css, script files)
+    
+    */
+
+
+    if(input){
+        // destinations = await loadData();
+
+        const countriesData = [];
+
+        destinations.countries.forEach(country => {
+            country.cities.forEach(city => {
+                countriesData.push({
+                    countryName: country.name,
+                    cityName: city.name
+                })
+                // console.log('Country Name:', country.name, " and City Name:", city.name);
+            })
+        })
+
+        console.log('Countries Data:', countriesData);
+    }
+
+    
+
+
     
     // for(const [key, locations] of Object.entries(destinations)){
 
