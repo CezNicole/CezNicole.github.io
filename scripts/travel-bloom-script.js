@@ -2,6 +2,7 @@ import { getJsonData } from "./travel-bloom-api.js";
 
 let destinations = {};
 
+
 export async function loadData(){
     try {
         const response = await getJsonData();
@@ -64,25 +65,6 @@ export async function search(input){
         // divLocalTime.textContent = location.name;
 
         divParentContainer.appendChild(divLocalTime);
-
-
-
-
-
-            // const countriesData = [];
-
-            // destinations.countries.forEach(country => {
-            //     country.cities.forEach(city => {
-            //         countriesData.push({
-            //             countryName: country.name,
-            //             cityName: city.name
-            //         })
-            //         // console.log('Country Name:', country.name, " and City Name:", city.name);
-            //     })
-            // })
-
-            // console.log('Countries Data:', countriesData);
-
     } else{
         searchInput.classList.add('error');
         console.log('Please enter a valid destination / keyword.');
@@ -108,8 +90,34 @@ export async function search(input){
     divParentContainer.innerHTML = '';
     searchResultsSection.innerHTML = '';
 
-    if(input === 'countries'){
+
+    const countriesData = [];
+
+    destinations.countries.forEach(country => {
+        country.cities.forEach(city => {
+            countriesData.push({
+                // TO-DO: MODIFY THE OBJECT STRUCTURE TO DISPLAY CITY DETAILS CORRECTLY WHEN THE COUNTRY NAME MATCHES INPUT, SAME WITH CITY NAME
+                cityName: city.name,
+                cityImage: city.imageUrl,
+                cityDesc: city.description,
+                countryName: city.name.split(", ")[1]
+            })
+            // console.log('Country Name:', countriesData.countryName, " and City Name:", countriesData.cityName, 'Image URL:', countriesData.imgUrl, 'Description:', countriesData.desc);
+        })
+    })
+
+    console.log('Countries Data:', countriesData);
+
+
+    // Finding country / city matches
+    let matches = countriesData.filter(country => input.includes(country.countryName.toLowerCase()) || input.includes(country.cityName.toLowerCase()));
+    console.log('Matches:', matches);
+    
+
+
+    if(input.includes('countries')){
         destinations.countries.forEach(country => country.cities.forEach(city => {
+        // countriesData.forEach(country => {
             const divSearchResultsCards = document.createElement('div');
             divSearchResultsCards.classList.add('search-results__cards');
 
@@ -117,6 +125,8 @@ export async function search(input){
             const imgCard = document.createElement('img');
             imgCard.src = city.imageUrl;
             imgCard.alt = city.name;
+            // imgCard.src = country.cityImage;
+            // imgCard.alt = country.cityName;
             imgCard.classList.add('search-results__card-images');
     
     
@@ -154,9 +164,9 @@ export async function search(input){
 
             
             // console.log(country);
-            console.log(city);
+            console.log(country);
         }))
-    } else if(input === 'temples'){
+    } else if(input.includes('temples')){
         destinations.temples.forEach(temple => {
             const divSearchResultsCards = document.createElement('div');
             divSearchResultsCards.classList.add('search-results__cards');
@@ -203,7 +213,7 @@ export async function search(input){
 
             console.log(temple);
         })
-    } else if(input === 'beaches'){
+    } else if(input.includes('beaches')){
         destinations.beaches.forEach(beach => {
             const divSearchResultsCards = document.createElement('div');
             divSearchResultsCards.classList.add('search-results__cards');
@@ -251,12 +261,15 @@ export async function search(input){
 
             console.log(beach);
         })
-    } else{
+    } else if(matches.length > 0){
+        // TO-DO: display cards for data matches
+        matches.forEach()
+        console.log(`It's a match! ${countriesData.countryName} ${countriesData.cityName}`);
+        
+    }
+    else{
         divParentContainer.innerHTML = 'Data not found. Please modify your search (e.g. countries, temples, or beaches).';
         divParentContainer.classList.add('invalid-search');
-
-
-
 
         console.log('Data not found. Please modify your search (e.g. countries, temples, or beaches).');
     }
@@ -284,163 +297,291 @@ export async function search(input){
     */
 
 
-    if(input){
-        // destinations = await loadData();
+    // if(input){
+    //     // destinations = await loadData();
 
-        const countriesData = [];
+    //     const countriesData = [];
 
-        destinations.countries.forEach(country => {
-            country.cities.forEach(city => {
-                countriesData.push({
-                    // TO-DO: MODIFY THE OBJECT STRUCTURE TO DISPLAY CITY DETAILS CORRECTLY WHEN THE COUNTRY NAME MATCHES INPUT, SAME WITH CITY NAME
-                    countryName: country.name,
-                    cityName: city.name,
-                    imgUrl: city.imageURL,
-                    desc: city.description
-                })
-                // console.log('Country Name:', country.name, " and City Name:", city.name);
-            })
-        })
+    //     destinations.countries.forEach(country => {
+    //         country.cities.forEach(city => {
+    //             countriesData.push({
+    //                 // TO-DO: MODIFY THE OBJECT STRUCTURE TO DISPLAY CITY DETAILS CORRECTLY WHEN THE COUNTRY NAME MATCHES INPUT, SAME WITH CITY NAME
+    //                 cityName: city.name,
+    //                 cityImage: city.imageUrl,
+    //                 cityDesc: city.description,
+    //                 countryName: city.name.split(", ")[1]
+    //             })
+    //             // console.log('Country Name:', countriesData.countryName, " and City Name:", countriesData.cityName, 'Image URL:', countriesData.imgUrl, 'Description:', countriesData.desc);
+    //         })
+    //     })
 
-        console.log('Countries Data:', countriesData);
+    //     console.log('Countries Data:', countriesData);
+
+
+    //     // let countryNames = [];
+
+    //     // for (const country of countriesData) {
+    //     //     // console.log(country.cityName);
+    //     //     let countryName = country.cityName.split(", ");
+    //     //     if(countryName.length === 2){
+    //     //         console.log(countryName[1]);
+                
+    //     //         // if(!countryNames.includes(countryName[1])){
+    //     //         //     countryNames.push(countryName[1]);
+    //     //         // }
+    //     //         if(input.includes(countryName[1].toLowerCase())){
+    //     //             console.log(`It's a match! Input ${input} =  Value ${countryName[1]}`);
 
 
 
-        const templesData = [];
-        
-        destinations.temples.forEach(temple => {
-            // console.log(temple.name);
+    //     //             // const divSearchResultsCards = document.createElement('div');
+    //     //             // divSearchResultsCards.classList.add('search-results__cards');
+
+                    
+    //     //             // const imgCard = document.createElement('img');
+    //     //             // imgCard.src = country.cityImage;
+    //     //             // imgCard.alt = countryName[1];
+    //     //             // imgCard.classList.add('search-results__card-images');
             
-            templesData.push(temple.name);
-        })
+            
+    //     //             // const divCardDetails = document.createElement('div');
+    //     //             // divCardDetails.classList.add('search-results__card-details');
+            
+    //     //             // const destinationName = document.createElement('h3');
+    //     //             // destinationName.classList.add('search-results__destination');
+    //     //             // destinationName.innerHTML = country.cityName;
+            
+    //     //             // const destinationDescription = document.createElement('p');
+    //     //             // destinationDescription.classList.add('search-results__description');
+    //     //             // destinationDescription.textContent = country.cityDesc;
+            
+    //     //             // const btnVisit = document.createElement('button');
+    //     //             // btnVisit.classList.add('buttons', 'buttons__visit');
+    //     //             // btnVisit.innerHTML = 'Visit';
+            
+            
+    //     //             // divCardDetails.appendChild(destinationName);
+    //     //             // divCardDetails.appendChild(destinationDescription);
+    //     //             // divCardDetails.appendChild(btnVisit);
+            
+            
+    //     //             // divSearchResultsCards.appendChild(imgCard);
+    //     //             // divSearchResultsCards.appendChild(divCardDetails);
+            
+                    
+    //     //             // searchResultsSection.appendChild(divSearchResultsCards);
+                
+    //     //             // divParentContainer.appendChild(searchResultsSection);
+    //     //         } else{
+    //     //             // divParentContainer.innerHTML = 'Data not found. Please modify your search (e.g. countries, temples, or beaches).';
+    //     //             // divParentContainer.classList.add('invalid-search');
 
-        console.log('Temples Data:', templesData);
 
 
 
-        const beachesData = [];
+    //     //             console.log('Data not found. Please modify your search (e.g. countries, temples, or beaches).');
+    //     //         }
+    //     //     }
+    //     // }
 
-        destinations.beaches.forEach(beach => {
-            // console.log(beach.name);
-
-            beachesData.push(beach.name);
-        })
-
-        console.log('Beaches Data:', beachesData);
-
-
-        console.log('User input:', input);
         
-        for (const country of countriesData) {
-            let countryValue = country.countryName.toLowerCase();
-            let cityValue = country.cityName.toLowerCase();
-
-            if(countryValue.includes(input)){
-                console.log(`It's a match! Input ${input} =  Value ${countryValue}`);
+        
+    //     // for(const data of countriesData){
+    //     //     if(input.includes(country.toLowerCase())){
+    //     //         console.log(`It's a match! Input ${input} =  Value ${country}`);
 
 
-                const divSearchResultsCards = document.createElement('div');
-                divSearchResultsCards.classList.add('search-results__cards');
+    //     //         const divSearchResultsCards = document.createElement('div');
+    //     //         divSearchResultsCards.classList.add('search-results__cards');
 
                 
-                const imgCard = document.createElement('img');
-                imgCard.src = city.imgUrl;
-                imgCard.alt = country.name;
-                imgCard.classList.add('search-results__card-images');
+    //     //         const imgCard = document.createElement('img');
+    //     //         imgCard.src = data.cityImage;
+    //     //         imgCard.alt = data.country;
+    //     //         imgCard.classList.add('search-results__card-images');
         
         
-                const divCardDetails = document.createElement('div');
-                divCardDetails.classList.add('search-results__card-details');
+    //     //         const divCardDetails = document.createElement('div');
+    //     //         divCardDetails.classList.add('search-results__card-details');
         
-                const destinationName = document.createElement('h3');
-                destinationName.classList.add('search-results__destination');
-                destinationName.innerHTML = country.name;
+    //     //         const destinationName = document.createElement('h3');
+    //     //         destinationName.classList.add('search-results__destination');
+    //     //         destinationName.innerHTML = data.country;
         
-                const destinationDescription = document.createElement('p');
-                destinationDescription.classList.add('search-results__description');
-                destinationDescription.textContent = city.description;
+    //     //         const destinationDescription = document.createElement('p');
+    //     //         destinationDescription.classList.add('search-results__description');
+    //     //         destinationDescription.textContent = data.cityDesc;
         
-                const btnVisit = document.createElement('button');
-                btnVisit.classList.add('buttons', 'buttons__visit');
-                btnVisit.innerHTML = 'Visit';
-        
-        
-                divCardDetails.appendChild(destinationName);
-                divCardDetails.appendChild(destinationDescription);
-                divCardDetails.appendChild(btnVisit);
+    //     //         const btnVisit = document.createElement('button');
+    //     //         btnVisit.classList.add('buttons', 'buttons__visit');
+    //     //         btnVisit.innerHTML = 'Visit';
         
         
-                divSearchResultsCards.appendChild(imgCard);
-                divSearchResultsCards.appendChild(divCardDetails);
-        
-                
-                searchResultsSection.appendChild(divSearchResultsCards);
-            
-                divParentContainer.appendChild(searchResultsSection);
-
-
-                // divParentContainer.classList.remove('invalid-search');
-
-
-            } else if(cityValue.includes(input)){
-                console.log(`It's a match! Input ${input} = Value ${city.cityName}`);
-
-
-                const divSearchResultsCards = document.createElement('div');
-                divSearchResultsCards.classList.add('search-results__cards');
-
-                
-                const imgCard = document.createElement('img');
-                imgCard.src = city.imgUrl;
-                imgCard.alt = city.name;
-                imgCard.classList.add('search-results__card-images');
+    //     //         divCardDetails.appendChild(destinationName);
+    //     //         divCardDetails.appendChild(destinationDescription);
+    //     //         divCardDetails.appendChild(btnVisit);
         
         
-                const divCardDetails = document.createElement('div');
-                divCardDetails.classList.add('search-results__card-details');
-        
-                const destinationName = document.createElement('h3');
-                destinationName.classList.add('search-results__destination');
-                destinationName.innerHTML = city.name;
-        
-                const destinationDescription = document.createElement('p');
-                destinationDescription.classList.add('search-results__description');
-                destinationDescription.textContent = city.description;
-        
-                const btnVisit = document.createElement('button');
-                btnVisit.classList.add('buttons', 'buttons__visit');
-                btnVisit.innerHTML = 'Visit';
-        
-        
-                divCardDetails.appendChild(destinationName);
-                divCardDetails.appendChild(destinationDescription);
-                divCardDetails.appendChild(btnVisit);
-        
-        
-                divSearchResultsCards.appendChild(imgCard);
-                divSearchResultsCards.appendChild(divCardDetails);
+    //     //         divSearchResultsCards.appendChild(imgCard);
+    //     //         divSearchResultsCards.appendChild(divCardDetails);
         
                 
-                searchResultsSection.appendChild(divSearchResultsCards);
+    //     //         searchResultsSection.appendChild(divSearchResultsCards);
             
-                divParentContainer.appendChild(searchResultsSection);
+    //     //         divParentContainer.appendChild(searchResultsSection);
 
 
-                // divParentContainer.classList.remove('invalid-search');
-            } else{
-                divParentContainer.innerHTML = 'Data not found. Please modify your search (e.g. countries, temples, or beaches).';
-                divParentContainer.classList.add('invalid-search');
+    //     //         // divParentContainer.classList.remove('invalid-search');
+    //     //     } else{
+    //     //         console.log('Data not found. Please modify your search (e.g. countries, temples, or beaches).');
+    //     //     }
+    //     // }
 
 
 
-
-                console.log('Data not found. Please modify your search (e.g. countries, temples, or beaches).');
-            }
-
-            // console.log('Country:', countryValue, 'City:', cityValue);
+    //     // const templesData = [];
+        
+    //     // destinations.temples.forEach(temple => {
+    //     //     // console.log(temple.name);
             
-        }
-    }
+    //     //     templesData.push(temple.name);
+    //     // })
+
+    //     // console.log('Temples Data:', templesData);
+
+
+
+    //     // const beachesData = [];
+
+    //     // destinations.beaches.forEach(beach => {
+    //     //     // console.log(beach.name);
+
+    //     //     beachesData.push(beach.name);
+    //     // })
+
+    //     // console.log('Beaches Data:', beachesData);
+
+
+
+
+
+
+    //     // console.log('User input:', input);
+        
+    //     // for (const country of countriesData) {
+    //     //     console.log('Logging all countries data:', countriesData);
+            
+    //     //     let countryValue = country.countryName.toLowerCase();
+    //     //     let cityValue = country.cityName.toLowerCase();
+
+    //     //     if(input.includes(countryValue) || input.includes(cityValue)){
+    //     //         console.log(`It's a match! Input ${input}, Value ${countryValue} ${cityValue}`);
+
+
+    //     //         const divSearchResultsCards = document.createElement('div');
+    //     //         divSearchResultsCards.classList.add('search-results__cards');
+
+                
+    //     //         const imgCard = document.createElement('img');
+    //     //         imgCard.src = country.cityImage;
+    //     //         imgCard.alt = country.cityName;
+    //     //         imgCard.classList.add('search-results__card-images');
+        
+        
+    //     //         const divCardDetails = document.createElement('div');
+    //     //         divCardDetails.classList.add('search-results__card-details');
+        
+    //     //         const destinationName = document.createElement('h3');
+    //     //         destinationName.classList.add('search-results__destination');
+    //     //         destinationName.innerHTML = country.cityName;
+        
+    //     //         const destinationDescription = document.createElement('p');
+    //     //         destinationDescription.classList.add('search-results__description');
+    //     //         destinationDescription.textContent = country.cityDesc;
+        
+    //     //         const btnVisit = document.createElement('button');
+    //     //         btnVisit.classList.add('buttons', 'buttons__visit');
+    //     //         btnVisit.innerHTML = 'Visit';
+        
+        
+    //     //         divCardDetails.appendChild(destinationName);
+    //     //         divCardDetails.appendChild(destinationDescription);
+    //     //         divCardDetails.appendChild(btnVisit);
+        
+        
+    //     //         divSearchResultsCards.appendChild(imgCard);
+    //     //         divSearchResultsCards.appendChild(divCardDetails);
+        
+                
+    //     //         searchResultsSection.appendChild(divSearchResultsCards);
+            
+    //     //         divParentContainer.appendChild(searchResultsSection);
+
+
+    //     //         // divParentContainer.classList.remove('invalid-search');
+
+
+    //     //     } 
+    //     //     // else if(input.includes(cityValue)){
+    //     //     //     console.log(`It's a match! Input ${input} = Value ${cityValue}`);
+
+
+    //     //     //     const divSearchResultsCards = document.createElement('div');
+    //     //     //     divSearchResultsCards.classList.add('search-results__cards');
+
+                
+    //     //     //     const imgCard = document.createElement('img');
+    //     //     //     imgCard.src = city.imgUrl;
+    //     //     //     imgCard.alt = city.name;
+    //     //     //     imgCard.classList.add('search-results__card-images');
+        
+        
+    //     //     //     const divCardDetails = document.createElement('div');
+    //     //     //     divCardDetails.classList.add('search-results__card-details');
+        
+    //     //     //     const destinationName = document.createElement('h3');
+    //     //     //     destinationName.classList.add('search-results__destination');
+    //     //     //     destinationName.innerHTML = city.name;
+        
+    //     //     //     const destinationDescription = document.createElement('p');
+    //     //     //     destinationDescription.classList.add('search-results__description');
+    //     //     //     destinationDescription.textContent = city.description;
+        
+    //     //     //     const btnVisit = document.createElement('button');
+    //     //     //     btnVisit.classList.add('buttons', 'buttons__visit');
+    //     //     //     btnVisit.innerHTML = 'Visit';
+        
+        
+    //     //     //     divCardDetails.appendChild(destinationName);
+    //     //     //     divCardDetails.appendChild(destinationDescription);
+    //     //     //     divCardDetails.appendChild(btnVisit);
+        
+        
+    //     //     //     divSearchResultsCards.appendChild(imgCard);
+    //     //     //     divSearchResultsCards.appendChild(divCardDetails);
+        
+                
+    //     //     //     searchResultsSection.appendChild(divSearchResultsCards);
+            
+    //     //     //     divParentContainer.appendChild(searchResultsSection);
+
+
+    //     //     //     // divParentContainer.classList.remove('invalid-search');
+    //     //     // } 
+    //     //     else{
+    //     //         divParentContainer.innerHTML = 'Data not found. Please modify your search (e.g. countries, temples, or beaches).';
+    //     //         divParentContainer.classList.add('invalid-search');
+
+
+
+
+    //     //         console.log('Data not found. Please modify your search (e.g. countries, temples, or beaches).');
+    //     //     }
+
+    //     //     // console.log('Country:', countryValue, 'City:', cityValue);
+            
+    //     // }
+    // }
 
     
 
