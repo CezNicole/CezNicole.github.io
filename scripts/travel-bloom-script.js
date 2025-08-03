@@ -110,8 +110,17 @@ export async function search(input){
 
 
     // Finding country / city matches
-    let matches = countriesData.filter(country => input.includes(country.countryName.toLowerCase()) || input.includes(country.cityName.toLowerCase()));
-    console.log('Matches:', matches);
+    let countryMatches = countriesData.filter(country => country.countryName.toLowerCase().includes(input) || country.cityName.toLowerCase().includes(input));
+    console.log('Country Matches:', countryMatches);
+
+    // Finding temple matches
+    let templeMatches = destinations.temples.filter(temple => temple.name.toLowerCase().includes(input));
+    console.log('Temple Matches:', templeMatches);
+
+    // Finding beach matches
+    let beachMatches = destinations.beaches.filter(beach => beach.name.toLowerCase().includes(input));
+    console.log('Beach Matches:', beachMatches);
+    
     
 
 
@@ -261,12 +270,66 @@ export async function search(input){
 
             console.log(beach);
         })
-    } else if(matches.length > 0){
-        // TO-DO: display cards for data matches
-        matches.forEach()
-        console.log(`It's a match! ${countriesData.countryName} ${countriesData.cityName}`);
+    } else if(countryMatches.length > 0){
+        /*
+        TO-DOS: 
+        // 1. display cards for data matches (countries)
+        2. display cards for all matching data -- countries, temples, beaches
+        */
+        countryMatches.forEach(dataMatch => {
+            const divSearchResultsCards = document.createElement('div');
+            divSearchResultsCards.classList.add('search-results__cards');
+
+            
+            const imgCard = document.createElement('img');
+            imgCard.src = dataMatch.cityImage;
+            imgCard.alt = dataMatch.cityName;
+            // imgCard.src = country.cityImage;
+            // imgCard.alt = country.cityName;
+            imgCard.classList.add('search-results__card-images');
+    
+    
+            const divCardDetails = document.createElement('div');
+            divCardDetails.classList.add('search-results__card-details');
+    
+            const destinationName = document.createElement('h3');
+            destinationName.classList.add('search-results__destination');
+            destinationName.innerHTML = dataMatch.cityName;
+    
+            const destinationDescription = document.createElement('p');
+            destinationDescription.classList.add('search-results__description');
+            destinationDescription.textContent = dataMatch.cityDesc;
+    
+            const btnVisit = document.createElement('button');
+            btnVisit.classList.add('buttons', 'buttons__visit');
+            btnVisit.innerHTML = 'Visit';
+    
+    
+            divCardDetails.appendChild(destinationName);
+            divCardDetails.appendChild(destinationDescription);
+            divCardDetails.appendChild(btnVisit);
+    
+    
+            divSearchResultsCards.appendChild(imgCard);
+            divSearchResultsCards.appendChild(divCardDetails);
+    
+            
+            searchResultsSection.appendChild(divSearchResultsCards);
+        
+            divParentContainer.appendChild(searchResultsSection);
+
+
+            divParentContainer.classList.remove('invalid-search');
+
+
+            console.log(dataMatch);
+            
+        })
+        // console.log(`It's a match! ${countriesData.countryName} ${countriesData.cityName}`);
         
     }
+    // TO-DO: Add another 'elseif' stmt to display cards for templeMatches and beachMatches
+    // else if()
     else{
         divParentContainer.innerHTML = 'Data not found. Please modify your search (e.g. countries, temples, or beaches).';
         divParentContainer.classList.add('invalid-search');
