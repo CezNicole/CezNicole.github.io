@@ -91,11 +91,11 @@ export async function search(input){
     searchResultsSection.innerHTML = '';
 
 
-    const countriesData = [];
+    const countriesArr = [];
 
     destinations.countries.forEach(country => {
         country.cities.forEach(city => {
-            countriesData.push({
+            countriesArr.push({
                 // TO-DO: MODIFY THE OBJECT STRUCTURE TO DISPLAY CITY DETAILS CORRECTLY WHEN THE COUNTRY NAME MATCHES INPUT, SAME WITH CITY NAME
                 cityName: city.name,
                 cityImage: city.imageUrl,
@@ -106,27 +106,53 @@ export async function search(input){
         })
     })
 
-    console.log('Countries Data:', countriesData);
+    console.log('Countries Array Data:', countriesArr);
+
+
+
+    const templesArr = [];
+
+    destinations.temples.forEach(temple => templesArr.push({
+        destination: temple.name.split(", ")[0],
+        country: temple.name.split(", ")[1],
+        image: temple.imageUrl,
+        desc: temple.description
+    }))
+
+    console.log('Temples Array Data:', templesArr);
+
+    
+
+    const beachesArr = [];
+
+    destinations.beaches.forEach(beach => beachesArr.push({
+        destination: beach.name.split(", ")[0],
+        country: beach.name.split(", ")[1],
+        image: beach.imageUrl,
+        desc: beach.description
+    }))
+
+    console.log('Beaches Array Data:', beachesArr);
+
 
 
     // Finding country / city matches
-    let countryMatches = countriesData.filter(country => country.countryName.toLowerCase().includes(input) || country.cityName.toLowerCase().includes(input));
+    let countryMatches = countriesArr.filter(country => country.countryName.toLowerCase().includes(input) || country.cityName.toLowerCase().includes(input));
     console.log('Country Matches:', countryMatches);
 
     // Finding temple matches
-    let templeMatches = destinations.temples.filter(temple => temple.name.toLowerCase().includes(input));
+    let templeMatches = templesArr.filter(temple => temple.destination.toLowerCase().includes(input) || temple.country.toLowerCase().includes(input));
     console.log('Temple Matches:', templeMatches);
 
     // Finding beach matches
-    let beachMatches = destinations.beaches.filter(beach => beach.name.toLowerCase().includes(input));
+    let beachMatches = beachesArr.filter(beach => beach.destination.toLowerCase().includes(input) || beach.country.toLowerCase().includes(input));
     console.log('Beach Matches:', beachMatches);
     
     
 
 
-    if(input.includes('countries')){
+    if(input.includes('country') || input.includes('countries')){
         destinations.countries.forEach(country => country.cities.forEach(city => {
-        // countriesData.forEach(country => {
             const divSearchResultsCards = document.createElement('div');
             divSearchResultsCards.classList.add('search-results__cards');
 
@@ -175,7 +201,7 @@ export async function search(input){
             // console.log(country);
             console.log(country);
         }))
-    } else if(input.includes('temples')){
+    } else if(input.includes('temple') || input.includes('temples')){
         destinations.temples.forEach(temple => {
             const divSearchResultsCards = document.createElement('div');
             divSearchResultsCards.classList.add('search-results__cards');
@@ -222,7 +248,7 @@ export async function search(input){
 
             console.log(temple);
         })
-    } else if(input.includes('beaches')){
+    } else if(input.includes('beach') || input.includes('beaches')){
         destinations.beaches.forEach(beach => {
             const divSearchResultsCards = document.createElement('div');
             divSearchResultsCards.classList.add('search-results__cards');
@@ -284,8 +310,6 @@ export async function search(input){
             const imgCard = document.createElement('img');
             imgCard.src = dataMatch.cityImage;
             imgCard.alt = dataMatch.cityName;
-            // imgCard.src = country.cityImage;
-            // imgCard.alt = country.cityName;
             imgCard.classList.add('search-results__card-images');
     
     
@@ -322,14 +346,110 @@ export async function search(input){
             divParentContainer.classList.remove('invalid-search');
 
 
-            console.log(dataMatch);
+            console.log('Country Matches:', dataMatch);
             
         })
         // console.log(`It's a match! ${countriesData.countryName} ${countriesData.cityName}`);
         
     }
-    // TO-DO: Add another 'elseif' stmt to display cards for templeMatches and beachMatches
-    // else if()
+    // DONE: TO-DO: Add another 'elseif' stmt to display cards for templeMatches and beachMatches
+    else if(templeMatches.length > 0){
+        templeMatches.forEach(dataMatch => {
+            const divSearchResultsCards = document.createElement('div');
+            divSearchResultsCards.classList.add('search-results__cards');
+
+            
+            const imgCard = document.createElement('img');
+            imgCard.src = dataMatch.image;
+            imgCard.alt = `${dataMatch.destination}, ${dataMatch.country}`;
+            imgCard.classList.add('search-results__card-images');
+    
+    
+            const divCardDetails = document.createElement('div');
+            divCardDetails.classList.add('search-results__card-details');
+    
+            const destinationName = document.createElement('h3');
+            destinationName.classList.add('search-results__destination');
+            destinationName.innerHTML = `${dataMatch.destination}, ${dataMatch.country}`;
+    
+            const destinationDescription = document.createElement('p');
+            destinationDescription.classList.add('search-results__description');
+            destinationDescription.textContent = dataMatch.desc;
+    
+            const btnVisit = document.createElement('button');
+            btnVisit.classList.add('buttons', 'buttons__visit');
+            btnVisit.innerHTML = 'Visit';
+    
+    
+            divCardDetails.appendChild(destinationName);
+            divCardDetails.appendChild(destinationDescription);
+            divCardDetails.appendChild(btnVisit);
+    
+    
+            divSearchResultsCards.appendChild(imgCard);
+            divSearchResultsCards.appendChild(divCardDetails);
+    
+            
+            searchResultsSection.appendChild(divSearchResultsCards);
+        
+            divParentContainer.appendChild(searchResultsSection);
+
+
+            divParentContainer.classList.remove('invalid-search');
+
+
+            console.log('Temple Matches:', dataMatch);
+        })
+    }
+    // BUG: searching for 'brazil' only shows the countries data, not the 'Copacabana Beach, Brazil' from the beaches object 
+    else if(beachMatches.length > 0){
+        beachMatches.forEach(dataMatch => {
+            const divSearchResultsCards = document.createElement('div');
+            divSearchResultsCards.classList.add('search-results__cards');
+
+            
+            const imgCard = document.createElement('img');
+            imgCard.src = dataMatch.image;
+            imgCard.alt = `${dataMatch.destination}, ${dataMatch.country}`;
+            imgCard.classList.add('search-results__card-images');
+    
+    
+            const divCardDetails = document.createElement('div');
+            divCardDetails.classList.add('search-results__card-details');
+    
+            const destinationName = document.createElement('h3');
+            destinationName.classList.add('search-results__destination');
+            destinationName.innerHTML = `${dataMatch.destination}, ${dataMatch.country}`;
+    
+            const destinationDescription = document.createElement('p');
+            destinationDescription.classList.add('search-results__description');
+            destinationDescription.textContent = dataMatch.desc;
+    
+            const btnVisit = document.createElement('button');
+            btnVisit.classList.add('buttons', 'buttons__visit');
+            btnVisit.innerHTML = 'Visit';
+    
+    
+            divCardDetails.appendChild(destinationName);
+            divCardDetails.appendChild(destinationDescription);
+            divCardDetails.appendChild(btnVisit);
+    
+    
+            divSearchResultsCards.appendChild(imgCard);
+            divSearchResultsCards.appendChild(divCardDetails);
+    
+            
+            searchResultsSection.appendChild(divSearchResultsCards);
+        
+            divParentContainer.appendChild(searchResultsSection);
+
+
+            divParentContainer.classList.remove('invalid-search');
+
+
+            console.log('Beach Matches:', dataMatch);
+        })
+    }
     else{
         divParentContainer.innerHTML = 'Data not found. Please modify your search (e.g. countries, temples, or beaches).';
         divParentContainer.classList.add('invalid-search');
