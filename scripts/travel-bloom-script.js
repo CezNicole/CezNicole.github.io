@@ -25,7 +25,7 @@ const divLocalTime = document.createElement('div');
 
 
 
-
+let matchFound = false;
 
 
 // WIP here
@@ -296,13 +296,23 @@ export async function search(input){
 
             console.log(beach);
         })
-    } else if(countryMatches.length > 0){
+    } else{
+        divParentContainer.innerHTML = 'Data not found. Please modify your search (e.g. countries, temples, or beaches).';
+        divParentContainer.classList.add('invalid-search');
+
+        console.log('Data not found. Please modify your search (e.g. countries, temples, or beaches).');
+    }
+    
+    
+    if(countryMatches.length > 0){
         /*
         TO-DOS: 
         // 1. display cards for data matches (countries)
         2. display cards for all matching data -- countries, temples, beaches
         */
         countryMatches.forEach(dataMatch => {
+            matchFound = true;
+
             const divSearchResultsCards = document.createElement('div');
             divSearchResultsCards.classList.add('search-results__cards');
 
@@ -350,11 +360,14 @@ export async function search(input){
             
         })
         // console.log(`It's a match! ${countriesData.countryName} ${countriesData.cityName}`);
-        
-    }
+    } 
+
+
     // DONE: TO-DO: Add another 'elseif' stmt to display cards for templeMatches and beachMatches
-    else if(templeMatches.length > 0){
+    if(templeMatches.length > 0){
         templeMatches.forEach(dataMatch => {
+            matchFound = true;
+
             const divSearchResultsCards = document.createElement('div');
             divSearchResultsCards.classList.add('search-results__cards');
 
@@ -400,10 +413,14 @@ export async function search(input){
 
             console.log('Temple Matches:', dataMatch);
         })
-    }
-    // BUG: searching for 'brazil' only shows the countries data, not the 'Copacabana Beach, Brazil' from the beaches object 
-    else if(beachMatches.length > 0){
+    } 
+
+
+    // RESOLVED: BUG: searching for 'brazil' only shows the countries data, not the 'Copacabana Beach, Brazil' from the beaches object 
+    if(beachMatches.length > 0){
         beachMatches.forEach(dataMatch => {
+            matchFound = true;
+
             const divSearchResultsCards = document.createElement('div');
             divSearchResultsCards.classList.add('search-results__cards');
 
@@ -449,13 +466,21 @@ export async function search(input){
 
             console.log('Beach Matches:', dataMatch);
         })
-    }
-    else{
+    } 
+
+    if(!input || !matchFound){
         divParentContainer.innerHTML = 'Data not found. Please modify your search (e.g. countries, temples, or beaches).';
         divParentContainer.classList.add('invalid-search');
 
         console.log('Data not found. Please modify your search (e.g. countries, temples, or beaches).');
+    } else{
+        /* 
+        TO-DOS:
+        1. Refactor code to only display card details in the DOM when the data matches
+        2. Fix bug: on page load, the error message doesn't get displayed when clicking on Search button w/o any search input
+        */
     }
+    
 
 
     /*
