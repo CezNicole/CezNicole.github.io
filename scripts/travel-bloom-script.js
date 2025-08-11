@@ -37,13 +37,6 @@ let matchFound = false;
 export function inputValidation(){
     let input = searchInput.value.trim().toLowerCase();
 
-    // if(input){
-    //     console.log('Your input is:', input);
-    // } else{
-    //     console.log('Please enter a valid input');
-    // }
-
-
     if(!input){
         searchInput.classList.add('error');
         console.log('Please enter a valid destination / keyword.');
@@ -59,29 +52,12 @@ export function inputValidation(){
 
         console.log('Your input is:', input);
     }
-
-
-    
-    // searchInput.addEventListener('input', () => {
-    //     let userInput = searchInput.value.trim();
-
-    //     if(!userInput){
-    //         searchInput.classList.add('error');
-    //     } else{
-    //         searchInput.classList.remove('error');
-    //     }
-    // })
-
-    // searchInput.addEventListener('focus', () => {
-    //     searchInput.classList.add('focus');
-    //     searchInput.classList.remove('error');
-    // })
 }
 
 
 
 
-
+// WIP here
 export function renderDestination(data){
     const divSearchResultsCards = document.createElement('div');
     divSearchResultsCards.classList.add('search-results__cards');
