@@ -25,7 +25,112 @@ const divLocalTime = document.createElement('div');
 
 
 
+
+
+
 let matchFound = false;
+
+
+
+
+
+export function inputValidation(){
+    let input = searchInput.value.trim().toLowerCase();
+
+    // if(input){
+    //     console.log('Your input is:', input);
+    // } else{
+    //     console.log('Please enter a valid input');
+    // }
+
+
+    if(!input){
+        searchInput.classList.add('error');
+        console.log('Please enter a valid destination / keyword.');
+    } else{
+        searchInput.classList.remove('error');
+
+        divParentContainer.innerHTML = '';
+
+        divLocalTime.classList.add('search-results__local-time');
+        // divLocalTime.textContent = location.name;
+
+        divParentContainer.appendChild(divLocalTime);
+
+        console.log('Your input is:', input);
+    }
+
+
+    
+    // searchInput.addEventListener('input', () => {
+    //     let userInput = searchInput.value.trim();
+
+    //     if(!userInput){
+    //         searchInput.classList.add('error');
+    //     } else{
+    //         searchInput.classList.remove('error');
+    //     }
+    // })
+
+    // searchInput.addEventListener('focus', () => {
+    //     searchInput.classList.add('focus');
+    //     searchInput.classList.remove('error');
+    // })
+}
+
+
+
+
+
+export function renderDestination(data){
+    const divSearchResultsCards = document.createElement('div');
+    divSearchResultsCards.classList.add('search-results__cards');
+
+    
+    const imgCard = document.createElement('img');
+    imgCard.src = data.imageUrl;
+    imgCard.alt = data.name;
+    // imgCard.src = country.cityImage;
+    // imgCard.alt = country.cityName;
+    imgCard.classList.add('search-results__card-images');
+
+
+    const divCardDetails = document.createElement('div');
+    divCardDetails.classList.add('search-results__card-details');
+
+    const destinationName = document.createElement('h3');
+    destinationName.classList.add('search-results__destination');
+    destinationName.innerHTML = data.name;
+
+    const destinationDescription = document.createElement('p');
+    destinationDescription.classList.add('search-results__description');
+    destinationDescription.textContent = data.description;
+
+    const btnVisit = document.createElement('button');
+    btnVisit.classList.add('buttons', 'buttons__visit');
+    btnVisit.innerHTML = 'Visit';
+
+
+    divCardDetails.appendChild(destinationName);
+    divCardDetails.appendChild(destinationDescription);
+    divCardDetails.appendChild(btnVisit);
+
+
+    divSearchResultsCards.appendChild(imgCard);
+    divSearchResultsCards.appendChild(divCardDetails);
+
+    
+    searchResultsSection.appendChild(divSearchResultsCards);
+
+    divParentContainer.appendChild(searchResultsSection);
+
+
+    // divParentContainer.classList.remove('invalid-search');
+
+}
+
+
+
 
 
 // WIP here
@@ -47,39 +152,39 @@ export async function search(input){
     
    
    
-    input = searchInput.value.trim().toLowerCase();
+    // input = searchInput.value.trim().toLowerCase();
     console.log('Inside the search function, the input value is:', input);
 
     
     
     
 
-    // Form Validation
-    if(input){
-        searchInput.classList.remove('error');
-        destinations = await loadData();
+    // // Form Validation
+    // if(input){
+    //     searchInput.classList.remove('error');
+    //     destinations = await loadData();
 
-        divParentContainer.innerHTML = '';
+    //     divParentContainer.innerHTML = '';
 
-        divLocalTime.classList.add('search-results__local-time');
-        // divLocalTime.textContent = location.name;
+    //     divLocalTime.classList.add('search-results__local-time');
+    //     // divLocalTime.textContent = location.name;
 
-        divParentContainer.appendChild(divLocalTime);
-    } else{
-        searchInput.classList.add('error');
-        console.log('Please enter a valid destination / keyword.');
-    }
+    //     divParentContainer.appendChild(divLocalTime);
+    // } else{
+    //     searchInput.classList.add('error');
+    //     console.log('Please enter a valid destination / keyword.');
+    // }
 
-    searchInput.addEventListener('input', () => {
-        if(input){
-            searchInput.classList.remove('error');
-        }
-    })
+    // searchInput.addEventListener('input', () => {
+    //     if(input){
+    //         searchInput.classList.remove('error');
+    //     }
+    // })
 
-    searchInput.addEventListener('focus', () => {
-        searchInput.classList.add('focus');
-        searchInput.classList.remove('error');
-    })
+    // searchInput.addEventListener('focus', () => {
+    //     searchInput.classList.add('focus');
+    //     searchInput.classList.remove('error');
+    // })
 
 
 
@@ -527,7 +632,9 @@ export function clear(){
 const btnSearch = document.getElementById('btnSearch');
 btnSearch.addEventListener('click', (event) => {
     event.preventDefault();
-    search();
+    // search();
+
+    inputValidation();
 })
 
 const btnClear = document.getElementById('btnClear');
