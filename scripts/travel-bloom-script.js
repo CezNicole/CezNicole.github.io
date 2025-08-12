@@ -26,7 +26,7 @@ const divLocalTime = document.createElement('div');
 
 
 
-
+let input;
 
 let matchFound = false;
 
@@ -35,7 +35,7 @@ let matchFound = false;
 
 
 export function inputValidation(){
-    let input = searchInput.value.trim().toLowerCase();
+    input = searchInput.value.trim().toLowerCase();
 
     if(!input){
         searchInput.classList.add('error');
@@ -43,12 +43,18 @@ export function inputValidation(){
     } else{
         searchInput.classList.remove('error');
 
-        divParentContainer.innerHTML = '';
+        // divParentContainer.innerHTML = '';
 
         divLocalTime.classList.add('search-results__local-time');
         // divLocalTime.textContent = location.name;
 
         divParentContainer.appendChild(divLocalTime);
+
+
+
+        // TESTING FILTER W/ RENDER FUNCTION
+        filterData();
+
 
         console.log('Your input is:', input);
     }
@@ -58,6 +64,37 @@ export function inputValidation(){
 
 
 // WIP here
+export async function filterData(){
+    input = searchInput.value.trim().toLowerCase();
+
+    divParentContainer.innerHTML = '';
+    searchResultsSection.innerHTML = '';
+    
+    if(input){
+        destinations = await loadData();
+
+        if(input.includes('country') || input.includes('countries')){
+            console.log('Your input is:', input, destinations);
+
+            destinations.countries.forEach(country => {
+                country.cities.forEach(city => {
+                    renderDestination(city)
+                    console.log('Displaying countries data:', city);
+                })
+            })
+        } 
+        // TO-DO: else if checks for "beach / beaches", "temple / temples", input that matches name in the json file
+        else{
+            console.log('The text input is:', input);
+        }
+    } else{
+        console.log('Please modify your input');
+    }
+    
+}
+
+
+
 export function renderDestination(data){
     const divSearchResultsCards = document.createElement('div');
     divSearchResultsCards.classList.add('search-results__cards');
@@ -102,7 +139,6 @@ export function renderDestination(data){
 
 
     // divParentContainer.classList.remove('invalid-search');
-
 }
 
 
