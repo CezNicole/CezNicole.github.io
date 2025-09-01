@@ -73,8 +73,8 @@ export async function filterData(){
     if(input){
         destinations = await loadData();
 
-        if(input.includes('country') || input.includes('countries')){
-            console.log('Your input is:', input, destinations);
+        if(input ==='country' || input === 'countries'){
+            console.log('Matched countries! Your input is:', input, destinations);
 
             destinations.countries.forEach(country => {
                 country.cities.forEach(city => {
@@ -83,13 +83,35 @@ export async function filterData(){
                 })
             })
         } 
-        // TO-DO: else if checks for "beach / beaches", "temple / temples", input that matches name in the json file
+        else if(input === 'temple' || input === 'temples'){
+            console.log('Matched temples! Your input is:', input, destinations);
+
+            destinations.temples.forEach(temple => {
+                renderDestination(temple);
+                console.log('Displaying temples data:', temple);
+                
+            })
+            
+        }
+        else if(input === 'beach' || input === 'beaches'){
+            console.log('Matched beaches! Your input is:', input, destinations);
+
+            destinations.beaches.forEach(beach => {
+                renderDestination(beach);
+                console.log('Displaying beaches data:', beach);
+                
+            })
+        }
         else{
             console.log('The text input is:', input);
         }
     } else{
         console.log('Please modify your input');
     }
+
+
+    // TO-DO: write code to check for input matches on city/temple/beach name in the json file
+
     
 }
 
