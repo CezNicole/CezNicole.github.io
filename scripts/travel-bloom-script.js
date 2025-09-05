@@ -56,9 +56,10 @@ export function inputValidation(){
         filterData();
         matchCountryName();
 
-
         console.log('Your input is:', input);
     }
+    
+    clear();
 }
 
 
@@ -111,7 +112,6 @@ export async function filterData(){
     }
 
 
-    // TO-DO: write code to check for input matches on city/temple/beach name in the json file
     
 }
 
@@ -128,15 +128,25 @@ export async function matchCountryName(){
     destinations.countries.forEach(country => {
         let countryName = country.name.toLowerCase();
         if(input.includes(countryName)) {
-            console.log(`Country name matched! ${input}, ${country.name}, ${countryName}`);
+            
+            // Display all city data for matched country name
+            country.cities.forEach(city => {
+                renderDestination(city)
+                console.log('Displaying countries data:', city);
+            })
 
-            // TO-DO: Display all city data for matched country name
+            console.log(`Country name matched! ${input}, ${country.name}, ${countryName}`);
 
         } else{
             console.log(`No data matches! Your input is: ${input}, ${country.name}, ${countryName}`);
+
+            // TO-DO: Display the error message on DOM
         }
     })
 }
+
+// TO-DO: write code to check for input matches on temple/beach name in the json file
+
 
 
 
