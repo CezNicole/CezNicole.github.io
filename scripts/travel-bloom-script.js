@@ -55,6 +55,7 @@ export function inputValidation(){
         // TESTING FILTER W/ RENDER FUNCTION
         filterData();
         matchCountryName();
+        matchTempleName();
 
         console.log('Your input is:', input);
     }
@@ -127,8 +128,8 @@ export async function matchCountryName(){
 
     destinations.countries.forEach(country => {
         let countryName = country.name.toLowerCase();
+
         if(input.includes(countryName)) {
-            
             // Display all city data for matched country name
             country.cities.forEach(city => {
                 renderDestination(city)
@@ -146,7 +147,46 @@ export async function matchCountryName(){
 }
 
 // TO-DO: write code to check for input matches on temple/beach name in the json file
+export async function matchTempleName(){
+    input = searchInput.value.trim().toLowerCase();
 
+    console.log('Entered matchTempleName() function!', destinations);
+
+    destinations = await loadData();
+
+    destinations.temples.forEach(temple => {
+        let templeName = temple.name.toLowerCase();
+        let splitTempleName = templeName.split(',');
+        
+        console.log('TEMPLE NAME:', templeName, 'SPLIT TEMPLE NAME:', splitTempleName);
+        
+        const templesArr = {
+            templeName: splitTempleName[0],
+            country: splitTempleName[1]
+        };
+
+// TO-DO: Figure out why the templesArr is displayed as [object Object]
+        console.log(`Displaying Temples Data: ${templesArr}`);
+        
+
+        
+        // if(templeName.includes(input)){
+        if(input.includes(templeName)){
+
+            // Display all temple data for matched temple name
+            
+            // renderDestination(temple);
+
+            console.log('Displaying temples data:', temple);
+            // console.log('Temple name matched!', 'input:', input, 'templeName:', templeName, temple.name);
+        } else{
+            console.log(`No data matches! Your input is: ${input}, temple.name: ${temple.name}, templeName: ${templeName}`);
+
+            // TO-DO: Display the error message on DOM
+        }
+    })
+    
+}
 
 
 
