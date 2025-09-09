@@ -1,6 +1,7 @@
 import { getJsonData } from "./travel-bloom-api.js";
 
 let destinations = {};
+let input;
 
 
 export async function loadData(){
@@ -22,14 +23,6 @@ const divParentContainer = document.querySelector('.search-results');
 const searchResultsSection = document.createElement('section');
 
 const divLocalTime = document.createElement('div');
-
-
-
-
-let input;
-
-let matchFound = false;
-
 
 
 
@@ -56,6 +49,7 @@ export function inputValidation(){
         filterData();
         matchCountryName();
         matchTempleName();
+        matchBeachName();
 
         console.log('Your input is:', input);
     }
@@ -63,10 +57,6 @@ export function inputValidation(){
     clear();
 }
 
-
-
-
-// WIP here
 export async function filterData(){
     input = searchInput.value.trim().toLowerCase();
 
@@ -77,39 +67,32 @@ export async function filterData(){
         destinations = await loadData();
 
         if(input ==='country' || input === 'countries'){
-            console.log('Matched countries! Your input is:', input, destinations);
-
             destinations.countries.forEach(country => {
                 country.cities.forEach(city => {
                     renderDestination(city)
-                    console.log('Displaying countries data:', city);
                 })
             })
         } 
         else if(input === 'temple' || input === 'temples'){
-            console.log('Matched temples! Your input is:', input, destinations);
-
             destinations.temples.forEach(temple => {
                 renderDestination(temple);
-                console.log('Displaying temples data:', temple);
-                
             })
             
         }
         else if(input === 'beach' || input === 'beaches'){
-            console.log('Matched beaches! Your input is:', input, destinations);
-
             destinations.beaches.forEach(beach => {
                 renderDestination(beach);
-                console.log('Displaying beaches data:', beach);
-                
             })
         }
         else{
-            console.log('The text input is:', input);
+            console.log(`No data matches! Your input is: ${input}, ${country.name}, ${countryName}`);
+
+            // TO-DO: Display the error message on DOM
         }
     } else{
-        console.log('Please modify your input');
+        console.log(`No data matches! Your input is: ${input}, ${country.name}, ${countryName}`);
+
+        // TO-DO: Display the error message on DOM
     }
 
 
@@ -119,24 +102,16 @@ export async function filterData(){
 export async function matchCountryName(){
     input = searchInput.value.trim().toLowerCase();
 
-    console.log('Entered matchCountryName() function!', destinations);
-    
     destinations = await loadData();
     
-    console.log(destinations);
-    
-
     destinations.countries.forEach(country => {
         let countryName = country.name.toLowerCase();
 
-        if(input.includes(countryName)) {
+        if(countryName.includes(input)) {
             // Display all city data for matched country name
             country.cities.forEach(city => {
                 renderDestination(city)
-                console.log('Displaying countries data:', city);
             })
-
-            console.log(`Country name matched! ${input}, ${country.name}, ${countryName}`);
 
         } else{
             console.log(`No data matches! Your input is: ${input}, ${country.name}, ${countryName}`);
@@ -146,50 +121,45 @@ export async function matchCountryName(){
     })
 }
 
-// TO-DO: write code to check for input matches on temple/beach name in the json file
 export async function matchTempleName(){
     input = searchInput.value.trim().toLowerCase();
-
-    console.log('Entered matchTempleName() function!', destinations);
 
     destinations = await loadData();
 
     destinations.temples.forEach(temple => {
         let templeName = temple.name.toLowerCase();
-        let splitTempleName = templeName.split(',');
-        
-        console.log('TEMPLE NAME:', templeName, 'SPLIT TEMPLE NAME:', splitTempleName);
-        
-        const templesArr = {
-            templeName: splitTempleName[0],
-            country: splitTempleName[1]
-        };
 
-// TO-DO: Figure out why the templesArr is displayed as [object Object]
-        console.log(`Displaying Temples Data: ${templesArr}`);
-        
-
-        
-        // if(templeName.includes(input)){
-        if(input.includes(templeName)){
-
+        if(templeName.includes(input)){
             // Display all temple data for matched temple name
-            
-            // renderDestination(temple);
+            renderDestination(temple);
 
-            console.log('Displaying temples data:', temple);
-            // console.log('Temple name matched!', 'input:', input, 'templeName:', templeName, temple.name);
         } else{
             console.log(`No data matches! Your input is: ${input}, temple.name: ${temple.name}, templeName: ${templeName}`);
 
             // TO-DO: Display the error message on DOM
         }
     })
-    
 }
 
+export async function matchBeachName(){
+    input = searchInput.value.trim().toLowerCase();
 
+    destinations = await loadData();
 
+    destinations.beaches.forEach(beach => {
+        let beachName = beach.name.toLowerCase();
+
+        if(beachName.includes(input)){
+            // Display all beach data for matched beach name
+            renderDestination(beach);
+
+        } else{
+            console.log(`No data matches! Your input is: ${input}, beach.name: ${beach.name}, beachName: ${beachName}`);
+
+            // TO-DO: Display the error message on DOM
+        }
+    })
+}
 
 export function renderDestination(data){
     const divSearchResultsCards = document.createElement('div');
@@ -731,6 +701,10 @@ export async function search(input){
 //         console.error('Error fetching timezone:', error.response?.status, error.message);
 //     }
 // }
+
+
+
+
 
 export function clear(){
     searchInput.value = '';
