@@ -1,4 +1,4 @@
-import { getJsonData } from "./travel-bloom-api.js";
+import { getJsonData, getTimeZone } from "./travel-bloom-api.js";
 
 let destinations = {};
 let input;
@@ -50,6 +50,7 @@ export function inputValidation(){
         matchCountryName();
         matchTempleName();
         matchBeachName();
+        displayTimeZone();
 
         console.log('Your input is:', input);
     }
@@ -85,12 +86,12 @@ export async function filterData(){
             })
         }
         else{
-            console.log(`No data matches! Your input is: ${input}, ${country.name}, ${countryName}`);
+            console.log(`No data matches! Your input is: ${input}`);
 
             // TO-DO: Display the error message on DOM
         }
     } else{
-        console.log(`No data matches! Your input is: ${input}, ${country.name}, ${countryName}`);
+        console.log(`No data matches! Your input is: ${input}`);
 
         // TO-DO: Display the error message on DOM
     }
@@ -205,6 +206,77 @@ export function renderDestination(data){
 
 
     // divParentContainer.classList.remove('invalid-search');
+}
+
+
+// TO-DO: Add function to display timezone when a country/city is searched
+export async function displayTimeZone(){
+    const timeZones = {
+        'australia': 'http://worldtimeapi.org/api/timezone/australia/act',
+        'japan': 'http://worldtimeapi.org/api/timezone/japan',
+        'brazil': 'http://worldtimeapi.org/api/timezone/brazil/east',
+        'cambodia': 'http://worldtimeapi.org/api/timezone/Asia/Phnom_Penh',
+        'india': 'http://worldtimeapi.org/api/timezone/Asia/Kolkata',
+        'french polynesia': 'http://worldtimeapi.org/api/timezone/Pacific/Tahiti',
+        'tahiti': 'http://worldtimeapi.org/api/timezone/Pacific/Tahiti',
+    }
+
+    console.log(timeZones);
+
+    
+    input = searchInput.value.trim().toLowerCase();
+
+    let timeZoneFound = false;
+
+    for (const key in timeZones) {
+        if(input === key){
+            timeZoneFound = true;
+
+            console.log('Your input timezone is:', input, timeZones[input], timeZoneFound);
+            
+        } 
+        
+    }
+
+    if(!timeZoneFound){
+        console.log('No timezone found', timeZoneFound);
+    }
+
+
+    // TO-DO: Display timezone when the input matches any of the timeZones key
+    // FIX: where are you calling getTimeZone()
+
+
+
+    // try {
+    //     // destinations.countries.forEach(country => {
+    //     //     country.cities.forEach(city => {
+    //     //         if(input === country.name.toLowerCase() || input === city.name.toLowerCase()){
+
+    //     //             switch (input) {
+    //     //                 case 'Australia':
+    //     //                     apiEndpoint = getTimeZone(input);
+    //     //                     break;
+                    
+    //     //                 default:
+    //     //                     break;
+    //     //             }
+    //     //         }
+    //     //     })
+    //     // })
+
+    // } catch (error) {
+    //     console.log('No timezone found.');
+    // }
+    /*
+        AUSTRALIA: http://worldtimeapi.org/api/timezone/australia/act
+        JAPAN: http://worldtimeapi.org/api/timezone/japan
+        BRAZIL: http://worldtimeapi.org/api/timezone/brazil/east
+        CAMBODIA: Asia/Phnom_Penh
+        INDIA: Asia/Kolkata
+        French Polynesia: Pacific/Tahiti
+
+    */
 }
 
 
