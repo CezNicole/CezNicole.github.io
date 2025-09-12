@@ -1,7 +1,7 @@
 import { getJsonData, getTimeZone } from "./travel-bloom-api.js";
 
 let destinations = {};
-let input;
+// let input;
 
 
 export async function loadData(){
@@ -28,184 +28,229 @@ const divLocalTime = document.createElement('div');
 
 
 export function inputValidation(){
-    input = searchInput.value.trim().toLowerCase();
+    const input = searchInput.value.trim().toLowerCase();
 
-    if(!input){
-        searchInput.classList.add('error');
-        console.log('Please enter a valid destination / keyword.');
-    } else{
-        searchInput.classList.remove('error');
+    try {
 
-        // divParentContainer.innerHTML = '';
+        if(!input){
+            searchInput.classList.add('error');
+            console.log('Please enter a valid destination / keyword.');
+        } else{
+            searchInput.classList.remove('error');
 
-        divLocalTime.classList.add('search-results__local-time');
-        // divLocalTime.textContent = location.name;
+            // divParentContainer.innerHTML = '';
 
-        divParentContainer.appendChild(divLocalTime);
+            divLocalTime.classList.add('search-results__local-time');
+            // divLocalTime.textContent = location.name;
+
+            divParentContainer.appendChild(divLocalTime);
 
 
 
-        // TESTING FILTER W/ RENDER FUNCTION
-        filterData();
-        matchCountryName();
-        matchTempleName();
-        matchBeachName();
-        displayTimeZone();
+            // TESTING FILTER W/ RENDER FUNCTION
+            if(input === 'country' || input === 'countries' || input === 'temple' || input === 'temples' || input === 'beach' || input === 'beaches'){
+                filterData();
+            } else{
+                matchCountryName();
+                matchTempleName();
+                matchBeachName();
+            }
 
-        console.log('Your input is:', input);
+            displayTimeZone();
+
+            console.log('Your input is:', input);
+        }
+    
+    } catch (error) {
+        console.log('Error validating data', error);
     }
     
     clear();
 }
 
 export async function filterData(){
-    input = searchInput.value.trim().toLowerCase();
+    const input = searchInput.value.trim().toLowerCase();
 
     divParentContainer.innerHTML = '';
     searchResultsSection.innerHTML = '';
-    
-    if(input){
-        destinations = await loadData();
 
-        if(input ==='country' || input === 'countries'){
-            destinations.countries.forEach(country => {
-                country.cities.forEach(city => {
-                    renderDestination(city)
+    try {
+        
+        if(input){
+            destinations = await loadData();
+
+            if(input ==='country' || input === 'countries'){
+                destinations.countries.forEach(country => {
+                    country.cities.forEach(city => {
+                        renderDestination(city)
+                    })
                 })
-            })
-        } 
-        else if(input === 'temple' || input === 'temples'){
-            destinations.temples.forEach(temple => {
-                renderDestination(temple);
-            })
-            
-        }
-        else if(input === 'beach' || input === 'beaches'){
-            destinations.beaches.forEach(beach => {
-                renderDestination(beach);
-            })
-        }
-        else{
+            } 
+            else if(input === 'temple' || input === 'temples'){
+                destinations.temples.forEach(temple => {
+                    renderDestination(temple);
+                })
+                
+            }
+            else if(input === 'beach' || input === 'beaches'){
+                destinations.beaches.forEach(beach => {
+                    renderDestination(beach);
+                })
+            }
+            else{
+                console.log(`No data matches! Your input is: ${input}`);
+
+                // TO-DO: Display the error message on DOM
+            }
+        } else{
             console.log(`No data matches! Your input is: ${input}`);
 
             // TO-DO: Display the error message on DOM
         }
-    } else{
-        console.log(`No data matches! Your input is: ${input}`);
 
-        // TO-DO: Display the error message on DOM
+    } catch (error) {
+        console.log('Error filtering data', error);
     }
-
-
-    
 }
 
 export async function matchCountryName(){
-    input = searchInput.value.trim().toLowerCase();
+    const input = searchInput.value.trim().toLowerCase();
 
-    destinations = await loadData();
+    divParentContainer.innerHTML = '';
+    searchResultsSection.innerHTML = '';
+
+    try {
     
-    destinations.countries.forEach(country => {
-        let countryName = country.name.toLowerCase();
-
-        if(countryName.includes(input)) {
-            // Display all city data for matched country name
-            country.cities.forEach(city => {
-                renderDestination(city)
-            })
-
-        } else{
-            console.log(`No data matches! Your input is: ${input}, ${country.name}, ${countryName}`);
-
-            // TO-DO: Display the error message on DOM
-        }
-    })
+        destinations = await loadData();
+        
+        destinations.countries.forEach(country => {
+            let countryName = country.name.toLowerCase();
+    
+            if(countryName.includes(input)) {
+                // Display all city data for matched country name
+                country.cities.forEach(city => {
+                    renderDestination(city)
+                })
+    
+            } else{
+                console.log(`No data matches! Your input is: ${input}, ${country.name}, ${countryName}`);
+    
+                // TO-DO: Display the error message on DOM
+            }
+        })
+        
+    } catch (error) {
+        console.log('Error matching country name', error);
+    }
 }
 
 export async function matchTempleName(){
-    input = searchInput.value.trim().toLowerCase();
+    const input = searchInput.value.trim().toLowerCase();
 
-    destinations = await loadData();
+    divParentContainer.innerHTML = '';
+    searchResultsSection.innerHTML = '';
 
-    destinations.temples.forEach(temple => {
-        let templeName = temple.name.toLowerCase();
-
-        if(templeName.includes(input)){
-            // Display all temple data for matched temple name
-            renderDestination(temple);
-
-        } else{
-            console.log(`No data matches! Your input is: ${input}, temple.name: ${temple.name}, templeName: ${templeName}`);
-
-            // TO-DO: Display the error message on DOM
-        }
-    })
+    try {
+    
+        destinations = await loadData();
+    
+        destinations.temples.forEach(temple => {
+            let templeName = temple.name.toLowerCase();
+    
+            if(templeName.includes(input)){
+                // Display all temple data for matched temple name
+                renderDestination(temple);
+    
+            } else{
+                console.log(`No data matches! Your input is: ${input}, temple.name: ${temple.name}, templeName: ${templeName}`);
+    
+                // TO-DO: Display the error message on DOM
+            }
+        })
+        
+    } catch (error) {
+        console.log('Error matching temple name', error);
+    }
 }
 
 export async function matchBeachName(){
-    input = searchInput.value.trim().toLowerCase();
+    const input = searchInput.value.trim().toLowerCase();
 
-    destinations = await loadData();
-
-    destinations.beaches.forEach(beach => {
-        let beachName = beach.name.toLowerCase();
-
-        if(beachName.includes(input)){
-            // Display all beach data for matched beach name
-            renderDestination(beach);
-
-        } else{
-            console.log(`No data matches! Your input is: ${input}, beach.name: ${beach.name}, beachName: ${beachName}`);
-
-            // TO-DO: Display the error message on DOM
-        }
-    })
+    divParentContainer.innerHTML = '';
+    searchResultsSection.innerHTML = '';
+    
+    try {
+    
+        destinations = await loadData();
+    
+        destinations.beaches.forEach(beach => {
+            let beachName = beach.name.toLowerCase();
+    
+            if(beachName.includes(input)){
+                // Display all beach data for matched beach name
+                renderDestination(beach);
+    
+            } else{
+                console.log(`No data matches! Your input is: ${input}, beach.name: ${beach.name}, beachName: ${beachName}`);
+    
+                // TO-DO: Display the error message on DOM
+            }
+        })
+        
+    } catch (error) {
+        console.log('Error matching beach name', error);
+    }
 }
 
 export function renderDestination(data){
-    const divSearchResultsCards = document.createElement('div');
-    divSearchResultsCards.classList.add('search-results__cards');
-
+    try {
+        const divSearchResultsCards = document.createElement('div');
+        divSearchResultsCards.classList.add('search-results__cards');
     
-    const imgCard = document.createElement('img');
-    imgCard.src = data.imageUrl;
-    imgCard.alt = data.name;
-    // imgCard.src = country.cityImage;
-    // imgCard.alt = country.cityName;
-    imgCard.classList.add('search-results__card-images');
-
-
-    const divCardDetails = document.createElement('div');
-    divCardDetails.classList.add('search-results__card-details');
-
-    const destinationName = document.createElement('h3');
-    destinationName.classList.add('search-results__destination');
-    destinationName.innerHTML = data.name;
-
-    const destinationDescription = document.createElement('p');
-    destinationDescription.classList.add('search-results__description');
-    destinationDescription.textContent = data.description;
-
-    const btnVisit = document.createElement('button');
-    btnVisit.classList.add('buttons', 'buttons__visit');
-    btnVisit.innerHTML = 'Visit';
-
-
-    divCardDetails.appendChild(destinationName);
-    divCardDetails.appendChild(destinationDescription);
-    divCardDetails.appendChild(btnVisit);
-
-
-    divSearchResultsCards.appendChild(imgCard);
-    divSearchResultsCards.appendChild(divCardDetails);
-
+        
+        const imgCard = document.createElement('img');
+        imgCard.src = data.imageUrl;
+        imgCard.alt = data.name;
+        // imgCard.src = country.cityImage;
+        // imgCard.alt = country.cityName;
+        imgCard.classList.add('search-results__card-images');
     
-    searchResultsSection.appendChild(divSearchResultsCards);
-
-    divParentContainer.appendChild(searchResultsSection);
-
-
-    // divParentContainer.classList.remove('invalid-search');
+    
+        const divCardDetails = document.createElement('div');
+        divCardDetails.classList.add('search-results__card-details');
+    
+        const destinationName = document.createElement('h3');
+        destinationName.classList.add('search-results__destination');
+        destinationName.innerHTML = data.name;
+    
+        const destinationDescription = document.createElement('p');
+        destinationDescription.classList.add('search-results__description');
+        destinationDescription.textContent = data.description;
+    
+        const btnVisit = document.createElement('button');
+        btnVisit.classList.add('buttons', 'buttons__visit');
+        btnVisit.innerHTML = 'Visit';
+    
+    
+        divCardDetails.appendChild(destinationName);
+        divCardDetails.appendChild(destinationDescription);
+        divCardDetails.appendChild(btnVisit);
+    
+    
+        divSearchResultsCards.appendChild(imgCard);
+        divSearchResultsCards.appendChild(divCardDetails);
+    
+        
+        searchResultsSection.appendChild(divSearchResultsCards);
+    
+        divParentContainer.appendChild(searchResultsSection);
+    
+    
+        // divParentContainer.classList.remove('invalid-search');
+        
+    } catch (error) {
+        console.log('Error rendering data', error);
+    }
 }
 
 
@@ -218,33 +263,40 @@ export async function displayTimeZone(){
         'cambodia': 'http://worldtimeapi.org/api/timezone/Asia/Phnom_Penh',
         'india': 'http://worldtimeapi.org/api/timezone/Asia/Kolkata',
         'french polynesia': 'http://worldtimeapi.org/api/timezone/Pacific/Tahiti',
-        'tahiti': 'http://worldtimeapi.org/api/timezone/Pacific/Tahiti',
+        'polynesia': 'http://worldtimeapi.org/api/timezone/Pacific/Tahiti',
     }
 
     console.log(timeZones);
 
     
-    input = searchInput.value.trim().toLowerCase();
+    const input = searchInput.value.trim().toLowerCase();
 
     let timeZoneFound = false;
 
-    for (const key in timeZones) {
-        if(input === key){
-            timeZoneFound = true;
 
-            console.log('Your input timezone is:', input, timeZones[input], timeZoneFound);
+    try {
+        for (const key in timeZones) {
+            if(input === key){
+                timeZoneFound = true;
+    
+                console.log('Your input timezone is:', input, timeZones[input], timeZoneFound);
+                
+            } 
             
-        } 
+        }
+    
+        if(!timeZoneFound){
+            console.log('No timezone found', timeZoneFound);
+        }
         
+        // TO-DO: Display timezone when the input matches any of the timeZones key
+        // FIX: where are you calling getTimeZone()
+
+    } catch (error) {
+        console.log('No timezone found');
     }
 
-    if(!timeZoneFound){
-        console.log('No timezone found', timeZoneFound);
-    }
 
-
-    // TO-DO: Display timezone when the input matches any of the timeZones key
-    // FIX: where are you calling getTimeZone()
 
 
 
