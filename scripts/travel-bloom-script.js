@@ -204,6 +204,16 @@ export async function matchBeachName(){
 
 export function renderDestination(data){
     try {
+
+        // Adding timezone if country is searched, else empty block
+        const divTimeZone = document.createElement('div');
+        divTimeZone.classList.add('search-results__local-time');
+
+        divParentContainer.appendChild(divTimeZone);
+        // BUG: Timezone placeholder displays multiple times (same number as the search results)
+
+
+        // Displaying destination cards
         const divSearchResultsCards = document.createElement('div');
         divSearchResultsCards.classList.add('search-results__cards');
     
@@ -241,9 +251,15 @@ export function renderDestination(data){
         divSearchResultsCards.appendChild(divCardDetails);
     
         
+        
+
         searchResultsSection.appendChild(divSearchResultsCards);
-    
+        
+        
+
+
         divParentContainer.appendChild(searchResultsSection);
+        
     
     
         // divParentContainer.classList.remove('invalid-search');
@@ -279,7 +295,7 @@ export async function displayTimeZone(){
             if(input === key){
                 timeZoneFound = true;
     
-                console.log('Your input timezone is:', input, timeZones[input], timeZoneFound);
+                console.log('Your input timezone is:', input, getTimeZone(timeZones[input]), timeZoneFound, datetime);
                 
             } 
             
