@@ -16,12 +16,13 @@ body{
 // Portfolio Page Styling
 .portfolio{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: colors.$portfolio-green;
+    background-color: colors.$darkslategray;
+
 }
 
 @mixin portfolio-desc-text{
     @include font-regular;
-	color: colors.$grayish-blue;
+	color: colors.$japanese-indigo;
     font-size: 1.2em;
     line-height: 1.4;
 }
@@ -32,6 +33,23 @@ body{
     color: colors.$white;
 }
 
+@mixin buttons{
+    background-color: colors.$metallic-blue;
+    color: colors.$white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+}
+
+@mixin buttons-hover{
+    background-color: colors.$darkslategray;
+    color: colors.$antiquewhite;
+}
+
+@mixin buttons-active{
+    background-color: colors.$chestnut;
+    color: colors.$white;
+}
 
 
 // Nitro Coffee Shop Styling

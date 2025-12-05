@@ -9,7 +9,6 @@ const commentInput = document.getElementById('commentText');
 const commentsSection = document.querySelector('.comment-section__comments');
 
 let allComments = [];
-
 // const pageLoad = Date.now();
 // const maxTimestamp = await checkMaxTimestamp();
 
@@ -24,14 +23,15 @@ async function loadAllComments(){
         allComments = await bandSiteApi.getComments();
         
 
-        // allComments = allComments.map(comment => {
-        //     return {
-        //         ...comment,
-        //         isOriginal: new Date(comment.timestamp).getTime() <= maxTimestamp.getTime()
-        //     }
-        // })
+        allComments = allComments.map(comment => {
+            return {
+                ...comment,
+                liked: false
+            }
+        })
 
         renderComments(allComments);
+
     } catch (error) {
         console.error(`Error loading comments:`, error.response?.status, error.message);
     }
@@ -82,6 +82,50 @@ async function handleFormSubmit(event){
 }
 
 
+function createLikeButton(comment){
+    const btnLike = document.createElement('a');
+    btnLike.href = '#';
+    btnLike.classList.add('comment-section__like-button');
+
+    if(comment.liked){
+        btnLike.classList.add('comment-section__like-button--liked');
+    }
+
+    btnLike.addEventListener('click', (event) => {
+        event.preventDefault();
+        likeComment(event, comment.id);
+    });
+
+    return btnLike;
+}
+
+
+function createDeleteButton(comment){
+    const btnDelete = document.createElement('a');
+    btnDelete.href = '#';
+    btnDelete.classList.add('comment-section__delete-button');
+    
+
+    // Add delete button only on newly added comments via POST method
+    // Convert date into a number for correct comparison
+    const commentDate = new Date(comment.timestamp).getTime();
+    const cutOffDate = new Date('2/17/2021').getTime();
+
+    if(commentDate <= cutOffDate){
+        btnDelete.classList.add('hidden');
+    }
+
+
+    btnDelete.addEventListener('click', (event) => {
+        btnDelete.disabled = true;
+        deletePostedComment(event, comment.id)
+    });
+
+
+    return btnDelete;
+}
+
+
 function renderComments(comments){
     commentsSection.innerHTML = '';
 
@@ -107,37 +151,36 @@ function renderComments(comments){
         dateElement.textContent = new Date(comment.timestamp).toLocaleDateString();
 
 
-        const btnLike = document.createElement('a');
-        btnLike.href = '#';
-        btnLike.classList.add('comment-section__like-button');
-        btnLike.addEventListener('click', (event) => {
-            likeExistingComment(event, comment.id);
-            btnLike.classList.add('comment-section__like-button--liked');
-        });
+        // const btnLike = document.createElement('a');
+        // btnLike.href = '#';
+        // btnLike.classList.add('comment-section__like-button');
+        // btnLike.addEventListener('click', (event) => {
+        //     likeComment(event, comment.id);
+        //     btnLike.classList.add('comment-section__like-button--liked');
+        // });
 
         
-        const btnDelete = document.createElement('a');
-        btnDelete.href = '#';
-        btnDelete.classList.add('comment-section__delete-button');
+        // const btnDelete = document.createElement('a');
+        // btnDelete.href = '#';
+        // btnDelete.classList.add('comment-section__delete-button');
         
 
-        // Add delete button only on newly added comments via POST method
-        if(dateElement.textContent <= '2/17/2021'){
-        // if(dateElement.textContent <= convertedMaxTimestamp){
-            // console.log('Converted max timestamp:', convertedMaxTimestamp);
-            btnDelete.classList.add('hidden');
-        }
+        // // Add delete button only on newly added comments via POST method
+        // const commentDate = new Date(comment.timestamp).getTime();
+        // const cutOffDate = new Date('2/17/2021').getTime();
 
-        // if(new Date(comment.timestamp).getTime() <= maxTimestamp.getTime()){
-        //     console.log('Original max timestamp:', comment.timestamp);
-        //     btnDelete.classList.add('hidden');   
+        // if(commentDate <= cutOffDate){
+        //     btnDelete.classList.add('hidden');
         // }
 
-        // if(comment.isOriginal){
-        //     btnDelete.classList.add('hidden');   
-        // }
+        const btnLike = createLikeButton(comment);
 
-        btnDelete.addEventListener('click', (event) => deletePostedComment(event, comment.id));
+        // btnDelete.addEventListener('click', (event) => {
+        //     btnDelete.disabled = true;
+        //     deletePostedComment(event, comment.id)
+        // });
+
+        const btnDelete = createDeleteButton(comment);
 
 
         containerDiv.appendChild(nameElement);
@@ -191,8 +234,7 @@ async function deletePostedComment(event, commentId){
     event.preventDefault();
 
     try {
-        // await deleteComment(commentId);
-        bandSiteApi.deleteComment(commentId)
+        await bandSiteApi.deleteComment(commentId)
         allComments = allComments.filter(comment => commentId !== comment.id);
         renderComments(allComments);
     } catch (error) {
@@ -201,23 +243,67 @@ async function deletePostedComment(event, commentId){
 }
 
 
-async function likeExistingComment(event, commentId){
+async function likeComment(event, commentId){
     event.preventDefault();
+
+    const comment = allComments.find(c => c.id === commentId)
+
+    // If the comment doesn't exist, stop the function
+    if(!comment){
+        return;
+    }
+    
+
+    // To toggle the like/unlike visual change and state
+    const btnLike = event.currentTarget;
+    const newLikedState = !comment.liked;
+
     
     try {
-        // await likeComment(commentId);
-        bandSiteApi.likeComment(commentId)
-        allComments = allComments.map(comment => {
-            if(comment.id === commentId){
-                comment.like++;
-            } else{
-                console.log('Comment ID not found', error);
-            }
-        })
+        if(newLikedState){
+            await bandSiteApi.likeComment(commentId);
+            comment.likes++;
+        } else{
+            await unlikeComment(comment);
+        }
+        
+        // allComments = allComments.map(comment => {
+        //     if(comment.id === commentId){
+        //         return{
+        //             ...comment,
+        //             liked: newLikedState,
+        //             like: newLikedState ? comment.like + 1 : comment.like - 1
+        //         }
+        //     }
+        //     return comment;
+        // })
+
+
+        // Update comment directly
+        comment.liked = newLikedState;
        
+
+        // Change like button color
+        if (comment.liked) {
+            btnLike.classList.add('comment-section__like-button--liked');
+        } else {
+            btnLike.classList.remove('comment-section__like-button--liked');
+        }
+
         renderComments(allComments);
+        
     } catch (error) {
         console.error('Failed to like comment:', error.response?.status, error.message);
+    }
+}
+
+
+async function unlikeComment(comment){
+    try {
+        comment.liked = false;
+        comment.likes--;
+    } catch (error) {
+        console.error('Failed to unlike comment:', error.response?.status, error.message);
     }
 }
 
