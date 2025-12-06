@@ -3,78 +3,454 @@
 @use '../../styles/partials/breakpoints' as breakpoints;
 
 .travel-bloom{
-    background-image: url(../../assets/images/TravelBloom/images/downtown-nyc.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 100vh;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: colors.$white;
 }
 
 .header{
     display: flex;
     justify-content: space-between;
     background-color: colors.$travelbloom-black;
-    color: colors.$white;
     width: 100%;
-    padding: 0.5em;
+    // padding: 0.5em;
+    padding: 0.8em 0.5em;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 
     &__container{
         display: flex;
+        width: 40%;
+        // width: 35%;
+        z-index: 1;
     }
 
     &__site-name{
         font-family: 'Times New Roman', Times, serif;
         font-style: italic;
-        font-size: 1.5em;
+        // font-size: 1.5em;
+        // font-size: 1.25em;
+        // font-size: 1.15em;
+        font-size: 1.05em;
+        // font-size: 3.5vw;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 0 1em;
+        margin: 0 0.25em;
     }
 }
 
 .nav-bar{
     list-style-type: none;
+    position: absolute;
+    // top: 3.7em;
+    top: 3.5em;
+    left: 0;
+    background-color: colors.$travelbloom-black;
+    width: 100%;
+    padding: 1em 0 0;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 25%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
     
     &__links{
         text-decoration: none;
         color: colors.$white;
         font-weight: 600;
+        padding: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        &:hover{
+            background-color: colors.$travelbloom-teal;
+        }
+
+        &:active{
+            background-color: colors.$secondary-teal;
+        }
     }
 }
 
 .search-bar{
-    width: 30%;
-    height: 2.8em;
+    // width: 70%;
+    // width: 60%;
+    width: 65%;
+    // width: 80%;
+    // max-width: 25em;
+    // max-width: 30em;
+    // height: 2.8em;
     background-color: colors.$white;
     border-radius: 2em;
-    padding: 0.75em;
-    margin: auto 0;
+    // padding: 0 0.75em;
+    // padding: 0 1em;
+    display: flex;
+    // justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    // padding: 0.25em 0;
+
+    &__container{
+        // width: 60%;
+        // width: 95%;
+        // min-width: 95%;
+        // width: 96%;
+        width: 100%;
+        // max-width: 22em;
+        max-width: 30em;
+        // max-width: 100%;
+        // width: 100%;
+        // max-width: 14.25em;
+        // max-width: 100%;
+        display: flex;
+        // // height: 2.8em;
+        // background-color: colors.$white;
+        // border-radius: 2em;
+        // // padding: 0 0.75em;
+        // padding: 0 1em;
+        // display: flex;
+        justify-content: space-between;
+        // margin: 0.15em auto;
+        margin: 0.15em;
+        // border: none;
+        // border: 2px solid green;
+    }
+
+    &__subcontainer{
+        // width: 50%;
+        width: 47%;
+        // width: 65%;
+        // width: 60%;
+        // width: 65%;
+        max-width: 10em;
+        display: flex;
+        // justify-content: space-between;
+        justify-content: space-evenly;
+        // border: 2px solid red;
+        margin-right: 0.15em;
+    }
+
+
+    &__input{
+        border: 0.14em solid colors.$white;
+        // border: 0.14em solid colors.$travelbloom-teal;
+        // width: 60%;
+        // width: 50%;
+        width: 53%;
+        // width: 35%;
+        // max-width: 90%;
+        // max-width: 100%;
+        max-width: 35vw;
+        // color: colors.$travelbloom-teal;
+        border-radius: 2em;
+        // position: relative;
+        // right: 0.7em;
+        padding: 0 0.5em;
+        // padding: 0 0.25em;
+        // margin: 0;
+        // font-size: 0.95em;
+        // border: 2px solid blue;
+    
+        &::placeholder {
+            color: colors.$travelbloom-teal;
+            font-size: 0.85em;
+        }
+
+        &:focus {
+            border: 0.14em solid colors.$travelbloom-teal;
+        }
+    }
 }
 
-#searchInput{
-    border: none;
-    width: 60%;
-}
+// #searchInput{
+//     // border: colors.$white;
+//     border: none;
+//     width: 100%;
+//     color: colors.$travelbloom-teal;
+//     border-radius: 2em;
+//     position: relative;
+//     right: 0.7em;
+//     padding: 0 1em;
+
+//     &::placeholder{
+//         color: colors.$travelbloom-teal;
+//     }
+// }
 
 .icons{
+    width: 1.5em;
+
+    &:hover {
+        transition: all .2s ease-in-out;
+        transform: scale(1.4);
+    }
+
     &__logo{
         filter:
             brightness(0) invert(1) /* Turns black to white */
             drop-shadow(0.5px 0 white)    /* Adds white outline */
             drop-shadow(-0.5px 0 white) drop-shadow(0 0.5px white) drop-shadow(0 -0.5px white);
+        // width: 2.5em;
+        // width: 1.5em;
+        width: 2em;
     }
+
+    // &__burger{
+    //     width: 1.5em;
+    // }
 
     &__search{
         width: 1em;
+        display: none;
+    }
+
+    &--smaller{
+        width: 1em;
+    }
+
+    &--bigger{
+        width: 1.6em;
     }
 }
 
 .buttons{
-    background-color: colors.$travelbloom-teal;
+    // BOOK NOW button styling
+    background-color: colors.$secondary-teal;
     color: colors.$white;
     border: colors.$travelbloom-teal;
+    padding: 0.75em 0;
+    width: 9em;
+    border-radius: 0.4em;
+    font-size: 1em;
+    font-weight: 600;
+    
+    &--hidden{
+        display: none;
+    }
+
+    &:hover{
+        background-color: colors.$travelbloom-teal;
+    }
+
+    &:active{
+        background-color: colors.$darkslategray;
+    }
+
+    // Search & Clear buttons styling
+    &__form{
+        padding: 0.3em 0;
+        font-size: 0.95em;
+        font-weight: 300;
+        // width: 4.5em;
+        // width: 3.8em;
+        width: 3.5em;
+        background-color: colors.$travelbloom-teal;
+
+        &:hover {
+            background-color: colors.$secondary-teal;   
+        }
+    }
+
+    // Visit button styling
+    &__visit{
+        padding: 0.5em 0;
+        font-size: 0.95em;
+        font-weight: 300;
+        width: 4em;
+        background-color: colors.$travelbloom-teal;
+
+        &:hover {
+            background-color: colors.$secondary-teal;
+        }
+    }
+}
+
+.main{
+    position: relative;
+    top: 14em;
+    width: 100%;
+    max-width: 80em;
+    min-height: 100vh;
+    background-image: url(../../assets/images/TravelBloom/downtown-nyc.jpg);
+    background-size: cover;
+    background-position: center;
+
+    &::before{
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: rgba($color: colors.$travelbloom-teal, $alpha: 0.5);
+    }
+
+    &__container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 3em 0;
+       
+        // flex-wrap: wrap;
+    }
+
+    &__subcontainer{
+        // &--top{
+            display: flex;
+            width: 100%;
+            // width: 60%;
+            // border: 2px solid red;
+        // }
+    }
+
+    &__socials-section{
+        width: 10%;
+        padding: 0 0.5em;
+    }
+
+    &__main-section{
+        width: 90%;
+        margin: 1em 0.5em;
+        padding: 0.15em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        // justify-content: space-between;
+    }
+
+    &__title{
+        font-size: 2.4em;
+        // font-size: 10vw;
+        // font-size: 210%;
+        font-weight: 900;
+        // margin: 1em 0.5em;
+        // width: 9em;
+        // width: 90%;
+        // width: 80%;
+        width: 100%;
+        max-width: 9em;
+        line-height: 1.3em;
+    }
+
+    &__description{
+        // width: 75%;
+        width: 100%;
+        // max-width: 60vw;
+        max-width: 20em;
+        line-height: 1.5em;
+        // color: colors.$travelbloom-gray;
+    }
+}
+
+.vertical-line{
+    border-left: 0.15em solid colors.$white;
+    height: 11.5em;
+    margin: 0 0.7em;
+}
+
+.socials{
+    list-style-type: none;
+    margin: 4em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 15em;
+
+    &__links{
+        text-decoration: none;
+    }
+}
+
+.search-results{
+    // width: 80%;
+    width: 92%;
+    // width: 100%;
+    max-width: 28em;
+    margin: 0 auto;
+
+    &__local-time{
+        background-color: colors.$travelbloom-teal;
+        padding: 1em 2em;
+        border-radius: 0.5em;
+        font-weight: 600;
+        // border: 2px solid red;
+    }
+
+    &__cards{
+        width: 100%;
+        margin: 1em 0;
+        border-radius: 2em;
+    }
+
+    &__card-images{
+        width: 100%;
+        border-top-left-radius: 0.5em;
+        border-top-right-radius: 0.5em;
+        height: 15.65em;
+    }
+
+    &__card-details{
+        background-color: colors.$white;
+        color: colors.$travelbloom-charcoal;
+        padding: 1em;
+        position: relative;
+        bottom: 0.5em;
+        border-bottom-left-radius: 0.5em;
+        border-bottom-right-radius: 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 12em;
+    }
+
+    &__description{
+        line-height: 1.5em;
+        margin: 0.3em 0 0.8em;
+        color: colors.$travelbloom-gray;
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        // height: 30em;
+    }
+
+    // &__local-time{
+    //     // line-height: 1.5em;
+    //     // margin: 0.3em 0 0.8em;
+    //     // color: colors.$travelbloom-gray;
+    //     // position: relative;
+    //     // top: 0;
+    //     border: 2px solid red;
+    // }
+}
+
+.error{
+    border: 0.14em solid rgb(150, 5, 5);
+}
+
+.focus {
+    border: 0.14em solid colors.$travelbloom-teal;
+}
+
+.active {
+    background-color: colors.$secondary-teal;
+}
+
+.invalid-search{
+    color: rgb(155, 34, 34);
+    // font-size: 1.05em;
+    font-size: 1.25em;
+    font-weight: 800;
+    // font-weight: 300;
+    line-height: 1.5;
+    background-color: hsla(0, 0%, 100%, 40%);
+    padding: 0.25em;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

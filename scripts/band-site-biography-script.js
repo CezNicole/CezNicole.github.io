@@ -17,10 +17,18 @@ const bandSiteApi = new BandSiteApi();
 
 async function loadAllComments(){
     try {
-        // allComments = await getComments();
         allComments = await bandSiteApi.getComments();
         
+
+        allComments = allComments.map(comment => {
+            return {
+                ...comment,
+                liked: false
+            }
+        })
+
         renderComments(allComments);
+
     } catch (error) {
         console.error(`Error loading comments:`, error.response?.status, error.message);
     }
@@ -55,7 +63,6 @@ async function handleFormSubmit(event){
         };
 
         try {
-            // const postedComment = await postComment(newComment);
             const postedComment = await bandSiteApi.postComment(newComment);
 
             allComments.unshift(postedComment);
@@ -65,6 +72,117 @@ async function handleFormSubmit(event){
             console.error(`Error submitting comment:`, error.response?.status, error.message);
         }
     }
+}
+
+
+async function deletePostedComment(event, commentId){
+    event.preventDefault();
+
+    try {
+        await bandSiteApi.deleteComment(commentId)
+        allComments = allComments.filter(comment => commentId !== comment.id);
+        renderComments(allComments);
+    } catch (error) {
+        console.error('Failed to delete comment:', error.response?.status, error.message);
+    }
+}
+
+
+async function likeComment(event, commentId){
+    event.preventDefault();
+
+    const comment = allComments.find(c => c.id === commentId)
+
+    // If the comment doesn't exist, stop the function
+    if(!comment){
+        return;
+    }
+    
+
+    // To toggle the like/unlike visual change and state
+    const btnLike = event.currentTarget;
+    const newLikedState = !comment.liked;
+
+
+    try {
+        if(newLikedState){
+            await bandSiteApi.likeComment(commentId);
+            comment.likes++;
+        } else{
+            await unlikeComment(comment);
+        }
+       
+
+        // Update comment directly
+        comment.liked = newLikedState;
+       
+
+        // Change like button color
+        if (comment.liked) {
+            btnLike.classList.add('comment-section__like-button--liked');
+        } else {
+            btnLike.classList.remove('comment-section__like-button--liked');
+        }
+
+        renderComments(allComments);
+        
+    } catch (error) {
+        console.error('Failed to like comment:', error.response?.status, error.message);
+    }
+}
+
+
+async function unlikeComment(comment){
+    try {
+        comment.liked = false;
+        comment.likes--;
+    } catch (error) {
+        console.error('Failed to unlike comment:', error.response?.status, error.message);
+    }
+}
+
+
+function createLikeButton(comment){
+    const btnLike = document.createElement('a');
+    btnLike.href = '#';
+    btnLike.classList.add('comment-section__like-button');
+
+    if(comment.liked){
+        btnLike.classList.add('comment-section__like-button--liked');
+    }
+
+    btnLike.addEventListener('click', (event) => {
+        event.preventDefault();
+        likeComment(event, comment.id);
+    });
+
+    return btnLike;
+}
+
+
+function createDeleteButton(comment){
+    const btnDelete = document.createElement('a');
+    btnDelete.href = '#';
+    btnDelete.classList.add('comment-section__delete-button');
+    
+
+    // Add delete button only on newly added comments via POST method
+    // Convert date into a number for correct comparison
+    const commentDate = new Date(comment.timestamp).getTime();
+    const cutOffDate = new Date('2/17/2021').getTime();
+
+    if(commentDate <= cutOffDate){
+        btnDelete.classList.add('hidden');
+    }
+
+
+    btnDelete.addEventListener('click', (event) => {
+        btnDelete.disabled = true;
+        deletePostedComment(event, comment.id)
+    });
+
+
+    return btnDelete;
 }
 
 
@@ -93,27 +211,9 @@ function renderComments(comments){
         dateElement.textContent = new Date(comment.timestamp).toLocaleDateString();
 
 
-        const btnLike = document.createElement('a');
-        btnLike.href = '#';
-        btnLike.classList.add('comment-section__like-button');
-        btnLike.addEventListener('click', (event) => {
-            likeExistingComment(event, comment.id);
-            btnLike.classList.add('comment-section__like-button--liked');
-        });
+        const btnLike = createLikeButton(comment);
 
-        
-        const btnDelete = document.createElement('a');
-        btnDelete.href = '#';
-        btnDelete.classList.add('comment-section__delete-button');
-        
-
-        // Add delete button only on newly added comments via POST method
-        if(dateElement.textContent <= '2/17/2021'){
-            btnDelete.classList.add('hidden');
-        }
-
-        
-        btnDelete.addEventListener('click', (event) => deletePostedComment(event, comment.id));
+        const btnDelete = createDeleteButton(comment);
 
 
         containerDiv.appendChild(nameElement);
@@ -161,40 +261,3 @@ form.addEventListener('submit', handleFormSubmit);
 
 
 loadAllComments();
-
-
-async function deletePostedComment(event, commentId){
-    event.preventDefault();
-
-    try {
-        // await deleteComment(commentId);
-        bandSiteApi.deleteComment(commentId)
-        
-        allComments = allComments.filter(comment => commentId !== comment.id);
-        renderComments(allComments);
-    } catch (error) {
-        console.error('Failed to delete comment:', error.response?.status, error.message);
-    }
-}
-
-
-async function likeExistingComment(event, commentId){
-    event.preventDefault();
-    
-    try {
-        // await likeComment(commentId);
-        bandSiteApi.likeComment(commentId)
-        
-        allComments = allComments.map(comment => {
-            if(comment.id === commentId){
-                comment.like++;
-            } else{
-                console.log('Comment ID not found', error);
-            }
-        })
-       
-        renderComments(allComments);
-    } catch (error) {
-        console.error('Failed to like comment:', error.response?.status, error.message);
-    }
-}

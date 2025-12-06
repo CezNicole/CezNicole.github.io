@@ -72,7 +72,7 @@ body {
 
 .portfolio {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #cad2c5;
+  background-color: #023638;
 }
 
 .nitro-coffee-shop {
@@ -87,69 +87,307 @@ body {
 }
 
 .travel-bloom {
-  background-image: url(../../assets/images/TravelBloom/images/downtown-nyc.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100vh;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   background-color: #191d1a;
-  color: #fff;
   width: 100%;
-  padding: 0.5em;
+  padding: 0.8em 0.5em;
+  position: fixed;
+  top: 0;
+  z-index: 2;
 }
 .header__container {
   display: flex;
+  width: 40%;
+  z-index: 1;
 }
 .header__site-name {
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
-  font-size: 1.5em;
+  font-size: 1.05em;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 1em;
+  margin: 0 0.25em;
 }
 
 .nav-bar {
   list-style-type: none;
+  position: absolute;
+  top: 3.5em;
+  left: 0;
+  background-color: #191d1a;
+  width: 100%;
+  padding: 1em 0 0;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 25%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
 }
 .nav-bar__links {
   text-decoration: none;
   color: #fff;
   font-weight: 600;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-bar__links:hover {
+  background-color: #09565c;
+}
+.nav-bar__links:active {
+  background-color: #007c8c;
 }
 
 .search-bar {
-  width: 30%;
-  height: 2.8em;
+  width: 65%;
   background-color: #fff;
   border-radius: 2em;
-  padding: 0.75em;
-  margin: auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar__container {
+  width: 100%;
+  max-width: 30em;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.15em;
+}
+.search-bar__subcontainer {
+  width: 47%;
+  max-width: 10em;
+  display: flex;
+  justify-content: space-evenly;
+  margin-right: 0.15em;
+}
+.search-bar__input {
+  border: 0.14em solid #fff;
+  width: 53%;
+  max-width: 35vw;
+  border-radius: 2em;
+  padding: 0 0.5em;
+}
+.search-bar__input::-moz-placeholder {
+  color: #09565c;
+  font-size: 0.85em;
+}
+.search-bar__input::placeholder {
+  color: #09565c;
+  font-size: 0.85em;
+}
+.search-bar__input:focus {
+  border: 0.14em solid #09565c;
 }
 
-#searchInput {
-  border: none;
-  width: 60%;
+.icons {
+  width: 1.5em;
 }
-
+.icons:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.4);
+}
 .icons__logo {
   filter: brightness(0) invert(1) drop-shadow(0.5px 0 white) drop-shadow(-0.5px 0 white) drop-shadow(0 0.5px white) drop-shadow(0 -0.5px white);
+  width: 2em;
 }
 .icons__search {
   width: 1em;
+  display: none;
+}
+.icons--smaller {
+  width: 1em;
+}
+.icons--bigger {
+  width: 1.6em;
 }
 
 .buttons {
-  background-color: #006666;
+  background-color: #007c8c;
   color: #fff;
-  border: #006666;
+  border: #09565c;
+  padding: 0.75em 0;
+  width: 9em;
+  border-radius: 0.4em;
+  font-size: 1em;
+  font-weight: 600;
+}
+.buttons--hidden {
+  display: none;
+}
+.buttons:hover {
+  background-color: #09565c;
+}
+.buttons:active {
+  background-color: #023638;
+}
+.buttons__form {
+  padding: 0.3em 0;
+  font-size: 0.95em;
+  font-weight: 300;
+  width: 3.5em;
+  background-color: #09565c;
+}
+.buttons__form:hover {
+  background-color: #007c8c;
+}
+.buttons__visit {
+  padding: 0.5em 0;
+  font-size: 0.95em;
+  font-weight: 300;
+  width: 4em;
+  background-color: #09565c;
+}
+.buttons__visit:hover {
+  background-color: #007c8c;
+}
+
+.main {
+  position: relative;
+  top: 14em;
+  width: 100%;
+  max-width: 80em;
+  min-height: 100vh;
+  background-image: url(../../assets/images/TravelBloom/downtown-nyc.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(9, 86, 92, 0.5);
+}
+.main__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 3em 0;
+}
+.main__subcontainer {
+  display: flex;
+  width: 100%;
+}
+.main__socials-section {
+  width: 10%;
+  padding: 0 0.5em;
+}
+.main__main-section {
+  width: 90%;
+  margin: 1em 0.5em;
+  padding: 0.15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.main__title {
+  font-size: 2.4em;
+  font-weight: 900;
+  width: 100%;
+  max-width: 9em;
+  line-height: 1.3em;
+}
+.main__description {
+  width: 100%;
+  max-width: 20em;
+  line-height: 1.5em;
+}
+
+.vertical-line {
+  border-left: 0.15em solid #fff;
+  height: 11.5em;
+  margin: 0 0.7em;
+}
+
+.socials {
+  list-style-type: none;
+  margin: 4em auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 15em;
+}
+.socials__links {
+  text-decoration: none;
+}
+
+.search-results {
+  width: 92%;
+  max-width: 28em;
+  margin: 0 auto;
+}
+.search-results__local-time {
+  background-color: #09565c;
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  font-weight: 600;
+}
+.search-results__cards {
+  width: 100%;
+  margin: 1em 0;
+  border-radius: 2em;
+}
+.search-results__card-images {
+  width: 100%;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  height: 15.65em;
+}
+.search-results__card-details {
+  background-color: #fff;
+  color: #333333;
+  padding: 1em;
+  position: relative;
+  bottom: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 12em;
+}
+.search-results__description {
+  line-height: 1.5em;
+  margin: 0.3em 0 0.8em;
+  color: rgb(197, 197, 197);
+}
+.search-results__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.error {
+  border: 0.14em solid rgb(150, 5, 5);
+}
+
+.focus {
+  border: 0.14em solid #09565c;
+}
+
+.active {
+  background-color: #007c8c;
+}
+
+.invalid-search {
+  color: rgb(155, 34, 34);
+  font-size: 1.25em;
+  font-weight: 800;
+  line-height: 1.5;
+  background-color: hsla(0, 0%, 100%, 0.4);
+  padding: 0.25em;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=travel-bloom-home.css.map */
