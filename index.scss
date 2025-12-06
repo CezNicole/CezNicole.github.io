@@ -70,9 +70,9 @@
 }
 
 .profile-name {
-	@include section-titles;
 	@include font-bold;
 	font-size: 1.8em;
+	margin-top: 0.5em;
 }
 
 .profile-role {
@@ -141,6 +141,13 @@
 			margin: 1.5em auto 0;
 		}
 
+		&--skills{
+			width: 90%;
+			margin: 0 auto;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
 		&--portfolio{
 			@extend .section-cards__container--about;
 			margin: 0;
@@ -158,6 +165,8 @@
 
 	&__titles{
 		@include section-subtitles;
+		@include font-bold;
+		color: colors.$metallic-blue;
 	}
 
 	&__desc{
@@ -179,6 +188,16 @@
 				transform: rotateY(0deg);
 			}
 		}
+	}
+
+	&__skills{
+		@include project-details-text;
+		color: colors.$darkslategray;
+		background-color: rgba($color: colors.$white, $alpha: 0.4);
+		border: 2px solid colors.$antiquewhite;
+		border-radius: 0.5em;
+		margin: 0.3em auto;
+		padding: 0.3em;
 	}
 }
 

@@ -150,12 +150,10 @@ body {
 }
 
 .profile-name {
-  font-weight: 300;
-  font-style: normal;
-  font-size: 3.75em;
   font-weight: 700;
   font-style: normal;
   font-size: 1.8em;
+  margin-top: 0.5em;
 }
 
 .profile-role {
@@ -229,6 +227,12 @@ body {
   padding: 1em;
   margin: 1.5em auto 0;
 }
+.section-cards__container--skills {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
 .section-cards__container--portfolio {
   margin: 0;
   display: flex;
@@ -244,6 +248,9 @@ body {
   font-weight: 300;
   font-style: normal;
   font-size: 2.06em;
+  font-weight: 700;
+  font-style: normal;
+  color: #3e5c76;
 }
 .section-cards__desc {
   font-weight: 400;
@@ -265,6 +272,21 @@ body {
 }
 .section-cards__desc--projects:hover > .project-details {
   transform: rotateY(0deg);
+}
+.section-cards__skills {
+  font-weight: 400;
+  font-style: normal;
+  color: #2f3e46;
+  font-size: 1.2em;
+  line-height: 1.4;
+  font-size: 0.95em;
+  color: #fff;
+  color: #023638;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 2px solid #f0ebd8;
+  border-radius: 0.5em;
+  margin: 0.3em auto;
+  padding: 0.3em;
 }
 
 .project-image {
