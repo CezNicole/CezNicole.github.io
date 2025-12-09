@@ -222,6 +222,12 @@
 			@include font-italic;
 		}
 	}
+
+	&__cybersecurity{
+		transform: none;
+		// overflow-y: hidden;
+		width: 100%;
+	}
 }
 
 .card-details {
@@ -251,6 +257,24 @@
 	text-align: center;
 	position: relative;
 	bottom: 0;
+}
+
+.highlighted-skills{
+	@include project-details-text;
+	color: colors.$antiquewhite;
+	background-color: rgba($color: colors.$border-teal, $alpha: 0.4);
+	border: 2px solid colors.$antiquewhite;
+	border-radius: 0.5em;
+	margin: 0.3em auto;
+	padding: 0.3em;
+	width: 50%;
+
+	&__list{
+		list-style-type: none;
+		display: flex;
+		// width: 100%;
+		// flex-wrap: wrap;
+	}
 }
 
 

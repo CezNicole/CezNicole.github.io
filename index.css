@@ -322,6 +322,10 @@ body {
   font-weight: 400;
   font-style: italic;
 }
+.project-details__cybersecurity {
+  transform: none;
+  width: 100%;
+}
 
 .card-details {
   position: absolute;
@@ -357,6 +361,27 @@ body {
   text-align: center;
   position: relative;
   bottom: 0;
+}
+
+.highlighted-skills {
+  font-weight: 400;
+  font-style: normal;
+  color: #2f3e46;
+  font-size: 1.2em;
+  line-height: 1.4;
+  font-size: 0.95em;
+  color: #fff;
+  color: #f0ebd8;
+  background-color: rgba(82, 121, 111, 0.4);
+  border: 2px solid #f0ebd8;
+  border-radius: 0.5em;
+  margin: 0.3em auto;
+  padding: 0.3em;
+  width: 50%;
+}
+.highlighted-skills__list {
+  list-style-type: none;
+  display: flex;
 }
 
 @media (min-width: 768px) {
