@@ -287,6 +287,35 @@
 	}
 }
 
+.modal{
+	position: fixed;
+	inset: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: colors.$metallic-blue;
+	color: colors.$white;
+	padding: 1.5em;
+}
+
+.modal-content{
+	width: 100%;
+	max-width: 900px;
+	background: var(--card);
+	border-radius: 0.88em;
+	padding: 1.13em;
+}
+
+.visible{
+	display: flex;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    overflow: auto;
+    flex-wrap: wrap;
+    padding: 6em 0;
+}
+
 
 @include breakpoints.tablet{
 	.nav-links {

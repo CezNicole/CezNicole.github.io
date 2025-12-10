@@ -21,3 +21,9 @@ btnViewFeaturesBandSite.addEventListener('click', (event) => {
     event.preventDefault();
     window.open('pages/band-site-biography.html', '_blank');
 })
+
+const btnViewCybersecurityProject1 = document.getElementById('btnCybersecurityProject1');
+btnViewCybersecurityProject1.addEventListener('click', (event) =>{
+    event.preventDefault();
+    document.querySelector('.modal').classList.add('visible');
+})

@@ -389,6 +389,35 @@ body {
   flex-wrap: wrap;
 }
 
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: #3e5c76;
+  color: #fff;
+  padding: 1.5em;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 900px;
+  background: var(--card);
+  border-radius: 0.88em;
+  padding: 1.13em;
+}
+
+.visible {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  overflow: auto;
+  flex-wrap: wrap;
+  padding: 6em 0;
+}
+
 @media (min-width: 768px) {
   .nav-links {
     margin: 1.5em;
