@@ -325,6 +325,7 @@ body {
 .project-details__cybersecurity {
   transform: none;
   width: 100%;
+  max-width: 30em;
 }
 
 .card-details {
@@ -377,11 +378,15 @@ body {
   border-radius: 0.5em;
   margin: 0.3em auto;
   padding: 0.3em;
-  width: 50%;
+  min-width: 10em;
+  max-width: 45%;
 }
 .highlighted-skills__list {
   list-style-type: none;
   display: flex;
+  width: 100%;
+  margin: 0 auto 1.5em;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 768px) {

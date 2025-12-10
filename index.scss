@@ -227,6 +227,7 @@
 		transform: none;
 		// overflow-y: hidden;
 		width: 100%;
+		max-width: 30em;
 	}
 }
 
@@ -267,13 +268,22 @@
 	border-radius: 0.5em;
 	margin: 0.3em auto;
 	padding: 0.3em;
-	width: 50%;
+	// width: 50%;
+	// max-width: 10em;
+	// min-width: 15em;
+	// max-width: 60%;
+	// min-width: 15em;
+	min-width: 10em;
+	max-width: 45%;
+
+
 
 	&__list{
 		list-style-type: none;
 		display: flex;
-		// width: 100%;
-		// flex-wrap: wrap;
+		width: 100%;
+		margin: 0 auto 1.5em;
+		flex-wrap: wrap;
 	}
 }
 
