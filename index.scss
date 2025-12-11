@@ -4,7 +4,9 @@
 
 .header {
 	position: relative;
-	z-index: 2;
+	// z-index: 2;
+	z-index: 1;
+
 
 	&__nav{
 		padding: 1em 0;
@@ -273,10 +275,10 @@
 	// min-width: 15em;
 	// max-width: 60%;
 	// min-width: 15em;
+	// max-width: 45%;
 	min-width: 10em;
-	max-width: 45%;
-
-
+	max-width: 48%;
+	text-align: center;
 
 	&__list{
 		list-style-type: none;
@@ -287,33 +289,91 @@
 	}
 }
 
+// WIP
 .modal{
 	position: fixed;
 	inset: 0;
+	top: 0;
 	display: none;
-	align-items: center;
-	justify-content: center;
-	background: colors.$metallic-blue;
-	color: colors.$white;
-	padding: 1.5em;
-}
-
-.modal-content{
+	background-color: colors.$japanese-indigo;
+	color: colors.$antiquewhite;
 	width: 100%;
-	max-width: 900px;
-	background: var(--card);
-	border-radius: 0.88em;
-	padding: 1.13em;
+	max-width: 80em;
+	padding: 1.5em;
+    overflow-y: auto;
+	z-index: 1;
+	// border: 2px solid red;
+	// align-items: center;
+	// justify-content: center;
+	// background: rgba($color: colors.$metallic-blue, $alpha: 1);
+	// background:rgba(2,6,23,0.6);
+	// display: flex;
+    // flex-wrap: wrap;
+    // width: 100%;
+    // position: fixed;
+    // top: 0;
+    // padding: 6em 0;
+
+	&__content{
+		width: 100%;
+		max-width: 80em;
+		padding: 0 1.3em;
+		// max-width: 900px;
+		// background: var(--card);
+		// border-radius: 0.88em;
+		// position: relative;
+		// top: 0;
+		// border: 2px solid blue;
+	}
+
+	&__titles{
+		font-size: 1.5em;
+	}
+
+	&__section-titles{
+		font-size: 1.2em;
+		// padding: 0.5em 0;
+		padding: 1em 0 0.5em;
+		// text-align: left;
+		// font-weight: 500;
+	}
+
+	&__section-subtitles{
+		@extend .modal__section-titles;
+		font-size: 1.15em;
+		padding-top: 0.5em;
+	}
 }
 
 .visible{
 	display: flex;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    overflow: auto;
     flex-wrap: wrap;
-    padding: 6em 0;
+    // width: 100%;
+    // position: fixed;
+    // top: 0;
+    // overflow: auto;
+    // padding: 6em 0;
+	// visibility: visible;
+}
+
+.close{
+	// background: transparent;
+	// color: var(--muted);
+	// float: right;
+	// font-size: 1.13em;
+	@include buttons;
+	background: none;
+	border: none;
+	position: absolute;
+	right: 0;
+
+	&:hover{
+		@include buttons-hover;
+	}
+
+	&:active{
+		@include buttons-active;
+	}
 }
 
 

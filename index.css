@@ -88,7 +88,7 @@ body {
 
 .header {
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 .header__nav {
   padding: 1em 0;
@@ -379,7 +379,8 @@ body {
   margin: 0.3em auto;
   padding: 0.3em;
   min-width: 10em;
-  max-width: 45%;
+  max-width: 48%;
+  text-align: center;
 }
 .highlighted-skills__list {
   list-style-type: none;
@@ -392,30 +393,56 @@ body {
 .modal {
   position: fixed;
   inset: 0;
+  top: 0;
   display: none;
-  align-items: center;
-  justify-content: center;
-  background: #3e5c76;
-  color: #fff;
-  padding: 1.5em;
-}
-
-.modal-content {
+  background-color: #2f3e46;
+  color: #f0ebd8;
   width: 100%;
-  max-width: 900px;
-  background: var(--card);
-  border-radius: 0.88em;
-  padding: 1.13em;
+  max-width: 80em;
+  padding: 1.5em;
+  overflow-y: auto;
+  z-index: 1;
+}
+.modal__content {
+  width: 100%;
+  max-width: 80em;
+  padding: 0 1.3em;
+}
+.modal__titles {
+  font-size: 1.5em;
+}
+.modal__section-titles, .modal__section-subtitles {
+  font-size: 1.2em;
+  padding: 1em 0 0.5em;
+}
+.modal__section-subtitles {
+  font-size: 1.15em;
+  padding-top: 0.5em;
 }
 
 .visible {
   display: flex;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  overflow: auto;
   flex-wrap: wrap;
-  padding: 6em 0;
+}
+
+.close {
+  background-color: #3e5c76;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  background: none;
+  border: none;
+  position: absolute;
+  right: 0;
+}
+.close:hover {
+  background-color: #023638;
+  color: #f0ebd8;
+}
+.close:active {
+  background-color: #944429;
+  color: #fff;
 }
 
 @media (min-width: 768px) {

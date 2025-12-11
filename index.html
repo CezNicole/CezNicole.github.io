@@ -135,84 +135,51 @@
 						<h3 class="section-cards__titles">Cybersecurity Projects</h3>
 					</div>
 
-					<div  class="project-details project-details__cybersecurity">
-						<h4 class="project-title">Security Controls and Compliance Evaluation</h4>
+					<div class="project-details project-details__cybersecurity">
+						<h4 class="project-title">
+							Security Controls and Compliance Evaluation
+						</h4>
 						<ul class="highlighted-skills__list">
 							<li class="highlighted-skills">Security Controls Assessment</li>
-							<li class="highlighted-skills">Compliance Framework Evaluation</li>
-							<li class="highlighted-skills">Remediation & Security Recommendations</li>
+							<li class="highlighted-skills">
+								Compliance Framework Evaluation
+							</li>
+							<li class="highlighted-skills">
+								Remediation & Security Recommendations
+							</li>
 						</ul>
 						<p class="project-details__desc">
-							Analyzed the company's posture scope, goals, and assessment report, and conducted an internal audit by completing the controls and compliance checklist.
+							Analyzed the company's posture scope, goals, and assessment
+							report, and conducted an internal audit by completing the controls
+							and compliance checklist.
 						</p>
 
-						<button class="buttons--project" id="btnCybersecurityProject1">
+						<button class="buttons--project" data-modal="CSProject1">
 							View Details
 						</button>
 					</div>
 
-					<div  class="project-details project-details__cybersecurity">
-						<h4 class="project-title">Security Controls and Compliance Evaluation2</h4>
+					<div class="project-details project-details__cybersecurity">
+						<h4 class="project-title">Network Traffic Analysis</h4>
 						<ul class="highlighted-skills__list">
-							<li class="highlighted-skills">Security Controls Assessment</li>
-							<li class="highlighted-skills">Compliance Framework Evaluation</li>
-							<li class="highlighted-skills">Remediation & Security Recommendations</li>
+							<li class="highlighted-skills">DNS & ICMP Traffic Analysis</li>
+							<li class="highlighted-skills">
+								Packet Capture Review (tcpdump)
+							</li>
+							<li class="highlighted-skills">
+								Understanding of TCP/IP Model (Internet Layer)
+							</li>
+							<li class="highlighted-skills">Root Cause Analysis</li>
 						</ul>
 						<p class="project-details__desc">
-							Analyzed the company's posture scope, goals, and assessment report, and conducted an internal audit by completing the controls and compliance checklist.
+							Examined DNS and ICMP traffic in transit using data from a network
+							protocol analyzer tool and determined which network protocol was
+							affected during this incident.
 						</p>
 
-						<button class="buttons--project" id="btnViewNitro">
+						<button class="buttons--project" data-modal="CSProject2">
 							View Details
 						</button>
-					</div>
-
-					<!-- <div class="project-details project-details__cybersecurity"> -->
-					<div class="modal">
-						<div class="modal-content">
-							<h4 class="project-title">Scope, Goals, and Risk Assessment</h4>
-							<p class="project-details__desc">
-								Scope: The scope of this audit is defined as the entire security
-								program at Botium Toys. This includes their assets like employee
-								equipment and devices, their internal network, and their systems.
-								You will need to review the assets Botium Toys has and the
-								controls and compliance practices they have in place.
-							</p>
-							<p class="project-details__desc">
-								Goals: Assess existing assets and complete the controls and
-								compliance checklist to determine which controls and compliance
-								best practices that need to be implemented to improve Botium Toys’
-								security posture.
-							</p>
-							<p class="project-details__desc">
-								Risk Assessment:
-								<p>RISK DESCRIPTION: Currently, there is inadequate
-								management of assets. Additionally, Botium Toys does not have all
-								of the proper controls in place and may not be fully compliant
-								with U.S. and international regulations and standards.</p>
-								<p>CONTROL BEST PRACTICES: The first of the five functions of the NIST CSF is
-								Identify. Botium Toys will need to dedicate resources to identify
-								assets so they can appropriately manage them. Additionally, they
-								will need to classify existing assets and determine the impact of
-								the loss of existing assets, including systems, on business
-								continuity.</p>
-								<p>RISK SCORE: On a scale of 1 to 10, the risk score is
-								8, which is fairly high. This is due to a lack of controls and
-								adherence to compliance best practices.</p>
-							</p>
-	
-							<p class="project-details__desc project-details__desc--italic">
-								Recommendations:
-								<ul>
-									<li>Implement Principle of Least Privilege Access</li>
-									<li>Set-up password management system</li>
-									<li>Assess current assets and legacy systems, and identify possible risks</li>
-									<li>Create an action plan to apply preventative / corrective measures to all assets, from highest to lowest risk priority</li>
-									<li>Identify all control categories (Administrative/Managerial, Technical, Physical/Operational) and their associated risks. Then, include them in the action plan</li>
-									<li>Collaborate w/ internal teams / employees to determine any additional risks on existing assets</li>
-								</ul>
-							</p>
-						</div>
 					</div>
 				</div>
 			</article>
@@ -330,6 +297,160 @@
 					</div>
 				</div>
 			</article>
+
+			<div class="modal" id="CSProject1">
+				<div class="modal__content">
+					<button class="close">X</button>
+
+					<h1 class="project-title modal__titles">
+						Scope, Goals, and Risk Assessment
+					</h1>
+
+					<h2 class="modal__section-titles">Scope</h2>
+					<p class="project-details__desc">
+						The scope of this audit is defined as the entire security program at
+						Botium Toys. This includes their assets like employee equipment and
+						devices, their internal network, and their systems. The requirement
+						is to review the assets Botium Toys has and the controls and
+						compliance practices they have in place.
+					</p>
+
+					<h2 class="modal__section-titles">Goals</h2>
+					<p class="project-details__desc">
+						Assess existing assets and complete the controls and compliance
+						checklist to determine which controls and compliance best practices
+						that need to be implemented to improve Botium Toys’ security
+						posture.
+					</p>
+
+					<h2 class="modal__section-titles">Risk Assessment</h2>
+					<div class="project-details__desc">
+						<h3 class="modal__section-subtitles">Risk Description</h3>
+						<p class="project-details__desc">
+							Currently, there is inadequate management of assets. Additionally,
+							Botium Toys does not have all of the proper controls in place and
+							may not be fully compliant with U.S. and international regulations
+							and standards.
+						</p>
+
+						<h3 class="modal__section-subtitles">Control Best Practices</h3>
+						<p class="project-details__desc">
+							The first of the five functions of the NIST CSF is Identify.
+							Botium Toys will need to dedicate resources to identify assets so
+							they can appropriately manage them. Additionally, they will need
+							to classify existing assets and determine the impact of the loss
+							of existing assets, including systems, on business continuity.
+						</p>
+
+						<h3 class="modal__section-subtitles">Risk Score</h3>
+						<p class="project-details__desc">
+							On a scale of 1 to 10, the risk score is 8, which is fairly high.
+							This is due to a lack of controls and adherence to compliance best
+							practices.
+						</p>
+					</div>
+
+					<h2 class="modal__section-titles">Recommendations</h2>
+					<ul class="project-details__desc">
+						<li>Implement Principle of Least Privilege Access</li>
+						<li>Set-up password management system</li>
+						<li>
+							Assess current assets and legacy systems, and identify possible
+							risks
+						</li>
+						<li>
+							Create an action plan to apply preventative / corrective measures
+							to all assets, from highest to lowest risk priority
+						</li>
+						<li>
+							Identify all control categories (Administrative/Managerial,
+							Technical, Physical/Operational) and their associated risks. Then,
+							include them in the action plan
+						</li>
+						<li>
+							Collaborate with internal teams / employees to determine any
+							additional risks on existing assets
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="modal" id="CSProject2">
+				<div class="modal__content">
+					<button class="close">X</button>
+
+					<h1 class="project-title modal__titles">
+						Cybersecurity Incident Report: Network Traffic Analysis
+					</h1>
+
+					<h2 class="modal__section-titles">Scope</h2>
+					<p class="project-details__desc">
+						The scope of this audit is defined as the entire security program at
+						Botium Toys. This includes their assets like employee equipment and
+						devices, their internal network, and their systems. The requirement
+						is to review the assets Botium Toys has and the controls and
+						compliance practices they have in place.
+					</p>
+
+					<h2 class="modal__section-titles">Goals</h2>
+					<p class="project-details__desc">
+						Assess existing assets and complete the controls and compliance
+						checklist to determine which controls and compliance best practices
+						that need to be implemented to improve Botium Toys’ security
+						posture.
+					</p>
+
+					<h2 class="modal__section-titles">Risk Assessment</h2>
+					<div class="project-details__desc">
+						<h3 class="modal__section-subtitles">Risk Description</h3>
+						<p class="project-details__desc">
+							Currently, there is inadequate management of assets. Additionally,
+							Botium Toys does not have all of the proper controls in place and
+							may not be fully compliant with U.S. and international regulations
+							and standards.
+						</p>
+
+						<h3 class="modal__section-subtitles">Control Best Practices</h3>
+						<p class="project-details__desc">
+							The first of the five functions of the NIST CSF is Identify.
+							Botium Toys will need to dedicate resources to identify assets so
+							they can appropriately manage them. Additionally, they will need
+							to classify existing assets and determine the impact of the loss
+							of existing assets, including systems, on business continuity.
+						</p>
+
+						<h3 class="modal__section-subtitles">Risk Score</h3>
+						<p class="project-details__desc">
+							On a scale of 1 to 10, the risk score is 8, which is fairly high.
+							This is due to a lack of controls and adherence to compliance best
+							practices.
+						</p>
+					</div>
+
+					<h2 class="modal__section-titles">Recommendations</h2>
+					<ul class="project-details__desc">
+						<li>Implement Principle of Least Privilege Access</li>
+						<li>Set-up password management system</li>
+						<li>
+							Assess current assets and legacy systems, and identify possible
+							risks
+						</li>
+						<li>
+							Create an action plan to apply preventative / corrective measures
+							to all assets, from highest to lowest risk priority
+						</li>
+						<li>
+							Identify all control categories (Administrative/Managerial,
+							Technical, Physical/Operational) and their associated risks. Then,
+							include them in the action plan
+						</li>
+						<li>
+							Collaborate with internal teams / employees to determine any
+							additional risks on existing assets
+						</li>
+					</ul>
+				</div>
+			</div>
 		</main>
 
 		<footer>
