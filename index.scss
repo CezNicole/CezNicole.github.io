@@ -376,6 +376,10 @@
 	}
 }
 
+.overflow-hidden{
+	overflow: hidden;
+}
+
 
 @include breakpoints.tablet{
 	.nav-links {
