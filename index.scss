@@ -4,7 +4,8 @@
 
 .header {
 	position: relative;
-	z-index: 2;
+	z-index: 1;
+
 
 	&__nav{
 		padding: 1em 0;
@@ -221,6 +222,16 @@
 		&--italic{
 			@include font-italic;
 		}
+
+		&--modal-padding{
+			padding: 0 0.5em;
+		}
+	}
+
+	&__cybersecurity{
+		transform: none;
+		width: 100%;
+		max-width: 30em;
 	}
 }
 
@@ -251,6 +262,96 @@
 	text-align: center;
 	position: relative;
 	bottom: 0;
+}
+
+.highlighted-skills{
+	@include project-details-text;
+	color: colors.$antiquewhite;
+	background-color: rgba($color: colors.$border-teal, $alpha: 0.4);
+	border: 2px solid colors.$antiquewhite;
+	border-radius: 0.5em;
+	margin: 0.3em auto;
+	padding: 0.3em;
+	min-width: 10em;
+	max-width: 48%;
+	text-align: center;
+
+	&__list{
+		list-style-type: none;
+		display: flex;
+		width: 100%;
+		margin: 0 auto 1.5em;
+		flex-wrap: wrap;
+	}
+}
+
+.modal{
+	position: fixed;
+	inset: 0;
+	top: 0;
+	display: none;
+	background-color: colors.$japanese-indigo;
+	color: colors.$antiquewhite;
+	width: 100%;
+	max-width: 80em;
+	padding: 1.5em;
+    overflow-y: auto;
+	z-index: 1;
+
+	&__content{
+		width: 100%;
+		max-width: 80em;
+		padding: 0 1.3em;
+	}
+
+	&__titles{
+		font-size: 1.5em;
+	}
+
+	&__section-titles{
+		font-size: 1.2em;
+		padding: 1em 0 0.5em;
+	}
+
+	&__section-subtitles{
+		@extend .modal__section-titles;
+		font-size: 1.15em;
+		padding-top: 0.5em;
+	}
+
+	&__header-content{
+		display: flex;
+		width: 100%;
+	}
+
+	&__list-items{
+		padding: 0.3em 0;
+	}
+}
+
+.visible{
+	display: flex;
+    flex-wrap: wrap;
+}
+
+.close{
+	@include buttons;
+	background: none;
+	border: none;
+	position: absolute;
+	right: 0;
+
+	&:hover{
+		@include buttons-hover;
+	}
+
+	&:active{
+		@include buttons-active;
+	}
+}
+
+.overflow-hidden{
+	overflow: hidden;
 }
 
 

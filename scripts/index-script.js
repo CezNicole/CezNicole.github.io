@@ -21,3 +21,35 @@ btnViewFeaturesBandSite.addEventListener('click', (event) => {
     event.preventDefault();
     window.open('pages/band-site-biography.html', '_blank');
 })
+
+
+// Cybersecurity Projects - Modal Functionality
+function openModal(id){
+    document.getElementById(id).classList.add('visible');
+}
+
+function closeModal(id){
+    document.getElementById(id).classList.remove('visible');
+}
+
+document.querySelectorAll("[data-modal]").forEach(btnViewDetails => {
+    btnViewDetails.addEventListener('click', (event) => {
+        event.preventDefault();
+        const modalId = btnViewDetails.dataset.modal; //HTML5: Gets data-modal value
+        openModal(modalId);
+
+        // hide <body> scroll functionality
+        document.body.classList.add('overflow-hidden');
+    })    
+});
+
+document.querySelectorAll(".close[data-modal]").forEach(btnClose => {
+    btnClose.addEventListener('click', (event) => {
+        event.preventDefault();
+        const modalId = btnClose.dataset.modal; //HTML5: Gets data-modal value
+        closeModal(modalId);
+
+        // make <body> scroll functionality visible
+        document.body.classList.remove('overflow-hidden');
+    })
+})
