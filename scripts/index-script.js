@@ -24,24 +24,6 @@ btnViewFeaturesBandSite.addEventListener('click', (event) => {
 
 
 // Cybersecurity Projects - Modal Functionality
-// const btnViewCybersecurityProject1 = document.getElementById('btnCybersecurityProject1');
-// btnViewCybersecurityProject1.addEventListener('click', (event) =>{
-//     event.preventDefault();
-//     document.getElementById('CSProject1').classList.add('visible');
-// })
-
-// const btnViewCybersecurityProject2 = document.getElementById('btnCybersecurityProject2');
-// btnViewCybersecurityProject2.addEventListener('click', (event) =>{
-//     event.preventDefault();
-//     document.getElementById('CSProject2').classList.add('visible');
-// })
-
-// const btnClose = document.querySelector('.close');
-// btnClose.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     document.querySelector('.modal').classList.remove('visible');
-// })
-
 function openModal(id){
     document.getElementById(id).classList.add('visible');
 }

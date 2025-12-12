@@ -4,7 +4,6 @@
 
 .header {
 	position: relative;
-	// z-index: 2;
 	z-index: 1;
 
 
@@ -223,11 +222,14 @@
 		&--italic{
 			@include font-italic;
 		}
+
+		&--modal-padding{
+			padding: 0 0.5em;
+		}
 	}
 
 	&__cybersecurity{
 		transform: none;
-		// overflow-y: hidden;
 		width: 100%;
 		max-width: 30em;
 	}
@@ -270,12 +272,6 @@
 	border-radius: 0.5em;
 	margin: 0.3em auto;
 	padding: 0.3em;
-	// width: 50%;
-	// max-width: 10em;
-	// min-width: 15em;
-	// max-width: 60%;
-	// min-width: 15em;
-	// max-width: 45%;
 	min-width: 10em;
 	max-width: 48%;
 	text-align: center;
@@ -289,7 +285,6 @@
 	}
 }
 
-// WIP
 .modal{
 	position: fixed;
 	inset: 0;
@@ -302,28 +297,11 @@
 	padding: 1.5em;
     overflow-y: auto;
 	z-index: 1;
-	// border: 2px solid red;
-	// align-items: center;
-	// justify-content: center;
-	// background: rgba($color: colors.$metallic-blue, $alpha: 1);
-	// background:rgba(2,6,23,0.6);
-	// display: flex;
-    // flex-wrap: wrap;
-    // width: 100%;
-    // position: fixed;
-    // top: 0;
-    // padding: 6em 0;
 
 	&__content{
 		width: 100%;
 		max-width: 80em;
 		padding: 0 1.3em;
-		// max-width: 900px;
-		// background: var(--card);
-		// border-radius: 0.88em;
-		// position: relative;
-		// top: 0;
-		// border: 2px solid blue;
 	}
 
 	&__titles{
@@ -332,10 +310,7 @@
 
 	&__section-titles{
 		font-size: 1.2em;
-		// padding: 0.5em 0;
 		padding: 1em 0 0.5em;
-		// text-align: left;
-		// font-weight: 500;
 	}
 
 	&__section-subtitles{
@@ -343,24 +318,23 @@
 		font-size: 1.15em;
 		padding-top: 0.5em;
 	}
+
+	&__header-content{
+		display: flex;
+		width: 100%;
+	}
+
+	&__list-items{
+		padding: 0.3em 0;
+	}
 }
 
 .visible{
 	display: flex;
     flex-wrap: wrap;
-    // width: 100%;
-    // position: fixed;
-    // top: 0;
-    // overflow: auto;
-    // padding: 6em 0;
-	// visibility: visible;
 }
 
 .close{
-	// background: transparent;
-	// color: var(--muted);
-	// float: right;
-	// font-size: 1.13em;
 	@include buttons;
 	background: none;
 	border: none;

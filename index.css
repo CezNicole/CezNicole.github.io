@@ -322,6 +322,9 @@ body {
   font-weight: 400;
   font-style: italic;
 }
+.project-details__desc--modal-padding {
+  padding: 0 0.5em;
+}
 .project-details__cybersecurity {
   transform: none;
   width: 100%;
@@ -418,6 +421,13 @@ body {
 .modal__section-subtitles {
   font-size: 1.15em;
   padding-top: 0.5em;
+}
+.modal__header-content {
+  display: flex;
+  width: 100%;
+}
+.modal__list-items {
+  padding: 0.3em 0;
 }
 
 .visible {
