@@ -181,6 +181,28 @@
 							View Details
 						</button>
 					</div>
+
+					<div class="project-details project-details__cybersecurity">
+						<h4 class="project-title">Web Service Attack Assessment</h4>
+						<ul class="highlighted-skills__list">
+							<li class="highlighted-skills">
+								Network Traffic Analysis using Wireshark
+							</li>
+							<li class="highlighted-skills">
+								Identification of Network Attacks (DoS, Network Intrusion, IP
+								Spoofing)
+							</li>
+						</ul>
+						<p class="project-details__desc">
+							Assessed Wireshark TCP/HTTP logs to identify the type of attack
+							causing network interruption and evaluate its impact on web server
+							performance.
+						</p>
+
+						<button class="buttons--project" data-modal="CSProject3">
+							View Details
+						</button>
+					</div>
 				</div>
 			</article>
 
@@ -327,9 +349,9 @@
 						market, initiated an internal IT audit to strengthen its security
 						posture and ensure compliance with industry and international
 						regulations. Using the NIST Cybersecurity Framework, the IT manager
-						outlined the audit scope, goals, and risk assessment. The task
-						involved evaluating this information to complete a controls and
-						compliance checklist to identify security gaps, risks, and areas for
+						outlined the audit scope, goals, and risk assessment. Your task is
+						to review this information and complete a controls & compliance
+						checklist to identify security gaps, risks, and areas for
 						improvement.
 					</p>
 
@@ -429,13 +451,13 @@
 
 					<h2 class="modal__section-titles">Scenario</h2>
 					<p class="project-details__desc">
-						Several customers of clients reported that they were not able to
-						access the client company website www.yummyrecipesforme.com, and saw
-						the error “destination port unreachable” after waiting for the page
-						to load. As a cybersecurity analyst working at a company that
-						specializing in providing IT services for clients, you are tasked
-						with analyzing the situation and determining which network protocol
-						was affected during this incident.
+						You are a cybersecurity analyst working at a company that
+						specializes in providing IT services for clients. Several customers
+						of clients reported that they were not able to access the client
+						company website www.yummyrecipesforme.com, and saw the error
+						“destination port unreachable” after waiting for the page to load.
+						You are tasked with analyzing the situation and determining which
+						network protocol was affected during this incident.
 					</p>
 
 					<h2 class="modal__section-titles">Problem Summary</h2>
@@ -498,6 +520,113 @@
 						again. Lastly, they used the logs from the network analyzer tool to
 						analyze the error messages.
 					</p>
+				</div>
+			</div>
+
+			<div class="modal" id="CSProject3">
+				<div class="modal__content">
+					<button class="close" data-modal="CSProject3">X</button>
+
+					<h1 class="project-title modal__titles">
+						Cybersecurity Incident Report: Network Attack Assessment
+					</h1>
+					<div class="modal__header-content">
+						<p class="project-details__desc--italic">Overview:</p>
+						<p
+							class="project-details__desc project-details__desc--modal-padding">
+							TCP/HTTP log analysis using Wireshark to identify the cause of
+							network interruption.
+						</p>
+					</div>
+					<div class="modal__header-content">
+						<p class="project-details__desc--italic">Role:</p>
+						<p
+							class="project-details__desc project-details__desc--modal-padding">
+							Cybersecurity Analyst
+						</p>
+					</div>
+
+					<h2 class="modal__section-titles">Scenario</h2>
+					<p class="project-details__desc">
+						You work as a security analyst for a travel agency that advertises
+						sales and promotions on the company’s website. An automated alert
+						indicated a problem with the company's web server, followed by
+						connection timeout errors. Packet capture revealed an abnormally
+						high volume of TCP SYN requests from an unfamiliar IP address that
+						overwhelmed the server's capacity to respond to legitimate traffic.
+
+						<br /><br />
+
+						The server was taken offline to recover, and the source IP was
+						temporarily blocked at the firewall. The incident required
+						escalation due to the likelihood of a SYN flood attack and the need
+						for longer-term mitigation to prevent recurrence.
+					</p>
+
+					<h2 class="modal__section-titles">Findings</h2>
+					<ul class="project-details__desc">
+						<li class="modal__list-items">
+							An automated alert was received from the monitoring system
+							indicating a problem with the company's web server
+						</li>
+						<li class="modal__list-items">
+							Upon visiting the company's website, a connection timeout error
+							message is displayed on the browser
+						</li>
+						<li class="modal__list-items">
+							Packet capture using Wireshark revealed that usually high volume
+							of TCP SYN packets coming from source IP 203.0.113.0
+						</li>
+						<li class="modal__list-items">
+							Initial requests from the malicious source IP 203.0.113.0
+							completed the 3-way TCP handshake, but subsequent SYN requests
+							exhausted the company web server's capacity to respond to
+							legitimate traffic
+						</li>
+						<li class="modal__list-items">
+							Company users (source IP 194.51.100.0/24) were able to access the
+							website prior to the attack, but began experiencing connection
+							timeouts when the malicious activity started
+						</li>
+						<li class="modal__list-items">
+							Logs showed [RST, ACK] packets and HTTP Gateway Timout responses
+							resulting from unacknowledged SYN requests
+						</li>
+					</ul>
+
+					<h2 class="modal__section-titles">Analysis</h2>
+					<div class="project-details__desc">
+						<h3 class="modal__section-subtitles">
+							Network Interruption Identification
+						</h3>
+						<p class="project-details__desc">
+							The logs show a connection timeout response from the company’s
+							website to the user’s browser when trying to access the website,
+							indicating a SYN flood attack. If not addressed promptly, this
+							event could be posing a much bigger risk.
+
+							<br /><br />
+
+							Log detection, log analysis, and containment have been performed
+							to temporarily prevent further damage on the company’s assets by
+							taking the server offline to allow recovery and restore normal
+							operations, as well as configuring the company’s firewall to block
+							the IP address that sends the abnormal volume of SYN requests.
+						</p>
+
+						<h3 class="modal__section-subtitles">
+							Website Malfunction Analysis
+						</h3>
+						<p class="project-details__desc">
+							Normally, a TCP three-way handshake occurs with SYN → SYN-ACK →
+							ACK packets to establish a connection. During the incident, a SYN
+							flood attack sent an abnormally high volume of SYN packets to the
+							company’s web server, exhausting its resources and preventing
+							legitimate TCP connections. Packet logs show that the malicious IP
+							repeatedly sent SYN packets, resulting in RST-ACK and Gateway
+							Timeout responses and disrupting normal web service operations.
+						</p>
+					</div>
 				</div>
 			</div>
 		</main>

@@ -147,6 +147,7 @@ body {
   background-color: #2f3e46;
   border-radius: 50%;
   width: 10em;
+  max-width: 10em;
 }
 
 .profile-name {
