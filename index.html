@@ -203,6 +203,21 @@
 							View Details
 						</button>
 					</div>
+
+					<div class="project-details project-details__cybersecurity">
+						<h4 class="project-title">
+							Security Incident Report Documentation
+						</h4>
+						<ul class="highlighted-skills__list">
+							<li class="highlighted-skills">xxx</li>
+							<li class="highlighted-skills">xxx</li>
+						</ul>
+						<p class="project-details__desc">xxx</p>
+
+						<button class="buttons--project" data-modal="CSProject4">
+							View Details
+						</button>
+					</div>
 				</div>
 			</article>
 
@@ -349,8 +364,8 @@
 						market, initiated an internal IT audit to strengthen its security
 						posture and ensure compliance with industry and international
 						regulations. Using the NIST Cybersecurity Framework, the IT manager
-						outlined the audit scope, goals, and risk assessment. Your task is
-						to review this information and complete a controls & compliance
+						outlined the audit scope, goals, and risk assessment. The task is to
+						review this information and complete a controls & compliance
 						checklist to identify security gaps, risks, and areas for
 						improvement.
 					</p>
@@ -360,8 +375,8 @@
 						The scope of this audit is defined as the entire security program at
 						Botium Toys. This includes their assets like employee equipment and
 						devices, their internal network, and their systems. The requirement
-						is to review the assets Botium Toys has and the controls and
-						compliance practices they have in place.
+						is to review Botium Toys' assets and evaulate existing controls and
+						compliance practices.
 					</p>
 
 					<h2 class="modal__section-titles">Goals</h2>
@@ -456,8 +471,8 @@
 						of clients reported that they were not able to access the client
 						company website www.yummyrecipesforme.com, and saw the error
 						“destination port unreachable” after waiting for the page to load.
-						You are tasked with analyzing the situation and determining which
-						network protocol was affected during this incident.
+						The task involves analyzing the situation to determine which network
+						protocol was affected during this incident.
 					</p>
 
 					<h2 class="modal__section-titles">Problem Summary</h2>
@@ -627,6 +642,134 @@
 							Timeout responses and disrupting normal web service operations.
 						</p>
 					</div>
+				</div>
+			</div>
+
+			<div class="modal" id="CSProject4">
+				<div class="modal__content">
+					<button class="close" data-modal="CSProject4">X</button>
+
+					<h1 class="project-title modal__titles">Security Incident Report</h1>
+					<div class="modal__header-content">
+						<p class="project-details__desc--italic">Overview:</p>
+						<p
+							class="project-details__desc project-details__desc--modal-padding">
+							Tcpdump log analysis to investigate, identify, document, and
+							recommend a solution for a security issue affecting access to the
+							company's main webpage.
+						</p>
+					</div>
+					<div class="modal__header-content">
+						<p class="project-details__desc--italic">Role:</p>
+						<p
+							class="project-details__desc project-details__desc--modal-padding">
+							Cybersecurity Analyst
+						</p>
+					</div>
+
+					<h2 class="modal__section-titles">Scenario</h2>
+					<p class="project-details__desc">
+						You are a cybersecurity analyst for yummyrecipesforme.com, a website
+						that sells recipes and cookbooks. A former employee has decided to
+						lure users to a fake website with malware.
+
+						<br /><br />
+
+						The objective of this investigation is to document the incident in
+						detail, identify the network protocols used to establish the
+						connection between the user and the website, and recommend a
+						security action to take to prevent brute force attacks in the
+						future.
+					</p>
+
+					<h2 class="modal__section-titles">Findings</h2>
+					<ul class="project-details__desc">
+						<li class="modal__list-items">
+							Multiple customers reported to yummyrecipesforme's helpdesk that
+							the company website prompted a file download, redirected to a
+							different URL, and caused their computers to slow down
+						</li>
+						<li class="modal__list-items">
+							The website owner was unable to access the admin panel and
+							contacted the website hosting provider for assistance
+						</li>
+						<li class="modal__list-items">
+							The security team created a sandbox environment and ran the
+							network protocol analyzer (tcpdump) to observe suspicious website
+							behavior
+						</li>
+						<li class="modal__list-items">
+							The web server was impacted by a brute force attack, as the
+							disgruntled employee easily guessed the administrative account's
+							default password
+						</li>
+						<li class="modal__list-items">
+							No preventive controls were in place to prevent such attacks
+						</li>
+					</ul>
+
+					<h2 class="modal__section-titles">Analysis</h2>
+					<div class="project-details__desc">
+						<h3 class="modal__section-subtitles">Network Protocol Analysis</h3>
+						<p class="project-details__desc">
+							The network protocol involved in the brute force attack was HTTP.
+							Since the website was using an unsecured protocol, it was easier
+							for the malicious actor to perform an attack by accessing the
+							admin panel and changing the source code.
+						</p>
+
+						<h3 class="modal__section-subtitles">Incident Documentation</h3>
+						<p class="project-details__desc">
+							Several customers reported that the company’s website prompted a
+							file download, redirected them to "greatrecipesforme.com", and
+							caused their computers to slow down. Investigation identified a
+							brute force attack that allowed the attacker to access the website
+							and modify its source code.
+
+							<br /><br />
+
+							The security team reproduced the issue in a sandbox environment
+							using a network protocol analyzer, confirming the download prompt
+							and subsequent redirection.
+
+							<br /><br />
+
+							Tcpdump logs showed that the browser resolved
+							"yummyrecipesforme.com" via DNS, requested the webpage, initiated
+							the malware download, and then resolved and accessed the malicious
+							website ("greatrecipesforme.com"), completing the HTTP request.
+
+							<br /><br />
+
+							Further analysis revealed that a malicious JavaScript code was
+							embedded in the website's source code, prompting users to download
+							an executable file. The use of HTTP left the connection unsecured,
+							increasing vulnerability to attacks, and no controls were in place
+							to prevent brute force attempts.
+						</p>
+					</div>
+
+					<h2 class="modal__section-titles">Recommendations</h2>
+					<ul class="project-details__desc">
+						<li class="modal__list-items">
+							Implement HTTPS to secure connections using TLS/SSL certificates
+						</li>
+						<li class="modal__list-items">
+							Enforce strong password policies, including complex password
+							requirements and periodic changes
+						</li>
+						<li class="modal__list-items">
+							Disallow reuse of previous passwords to enhace account security
+						</li>
+						<li class="modal__list-items">
+							Require 2-factor authentication (2FA) or multi-factor
+							authentication (MFA) on company websites
+						</li>
+						<li class="modal__list-items">
+							Monitor login attempts and limit the number of failed attempts to
+							prevent brute force attacks
+						</li>
+					</ul>
 				</div>
 			</div>
 		</main>
