@@ -431,6 +431,10 @@ body {
 .modal__list-items {
   padding: 0.3em 0;
 }
+.modal__list-items--strong {
+  font-weight: 700;
+  font-style: normal;
+}
 
 .visible {
   display: flex;

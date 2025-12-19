@@ -227,6 +227,24 @@
 							View Details
 						</button>
 					</div>
+
+					<div class="project-details project-details__cybersecurity">
+						<h4 class="project-title">Security Risk Assessment</h4>
+						<ul class="highlighted-skills__list">
+							<li class="highlighted-skills">Risk Assessment Reporting</li>
+							<li class="highlighted-skills">
+								Understanding of Network Hardening Tools and Practices
+							</li>
+						</ul>
+						<p class="project-details__desc">
+							Performed a security risk assessment to evaluate a data breach and
+							proposed network hardening controls to improve overall security.
+						</p>
+
+						<button class="buttons--project" data-modal="CSProject5">
+							View Details
+						</button>
+					</div>
 				</div>
 			</article>
 
@@ -779,6 +797,111 @@
 							prevent brute force attacks
 						</li>
 					</ul>
+				</div>
+			</div>
+
+			<div class="modal" id="CSProject5">
+				<div class="modal__content">
+					<button class="close" data-modal="CSProject5">X</button>
+
+					<h1 class="project-title modal__titles">Security Risk Assessment</h1>
+					<div class="modal__header-content">
+						<p class="project-details__desc--italic">Overview:</p>
+						<p
+							class="project-details__desc project-details__desc--modal-padding">
+							A social media organization initiated a network hardening review
+							following a data breach incident.
+						</p>
+					</div>
+					<div class="modal__header-content">
+						<p class="project-details__desc--italic">Role:</p>
+						<p
+							class="project-details__desc project-details__desc--modal-padding">
+							Cybersecurity Analyst
+						</p>
+					</div>
+
+					<h2 class="modal__section-titles">Scenario</h2>
+					<p class="project-details__desc">
+						A social media organization experienced a major data breach that
+						exposed customer personal information. In response, the organization
+						wants to implement strong network hardening practices that can be
+						performed consistently to prevent attacks and breaches in the
+						future.
+
+						<br /><br />
+
+						A network assessment identified four major vulnerabilities,
+						including shared employee passwords, default administrative
+						credentials, lack of firewall traffic filtering rules, and the
+						absence of multi-factor authentication (MFA). Without remediation,
+						these vulnerabilities significantly increase the likelihood of
+						recurring breaches and other security incidents.
+					</p>
+
+					<h2 class="modal__section-titles">Identified Security Risks</h2>
+					<ul class="project-details__desc">
+						<li class="modal__list-items modal__list-items--strong">
+							Shared employee passwords
+							<p class="project-details__desc">
+								&#8211; The organization's employees share passwords, increasing
+								the risk of unauthorized access.
+							</p>
+						</li>
+						<li class="modal__list-items modal__list-items--strong">
+							Default admin credentials
+							<p class="project-details__desc">
+								&#8211; The admin password for the database is set to the
+								default, making the database highly vulnerable to brute force
+								attacks and potential data leaks.
+							</p>
+						</li>
+						<li class="modal__list-items modal__list-items--strong">
+							Absence of firewall rules
+							<p class="project-details__desc">
+								&#8211; The firewalls do not have rules in place to filter
+								inbound and outbound network traffic, exposing the network to
+								malicious activity.
+							</p>
+						</li>
+						<li class="modal__list-items modal__list-items--strong">
+							Lack of multi-factor authentication (MFA)
+							<p class="project-details__desc">
+								&#8211; Multi-factor authentication (MFA) is not used,
+								increasing the risk of unauthorized access to sensitive data.
+							</p>
+						</li>
+					</ul>
+
+					<h2 class="modal__section-titles">
+						Network Hardening Recommendations
+					</h2>
+					<ol class="project-details__desc">
+						<li class="modal__list-items modal__list-items--strong">
+							Enforce strong password policies with regular updates
+							<p class="project-details__desc">
+								&#8211; This ensures that each user has a complex, unique
+								password, distinct from the administrative account, that is
+								changed regularly.
+							</p>
+						</li>
+						<li class="modal__list-items modal__list-items--strong">
+							Use port filtering with firewall maintenance
+							<p class="project-details__desc">
+								&#8211; Port filtering restricts company network access only to
+								authorized IP addresses and secure websites, while firewall
+								maintenance ensures that firewall rules remain current and
+								effective.
+							</p>
+						</li>
+						<li class="modal__list-items modal__list-items--strong">
+							Implement multi-factor authentication (MFA)
+							<p class="project-details__desc">
+								&#8211; This requires both user password and a one-time passcode
+								(OTP) to grant access to authorized users only.
+							</p>
+						</li>
+					</ol>
 				</div>
 			</div>
 		</main>

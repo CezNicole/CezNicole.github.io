@@ -328,6 +328,10 @@
 
 	&__list-items{
 		padding: 0.3em 0;
+
+		&--strong{
+			@include font-bold;
+		}
 	}
 }
 
