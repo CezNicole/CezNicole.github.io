@@ -245,6 +245,29 @@
 							View Details
 						</button>
 					</div>
+
+					<div class="project-details project-details__cybersecurity">
+						<h4 class="project-title">
+							Security Incident Reporting Using the NIST Cybersecurity Framework
+							(CSF)
+						</h4>
+						<ul class="highlighted-skills__list">
+							<li class="highlighted-skills">
+								Cybersecurity Incident Response and Reporting
+							</li>
+							<li class="highlighted-skills">
+								Understanding and Applying the NIST CSF
+							</li>
+						</ul>
+						<p class="project-details__desc">
+							Created a security incident report aligned with the NIST
+							Cybersecurity Framework (CSF) to analyze a network incident.
+						</p>
+
+						<button class="buttons--project" data-modal="CSProject6">
+							View Details
+						</button>
+					</div>
 				</div>
 			</article>
 
@@ -902,6 +925,127 @@
 							</p>
 						</li>
 					</ol>
+				</div>
+			</div>
+
+			<div class="modal" id="CSProject6">
+				<div class="modal__content">
+					<button class="close" data-modal="CSProject6">X</button>
+
+					<h1 class="project-title modal__titles">
+						Security Incident Reporting Using the NIST Cybersecurity Framework
+						(CSF)
+					</h1>
+					<div class="modal__header-content">
+						<p class="project-details__desc--italic">Overview:</p>
+						<p
+							class="project-details__desc project-details__desc--modal-padding">
+							Network incident analysis and reporting using the NIST
+							Cybersecurity Framework (CSF).
+						</p>
+					</div>
+					<div class="modal__header-content">
+						<p class="project-details__desc--italic">Role:</p>
+						<p
+							class="project-details__desc project-details__desc--modal-padding">
+							Cybersecurity Analyst
+						</p>
+					</div>
+
+					<h2 class="modal__section-titles">Scenario</h2>
+					<p class="project-details__desc">
+						A multimedia company recently experienced a distributed
+						denial-of-service (DDoS) attack that disrupted internal network
+						operations for two hours.
+
+						<br /><br />
+
+						The attack involved a flood of ICMP packets that overwhelmed the
+						network services and prevented access to internal resources. The
+						incident management team responded by blocking incoming ICMP
+						packets, stopping all non-critical network services offline, and
+						restoring critical network services.
+
+						<br /><br />
+
+						Investigation later confirmed that the attack exploited an
+						unconfigured firewall, allowing the malicious attacker to penetrate
+						the company network.
+					</p>
+
+					<h2 class="modal__section-titles">Analysis using NIST CSF</h2>
+					<div class="project-details__desc">
+						<h3 class="modal__section-subtitles">Identify</h3>
+						<p class="project-details__desc">
+							The investigation revealed that an unconfigured firewall was used
+							by the malicious actor to exploit the company network with DDoS
+							attacks, specifically the Ping of Death. Additionally, the absence
+							of intrusion detection and prevention systems prevented timely
+							detection and alerting of the attack.
+						</p>
+
+						<h3 class="modal__section-subtitles">Protect</h3>
+						<p class="project-details__desc">
+							The security team strengthened the company's internal networks by
+							implementing a new firewall to limit the rate of incoming ICMP
+							packets, a source IP verification to check for spoofed IP
+							addresses on incoming ICMP packets, a network monitoring software
+							to detect abnormal traffic patterns, and an IDS/IPS system to
+							filter ICMP traffic.
+						</p>
+
+						<h3 class="modal__section-subtitles">Detect</h3>
+						<p class="project-details__desc">
+							The security team implemented an IDS/IPS system to filter incoming
+							ICMP traffic based on suspicious characteristics / patterns and
+							for better alerting when malicious attacks occur.
+
+							<br /><br />
+
+							Additionally, the organization can leverage SIEM dashboards and
+							tools, tcpdump logs, and network log analyzer to monitor malicious
+							activities.
+
+							<br /><br />
+
+							System logging and monitoring, combined with security hardening
+							procedures such as regular software updates / patches, disabling
+							unused ports, reducing access permissions, and using MFA, can help
+							identify abnormal network behavior and ensure that only authorized
+							users have access to the internal network.
+						</p>
+
+						<h3 class="modal__section-subtitles">Respond</h3>
+						<p class="project-details__desc">
+							To address the incident and avoid further impact, the security
+							team blocked the incoming ICMP packets, took all non-critical
+							network services offline, and restored critical network services.
+
+							<br /><br />
+
+							The team also deployed a new firewall to limit the rate of
+							incoming ICMP packets, enabled a source IP verification to check
+							for spoofed IP addresses, implemented a network monitoring
+							software to detect abnormal traffic patterns, and activated an
+							IDS/IPS system to filter suspicious ICMP activity.
+						</p>
+
+						<h3 class="modal__section-subtitles">Recover</h3>
+						<p class="project-details__desc">
+							The security team successfully restored normal network operations
+							within 2 hours by performing thorough investigation and
+							implementing the necessary controls to stop the DDoS attacks from
+							compromising the internal network.
+
+							<br /><br />
+
+							To improve response and recovery for future incidents, the
+							organization implemented an IDS/IPS system to enhance detection,
+							monitoring, and response to similar attacks. In addition, the use
+							of SIEM tools, tcpdump logs, and network log analyzer supports
+							faster and more effective incident resolution.
+						</p>
+					</div>
 				</div>
 			</div>
 		</main>

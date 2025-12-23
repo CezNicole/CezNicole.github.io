@@ -253,7 +253,9 @@
 	text-align: center;
 	margin: 0.5em auto;
 	padding: 0 0 0.5em;
-	height: 3.3em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .copyright {
