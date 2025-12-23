@@ -245,6 +245,25 @@
 							View Details
 						</button>
 					</div>
+
+					<div class="project-details project-details__cybersecurity">
+						<h4 class="project-title">
+							Security Incident Reporting Using the NIST Cybersecurity Framework
+							(CSF)
+						</h4>
+						<ul class="highlighted-skills__list">
+							<li class="highlighted-skills">xxx</li>
+							<li class="highlighted-skills">xxx</li>
+						</ul>
+						<p class="project-details__desc">
+							Created a security incident report aligned with the NIST
+							Cybersecurity Framework (CSF) to analyze a network incident.
+						</p>
+
+						<button class="buttons--project" data-modal="CSProject6">
+							View Details
+						</button>
+					</div>
 				</div>
 			</article>
 
@@ -872,6 +891,124 @@
 							</p>
 						</li>
 					</ul>
+
+					<h2 class="modal__section-titles">
+						Network Hardening Recommendations
+					</h2>
+					<ol class="project-details__desc">
+						<li class="modal__list-items modal__list-items--strong">
+							Enforce strong password policies with regular updates
+							<p class="project-details__desc">
+								&#8211; This ensures that each user has a complex, unique
+								password, distinct from the administrative account, that is
+								changed regularly.
+							</p>
+						</li>
+						<li class="modal__list-items modal__list-items--strong">
+							Use port filtering with firewall maintenance
+							<p class="project-details__desc">
+								&#8211; Port filtering restricts company network access only to
+								authorized IP addresses and secure websites, while firewall
+								maintenance ensures that firewall rules remain current and
+								effective.
+							</p>
+						</li>
+						<li class="modal__list-items modal__list-items--strong">
+							Implement multi-factor authentication (MFA)
+							<p class="project-details__desc">
+								&#8211; This requires both user password and a one-time passcode
+								(OTP) to grant access to authorized users only.
+							</p>
+						</li>
+					</ol>
+				</div>
+			</div>
+
+			<div class="modal" id="CSProject6">
+				<div class="modal__content">
+					<button class="close" data-modal="CSProject6">X</button>
+
+					<h1 class="project-title modal__titles">
+						Security Incident Reporting Using the NIST Cybersecurity Framework
+						(CSF)
+					</h1>
+					<div class="modal__header-content">
+						<p class="project-details__desc--italic">Overview:</p>
+						<p
+							class="project-details__desc project-details__desc--modal-padding">
+							Network incident analysis and reporting using the NIST
+							Cybersecurity Framework (CSF).
+						</p>
+					</div>
+					<div class="modal__header-content">
+						<p class="project-details__desc--italic">Role:</p>
+						<p
+							class="project-details__desc project-details__desc--modal-padding">
+							Cybersecurity Analyst
+						</p>
+					</div>
+
+					<h2 class="modal__section-titles">Scenario</h2>
+					<p class="project-details__desc">
+						A multimedia company recently experienced a distributed
+						denial-of-service (DDoS) attack that disrupted internal network
+						operations for two hours.
+
+						<br /><br />
+
+						The attack involved a flood of ICMP packets that overwhelmed the
+						network services and prevented access to internal resources. The
+						incident management team responded by blocking incoming ICMP
+						packets, stopping all non-critical network services offline, and
+						restoring critical network services.
+
+						<br /><br />
+
+						Investigation later confirmed that the attack exploited an
+						unconfigured firewall, allowing the malicious attacker to penetrate
+						the company network.
+					</p>
+
+					<h2 class="modal__section-titles">Analysis using NIST CSF</h2>
+					<div class="project-details__desc">
+						<h3 class="modal__section-subtitles">Identify</h3>
+						<p class="project-details__desc">
+							The investigation revealed that an unconfigured firewall was used
+							by the malicious actor to exploit the company network with DDoS
+							attacks, specifically the Ping of Death. Additionally, the absence
+							of intrusion detection and prevention systems prevented timely
+							detection and alerting of the attack.
+						</p>
+
+						<h3 class="modal__section-subtitles">Protect</h3>
+						<p class="project-details__desc">
+							The security team strengthened the company's internal networks by
+							implementing a new firewall to limit the rate of incoming ICMP
+							packets, a source IP verification to check for spoofed IP
+							addresses on incoming ICMP packets, a network monitoring software
+							to detect abnormal traffic patterns, and an IDS/IPS system to
+							filter ICMP traffic.
+						</p>
+
+						<h3 class="modal__section-subtitles">Detect</h3>
+						<p class="project-details__desc">
+							To better handle potential security incidents like this, the
+							security team has implemented an IDS/IPS system to filter out
+							incoming ICMP traffic based on suspicious characteristics and for
+							better alerting when malicious attacks occur.
+
+							<br /><br />
+
+							The organization can also benefit from using SIEM dashboards and
+							tools, tcpdump logs, and network log analyzer to alert the
+							security team of potential malicious attacks, system logging and
+							monitoring to quickly identify abnormal network traffic and
+							implementing security hardening procedures such as regular
+							software updates / patches, disabling unused ports, reducing
+							access permissions, and using MFA to ensure that only authorized
+							users have access to the company’s internal network.
+						</p>
+					</div>
 
 					<h2 class="modal__section-titles">
 						Network Hardening Recommendations
