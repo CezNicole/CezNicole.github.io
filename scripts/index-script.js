@@ -1,3 +1,5 @@
+import {getProjects} from "./index-api.js";
+
 const btnContact = document.getElementById('btnContactMe');
 btnContact.addEventListener('click', (event) => {
     event.preventDefault();
@@ -21,6 +23,54 @@ btnViewFeaturesBandSite.addEventListener('click', (event) => {
     event.preventDefault();
     window.open('pages/band-site-biography.html', '_blank');
 })
+
+
+// Refactor code for a dynamic Portfolio page
+const skills = [
+    'Microsoft Azure AZ-900 Fundamentals',
+    'AWS Certified Cloud Practitioner',
+    'Google Foundations of Cybersecurity',
+    'HTML',
+    'CSS/SCSS',
+    'JavaScript',
+    '.NET',
+    'Git',
+    'Basic SQL Queries',
+    'Incident Response (ServiceNow)',
+    'Network Traffic Analysis (Wireshark)',
+    'Log Analysis in SIEM Environments',
+];
+
+const divSkillsContainer = document.querySelector('.section-cards__container--skills');
+
+skills.forEach(skill => {
+    const divSkills = document.createElement('div');
+    divSkills.classList.add('section-cards__skills');
+    divSkills.innerHTML = skill;
+
+    divSkillsContainer.appendChild(divSkills);
+})
+
+
+// Refactor code to load and render Cybersecurity Projects
+let cybersecurityProjects = [];
+
+async function loadCybersecurityProjects(){
+    try {
+        const response = await getProjects();
+        cybersecurityProjects = response;
+        
+        // WIP
+        console.log(cybersecurityProjects);
+        
+        return cybersecurityProjects;
+    } catch (error) {
+        console.log('Error loading Cybersecurity Projects:', error)        
+    }
+
+}
+
+loadCybersecurityProjects();
 
 
 // Cybersecurity Projects - Modal Functionality
