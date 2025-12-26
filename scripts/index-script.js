@@ -60,10 +60,17 @@ async function loadCybersecurityProjects(){
         const response = await getProjects();
         cybersecurityProjects = response;
         
-        // WIP
-        console.log(cybersecurityProjects);
+        const projectWithIds = cybersecurityProjects.map((project, index) =>{
+            return{
+                id: `CSProject${index + 1}`,
+                ...project
+            }
+        })
+        console.log(projectWithIds);
         
-        return cybersecurityProjects;
+        renderAllProjects(projectWithIds);
+
+        return projectWithIds;
     } catch (error) {
         console.log('Error loading Cybersecurity Projects:', error)        
     }
@@ -71,6 +78,51 @@ async function loadCybersecurityProjects(){
 }
 
 loadCybersecurityProjects();
+
+
+function renderAllProjects(projects){
+    const portfolioContainer = document.querySelector('.section-cards__container--portfolio');
+
+    projects.forEach(project => {
+        const divProjectDetails = document.createElement('div');
+        divProjectDetails.classList.add('project-details');
+        divProjectDetails.classList.add('project-details__cybersecurity');
+    
+        const projectTitle = document.createElement('h4');
+        projectTitle.classList.add('project-title');
+        projectTitle.innerHTML = project.title;
+    
+        const skillsList = document.createElement('ul');
+        skillsList.classList.add('highlighted-skills__list');
+    
+        project.skills.forEach(skill => {
+            const highlightedSkill = document.createElement('li');
+            highlightedSkill.classList.add('highlighted-skills');
+            highlightedSkill.innerHTML = skill;
+
+            skillsList.appendChild(highlightedSkill);
+        })
+
+        const projectDesc = document.createElement('p');
+        projectDesc.classList.add('project-details__desc');
+        projectDesc.innerHTML = project.description;
+
+        const btnViewDetails = document.createElement('button');
+        btnViewDetails.classList.add('buttons--project');
+        btnViewDetails.dataset.modal = project.id;
+        btnViewDetails.innerHTML = 'View Details';
+
+        // WIP - bug: clicking the button doesn't show project details
+
+        divProjectDetails.appendChild(projectTitle);
+        divProjectDetails.appendChild(skillsList);
+        divProjectDetails.appendChild(projectDesc);
+        divProjectDetails.appendChild(btnViewDetails);
+
+        portfolioContainer.appendChild(divProjectDetails);
+    })
+    return projects;
+}
 
 
 // Cybersecurity Projects - Modal Functionality
