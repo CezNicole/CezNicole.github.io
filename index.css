@@ -198,6 +198,10 @@ body {
   background-color: #944429;
   color: #fff;
 }
+.buttons--bottom {
+  position: relative;
+  top: 1em;
+}
 
 .main {
   margin-top: 7em;

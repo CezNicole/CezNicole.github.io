@@ -110,6 +110,16 @@
 			@include buttons-active;
 		}
 	}
+
+	// WIP: make all buttons aligned at the bottom of the card
+	&--bottom{
+		position: relative;
+		top: 1em;
+		// position: relative;
+		// text-align: center;
+		// margin-bottom: 0;
+		// border: 2px solid red;
+	}
 }
 
 .main {

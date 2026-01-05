@@ -109,10 +109,15 @@ function renderAllProjects(projects){
 
         const btnViewDetails = document.createElement('button');
         btnViewDetails.classList.add('buttons--project');
+        // btnViewDetails.classList.add('buttons--bottom');
         btnViewDetails.dataset.modal = project.id;
         btnViewDetails.innerHTML = 'View Details';
 
         // WIP - bug: clicking the button doesn't show project details
+        const modal = document.getElementById(project.id);
+        const btnClose = modal.querySelector('.close');
+        modalFunctionality(btnViewDetails, btnClose, project.id);
+
 
         divProjectDetails.appendChild(projectTitle);
         divProjectDetails.appendChild(skillsList);
@@ -134,24 +139,44 @@ function closeModal(id){
     document.getElementById(id).classList.remove('visible');
 }
 
-document.querySelectorAll("[data-modal]").forEach(btnViewDetails => {
-    btnViewDetails.addEventListener('click', (event) => {
+// document.querySelectorAll("[data-modal]").forEach(btnViewDetails => {
+//     btnViewDetails.addEventListener('click', (event) => {
+//         event.preventDefault();
+//         const modalId = btnViewDetails.dataset.modal; //HTML5: Gets data-modal value
+//         openModal(modalId);
+
+//         // hide <body> scroll functionality
+//         document.body.classList.add('overflow-hidden');
+//     })    
+// });
+
+// document.querySelectorAll(".close[data-modal]").forEach(btnClose => {
+//     btnClose.addEventListener('click', (event) => {
+//         event.preventDefault();
+//         const modalId = btnClose.dataset.modal; //HTML5: Gets data-modal value
+//         closeModal(modalId);
+
+//         // make <body> scroll functionality visible
+//         document.body.classList.remove('overflow-hidden');
+//     })
+// })
+
+
+// Refactor: btnViewDetails modal functionality
+function modalFunctionality(openBtn, closeBtn, modalId){
+    openBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        const modalId = btnViewDetails.dataset.modal; //HTML5: Gets data-modal value
         openModal(modalId);
 
         // hide <body> scroll functionality
         document.body.classList.add('overflow-hidden');
-    })    
-});
+    });
 
-document.querySelectorAll(".close[data-modal]").forEach(btnClose => {
-    btnClose.addEventListener('click', (event) => {
+    closeBtn.addEventListener('click', (event) => {
         event.preventDefault();
-        const modalId = btnClose.dataset.modal; //HTML5: Gets data-modal value
         closeModal(modalId);
 
         // make <body> scroll functionality visible
         document.body.classList.remove('overflow-hidden');
     })
-})
+}
