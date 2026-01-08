@@ -95,7 +95,7 @@
 		@include buttons-active;
 	}
 
-	&--project{
+	&__project{
 		@extend .buttons;
 		background-color: colors.$metallic-blue;
 		color: colors.$white;
@@ -109,6 +109,10 @@
 		&:active{
 			@include buttons-active;
 		}
+	}
+
+	&__container{
+		margin-top: auto;
 	}
 }
 
@@ -233,6 +237,9 @@
 		transform: none;
 		width: 100%;
 		max-width: 30em;
+		display: flex;
+		flex-direction: column;
+		max-height: 35em;
 	}
 }
 

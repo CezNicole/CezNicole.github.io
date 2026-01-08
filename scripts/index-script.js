@@ -108,22 +108,27 @@ function renderAllProjects(projects){
         projectDesc.classList.add('project-details__desc');
         projectDesc.innerHTML = project.description;
 
+        const btnContainer = document.createElement('div');
+        btnContainer.classList.add('buttons__container');
+
         const btnViewDetails = document.createElement('button');
-        btnViewDetails.classList.add('buttons--project');
-        // btnViewDetails.classList.add('buttons--bottom');
+        btnViewDetails.classList.add('buttons__project');
         btnViewDetails.dataset.modal = project.id;
         btnViewDetails.innerHTML = 'View Details';
 
+        
         // WIP - bug: clicking the button doesn't show project details
         const modal = document.getElementById(project.id);
         const btnClose = modal.querySelector('.close');
         modalFunctionality(btnViewDetails, btnClose, project.id);
-
-
+        
+        
         divProjectDetails.appendChild(projectTitle);
         divProjectDetails.appendChild(skillsList);
         divProjectDetails.appendChild(projectDesc);
-        divProjectDetails.appendChild(btnViewDetails);
+
+        btnContainer.appendChild(btnViewDetails);
+        divProjectDetails.appendChild(btnContainer);
 
         portfolioContainer.appendChild(divProjectDetails);
     })
