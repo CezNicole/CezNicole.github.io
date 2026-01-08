@@ -165,7 +165,7 @@ body {
   font-size: 1.6em;
 }
 
-.buttons, .buttons--project {
+.buttons, .buttons__project {
   font-weight: 400;
   font-style: normal;
   font-size: 1.31em;
@@ -176,31 +176,30 @@ body {
   border-radius: 8px;
   padding: 0.5em 1em;
 }
-.buttons:hover, .buttons--project:hover {
+.buttons:hover, .buttons__project:hover {
   background-color: #023638;
   color: #f0ebd8;
 }
-.buttons:active, .buttons--project:active {
+.buttons:active, .buttons__project:active {
   background-color: #944429;
   color: #fff;
 }
-.buttons--project {
+.buttons__project {
   background-color: #3e5c76;
   color: #fff;
   display: flex;
   margin: 1em auto;
 }
-.buttons--project:hover {
+.buttons__project:hover {
   background-color: #023638;
   color: #f0ebd8;
 }
-.buttons--project:active {
+.buttons__project:active {
   background-color: #944429;
   color: #fff;
 }
-.buttons--bottom {
-  position: relative;
-  top: 1em;
+.buttons__container {
+  margin-top: auto;
 }
 
 .main {
@@ -334,6 +333,9 @@ body {
   transform: none;
   width: 100%;
   max-width: 30em;
+  display: flex;
+  flex-direction: column;
+  max-height: 35em;
 }
 
 .card-details {
