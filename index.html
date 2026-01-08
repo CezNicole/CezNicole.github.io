@@ -16,6 +16,9 @@
 
 		<title>CezNicole's Portfolio Page</title>
 		<link rel="stylesheet" href="./index.css" />
+
+		<!-- global Axios object -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	</head>
 	<body class="portfolio">
 		<header class="header">
@@ -88,30 +91,7 @@
 
 				<div class="section-cards__container--about">
 					<div class="section-cards__container--skills">
-						<div class="section-cards__skills">
-							Microsoft Azure AZ-900 Fundamentals
-						</div>
-						<div class="section-cards__skills">
-							AWS Certified Cloud Practitioner
-						</div>
-						<div class="section-cards__skills">
-							Google Foundations of Cybersecurity
-						</div>
-						<div class="section-cards__skills">HTML</div>
-						<div class="section-cards__skills">CSS/SCSS</div>
-						<div class="section-cards__skills">JavaScript</div>
-						<div class="section-cards__skills">.NET</div>
-						<div class="section-cards__skills">Git</div>
-						<div class="section-cards__skills">Basic SQL Queries</div>
-						<div class="section-cards__skills">
-							Incident Response (ServiceNow)
-						</div>
-						<div class="section-cards__skills">
-							Network Traffic Analysis (Wireshark)
-						</div>
-						<div class="section-cards__skills">
-							Log Analysis in SIEM Environments
-						</div>
+						
 					</div>
 					<p class="section-cards__desc">
 						I’m a lifelong learner specializing in Software Engineering and
@@ -135,139 +115,7 @@
 						<h3 class="section-cards__titles">Cybersecurity Projects</h3>
 					</div>
 
-					<div class="project-details project-details__cybersecurity">
-						<h4 class="project-title">
-							Security Controls and Compliance Evaluation
-						</h4>
-						<ul class="highlighted-skills__list">
-							<li class="highlighted-skills">Security Controls Assessment</li>
-							<li class="highlighted-skills">
-								Compliance Framework Evaluation
-							</li>
-							<li class="highlighted-skills">
-								Remediation & Security Recommendations
-							</li>
-						</ul>
-						<p class="project-details__desc">
-							Analyzed the company's posture scope, goals, and assessment
-							report, and conducted an internal audit by completing the controls
-							and compliance checklist.
-						</p>
-
-						<button class="buttons--project" data-modal="CSProject1">
-							View Details
-						</button>
-					</div>
-
-					<div class="project-details project-details__cybersecurity">
-						<h4 class="project-title">Network Traffic Analysis</h4>
-						<ul class="highlighted-skills__list">
-							<li class="highlighted-skills">DNS & ICMP Traffic Analysis</li>
-							<li class="highlighted-skills">
-								Packet Capture Review (tcpdump)
-							</li>
-							<li class="highlighted-skills">Root Cause Analysis</li>
-							<li class="highlighted-skills">
-								Understanding of TCP/IP Model (Internet Layer)
-							</li>
-						</ul>
-						<p class="project-details__desc">
-							Examined DNS and ICMP traffic in transit using data from a network
-							protocol analyzer tool and determined which network protocol was
-							affected during this incident.
-						</p>
-
-						<button class="buttons--project" data-modal="CSProject2">
-							View Details
-						</button>
-					</div>
-
-					<div class="project-details project-details__cybersecurity">
-						<h4 class="project-title">Web Service Attack Assessment</h4>
-						<ul class="highlighted-skills__list">
-							<li class="highlighted-skills">
-								Network Traffic Analysis using Wireshark
-							</li>
-							<li class="highlighted-skills">
-								Identification of Network Attacks (DoS, Network Intrusion, IP
-								Spoofing)
-							</li>
-						</ul>
-						<p class="project-details__desc">
-							Assessed Wireshark TCP/HTTP logs to identify the type of attack
-							causing network interruption and evaluate its impact on web server
-							performance.
-						</p>
-
-						<button class="buttons--project" data-modal="CSProject3">
-							View Details
-						</button>
-					</div>
-
-					<div class="project-details project-details__cybersecurity">
-						<h4 class="project-title">
-							Security Incident Report Documentation
-						</h4>
-						<ul class="highlighted-skills__list">
-							<li class="highlighted-skills">Security Incident Reporting</li>
-							<li class="highlighted-skills">
-								Network Traffic Analysis (tcpdump)
-							</li>
-							<li class="highlighted-skills">
-								Network Protocol Identification (DNS, HTTP)
-							</li>
-						</ul>
-						<p class="project-details__desc">
-							Investigated a security event by reviewing tcpdump logs to
-							identify the network protocols used and documenting what occurred
-							during the incident.
-						</p>
-
-						<button class="buttons--project" data-modal="CSProject4">
-							View Details
-						</button>
-					</div>
-
-					<div class="project-details project-details__cybersecurity">
-						<h4 class="project-title">Security Risk Assessment</h4>
-						<ul class="highlighted-skills__list">
-							<li class="highlighted-skills">Risk Assessment Reporting</li>
-							<li class="highlighted-skills">
-								Understanding of Network Hardening Tools and Practices
-							</li>
-						</ul>
-						<p class="project-details__desc">
-							Performed a security risk assessment to evaluate a data breach and
-							proposed network hardening controls to improve overall security.
-						</p>
-
-						<button class="buttons--project" data-modal="CSProject5">
-							View Details
-						</button>
-					</div>
-
-					<div class="project-details project-details__cybersecurity">
-						<h4 class="project-title">
-							Security Incident Reporting Using the NIST Cybersecurity Framework
-							(CSF)
-						</h4>
-						<ul class="highlighted-skills__list">
-							<li class="highlighted-skills">
-								Cybersecurity Incident Response and Reporting
-							</li>
-							<li class="highlighted-skills">
-								Understanding and Applying the NIST CSF
-							</li>
-						</ul>
-						<p class="project-details__desc">
-							Created a security incident report aligned with the NIST
-							Cybersecurity Framework (CSF) to analyze a network incident.
-						</p>
-
-						<button class="buttons--project" data-modal="CSProject6">
-							View Details
-						</button>
-					</div>
+					
 				</div>
 			</article>
 
@@ -1054,6 +902,6 @@
 			<div class="copyright">Copyright &copy; 2025. All rights reserved.</div>
 		</footer>
 
-		<script src="./scripts/index-script.js"></script>
+		<script type="module" src="./scripts/index-script.js"></script>
 	</body>
 </html>

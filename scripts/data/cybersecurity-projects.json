@@ -1,0 +1,56 @@
+{
+    "projects": [
+        {
+            "title": "Security Controls and Compliance Evaluation",
+            "skills": [
+                "Security Controls Assessment",
+                "Compliance Framework Evaluation",
+                "Remediation & Security Recommendations"
+            ],
+            "description": "Analyzed the company's posture scope, goals, and assessment report, and conducted an internal audit by completing the controls and compliance checklist."
+        },
+        {
+            "title": "Network Traffic Analysis",
+            "skills": [
+                "DNS & ICMP Traffic Analysis",
+                "Packet Capture Review (tcpdump)",
+                "Root Cause Analysis",
+                "Understanding of TCP/IP Model (Internet Layer)"
+            ],
+            "description": "Examined DNS and ICMP traffic in transit using data from a network protocol analyzer tool and determined which network protocol was affected during this incident."
+        },
+        {
+            "title": "Web Service Attack Assessment",
+            "skills": [
+                "Network Traffic Analysis using Wireshark",
+                "Identification of Network Attacks (DoS, Network Intrusion, IP Spoofing)"
+            ],
+            "description": "Assessed Wireshark TCP/HTTP logs to identify the type of attack causing network interruption and evaluate its impact on web server performance."
+        },
+        {
+            "title": "Security Incident Report Documentation",
+            "skills": [
+                "Security Incident Reporting",
+                "Network Traffic Analysis (tcpdump)",
+                "Network Protocol Identification (DNS, HTTP)"
+            ],
+            "description": "Investigated a security event by reviewing tcpdump logs to identify the network protocols used and documenting what occurred during the incident."
+        },
+        {
+            "title": "Security Risk Assessment",
+            "skills": [
+                "Risk Assessment Reporting",
+                "Understanding of Network Hardening Tools and Practices"
+            ],
+            "description": "Performed a security risk assessment to evaluate a data breach and proposed network hardening controls to improve overall security."
+        },
+        {
+            "title": "Security Incident Reporting Using the NIST Cybersecurity Framework (CSF)",
+            "skills": [
+                "Cybersecurity Incident Response and Reporting",
+                "Understanding and Applying the NIST CSF"
+            ],
+            "description": "Created a security incident report aligned with the NIST Cybersecurity Framework (CSF) to analyze a network incident."
+        }
+    ]
+}
