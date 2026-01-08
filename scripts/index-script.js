@@ -1,4 +1,4 @@
-import {getProjects} from "./index-api.js";
+import {getProjectDetails, getProjects} from "./index-api.js";
 
 const btnContact = document.getElementById('btnContactMe');
 btnContact.addEventListener('click', (event) => {
@@ -54,6 +54,7 @@ skills.forEach(skill => {
 
 // Refactor code to load and render Cybersecurity Projects
 let cybersecurityProjects = [];
+let cybersecurityProjectDetails = [];
 
 async function loadCybersecurityProjects(){
     try {
@@ -178,5 +179,51 @@ function modalFunctionality(openBtn, closeBtn, modalId){
 
         // make <body> scroll functionality visible
         document.body.classList.remove('overflow-hidden');
+    })
+}
+
+
+// Refactor: Load and Render Cybersecurity Project Details upon button click
+async function loadProjectDetails(){
+    try {
+        const response = await getProjectDetails();
+        cybersecurityProjectDetails = response;
+        
+        const projectDetailsWithIds = cybersecurityProjectDetails.map((project, index) =>{
+            return{
+                id: `CSProject${index + 1}`,
+                ...project
+            }
+        })
+        console.log(projectDetailsWithIds);
+        
+        renderAllDetails(projectDetailsWithIds);
+
+        return projectDetailsWithIds;
+    } catch (error) {
+        console.log('Error loading Cybersecurity Project Details:', error)        
+    }
+}
+
+// loadProjectDetails() 
+        
+
+// To-do: Display role": "Cybersecurity Analyst" for ALL PROJECTS (below Overview)
+
+
+
+
+function renderAllDetails(projectDetails){
+    projectDetails.forEach(detail => {
+        const parentContainer = document.createElement('div');
+        parentContainer.classList.add('modal');
+
+        const contentContainer = document.createElement('div');
+        contentContainer.classList.add('modal__content');
+
+        const btnClose = document.createElement('button');
+        btnClose.classList.add('close');
+        btnClose.dataset.modal = detail.id;
+        btnClose.textContent = 'X';
     })
 }
