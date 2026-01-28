@@ -67,7 +67,7 @@ async function loadCybersecurityProjects(){
                 ...project
             }
         })
-        console.log(projectWithIds);
+        // console.log(projectWithIds);
         
         renderAllProjects(projectWithIds);
 
@@ -117,10 +117,20 @@ function renderAllProjects(projects){
         btnViewDetails.innerHTML = 'View Details';
 
         
+      
+        btnViewDetails.addEventListener('click', (event) => {
+            event.preventDefault();
+            openModal(project.id);
+
+            // hide <body> scroll functionality
+            document.body.classList.add('overflow-hidden');
+        })
+
+        
         // WIP - bug: clicking the button doesn't show project details
-        const modal = document.getElementById(project.id);
-        const btnClose = modal.querySelector('.close');
-        modalFunctionality(btnViewDetails, btnClose, project.id);
+        // const modal = document.getElementById(project.id);
+        // const btnClose = modal.querySelector('.close');
+        // modalFunctionality(btnViewDetails, btnClose, project.id);
         
         
         divProjectDetails.appendChild(projectTitle);
@@ -132,6 +142,7 @@ function renderAllProjects(projects){
 
         portfolioContainer.appendChild(divProjectDetails);
     })
+
     return projects;
 }
 
@@ -169,23 +180,23 @@ function closeModal(id){
 
 
 // Refactor: btnViewDetails modal functionality
-function modalFunctionality(openBtn, closeBtn, modalId){
-    openBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        openModal(modalId);
+// function modalFunctionality(openBtn, closeBtn, modalId){
+//     openBtn.addEventListener('click', (event) => {
+//         event.preventDefault();
+//         openModal(modalId);
 
-        // hide <body> scroll functionality
-        document.body.classList.add('overflow-hidden');
-    });
+//         // hide <body> scroll functionality
+//         document.body.classList.add('overflow-hidden');
+//     });
 
-    closeBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        closeModal(modalId);
+//     closeBtn.addEventListener('click', (event) => {
+//         event.preventDefault();
+//         closeModal(modalId);
 
-        // make <body> scroll functionality visible
-        document.body.classList.remove('overflow-hidden');
-    })
-}
+//         // make <body> scroll functionality visible
+//         document.body.classList.remove('overflow-hidden');
+//     })
+// }
 
 
 // Refactor: Load and Render Cybersecurity Project Details upon button click
@@ -200,7 +211,7 @@ async function loadProjectDetails(){
                 ...project
             }
         })
-        console.log(projectDetailsWithIds);
+        // console.log(projectDetailsWithIds);
         
         renderAllDetails(projectDetailsWithIds);
 
@@ -210,7 +221,7 @@ async function loadProjectDetails(){
     }
 }
 
-// loadProjectDetails() 
+loadProjectDetails();
         
 
 // To-do: Display role": "Cybersecurity Analyst" for ALL PROJECTS (below Overview)
@@ -221,6 +232,7 @@ async function loadProjectDetails(){
 function renderAllDetails(projectDetails){
     projectDetails.forEach(detail => {
         const parentContainer = document.createElement('div');
+        parentContainer.id = detail.id;
         parentContainer.classList.add('modal');
 
         const contentContainer = document.createElement('div');
@@ -230,5 +242,78 @@ function renderAllDetails(projectDetails){
         btnClose.classList.add('close');
         btnClose.dataset.modal = detail.id;
         btnClose.textContent = 'X';
+
+
+        btnClose.addEventListener('click', (event) => {
+            event.preventDefault();
+            closeModal(detail.id);
+
+            // make <body> scroll functionality visible
+            document.body.classList.remove('overflow-hidden');
+        })
+
+
+        const title = document.createElement('h1');
+        title.classList.add('project-title');
+        title.classList.add('modal__titles');
+        title.innerHTML = detail.title;
+
+        const overviewDiv = document.createElement('div');
+        overviewDiv.classList.add('modal__header-content');
+
+        const overviewTitle = document.createElement('p');
+        overviewTitle.classList.add('project-details__desc--italic');
+        overviewTitle.innerHTML = 'Overview:';
+
+        const overviewContent = document.createElement('p');
+        overviewContent.classList.add('project-details__desc');
+        overviewContent.classList.add('project-details__desc--modal-padding');
+        overviewContent.innerHTML = detail.overview;
+
+        overviewDiv.appendChild(overviewTitle);
+        overviewDiv.appendChild(overviewContent);
+
+
+        const roleDiv = document.createElement('div');
+        roleDiv.classList.add('modal__header-content');
+
+        const roleTitle = document.createElement('p');
+        roleTitle.classList.add('project-details__desc--italic');
+        roleTitle.innerHTML = 'Role:';
+
+        const roleContent = document.createElement('p');
+        roleContent.classList.add('project-details__desc');
+        roleContent.classList.add('project-details__desc--modal-padding');
+        roleContent.innerHTML = 'Cybersecurity Analyst';
+
+        roleDiv.appendChild(roleTitle);
+        roleDiv.appendChild(roleContent);
+
+
+        const scenarioTitle = document.createElement('h2');
+        scenarioTitle.classList.add('modal__section-titles');
+        scenarioTitle.innerHTML = detail.sections[0].heading;
+
+        detail.sections[0].content.forEach((item) => {
+            const scenarioContent = document.createElement('p');
+            scenarioContent.classList.add('project-details__desc');
+            scenarioContent.innerHTML = item;
+        })
+
+
+
+        console.log(detail);
+        
+
+        contentContainer.appendChild(btnClose);
+        contentContainer.appendChild(title);
+        contentContainer.appendChild(overviewDiv);
+        contentContainer.appendChild(roleDiv);
+        contentContainer.appendChild(scenarioTitle);
+        contentContainer.appendChild(scenarioContent);
+
+
+        parentContainer.appendChild(contentContainer);
+        document.body.appendChild(parentContainer);
     })
 }
