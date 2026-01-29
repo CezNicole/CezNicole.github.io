@@ -68,7 +68,12 @@ async function loadCybersecurityProjects(){
         })
         console.log(projectWithIds);
         
-        // renderAllProjects(projectWithIds);
+        renderAllProjects(projectWithIds);
+
+        // projectWithIds.forEach(project => {
+        //     createProjectCard(project);
+        //     createProjectModal(project);
+        // })
 
         return projectWithIds;
     } catch (error) {
@@ -82,8 +87,6 @@ loadCybersecurityProjects();
 
 // WIP - Create DOM project cards
 function createProjectCard(project){
-    const portfolioContainer = document.querySelector('.section-cards__container--portfolio');
-
     const card = document.createElement('div');
     card.classList.add('project-details', 'project-details__cybersecurity');
     // divProjectDetails.classList.add('project-details__cybersecurity');
@@ -108,7 +111,12 @@ function createProjectCard(project){
     btnViewDetails.dataset.modal = project.id;
     btnViewDetails.textContent = 'View Details';
 
-    card.append(projectName, skillsList, projectDesc. btnContainer, btnViewDetails);
+    btnViewDetails.addEventListener('click', (event) => {
+        event.preventDefault();
+        openModal(project.id);
+    })
+
+    card.append(projectName, skillsList, projectDesc, btnContainer, btnViewDetails);
 
     return card;
 }
@@ -137,8 +145,13 @@ function createProjectModal(project){
 
     const btnClose = document.createElement('button');
     btnClose.classList.add('close');
-    // btnClose.dataset.modal = project.id;
+    btnClose.dataset.modal = project.id;
     btnClose.textContent = 'X';
+
+    btnClose.addEventListener('click', (event) => {
+        event.preventDefault();
+        closeModal(project.id);
+    })
 
     const title = document.createElement('h1');
     title.classList.add('project-title', 'modal__titles');
@@ -179,59 +192,66 @@ function createProjectModal(project){
 
     const scenarioTitle = document.createElement('h2');
     scenarioTitle.classList.add('modal__section-titles');
-    scenarioTitle.textContent = detail.sections[0].heading;
+    scenarioTitle.textContent = project.sections[0].heading;
+    
 
-    project.sections[0].content.forEach(item => {
+    modalContent.append(btnClose, title, overviewDiv, roleDiv, scenarioTitle);
+
+
+    const contentArray = Array.isArray(project.sections[0].content) ? project.sections[0].content : [project.sections[0].content];
+
+    contentArray.forEach(text => {
         const scenarioContent = document.createElement('p');
         scenarioContent.classList.add('project-details__desc');
-        scenarioContent.textContent = item;
+        // scenarioContent.textContent = project.sections[0].content.join('\n\n');
+        scenarioContent.textContent = text;
         modalContent.appendChild(scenarioContent);
     })
 
-    modalContent.append(btnClose, title, overviewDiv, roleDiv, scenarioTitle);
+
     modal.appendChild(modalContent);
 
     return modal;
 }
 
 
-// function renderAllProjects(projects){
+function renderAllProjects(projects){
+    const portfolioContainer = document.querySelector('.section-cards__container--portfolio');
+
+    projects.forEach(project => {
+        portfolioContainer.append(createProjectCard(project), createProjectModal(project));
+    })
+
+    return portfolioContainer;
+}
 
        
       
-//         btnViewDetails.addEventListener('click', (event) => {
-//             event.preventDefault();
-//             openModal(project.id);
 
-
-//             // hide <body> scroll functionality
-//             document.body.classList.add('overflow-hidden');
-//         })
 
         
 
-//         btnContainer.appendChild(btnViewDetails);
-//         divProjectDetails.appendChild(btnContainer);
-
-//         portfolioContainer.appendChild(divProjectDetails);
-//     })
 
 
-// }
 
+// Cybersecurity Projects - Modal Functionality
+function openModal(id){
+    const modal = document.getElementById(id);
+    if(!modal) return;
+    modal.classList.add('visible');
 
-// // Cybersecurity Projects - Modal Functionality
-// function openModal(id){
-//     const modal = document.getElementById(id);
-//     if(!modal) return;
-//     modal.classList.add('visible');
-// }
+    // hide <body> scroll functionality
+    document.body.classList.add('overflow-hidden');
+}
 
-// function closeModal(id){
-//     const modal = document.getElementById(id);
-//     if(!modal) return;
-//     modal.classList.remove('visible');
-// }
+function closeModal(id){
+    const modal = document.getElementById(id);
+    if(!modal) return;
+    modal.classList.remove('visible');
+
+    // make <body> scroll functionality visible
+    document.body.classList.remove('overflow-hidden');
+}
 
 // // document.querySelectorAll("[data-modal]").forEach(btnViewDetails => {
 // //     btnViewDetails.addEventListener('click', (event) => {
