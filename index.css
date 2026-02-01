@@ -337,6 +337,9 @@ body {
   flex-direction: column;
   max-height: 35em;
 }
+.project-details--newline {
+  padding-bottom: 0.7em;
+}
 
 .card-details {
   position: absolute;

@@ -6,8 +6,7 @@
 	position: relative;
 	z-index: 1;
 
-
-	&__nav{
+	&__nav {
 		padding: 1em 0;
 		background-color: colors.$darkslategray;
 		width: 100%;
@@ -27,7 +26,7 @@
 		align-items: center;
 	}
 
-	&__icon-list{
+	&__icon-list {
 		width: 100%;
 		display: flex;
 		justify-content: flex-end;
@@ -58,13 +57,13 @@
 		transition: all 0.2s ease-in-out;
 		transform: scale(1.3);
 	}
-	
+
 	&:active svg path {
 		fill: colors.$chestnut;
 	}
 }
 
-.profile-icon{
+.profile-icon {
 	background-color: colors.$japanese-indigo;
 	border-radius: 50%;
 	width: 10em;
@@ -95,23 +94,23 @@
 		@include buttons-active;
 	}
 
-	&__project{
+	&__project {
 		@extend .buttons;
 		background-color: colors.$metallic-blue;
 		color: colors.$white;
 		display: flex;
 		margin: 1em auto;
 
-		&:hover{
+		&:hover {
 			@include buttons-hover;
 		}
 
-		&:active{
+		&:active {
 			@include buttons-active;
 		}
 	}
 
-	&__container{
+	&__container {
 		margin-top: auto;
 	}
 }
@@ -121,7 +120,7 @@
 	color: colors.$japanese-indigo;
 }
 
-.section-cards{
+.section-cards {
 	background-color: colors.$antiquewhite;
 	border-radius: 15px;
 	box-shadow: 10px 10px colors.$border-teal;
@@ -141,62 +140,62 @@
 			width: 100%;
 		}
 
-		&--about{
+		&--about {
 			width: 100%;
 			padding: 1em;
 			margin: 1.5em auto 0;
 		}
 
-		&--skills{
+		&--skills {
 			width: 90%;
 			margin: 0 auto;
 			display: flex;
 			flex-wrap: wrap;
 		}
 
-		&--portfolio{
+		&--portfolio {
 			@extend .section-cards__container--about;
 			margin: 0;
-			display:  flex;
+			display: flex;
 			flex-wrap: wrap;
 			justify-content: center;
 			gap: 2em;
 		}
-		
+
 		&--full-width {
 			width: 100%;
 			text-align: center;
 		}
 	}
 
-	&__titles{
+	&__titles {
 		@include section-subtitles;
 		@include font-bold;
 		color: colors.$metallic-blue;
 	}
 
-	&__desc{
+	&__desc {
 		@include portfolio-desc-text;
 		padding: 0.85em 0.45em;
 
-		&--projects{
+		&--projects {
 			position: relative;
 			width: 100%;
 			max-width: 20em;
 			height: 35em;
 			max-height: 35em;
-			
-			&:hover > .project-image{
+
+			&:hover > .project-image {
 				transform: rotateY(180deg);
 			}
 
-			&:hover > .project-details{
+			&:hover > .project-details {
 				transform: rotateY(0deg);
 			}
 		}
 	}
 
-	&__skills{
+	&__skills {
 		@include project-details-text;
 		color: colors.$darkslategray;
 		background-color: rgba($color: colors.$white, $alpha: 0.4);
@@ -207,39 +206,43 @@
 	}
 }
 
-.project-image{
+.project-image {
 	backface-visibility: hidden;
 	transition: transform 1s ease;
 }
 
-.project-details{
+.project-details {
 	@include project-details-text;
-	background-color: colors.$japanese-indigo;	
+	background-color: colors.$japanese-indigo;
 	padding: 1em;
 	transform: rotateY(180deg);
 	overflow-y: auto;
 
-	&__desc{
+	&__desc {
 		@include project-details-text;
 		margin-bottom: 0.75em;
 		text-align: left;
 
-		&--italic{
+		&--italic {
 			@include font-italic;
 		}
 
-		&--modal-padding{
+		&--modal-padding {
 			padding: 0 0.5em;
 		}
 	}
 
-	&__cybersecurity{
+	&__cybersecurity {
 		transform: none;
 		width: 100%;
 		max-width: 30em;
 		display: flex;
 		flex-direction: column;
 		max-height: 35em;
+	}
+
+	&--newline {
+		padding-bottom: 0.7em;
 	}
 }
 
@@ -254,7 +257,7 @@
 	box-shadow: 0 4px 8px colors.$border-teal;
 }
 
-.project-title{
+.project-title {
 	@include paragraph-text-regular-italic;
 	font-size: 1.3em;
 	text-align: center;
@@ -275,7 +278,7 @@
 	bottom: 0;
 }
 
-.highlighted-skills{
+.highlighted-skills {
 	@include project-details-text;
 	color: colors.$antiquewhite;
 	background-color: rgba($color: colors.$border-teal, $alpha: 0.4);
@@ -287,7 +290,7 @@
 	max-width: 48%;
 	text-align: center;
 
-	&__list{
+	&__list {
 		list-style-type: none;
 		display: flex;
 		width: 100%;
@@ -296,7 +299,7 @@
 	}
 }
 
-.modal{
+.modal {
 	position: fixed;
 	inset: 0;
 	top: 0;
@@ -306,71 +309,70 @@
 	width: 100%;
 	max-width: 80em;
 	padding: 1.5em;
-    overflow-y: auto;
+	overflow-y: auto;
 	z-index: 1;
 
-	&__content{
+	&__content {
 		width: 100%;
 		max-width: 80em;
 		padding: 0 1.3em;
 	}
 
-	&__titles{
+	&__titles {
 		font-size: 1.5em;
 	}
 
-	&__section-titles{
+	&__section-titles {
 		font-size: 1.2em;
 		padding: 1em 0 0.5em;
 	}
 
-	&__section-subtitles{
+	&__section-subtitles {
 		@extend .modal__section-titles;
 		font-size: 1.15em;
 		padding-top: 0.5em;
 	}
 
-	&__header-content{
+	&__header-content {
 		display: flex;
 		width: 100%;
 	}
 
-	&__list-items{
+	&__list-items {
 		padding: 0.3em 0;
 
-		&--strong{
+		&--strong {
 			@include font-bold;
 		}
 	}
 }
 
-.visible{
+.visible {
 	display: flex;
-    flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
-.close{
+.close {
 	@include buttons;
 	background: none;
 	border: none;
 	position: absolute;
 	right: 0;
 
-	&:hover{
+	&:hover {
 		@include buttons-hover;
 	}
 
-	&:active{
+	&:active {
 		@include buttons-active;
 	}
 }
 
-.overflow-hidden{
+.overflow-hidden {
 	overflow: hidden;
 }
 
-
-@include breakpoints.tablet{
+@include breakpoints.tablet {
 	.nav-links {
 		margin: 1.5em;
 	}
@@ -387,14 +389,13 @@
 	}
 }
 
-
 @include breakpoints.desktop {
 	body {
 		@include desktop-max-width;
 	}
 
-	.header{
-		&__nav{
+	.header {
+		&__nav {
 			@include desktop-max-width;
 		}
 	}
