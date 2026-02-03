@@ -181,6 +181,19 @@ function createProjectModal(project){
 
     modalContent.append(btnClose, title, overviewDiv, roleDiv);
 
+
+
+    // WIP: Display project modal details
+    project.sections.forEach(section => {
+        renderSectionData(section, modalContent);
+    })
+
+    // modalContent.append(projectModal);
+    
+    
+    // modalContent.append(btnClose, title, overviewDiv, roleDiv);
+    
+    
     modal.appendChild(modalContent);
 
     return modal;
@@ -229,23 +242,27 @@ function renderSectionData(section, container){
         sectionTitle.classList.add('modal__section-titles');
         sectionTitle.textContent = section.heading;
         
-        console.log(sectionTitle);
-    
-    
-        const sectionContent = document.createElement('p');
-        sectionContent.classList.add('project-details__desc', 'project-details__desc--modal-padding');
-        sectionContent.textContent = section.content;
-    
-        console.log(sectionContent);
+        container.appendChild(sectionTitle);
 
-        container.append(sectionTitle, sectionContent);
+    
+        // const sectionContent = document.createElement('p');
+        // sectionContent.classList.add('project-details__desc', 'project-details__desc--modal-padding');
+        // sectionContent.textContent = section.content;
+
+        toArray(section.content).forEach(text => {
+            const sectionContent = document.createElement('p');
+            sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
+            sectionContent.textContent = text;
+
+            container.appendChild(sectionContent);
+        })
+    
+        // container.append(sectionTitle, sectionContent);
     } else if(section.type === 'subsections'){
         const sectionTitle = document.createElement('h2');
         sectionTitle.classList.add('modal__section-titles');
         sectionTitle.textContent = section.heading;
         
-        console.log(sectionTitle);
-
 
         const subsectionContainer = document.createElement('div');
         subsectionContainer.classList.add('project-details__desc');
@@ -256,21 +273,75 @@ function renderSectionData(section, container){
             sectionSubtitle.classList.add('modal__section-subtitles');
             sectionSubtitle.textContent = item.subheading;
             
-            console.log(sectionTitle);
-        
-        
-            const sectionContent = document.createElement('p');
-            sectionContent.classList.add('project-details__desc');
-            sectionContent.textContent = item.content;
-        
-            console.log(sectionContent);
+            subsectionContainer.appendChild(sectionSubtitle);
 
+
+            const sectionContent = document.createElement('p');
+            sectionContent.classList.add('project-details__desc', 'project-details__desc--modal-padding');
+            sectionContent.textContent = item.content;
+
+            // toArray(section.content).forEach(text => {
+            //     const sectionContent = document.createElement('p');
+            //     sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
+            //     sectionContent.textContent = text;
+
+            //     // container.appendChild(sectionContent);
+            //     subsectionContainer.append(sectionContent);
+            // })
+        
             subsectionContainer.append(sectionSubtitle, sectionContent);
 
-            container.appendChild(subsectionContainer);
+            container.append(sectionTitle, subsectionContainer);
         })
-    }
-    
+    } else if(section.type === 'list'){
+        const sectionTitle = document.createElement('h2');
+        sectionTitle.classList.add('modal__section-titles');
+        sectionTitle.textContent = section.heading;
+        
+        console.log(sectionTitle);
+
+        container.appendChild(sectionTitle);
+
+
+        if(section.ordered === false){
+            const unorderedList = document.createElement('ul');
+            unorderedList.classList.add('project-details__desc--modal-padding');
+
+            section.items.forEach(item => {
+                const listItems = document.createElement('li');
+                // listItems.classList.add('modal__list-items', 'modal__list-items--strong');
+                listItems.classList.add('project-details__desc');
+
+                listItems.textContent = item;
+
+                unorderedList.appendChild(listItems);
+            })
+
+            container.appendChild(unorderedList);
+        } else if(section.ordered === true){
+            const orderedList = document.createElement('ol');
+            orderedList.classList.add('project-details__desc--modal-padding');
+
+            section.items.forEach(item => {
+                const listItems = document.createElement('li');
+                listItems.classList.add('project-details__desc');
+                listItems.textContent = item;
+
+                orderedList.appendChild(listItems);
+            })
+
+            container.appendChild(orderedList);
+        }
+
+
+        toArray(section.content).forEach(text => {
+            const sectionContent = document.createElement('p');
+            sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding', 'project-details--top-padding');
+            sectionContent.textContent = text;
+
+            container.appendChild(sectionContent);
+        })
+    } 
 
 
     // portfolioContainer.append(sectionTitle, sectionContent);
@@ -308,7 +379,7 @@ function renderSectionData(section, container){
     //     sectionContent.classList.add('project-details__desc', 'project-details--newline');
     //     sectionContent.textContent = text;
 
-    //     portfolioContainer.appendChild(sectionContent);
+    //     container.appendChild(sectionContent);
     // })
 
 

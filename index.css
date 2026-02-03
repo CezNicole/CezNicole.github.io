@@ -340,6 +340,9 @@ body {
 .project-details--newline {
   padding-bottom: 0.7em;
 }
+.project-details--top-padding {
+  padding-top: 1.7em;
+}
 
 .card-details {
   position: absolute;
