@@ -329,6 +329,12 @@ body {
 .project-details__desc--modal-padding {
   padding: 0 0.5em;
 }
+.project-details__desc--extra-padding {
+  padding: 0 1em;
+}
+.project-details__desc--remove-bottom-margin {
+  margin-bottom: 0;
+}
 .project-details__cybersecurity {
   transform: none;
   width: 100%;
@@ -336,6 +342,12 @@ body {
   display: flex;
   flex-direction: column;
   max-height: 35em;
+}
+.project-details--newline {
+  padding-bottom: 0.7em;
+}
+.project-details--top-padding {
+  padding-top: 1.7em;
 }
 
 .card-details {
