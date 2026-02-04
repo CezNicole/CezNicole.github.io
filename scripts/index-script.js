@@ -66,10 +66,6 @@ async function loadCybersecurityProjects(){
                 ...project
             }
         })
-        
-        // console.log(projectWithIds);
-        
-        // renderAllProjects(projectWithIds);
         renderProjectCards(projectWithIds);
 
         return projectWithIds;
@@ -108,7 +104,6 @@ function createProjectCard(project){
         event.preventDefault();
         openModal(project.id);
     })
-
     card.append(projectName, skillsList, projectDesc, btnContainer, btnViewDetails);
 
     return card;
@@ -164,7 +159,6 @@ function createProjectModal(project){
 
     overviewDiv.append(overviewTitle, overviewContent);
 
-
     const roleDiv = document.createElement('div');
     roleDiv.classList.add('modal__header-content');
 
@@ -178,64 +172,28 @@ function createProjectModal(project){
 
     roleDiv.append(roleTitle, roleContent);
 
-
     modalContent.append(btnClose, title, overviewDiv, roleDiv);
 
-
-
-    // WIP: Display project modal details
+    // Display project modal details
     project.sections.forEach(section => {
         renderSectionData(section, modalContent);
     })
-
-    // modalContent.append(projectModal);
-    
-    
-    // modalContent.append(btnClose, title, overviewDiv, roleDiv);
-    
     
     modal.appendChild(modalContent);
 
     return modal;
-
-
-    // const scenarioTitle = document.createElement('h2');
-    // scenarioTitle.classList.add('modal__section-titles');
-    // scenarioTitle.textContent = project.sections[0].heading;
-
-    // const contentArray = toArray(project.sections[0].content);
-
-    // contentArray.forEach(text => {
-    //     const scenarioContent = document.createElement('p');
-    //     scenarioContent.classList.add('project-details__desc', 'project-details--newline');
-    //     scenarioContent.textContent = text;
-    //     modalContent.appendChild(scenarioContent);
-    // })
-
-
-
-    // let sections = renderSectionData(project.sections);
-    // modal.append(modalContent, sections);
 }
 
 function renderProjectCards(projects){
     const portfolioContainer = document.querySelector('.section-cards__container--portfolio');
 
     projects.forEach(project => {
-        // project.sections.forEach(section => {
-        //     renderSectionData(section, portfolioContainer);
-        // })
         portfolioContainer.append(createProjectCard(project), createProjectModal(project));
     })
 
     return portfolioContainer;
 }
 
-/* TO-DO: 
-Display Sections from JSON data on project modals
-*/ 
-
-// WIP - starting here
 function renderSectionData(section, container){
     if(section.type === 'text'){
         const sectionTitle = document.createElement('h2');
@@ -244,11 +202,6 @@ function renderSectionData(section, container){
         
         container.appendChild(sectionTitle);
 
-    
-        // const sectionContent = document.createElement('p');
-        // sectionContent.classList.add('project-details__desc', 'project-details__desc--modal-padding');
-        // sectionContent.textContent = section.content;
-
         toArray(section.content).forEach(text => {
             const sectionContent = document.createElement('p');
             sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
@@ -256,17 +209,13 @@ function renderSectionData(section, container){
 
             container.appendChild(sectionContent);
         })
-    
-        // container.append(sectionTitle, sectionContent);
     } else if(section.type === 'subsections'){
         const sectionTitle = document.createElement('h2');
         sectionTitle.classList.add('modal__section-titles');
         sectionTitle.textContent = section.heading;
         
-
         const subsectionContainer = document.createElement('div');
         subsectionContainer.classList.add('project-details__desc');
-
 
         section.items.forEach(item => {
             const sectionSubtitle = document.createElement('h3');
@@ -275,7 +224,6 @@ function renderSectionData(section, container){
             
             subsectionContainer.appendChild(sectionSubtitle);
 
-
             toArray(item.content).forEach(text => {
                 const sectionContent = document.createElement('p');
                 sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
@@ -283,7 +231,6 @@ function renderSectionData(section, container){
 
                 subsectionContainer.appendChild(sectionContent);
             })
-
             container.append(sectionTitle, subsectionContainer);
         })
     } else if(section.type === 'list'){
@@ -291,37 +238,19 @@ function renderSectionData(section, container){
         sectionTitle.classList.add('modal__section-titles');
         sectionTitle.textContent = section.heading;
         
-        console.log(sectionTitle);
-
-        // container.appendChild(sectionTitle);
-
-
         if(section.ordered === false){
             const unorderedList = document.createElement('ul');
             unorderedList.classList.add('project-details__desc--modal-padding');
-            // unorderedList.classList.add('project-details__desc');
-
 
             section.items.forEach(item => {
-                // const listItems = document.createElement('li');
-                // // listItems.classList.add('modal__list-items', 'modal__list-items--strong');
-                // listItems.classList.add('project-details__desc');
-
-                // listItems.textContent = item;
-
-                // unorderedList.appendChild(listItems);
-
                 if(item.subheading){
                     const sectionSubtitle = document.createElement('li');
                     sectionSubtitle.classList.add('project-details__desc', 'modal__list-items', 'modal__list-items--strong', 'project-details__desc--remove-bottom-margin');
                     sectionSubtitle.textContent = item.subheading;
 
-
-                    // const listItems = document.createElement('li');
                     const itemContent = document.createElement('p');
                     itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
                     itemContent.textContent = item.content;
-                    
 
                     unorderedList.append(sectionSubtitle, itemContent);
                 }
@@ -331,12 +260,10 @@ function renderSectionData(section, container){
                     listItems.classList.add('project-details__desc');
                     listItems.textContent = text;
 
-                    // subsectionContainer.appendChild(sectionContent);
                     unorderedList.appendChild(listItems);
                 })
             })
 
-            // container.appendChild(unorderedList);
             container.append(sectionTitle, unorderedList);
 
         } else if(section.ordered === true){
@@ -344,16 +271,28 @@ function renderSectionData(section, container){
             orderedList.classList.add('project-details__desc--modal-padding');
 
             section.items.forEach(item => {
-                const listItems = document.createElement('li');
-                listItems.classList.add('project-details__desc');
-                listItems.textContent = item;
+                if(item.subheading){
+                    const sectionSubtitle = document.createElement('li');
+                    sectionSubtitle.classList.add('project-details__desc', 'modal__list-items', 'modal__list-items--strong', 'project-details__desc--remove-bottom-margin');
+                    sectionSubtitle.textContent = item.subheading;
 
-                orderedList.appendChild(listItems);
+                    const itemContent = document.createElement('p');
+                    itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                    itemContent.textContent = item.content;
+                    
+                    orderedList.append(sectionSubtitle, itemContent);
+                }
+
+                toArray(item).forEach(text => {
+                    const listItems = document.createElement('li');
+                    listItems.classList.add('project-details__desc');
+                    listItems.textContent = text;
+
+                    orderedList.appendChild(listItems);
+                })
+                container.append(sectionTitle, orderedList);
             })
-
-            container.appendChild(orderedList);
         }
-
 
         toArray(section.content).forEach(text => {
             const sectionContent = document.createElement('p');
@@ -363,65 +302,7 @@ function renderSectionData(section, container){
             container.appendChild(sectionContent);
         })
     } 
-
-
-    // portfolioContainer.append(sectionTitle, sectionContent);
-    
-
-
-    // cybersecurityProjects.forEach(project => {
-    //     project.sections.forEach(section => {
-    //         if(section.type === 'text'){
-    //             // console.log('TEXT:', section);
-
-    //             const sectionTitle = document.createElement('h2');
-    //             sectionTitle.classList.add('modal__section-titles');
-    //             sectionTitle.textContent = section.heading;
-                
-    //             // console.log(sectionTitle);
-
-
-    //             const sectionContent = document.createElement('p');
-    //             sectionContent.classList.add('project-details__desc', 'project-details__desc--modal-padding');
-    //             sectionContent.textContent = section.content;
-
-
-    //             portfolioContainer.append(sectionTitle, sectionContent);
-                
-    //         } else{
-    //             console.log('PROJECT:', section);
-    //         }
-        // })
-    // })
-    
-
-    // toArray(section.content).forEach(text => {
-    //     const sectionContent = document.createElement('p');
-    //     sectionContent.classList.add('project-details__desc', 'project-details--newline');
-    //     sectionContent.textContent = text;
-
-    //     container.appendChild(sectionContent);
-    // })
-
-
-    // if(section.items){
-    //     if(section.items.ordered === false){
-    //         const unorderedList = document.createElement('ul');
-    //         unorderedList.classList.add('project-details__desc');
-    //         const listItems = document.createElement('li');
-    //         listItems.classList.add('modal__list-items', 'modal__list-items--strong');
-    //         listItems.textContent = items.subheading;
-    //     }
-    // }
 }
-
-console.log(cybersecurityProjects);
-
-
-        
-
-
-
 
 // Cybersecurity Projects - Modal Functionality
 function openModal(id){
@@ -442,124 +323,15 @@ function closeModal(id){
     document.body.classList.remove('overflow-hidden');
 }
 
-
 // Helper: Convert JSON data strings to array
 function toArray(data){
     if(Array.isArray(data)){
         return data;
     } 
-    
+
     if(typeof data === 'string'){
         return [data];
     }
 
     return [];
 }
-
-
-
-// // document.querySelectorAll("[data-modal]").forEach(btnViewDetails => {
-// //     btnViewDetails.addEventListener('click', (event) => {
-// //         event.preventDefault();
-// //         const modalId = btnViewDetails.dataset.modal; //HTML5: Gets data-modal value
-// //         openModal(modalId);
-
-// //         // hide <body> scroll functionality
-// //         document.body.classList.add('overflow-hidden');
-// //     })    
-// // });
-
-// // document.querySelectorAll(".close[data-modal]").forEach(btnClose => {
-// //     btnClose.addEventListener('click', (event) => {
-// //         event.preventDefault();
-// //         const modalId = btnClose.dataset.modal; //HTML5: Gets data-modal value
-// //         closeModal(modalId);
-
-// //         // make <body> scroll functionality visible
-// //         document.body.classList.remove('overflow-hidden');
-// //     })
-// // })
-
-
-// // Refactor: btnViewDetails modal functionality
-// // function modalFunctionality(openBtn, closeBtn, modalId){
-// //     openBtn.addEventListener('click', (event) => {
-// //         event.preventDefault();
-// //         openModal(modalId);
-
-// //         // hide <body> scroll functionality
-// //         document.body.classList.add('overflow-hidden');
-// //     });
-
-// //     closeBtn.addEventListener('click', (event) => {
-// //         event.preventDefault();
-// //         closeModal(modalId);
-
-// //         // make <body> scroll functionality visible
-// //         document.body.classList.remove('overflow-hidden');
-// //     })
-// // }
-
-
-// // Refactor: Load and Render Cybersecurity Project Details upon button click
-// async function loadProjectDetails(){
-//     try {
-//         const response = await getProjectDetails();
-//         cybersecurityProjectDetails = response;
-        
-//         const projectDetailsWithIds = cybersecurityProjectDetails.map((project, index) =>{
-//             return{
-//                 id: `CSProject${index + 1}`,
-//                 ...project
-//             }
-//         })
-//         // console.log(projectDetailsWithIds);
-        
-//         renderAllDetails(projectDetailsWithIds);
-
-//         return projectDetailsWithIds;
-//     } catch (error) {
-//         console.log('Error loading Cybersecurity Project Details:', error)        
-//     }
-// }
-
-// await loadProjectDetails();
-        
-
-// // To-do: Display role": "Cybersecurity Analyst" for ALL PROJECTS (below Overview)
-
-
-
-
-// function renderAllDetails(projectDetails){
-//     projectDetails.forEach(detail => {
-//         
-
-
-//         btnClose.addEventListener('click', (event) => {
-//             event.preventDefault();
-//             closeModal(detail.id);
-
-//             // make <body> scroll functionality visible
-//             document.body.classList.remove('overflow-hidden');
-//         })
-
-
-//         
-
-
-
-//         console.log(detail);
-        
-
-//         contentContainer.appendChild(btnClose);
-//         contentContainer.appendChild(title);
-//         contentContainer.appendChild(overviewDiv);
-//         contentContainer.appendChild(roleDiv);
-//         contentContainer.appendChild(scenarioTitle);
-
-
-//         parentContainer.appendChild(contentContainer);
-//         document.body.appendChild(parentContainer);
-//     })
-// }
