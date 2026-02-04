@@ -87,7 +87,7 @@
                     "heading": "Findings",
                     "items": [
                         "Several customers reported their inability to access the client customer website and got error “destination port unreachable” after waiting for the page to load",
-                        "Based on the tcpdump logs, the error started at 1: 24pm (similar errors found at 1: 27pm and 1: 28pm)",
+                        "Based on the tcpdump logs, the error started at 1:24pm (similar errors found at 1:27pm and 1:28pm)",
                         "When the source IP 192.51.100.15 (browser) sent a connection to the destination IP 203.0.113.2 (DNS server), it generated a query identification number: 35084, and an 'A?' flag indicating an A record associated with the domain name mapping to an IP address",
                         "Tcpdump logs show an ICMP error response 'udp port 53 unreachable'"
                     ],
@@ -97,7 +97,7 @@
                     "type": "text",
                     "heading": "Analysis",
                     "content": [
-                        "The incident started at 1: 24pm and similar error messages were logged at 1: 27pm and 1: 28pm.",
+                        "The incident started at 1:24pm and similar error messages were logged at 1:27pm and 1:28pm.",
                         "The IT team became aware of the incident as several customers reported that they were unable to access the client company website 'www.yummyrecipesforme.com' and saw error 'destination port unreachable' after waiting for the page to load.",
                         "To investigate the incident, the IT department attempted to visit the client company website and received the same error message as reported. The team also tried to troubleshoot the issue using the network analyzer tool, tcpdump, and attempted to load the website again. Lastly, they used the logs from the network analyzer tool to analyze the error messages."
                     ]
@@ -243,7 +243,7 @@
                     "items": [
                         {
                             "subheading": "Shared employee passwords",
-                            "description": "The organization's employees share passwords, increasing the risk of unauthorized access."
+                            "content": "The organization's employees share passwords, increasing the risk of unauthorized access."
                         },
                         {
                             "subheading": "Default admin credentials",
@@ -266,15 +266,15 @@
                     "items": [
                         {
                             "subheading": "Enforce strong password policies with regular updates",
-                            "description": "This ensures that each user has a complex, unique password, distinct from the administrative account, that is changed regularly."
+                            "content": "This ensures that each user has a complex, unique password, distinct from the administrative account, that is changed regularly."
                         },
                         {
                             "subheading": "Use port filtering with firewall maintenance",
-                            "description": "Port filtering restricts company network access only to authorized IP addresses and secure websites, while firewall maintenance ensures that firewall rules remain current and effective."
+                            "content": "Port filtering restricts company network access only to authorized IP addresses and secure websites, while firewall maintenance ensures that firewall rules remain current and effective."
                         },
                         {
                             "subheading": "Implement multi-factor authentication (MFA)",
-                            "description": "This requires both user password and a one-time passcode (OTP) to grant access to authorized users only."
+                            "content": "This requires both user password and a one-time passcode (OTP) to grant access to authorized users only."
                         }
                     ]
                 }
@@ -338,15 +338,15 @@
                     "items": [
                         {
                             "subheading": "Enforce strong password policies with regular updates",
-                            "description": "This ensures that each user has a complex, unique password, distinct from the administrative account, that is changed regularly."
+                            "content": "This ensures that each user has a complex, unique password, distinct from the administrative account, that is changed regularly."
                         },
                         {
                             "subheading": "Use port filtering with firewall maintenance",
-                            "description": "Port filtering restricts company network access only to authorized IP addresses and secure websites, while firewall maintenance ensures that firewall rules remain current and effective."
+                            "content": "Port filtering restricts company network access only to authorized IP addresses and secure websites, while firewall maintenance ensures that firewall rules remain current and effective."
                         },
                         {
                             "subheading": "Implement multi-factor authentication (MFA)",
-                            "description": "This requires both user password and a one-time passcode (OTP) to grant access to authorized users only."
+                            "content": "This requires both user password and a one-time passcode (OTP) to grant access to authorized users only."
                         }
                     ]
                 }

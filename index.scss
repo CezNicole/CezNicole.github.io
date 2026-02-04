@@ -230,6 +230,14 @@
 		&--modal-padding {
 			padding: 0 0.5em;
 		}
+
+		&--extra-padding {
+			padding: 0 1em;
+		}
+
+		&--remove-bottom-margin {
+			margin-bottom: 0;
+		}
 	}
 
 	&__cybersecurity {

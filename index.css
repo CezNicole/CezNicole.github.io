@@ -329,6 +329,12 @@ body {
 .project-details__desc--modal-padding {
   padding: 0 0.5em;
 }
+.project-details__desc--extra-padding {
+  padding: 0 1em;
+}
+.project-details__desc--remove-bottom-margin {
+  margin-bottom: 0;
+}
 .project-details__cybersecurity {
   transform: none;
   width: 100%;

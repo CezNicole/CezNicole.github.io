@@ -276,20 +276,13 @@ function renderSectionData(section, container){
             subsectionContainer.appendChild(sectionSubtitle);
 
 
-            const sectionContent = document.createElement('p');
-            sectionContent.classList.add('project-details__desc', 'project-details__desc--modal-padding');
-            sectionContent.textContent = item.content;
+            toArray(item.content).forEach(text => {
+                const sectionContent = document.createElement('p');
+                sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
+                sectionContent.textContent = text;
 
-            // toArray(section.content).forEach(text => {
-            //     const sectionContent = document.createElement('p');
-            //     sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
-            //     sectionContent.textContent = text;
-
-            //     // container.appendChild(sectionContent);
-            //     subsectionContainer.append(sectionContent);
-            // })
-        
-            subsectionContainer.append(sectionSubtitle, sectionContent);
+                subsectionContainer.appendChild(sectionContent);
+            })
 
             container.append(sectionTitle, subsectionContainer);
         })
@@ -300,24 +293,52 @@ function renderSectionData(section, container){
         
         console.log(sectionTitle);
 
-        container.appendChild(sectionTitle);
+        // container.appendChild(sectionTitle);
 
 
         if(section.ordered === false){
             const unorderedList = document.createElement('ul');
             unorderedList.classList.add('project-details__desc--modal-padding');
+            // unorderedList.classList.add('project-details__desc');
+
 
             section.items.forEach(item => {
-                const listItems = document.createElement('li');
-                // listItems.classList.add('modal__list-items', 'modal__list-items--strong');
-                listItems.classList.add('project-details__desc');
+                // const listItems = document.createElement('li');
+                // // listItems.classList.add('modal__list-items', 'modal__list-items--strong');
+                // listItems.classList.add('project-details__desc');
 
-                listItems.textContent = item;
+                // listItems.textContent = item;
 
-                unorderedList.appendChild(listItems);
+                // unorderedList.appendChild(listItems);
+
+                if(item.subheading){
+                    const sectionSubtitle = document.createElement('li');
+                    sectionSubtitle.classList.add('project-details__desc', 'modal__list-items', 'modal__list-items--strong', 'project-details__desc--remove-bottom-margin');
+                    sectionSubtitle.textContent = item.subheading;
+
+
+                    // const listItems = document.createElement('li');
+                    const itemContent = document.createElement('p');
+                    itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                    itemContent.textContent = item.content;
+                    
+
+                    unorderedList.append(sectionSubtitle, itemContent);
+                }
+
+                toArray(item).forEach(text => {
+                    const listItems = document.createElement('li');
+                    listItems.classList.add('project-details__desc');
+                    listItems.textContent = text;
+
+                    // subsectionContainer.appendChild(sectionContent);
+                    unorderedList.appendChild(listItems);
+                })
             })
 
-            container.appendChild(unorderedList);
+            // container.appendChild(unorderedList);
+            container.append(sectionTitle, unorderedList);
+
         } else if(section.ordered === true){
             const orderedList = document.createElement('ol');
             orderedList.classList.add('project-details__desc--modal-padding');
