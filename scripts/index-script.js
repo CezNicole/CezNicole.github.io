@@ -1,4 +1,4 @@
-import {getProjects} from "./index-api.js";
+import {getProjects, getHighlightedSkills} from "./index-api.js";
 
 const btnContact = document.getElementById('btnContactMe');
 btnContact.addEventListener('click', (event) => {
@@ -26,20 +26,18 @@ btnViewFeaturesBandSite.addEventListener('click', (event) => {
 
 
 // Refactor code for a dynamic Portfolio page
-const skills = [
-    'Microsoft Azure AZ-900 Fundamentals',
-    'AWS Certified Cloud Practitioner',
-    'Google Foundations of Cybersecurity',
-    'HTML',
-    'CSS/SCSS',
-    'JavaScript',
-    '.NET',
-    'Git',
-    'Basic SQL Queries',
-    'Incident Response (ServiceNow)',
-    'Network Traffic Analysis (Wireshark)',
-    'Log Analysis in SIEM Environments',
-];
+let skills = [];
+
+async function loadSkills(){
+    try {
+        skills = await getHighlightedSkills();
+        return skills;
+    } catch (error) {
+        console.log('Error loading Highlighted Skills', error);
+    }
+}
+
+skills = await loadSkills();
 
 const divSkillsContainer = document.querySelector('.section-cards__container--skills');
 
