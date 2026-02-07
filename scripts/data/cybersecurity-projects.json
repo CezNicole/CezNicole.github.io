@@ -340,12 +340,12 @@
         {
             "projectName": "Quantitative Risk Analysis Using Risk Register",
             "skills": [
-                "Risk Scoring",
-                "xxx"
+                "Risk Scoring and Prioritization",
+                "Operational Risk Evaluation"
             ],
             "description": "Conducted a security risk assessment using a risk register to quantify the risk likelihood and business impact and prioritize mitigation efforts based on overall risk scores.",
             "title": "Quantitative Risk Analysis Using Risk Register",
-            "overview": "xxx",
+            "overview": "Performed a risk assessment by evaluating operational vulnerabilities and assigning likelihood and impact scores to prioritize risks.",
             "sections": [
                 {
                     "type": "text",
@@ -417,7 +417,7 @@
                                 "6",
                                 "9",
                                 "6",
-                                "3"
+                                "2"
                             ]
                         }
                     ]

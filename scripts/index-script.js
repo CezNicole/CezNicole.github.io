@@ -192,6 +192,7 @@ function renderProjectCards(projects){
     return portfolioContainer;
 }
 
+// TO-DO: Refactor to make the code DRY for each section type render
 function renderSectionData(section, container){
     if(section.type === 'text'){
         const sectionTitle = document.createElement('h2');
@@ -299,7 +300,30 @@ function renderSectionData(section, container){
 
             container.appendChild(sectionContent);
         })
-    } 
+    } else if(section.type === 'table'){
+        const sectionTitle = document.createElement('h2');
+        sectionTitle.classList.add('modal__section-titles');
+        sectionTitle.textContent = section.heading;
+        
+        const subsectionContainer = document.createElement('div');
+        subsectionContainer.classList.add('project-details__desc');
+
+        // section.items.forEach(item => {
+        //     const sectionSubtitle = document.createElement('h3');
+        //     sectionSubtitle.classList.add('modal__section-subtitles');
+        //     sectionSubtitle.textContent = item.subheading;
+            
+        //     subsectionContainer.appendChild(sectionSubtitle);
+
+        //     toArray(item.content).forEach(text => {
+        //         const sectionContent = document.createElement('p');
+        //         sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
+        //         sectionContent.textContent = text;
+
+        //         subsectionContainer.appendChild(sectionContent);
+        //     })
+        container.append(sectionTitle, subsectionContainer);
+    }
 }
 
 // Cybersecurity Projects - Modal Functionality
@@ -332,4 +356,8 @@ function toArray(data){
     }
 
     return [];
+}
+
+function calculateOverallRiskScore(likelihood, severity){
+    return likelihood * severity;
 }
