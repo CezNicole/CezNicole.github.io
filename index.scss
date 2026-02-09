@@ -384,6 +384,24 @@
 	overflow: hidden;
 }
 
+.table {
+	width: 100%;
+	// border-collapse: collapse;
+
+	&__cells {
+		border: 2px solid colors.$antiquewhite;
+		// width: 100%;
+		// max-width: 80em;
+		// display: flex;
+		// flex-direction: column;
+	}
+
+	&--span {
+		grid-row: span 5;
+		// vertical-align: mgit iddle;
+	}
+}
+
 @include breakpoints.tablet {
 	.nav-links {
 		margin: 1.5em;

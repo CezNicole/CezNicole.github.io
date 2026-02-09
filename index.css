@@ -485,6 +485,16 @@ body {
   overflow: hidden;
 }
 
+.table {
+  width: 100%;
+}
+.table__cells {
+  border: 2px solid #f0ebd8;
+}
+.table--span {
+  grid-row: span 5;
+}
+
 @media (min-width: 768px) {
   .nav-links {
     margin: 1.5em;

@@ -367,57 +367,42 @@
                     "heading": "Risk Assessment",
                     "items": [
                         {
-                            "columnName": "Asset",
-                            "content": "Funds"
-                        },
-                        {
-                            "columnName": "Risk(s)",
-                            "content": [
-                                "Business email compromise",
-                                "Compromised user database",
-                                "Financial records leak",
-                                "Theft",
-                                "Supply chain disruption"
-                            ]
-                        },
-                        {
-                            "columnName": "Description",
-                            "content": [
-                                "An employee is tricked into sharing confidential information.",
-                                "Customer data is poorly encrypted.",
-                                "A database server of backed up data is publicly accessible.",
-                                "The bank's safe is left unlocked.",
-                                "Delivery delays due to natural disasters."
-                            ]
-                        },
-                        {
-                            "columnName": "Likelihood",
-                            "content": [
-                                "2",
-                                "2",
-                                "3",
-                                "2",
-                                "1"
-                            ]
-                        },
-                        {
-                            "columnName": "Severity",
-                            "content": [
-                                "3",
-                                "3",
-                                "3",
-                                "3",
-                                "2"
-                            ]
-                        },
-                        {
-                            "columnName": "Priority (Can be dynamically calculated)",
-                            "content": [
-                                "6",
-                                "6",
-                                "9",
-                                "6",
-                                "2"
+                            "risks": [
+                                {
+                                    "asset": "Funds",
+                                    "riskItem": "Business email compromise",
+                                    "description": "Business email compromise",
+                                    "likelihood": "2",
+                                    "severity": "3"
+                                },
+                                {
+                                    "asset": "Funds",
+                                    "riskItem": "Compromised user database",
+                                    "description": "Customer data is poorly encrypted",
+                                    "likelihood": "2",
+                                    "severity": "3"
+                                },
+                                {
+                                    "asset": "Funds",
+                                    "riskItem": "Financial records leak",
+                                    "description": "A database server of backed up data is publicly accessible",
+                                    "likelihood": "3",
+                                    "severity": "3"
+                                },
+                                {
+                                    "asset": "Funds",
+                                    "riskItem": "Theft",
+                                    "description": "The bank's safe is left unlocked",
+                                    "likelihood": "2",
+                                    "severity": "3"
+                                },
+                                {
+                                    "asset": "Funds",
+                                    "riskItem": "Supply chain disruption",
+                                    "description": "Delivery delays due to natural disasters",
+                                    "likelihood": "1",
+                                    "severity": "2"
+                                }
                             ]
                         }
                     ]

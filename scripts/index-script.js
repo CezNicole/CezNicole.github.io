@@ -305,8 +305,84 @@ function renderSectionData(section, container){
         sectionTitle.classList.add('modal__section-titles');
         sectionTitle.textContent = section.heading;
         
-        const subsectionContainer = document.createElement('div');
-        subsectionContainer.classList.add('project-details__desc');
+        const table = document.createElement('table');
+        table.classList.add('table');
+
+        const thead = document.createElement('thead');
+
+
+        
+        // const header = Object.keys(section.items);
+        // const data = Object.values(section.items);
+
+        // console.log('Keys:', header);
+        // console.log('Data', data);
+        
+        // console.log((section.items));
+        
+        
+        section.items.forEach(item => {
+            const tableRow = document.createElement('tr');
+            tableRow.classList.add('table__cells');
+            
+            Object.keys(item.risks[0]).forEach(key => {
+                const tableHeader = document.createElement('th');
+                tableHeader.classList.add('table__cells', 'modal__section-subtitles');
+
+                const uppercaseHeader = key.charAt(0).toUpperCase() + key.slice(1);
+                tableHeader.textContent = uppercaseHeader.split(/(?=[A-Z])/).join(" ");
+
+                tableRow.appendChild(tableHeader);
+            })
+            thead.appendChild(tableRow);
+            table.appendChild(thead);
+
+
+            // toArray(item.risks).forEach(risk => {
+            //     console.log('Keys:', Object.keys(risk));
+            //     console.log('Values:', Object.values(risk));
+
+
+                // const tableRow = document.createElement('tr');
+                // tableRow.classList.add('table__cells');
+    
+    
+                // const tableHeader = document.createElement('th');
+                // tableHeader.classList.add('table__cells', 'modal__section-subtitles');
+                // tableHeader.textContent = Object.keys(risk);
+    
+                // console.log(data);
+                // console.log(item.risks);
+                
+                
+    
+                // tableRow.appendChild(tableHeader);
+                // thead.appendChild(tableRow);
+                // table.appendChild(tableHeader);
+    
+    
+                // toArray(item.risks).forEach(text => {
+                //     const tableData = document.createElement('td');
+                //     tableData.classList.add('table__cells', 'project-details__desc');
+                //     tableData.textContent = text;
+    
+                //     console.log(tableData);
+                    
+        
+                //     // if(text.content === 'Funds'){
+                //     //     tableData.classList.add('table--span');
+                //     // }
+        
+                //     tableRow.appendChild(tableData);
+                    
+                //     // table.appendChild(tableData);
+    
+                    
+    
+                // })
+                // })
+
+        })
 
         // section.items.forEach(item => {
         //     const sectionSubtitle = document.createElement('h3');
@@ -322,7 +398,7 @@ function renderSectionData(section, container){
 
         //         subsectionContainer.appendChild(sectionContent);
         //     })
-        container.append(sectionTitle, subsectionContainer);
+        container.append(sectionTitle, table);
     }
 }
 
