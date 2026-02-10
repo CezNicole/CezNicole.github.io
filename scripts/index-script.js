@@ -311,26 +311,13 @@ function renderSectionData(section, container){
         const thead = document.createElement('thead');
 
 
-        
-        // const header = Object.keys(section.items);
-        // const data = Object.values(section.items);
-
-        // console.log('Keys:', header);
-        // console.log('Data', data);
-        
-        // console.log((section.items));
-        
-        
-        
-
-
         section.items.forEach(item => {
             const tableRow = document.createElement('tr');
             tableRow.classList.add('table__cells');
             
             Object.keys(item.risks[0]).forEach(key => {
                 const tableHeader = document.createElement('th');
-                tableHeader.classList.add('table__cells', 'modal__section-subtitles');
+                tableHeader.classList.add('table__cells', 'modal__section-subtitles', 'table__header');
 
                 const uppercaseHeader = key.charAt(0).toUpperCase() + key.slice(1);
                 tableHeader.textContent = uppercaseHeader.split(/(?=[A-Z])/).join(" ");
@@ -345,98 +332,38 @@ function renderSectionData(section, container){
                 const tableRow = document.createElement('tr');
                 tableRow.classList.add('table__cells');
 
+                if(index === 0){
+                    const tdAsset = document.createElement('td');
+                    tdAsset.classList.add('table__cells', 'project-details__desc', 'table--span', 'table--center');
+                    tdAsset.rowSpan = item.risks.length;
+                    tdAsset.textContent = risk.asset;          
+                    
+                    tableRow.appendChild(tdAsset);
+                }
 
-                // WIP - Refactor to remove bug
-                Object.values(risk).forEach(value => {
-                    const tableData = document.createElement('td');
-                    tableData.classList.add('table__cells', 'project-details__desc');
-                    tableData.textContent = value;
+                const tdRisk = document.createElement('td');
+                tdRisk.classList.add('table__cells', 'project-details__desc');
+                tdRisk.textContent = risk.riskItem;
+                tableRow.appendChild(tdRisk);
 
-                    if(index === 0){
-                        tableData.rowSpan = item.risks.length;
-                        tableData.classList.add('table--span');
-                    }
+                const tdDesc = document.createElement('td');
+                tdDesc.classList.add('table__cells', 'project-details__desc');
+                tdDesc.textContent = risk.description;
+                tableRow.appendChild(tdDesc);
 
-                    tableRow.appendChild(tableData);
-                })
-                
+                const tdLikelihood = document.createElement('td');
+                tdLikelihood.classList.add('table__cells', 'project-details__desc', 'table--center');
+                tdLikelihood.textContent = risk.likelihood;
+                tableRow.appendChild(tdLikelihood);
+
+                const tdSeverity = document.createElement('td');
+                tdSeverity.classList.add('table__cells', 'project-details__desc', 'table--center');
+                tdSeverity.textContent = risk.severity;
+                tableRow.appendChild(tdSeverity);
+
                 table.appendChild(tableRow);
-
-                // console.log(Object.values(risk));
-                
-    
-                // if(text.content === 'Funds'){
-                //     tableData.classList.add('table--span');
-                // }
-    
-                // tableRow.appendChild(tableData);
-                
-                // table.appendChild(tableData);
-
-                
-
             })
-
-                
-            // table.appendChild(tableRow);
-
-
-
-
-            // toArray(item.risks).forEach(risk => {
-            //     console.log('Keys:', Object.keys(risk));
-            //     console.log('Values:', Object.values(risk));
-
-
-            //     const tableRow = document.createElement('tr');
-            //     tableRow.classList.add('table__cells');
-    
-    
-             
-                
-    
-                // tableRow.appendChild(tableHeader);
-                // thead.appendChild(tableRow);
-                // table.appendChild(tableHeader);
-    
-    
-                // toArray(item.risks).forEach(text => {
-                //     const tableData = document.createElement('td');
-                //     tableData.classList.add('table__cells', 'project-details__desc');
-                //     tableData.textContent = text;
-    
-                //     console.log(tableData);
-                    
-        
-                //     // if(text.content === 'Funds'){
-                //     //     tableData.classList.add('table--span');
-                //     // }
-        
-                //     tableRow.appendChild(tableData);
-                    
-                //     // table.appendChild(tableData);
-    
-                    
-    
-                // })
-            // })
-
         })
-
-        // section.items.forEach(item => {
-        //     const sectionSubtitle = document.createElement('h3');
-        //     sectionSubtitle.classList.add('modal__section-subtitles');
-        //     sectionSubtitle.textContent = item.subheading;
-            
-        //     subsectionContainer.appendChild(sectionSubtitle);
-
-        //     toArray(item.content).forEach(text => {
-        //         const sectionContent = document.createElement('p');
-        //         sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
-        //         sectionContent.textContent = text;
-
-        //         subsectionContainer.appendChild(sectionContent);
-        //     })
         container.append(sectionTitle, table);
     }
 }

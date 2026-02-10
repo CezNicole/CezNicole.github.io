@@ -391,17 +391,19 @@
 	&__cells {
 		border: 2px solid colors.$antiquewhite;
 		padding: 0.5em;
-		// text-align: center;
-		// width: 100%;
-		// max-width: 80em;
-		// display: flex;
-		// flex-direction: column;
 	}
 
 	&--span {
-		// grid-row: span 5;
-		border: 2px solid red;
-		// vertical-align: middle;
+		vertical-align: middle;
+	}
+
+	&--center {
+		text-align: center;
+	}
+
+	&__header {
+		font-size: 1.08em;
+		color: colors.$white;
 	}
 }
 
