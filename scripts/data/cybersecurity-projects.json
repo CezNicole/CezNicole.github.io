@@ -371,7 +371,7 @@
                                 {
                                     "asset": "Funds",
                                     "riskItem": "Business email compromise",
-                                    "description": "Business email compromise",
+                                    "description": "An employee is tricked into sharing confidential information",
                                     "likelihood": "2",
                                     "severity": "3"
                                 },

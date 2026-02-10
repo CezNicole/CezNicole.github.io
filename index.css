@@ -487,12 +487,14 @@ body {
 
 .table {
   width: 100%;
+  border-collapse: collapse;
 }
 .table__cells {
   border: 2px solid #f0ebd8;
+  padding: 0.5em;
 }
 .table--span {
-  grid-row: span 5;
+  border: 2px solid red;
 }
 
 @media (min-width: 768px) {

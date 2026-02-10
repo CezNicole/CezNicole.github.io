@@ -321,6 +321,9 @@ function renderSectionData(section, container){
         // console.log((section.items));
         
         
+        
+
+
         section.items.forEach(item => {
             const tableRow = document.createElement('tr');
             tableRow.classList.add('table__cells');
@@ -338,22 +341,58 @@ function renderSectionData(section, container){
             table.appendChild(thead);
 
 
+            item.risks.forEach((risk, index) => {
+                const tableRow = document.createElement('tr');
+                tableRow.classList.add('table__cells');
+
+
+                // WIP - Refactor to remove bug
+                Object.values(risk).forEach(value => {
+                    const tableData = document.createElement('td');
+                    tableData.classList.add('table__cells', 'project-details__desc');
+                    tableData.textContent = value;
+
+                    if(index === 0){
+                        tableData.rowSpan = item.risks.length;
+                        tableData.classList.add('table--span');
+                    }
+
+                    tableRow.appendChild(tableData);
+                })
+                
+                table.appendChild(tableRow);
+
+                // console.log(Object.values(risk));
+                
+    
+                // if(text.content === 'Funds'){
+                //     tableData.classList.add('table--span');
+                // }
+    
+                // tableRow.appendChild(tableData);
+                
+                // table.appendChild(tableData);
+
+                
+
+            })
+
+                
+            // table.appendChild(tableRow);
+
+
+
+
             // toArray(item.risks).forEach(risk => {
             //     console.log('Keys:', Object.keys(risk));
             //     console.log('Values:', Object.values(risk));
 
 
-                // const tableRow = document.createElement('tr');
-                // tableRow.classList.add('table__cells');
+            //     const tableRow = document.createElement('tr');
+            //     tableRow.classList.add('table__cells');
     
     
-                // const tableHeader = document.createElement('th');
-                // tableHeader.classList.add('table__cells', 'modal__section-subtitles');
-                // tableHeader.textContent = Object.keys(risk);
-    
-                // console.log(data);
-                // console.log(item.risks);
-                
+             
                 
     
                 // tableRow.appendChild(tableHeader);
@@ -380,7 +419,7 @@ function renderSectionData(section, container){
                     
     
                 // })
-                // })
+            // })
 
         })
 
