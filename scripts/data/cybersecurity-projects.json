@@ -336,6 +336,86 @@
                     ]
                 }
             ]
+        },
+        {
+            "projectName": "Quantitative Risk Analysis Using Risk Register",
+            "skills": [
+                "Risk Scoring and Prioritization",
+                "Operational Risk Evaluation"
+            ],
+            "description": "Conducted a security risk assessment using a risk register to quantify the risk likelihood and business impact and prioritize mitigation efforts based on overall risk scores.",
+            "title": "Quantitative Risk Analysis Using Risk Register",
+            "overview": "Performed a risk assessment by evaluating operational vulnerabilities and assigning likelihood and impact scores to prioritize risks.",
+            "sections": [
+                {
+                    "type": "text",
+                    "heading": "Scenario",
+                    "content": [
+                        "You are a cybersecurity analyst on a newly formed security team at a commercial bank. The team is conducting an enterprise risk assessment to evaluate the bank's current operational environment and identify security risks that could impact critical systems, data, and business operations. As part of the assessment, the security team is creating a risk register to systematically document, evaluate, and prioritize identified risks.",
+                        "Your task is to review a defined set of risks recorded in the risk register. For each risk, you will determine the likelihood of occurrence for each identified risk, assess the potential severity and business impact resulting from each risk, and calculate an overall risk score based on likelihood and impact. The resulting scores are used to compare identified risks, prioritize mitigation efforts, and support data-driven decision-making."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "heading": "Operational Environment",
+                    "content": [
+                        "The bank is located in a coastal area with low crime rates. Many people and systems handle the bank's data — 100 on-premise employees and 20 remote employees. The customer base of the bank includes 2,000 individual accounts and 200 commercial accounts. The bank's services are marketed by a professional sports team and ten local businesses in the community. There are strict financial regulations that require the bank to secure their data and funds, like having enough cash available each day to meet Federal Reserve requirements."
+                    ]
+                },
+                {
+                    "type": "table",
+                    "heading": "Risk Assessment",
+                    "items": [
+                        {
+                            "risks": [
+                                {
+                                    "asset": "Funds",
+                                    "riskItem": "Business email compromise",
+                                    "description": "An employee is tricked into sharing confidential information",
+                                    "likelihood": "2",
+                                    "severity": "3"
+                                },
+                                {
+                                    "asset": "Funds",
+                                    "riskItem": "Compromised user database",
+                                    "description": "Customer data is poorly encrypted",
+                                    "likelihood": "2",
+                                    "severity": "3"
+                                },
+                                {
+                                    "asset": "Funds",
+                                    "riskItem": "Financial records leak",
+                                    "description": "A database server of backed up data is publicly accessible",
+                                    "likelihood": "3",
+                                    "severity": "3"
+                                },
+                                {
+                                    "asset": "Funds",
+                                    "riskItem": "Theft",
+                                    "description": "The bank's safe is left unlocked",
+                                    "likelihood": "2",
+                                    "severity": "3"
+                                },
+                                {
+                                    "asset": "Funds",
+                                    "riskItem": "Supply chain disruption",
+                                    "description": "Delivery delays due to natural disasters",
+                                    "likelihood": "1",
+                                    "severity": "2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "heading": "Analysis",
+                    "content": [
+                        "The identified risks pose a significant threat to the bank’s operational environment due to poor security controls, weak encryption practices, and insufficient disaster recovery planning. These gaps increase the likelihood of unauthorized access to sensitive customer and banking data, potentially resulting in substantial financial losses, regulatory penalties, and reputational damage.",
+                        "Given the volume of sensitive data and the complexity of user and system access, the bank must implement robust security measures to ensure the confidentiality, integrity, and availability of critical information assets."
+                    ]
+                }
+            ]
         }
     ]
 }

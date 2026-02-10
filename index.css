@@ -485,6 +485,25 @@ body {
   overflow: hidden;
 }
 
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table__cells {
+  border: 2px solid #f0ebd8;
+  padding: 0.5em;
+}
+.table--span {
+  vertical-align: middle;
+}
+.table--center {
+  text-align: center;
+}
+.table__header {
+  font-size: 1.08em;
+  color: #fff;
+}
+
 @media (min-width: 768px) {
   .nav-links {
     margin: 1.5em;

@@ -192,6 +192,7 @@ function renderProjectCards(projects){
     return portfolioContainer;
 }
 
+// TO-DO: Refactor to make the code DRY for each section type render
 function renderSectionData(section, container){
     if(section.type === 'text'){
         const sectionTitle = document.createElement('h2');
@@ -299,7 +300,72 @@ function renderSectionData(section, container){
 
             container.appendChild(sectionContent);
         })
-    } 
+    } else if(section.type === 'table'){
+        const sectionTitle = document.createElement('h2');
+        sectionTitle.classList.add('modal__section-titles');
+        sectionTitle.textContent = section.heading;
+        
+        const table = document.createElement('table');
+        table.classList.add('table');
+
+        const thead = document.createElement('thead');
+
+
+        section.items.forEach(item => {
+            const tableRow = document.createElement('tr');
+            tableRow.classList.add('table__cells');
+            
+            Object.keys(item.risks[0]).forEach(key => {
+                const tableHeader = document.createElement('th');
+                tableHeader.classList.add('table__cells', 'modal__section-subtitles', 'table__header');
+
+                const uppercaseHeader = key.charAt(0).toUpperCase() + key.slice(1);
+                tableHeader.textContent = uppercaseHeader.split(/(?=[A-Z])/).join(" ");
+
+                tableRow.appendChild(tableHeader);
+            })
+            thead.appendChild(tableRow);
+            table.appendChild(thead);
+
+
+            item.risks.forEach((risk, index) => {
+                const tableRow = document.createElement('tr');
+                tableRow.classList.add('table__cells');
+
+                if(index === 0){
+                    const tdAsset = document.createElement('td');
+                    tdAsset.classList.add('table__cells', 'project-details__desc', 'table--span', 'table--center');
+                    tdAsset.rowSpan = item.risks.length;
+                    tdAsset.textContent = risk.asset;          
+                    
+                    tableRow.appendChild(tdAsset);
+                }
+
+                const tdRisk = document.createElement('td');
+                tdRisk.classList.add('table__cells', 'project-details__desc');
+                tdRisk.textContent = risk.riskItem;
+                tableRow.appendChild(tdRisk);
+
+                const tdDesc = document.createElement('td');
+                tdDesc.classList.add('table__cells', 'project-details__desc');
+                tdDesc.textContent = risk.description;
+                tableRow.appendChild(tdDesc);
+
+                const tdLikelihood = document.createElement('td');
+                tdLikelihood.classList.add('table__cells', 'project-details__desc', 'table--center');
+                tdLikelihood.textContent = risk.likelihood;
+                tableRow.appendChild(tdLikelihood);
+
+                const tdSeverity = document.createElement('td');
+                tdSeverity.classList.add('table__cells', 'project-details__desc', 'table--center');
+                tdSeverity.textContent = risk.severity;
+                tableRow.appendChild(tdSeverity);
+
+                table.appendChild(tableRow);
+            })
+        })
+        container.append(sectionTitle, table);
+    }
 }
 
 // Cybersecurity Projects - Modal Functionality
@@ -332,4 +398,8 @@ function toArray(data){
     }
 
     return [];
+}
+
+function calculateOverallRiskScore(likelihood, severity){
+    return likelihood * severity;
 }

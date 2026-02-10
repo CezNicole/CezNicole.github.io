@@ -384,6 +384,29 @@
 	overflow: hidden;
 }
 
+.table {
+	width: 100%;
+	border-collapse: collapse;
+
+	&__cells {
+		border: 2px solid colors.$antiquewhite;
+		padding: 0.5em;
+	}
+
+	&--span {
+		vertical-align: middle;
+	}
+
+	&--center {
+		text-align: center;
+	}
+
+	&__header {
+		font-size: 1.08em;
+		color: colors.$white;
+	}
+}
+
 @include breakpoints.tablet {
 	.nav-links {
 		margin: 1.5em;
