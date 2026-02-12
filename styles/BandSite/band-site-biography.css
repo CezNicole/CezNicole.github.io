@@ -40,26 +40,6 @@
   font-weight: 700;
   font-style: normal;
 }
-/*
-PRIMARY COLORS
-BandSite-Black: Primary text color for dark on light background. Dark background color
--used for social icons
--bandsite logo 
-
-Silver: Seconday text color. Inactive CTA text color. 
-
-White: Primary text color for light on dark background. Light background color. Active CTA text color.
--active and hover links
-
-
-SECONDARY COLORS
-BandSite-DarkBlack: CTA hover state.
-
-Mercury: Divider line. Form field outline.
--inactive links
-
-Alabaster: Alternative light background color
-*/
 * {
   margin: 0;
   padding: 0;
@@ -83,7 +63,7 @@ body {
 
 .travel-site {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .band-site {
