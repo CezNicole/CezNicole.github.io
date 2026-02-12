@@ -324,10 +324,10 @@ function renderSectionData(section, container){
 
                 tableRow.appendChild(tableHeader);
             })
-            const tableHeader = document.createElement('th');
-            tableHeader.classList.add('table__cells', 'modal__section-subtitles', 'table__header');
-            tableHeader.textContent = 'Priority';
-            tableRow.appendChild(tableHeader);
+            const priorityHeader = document.createElement('th');
+            priorityHeader.classList.add('table__cells', 'modal__section-subtitles', 'table__header');
+            priorityHeader.textContent = 'Priority';
+            tableRow.appendChild(priorityHeader);
 
             thead.appendChild(tableRow);
             table.appendChild(thead);
