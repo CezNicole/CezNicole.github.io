@@ -407,6 +407,20 @@
 	}
 }
 
+.priority {
+	&--low {
+		background-color: rgb(49, 117, 49);
+	}
+
+	&--medium {
+		background-color: rgb(230, 151, 5);
+	}
+
+	&--high {
+		background-color: rgb(154, 0, 0);
+	}
+}
+
 @include breakpoints.tablet {
 	.nav-links {
 		margin: 1.5em;

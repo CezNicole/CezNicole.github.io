@@ -324,6 +324,11 @@ function renderSectionData(section, container){
 
                 tableRow.appendChild(tableHeader);
             })
+            const tableHeader = document.createElement('th');
+            tableHeader.classList.add('table__cells', 'modal__section-subtitles', 'table__header');
+            tableHeader.textContent = 'Priority';
+            tableRow.appendChild(tableHeader);
+
             thead.appendChild(tableRow);
             table.appendChild(thead);
 
@@ -361,6 +366,20 @@ function renderSectionData(section, container){
                 tdSeverity.textContent = risk.severity;
                 tableRow.appendChild(tdSeverity);
 
+                const tdPriority = document.createElement('td');
+                tdPriority.classList.add('table__cells', 'project-details__desc', 'table--center');
+                let result = calculateOverallRiskScore(risk.likelihood, risk.severity);
+                tdPriority.textContent = result;
+
+                if(result <= 3){
+                    tdPriority.classList.add('priority--low');
+                } else if(result > 3 && result <= 6){
+                    tdPriority.classList.add('priority--medium');
+                } else{
+                    tdPriority.classList.add('priority--high');
+                }
+
+                tableRow.appendChild(tdPriority);
                 table.appendChild(tableRow);
             })
         })
