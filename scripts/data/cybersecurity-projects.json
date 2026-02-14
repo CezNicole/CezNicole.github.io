@@ -416,6 +416,78 @@
                     ]
                 }
             ]
+        },
+        {
+            "projectName": "Data Privacy Risk Assessment",
+            "skills": [
+                "NIST SP 800-53 Implementation: Access Control (AC-6)",
+                "Security Plan Analysis and Control Documentation",
+                "Incident Analysis Using NIST Frameworks"
+            ],
+            "description": "Analyzed a data leak incident, reviewed NIST SP 800-53: AC-6, and recommended improvements to enforce principle of least privilege and prevent recurrence.",
+            "title": "Data Privacy Risk Assessment",
+            "overview": "Conducted a data risk assessment to evaluate information handling processes and safeguard data privacy.",
+            "sections": [
+                {
+                    "type": "text",
+                    "heading": "Scenario",
+                    "content": [
+                        "You work for an educational technology company that develops an automated grading application used by academic institutions. The application handles a wide range of data that it collects from academic institutions, instructors, parents, and students.",
+                        "Your team was alerted to a data leak of internal business plans on social media. Preliminary findings indicate that the principle of least privilege was not observed by employees at the company during a sales meeting, contributing to the incident.",
+                        "The objective of this investigation is to evaluate details about the incident, review the controls in place to prevent data leaks, identify ways to improve information privacy practices, and provide a risk-based justification for how the recommended measures will enhance the organization's overall data security posture."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "heading": "Incident Summary",
+                    "content": [
+                        "A sales manager granted team members temporary access to a folder containing confidential internal documents related to an unreleased product, including customer analytics and promotional materials. After the meeting, the manager did not revoke access to the internal folder, but warned the team to wait for approval before sharing the promotional materials externally.",
+                        "During a video call with a business partner, a member of the sales team forgot the manager's prior warning and proceeded to share the materials without obtaining proper approval. While intending to share the promotional content, the sales representative mistakenly shared a link to the internal folder containing confidential documents. The business partner later posted the link on their company's social media page, resulting in the unintended disclosure of sensitive internal information."
+                    ]
+                },
+                {
+                    "type": "list",
+                    "ordered": false,
+                    "heading": "Issues: What factors contributed to the information leak?",
+                    "items": [
+                        "The folder containing the new product files is classified as ‘Internal-Only’, instead of ‘Confidential’",
+                        "The customer analytics must be in a separate folder classified as ‘Internal-Only’",
+                        "The promotional materials must be in another folder classified as ‘Public’",
+                        "The manager did not revoke access to the internal folder and shared all the materials prior to getting approval",
+                        "Instead of a verbal warning, the sales manager should have imposed much stricter data protection controls",
+                        "The sales representative should have been more careful in sharing any materials to external users (i.e. business partners), and when they realized that the incorrect link was shared, they should have disabled the page or transferred the materials to another secure folder to avoid further leakage"
+                    ]
+                },
+                {
+                    "type": "text",
+                    "heading": "Review: What does NIST SP 800-53: AC-6 address?",
+                    "content": [
+                        "It addresses the Principle of Least Privilege Access, which states that only the least amount of access must be provided to perform the users’ responsibilities.",
+                        "Referring to the data leak incident, the Least Privilege Access wasn’t implemented as the Sales Manager mistakenly provided access to confidential new product information that hasn’t been publicly released, along with the customer analytics and promotional materials.",
+                        "Moreover, the manager did not revoke access to his team after the meeting concluded, which led to the accidental sharing of information by the sales team member to their business partner, resulting to more data leakage."
+                    ]
+                },
+                {
+                    "type": "list",
+                    "ordered": true,
+                    "heading": "Recommendations: How might the principle of least privilege be improved at the company?",
+                    "items": [
+                        "Implement data privacy protection controls to ensure that all data is safe and secure",
+                        "Have a dedicated Security Team to regularly audit permissions and monitor access to company assets",
+                        "Provide monthly or quarterly employee training on best security practices and how to implement them in real-world scenarios",
+                        "Provide guidance on how to properly classify assets (Public, Internal-Only, Confidential, Restricted)",
+                        "Have a single company asset repository for Internal-Only assets and use a separate repository for Public assets or for client-sharing (i.e. SharePoint, Secure shared network drive)."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "heading": "Justification: How might these improvements address the issues?",
+                    "content": [
+                        "Implementing data privacy protection controls, regular employee training programs that address common security threats, best security practices and how to implement them in real-world scenarios, and proper asset classification, combined with a dedicated Security Team to regularly audit permissions and monitor company asset access will help address the company’s data leakage issues.",
+                        "These recommendations, along with NIST SP 800-53: AC-6 – Principle of Least Privilege Access, will improve the company’s security posture and help ensure that their assets and customers’ information are securely handled."
+                    ]
+                }
+            ]
         }
     ]
 }
