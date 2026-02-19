@@ -450,12 +450,11 @@
                     "ordered": false,
                     "heading": "Issues: What factors contributed to the information leak?",
                     "items": [
-                        "The folder containing the new product files is classified as ‘Internal-Only’, instead of ‘Confidential’",
-                        "The customer analytics must be in a separate folder classified as ‘Internal-Only’",
-                        "The promotional materials must be in another folder classified as ‘Public’",
-                        "The manager did not revoke access to the internal folder and shared all the materials prior to getting approval",
-                        "Instead of a verbal warning, the sales manager should have imposed much stricter data protection controls",
-                        "The sales representative should have been more careful in sharing any materials to external users (i.e. business partners), and when they realized that the incorrect link was shared, they should have disabled the page or transferred the materials to another secure folder to avoid further leakage"
+                        "New product files were labeled 'Internal-Only' rather than 'Confidential', resulting in insufficient access restrictions.",
+                        "Customer analytics, promotional materials, and internal strategic documents were not properly separated according to sensitivity level, increasing risk exposure.",
+                        "Access to internal folders was not revoked prior to material sharing, and files were distributed without formal approval.",
+                        "The manager did not implement stricter data protection measures after identifying policy violations.",
+                        "Sensitive materials were shared with external parties without adequate verification, and corrective actions (i.e. disabling the link, relocating files to a secure folder) were not taken promptly after the incorrect link was distributed."
                     ]
                 },
                 {
