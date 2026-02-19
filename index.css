@@ -310,10 +310,13 @@ body {
   padding: 0 0.5em;
 }
 .project-details__desc--extra-padding {
-  padding: 0 1em;
+  padding: 0.5em 1.5em 0;
 }
 .project-details__desc--remove-bottom-margin {
   margin-bottom: 0;
+}
+.project-details__desc--indent-list {
+  padding: 0 1.5em 0.7em;
 }
 .project-details__cybersecurity {
   transform: none;
@@ -325,9 +328,6 @@ body {
 }
 .project-details--newline {
   padding-bottom: 0.7em;
-}
-.project-details--top-padding {
-  padding-top: 1.7em;
 }
 
 .card-details {
@@ -422,7 +422,7 @@ body {
 }
 .modal__section-subtitles {
   font-size: 1.15em;
-  padding-top: 0.5em;
+  padding: 0.5em 0.5em 0;
 }
 .modal__header-content {
   display: flex;
@@ -468,6 +468,7 @@ body {
 .table {
   width: 100%;
   border-collapse: collapse;
+  margin-bottom: 1.4em;
 }
 .table__cells {
   border: 2px solid #f0ebd8;

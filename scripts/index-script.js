@@ -225,7 +225,8 @@ function renderSectionData(section, container){
 
             toArray(item.content).forEach(text => {
                 const sectionContent = document.createElement('p');
-                sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
+                sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--extra-padding');
+
                 sectionContent.textContent = text;
 
                 subsectionContainer.appendChild(sectionContent);
@@ -239,7 +240,7 @@ function renderSectionData(section, container){
         
         if(section.ordered === false){
             const unorderedList = document.createElement('ul');
-            unorderedList.classList.add('project-details__desc--modal-padding');
+            unorderedList.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
 
             section.items.forEach(item => {
                 if(item.subheading){
@@ -267,7 +268,7 @@ function renderSectionData(section, container){
 
         } else if(section.ordered === true){
             const orderedList = document.createElement('ol');
-            orderedList.classList.add('project-details__desc--modal-padding');
+            orderedList.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
 
             section.items.forEach(item => {
                 if(item.subheading){
@@ -295,7 +296,8 @@ function renderSectionData(section, container){
 
         toArray(section.content).forEach(text => {
             const sectionContent = document.createElement('p');
-            sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding', 'project-details--top-padding');
+            sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
+
             sectionContent.textContent = text;
 
             container.appendChild(sectionContent);
