@@ -487,6 +487,35 @@
                     ]
                 }
             ]
+        },
+        {
+            "projectName": "xxx",
+            "skills": [
+                "Access Control Analysis (Authentication and Authorization)",
+                "Security Event Log Investigation"
+            ],
+            "description": "xxx",
+            "title": "xxx",
+            "overview": "xxx",
+            "sections": [
+                {
+                    "type": "text",
+                    "heading": "Scenario",
+                    "content": [
+                        "You’re the first cybersecurity professional hired by a growing business.",
+                        "Recently, a deposit was made from the business to an unknown bank account. The finance manager confirmed it was not an error, and fortunately, they were able to stop the payment. The owner has asked you to investigate what happened to prevent any future incidents.",
+                        "To do this, you will review the access logs, document findings to identify a potential threat actor, analyze exploited access control weaknesses, and recommend mitigations to strengthen controls and reduce the likelihood of recurrence."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "heading": "Findings",
+                    "content": [
+                        "A sales manager granted team members temporary access to a folder containing confidential internal documents related to an unreleased product, including customer analytics and promotional materials. After the meeting, the manager did not revoke access to the internal folder, but warned the team to wait for approval before sharing the promotional materials externally.",
+                        "During a video call with a business partner, a member of the sales team forgot the manager's prior warning and proceeded to share the materials without obtaining proper approval. While intending to share the promotional content, the sales representative mistakenly shared a link to the internal folder containing confidential documents. The business partner later posted the link on their company's social media page, resulting in the unintended disclosure of sensitive internal information."
+                    ]
+                }
+            ]
         }
     ]
 }
