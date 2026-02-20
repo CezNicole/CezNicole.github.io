@@ -508,11 +508,37 @@
                     ]
                 },
                 {
-                    "type": "text",
+                    "type": "list",
+                    "ordered": false,
                     "heading": "Findings",
-                    "content": [
-                        "A sales manager granted team members temporary access to a folder containing confidential internal documents related to an unreleased product, including customer analytics and promotional materials. After the meeting, the manager did not revoke access to the internal folder, but warned the team to wait for approval before sharing the promotional materials externally.",
-                        "During a video call with a business partner, a member of the sales team forgot the manager's prior warning and proceeded to share the materials without obtaining proper approval. While intending to share the promotional content, the sales representative mistakenly shared a link to the internal folder containing confidential documents. The business partner later posted the link on their company's social media page, resulting in the unintended disclosure of sensitive internal information."
+                    "items": [
+                        "All employees were granted administrator-level access within the system.",
+                        "Log records indicate that contractor Robert Taylor Jr. retained administrative access after his contract ended on December 27, 2019.",
+                        "The unauthorized transaction occurred on October 3, 2023 at 8:29:57 AM.",
+                        "Event logs show that the system was accessed from the device 'Up2-NoGud' with IP address 152.207.255.255."
+                    ]
+                },
+                {
+                    "type": "list",
+                    "ordered": false,
+                    "heading": "Analysis",
+                    "items": [
+                        "Granting administrative access to all employees significantly increases the risk of unauthorized transactions, data disclosure, and system misuse.",
+                        "Absence of granular access control reduces traceability, weakens non-repudiation, and impairs effective incident response.",
+                        "Inability to enforce role-based access control (RBAC) further exposes vulnerabilities and weak policies.",
+                        "Failure to restrict system access to authorized, active employees poses internal risks.",
+                        "Ineffective deprovisioning procedures permit post-termination access, increasing the risk of account abuse and unauthorized activity."
+                    ]
+                },
+                {
+                    "type": "list",
+                    "ordered": false,
+                    "heading": "Recommendations",
+                    "items": [
+                        "Implement strong authentication controls to verify all users, systems, bank accounts, and data accessing company assets.",
+                        "Conduct regular security awareness training to employee accountability and vigilance, and adherence to security policies.",
+                        "Leverage incident response teams to efficiently detect, investigate, and resolve security incidents and threats.",
+                        "Establish and enforce strict policies, standards, and procedures, including immediate revocation of employee access upon termination, to strengthen the company's security posture."
                     ]
                 }
             ]
