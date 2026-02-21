@@ -487,6 +487,61 @@
                     ]
                 }
             ]
+        },
+        {
+            "projectName": "Access Control Analysis Using the AAA Framework",
+            "skills": [
+                "Security Event Log Investigation",
+                "Application of AAA (Authentication, Authorization, Accounting) Framework"
+            ],
+            "description": "Reviewed and analyzed security event logs to improve authentication, authorization, and accounting controls for a small business.",
+            "title": "Access Control Analysis Using AAA Framework",
+            "overview": "Assessed access control and operational process for a small business, identified security gaps, and provided recommendations to strengthen overall security practices",
+            "sections": [
+                {
+                    "type": "text",
+                    "heading": "Scenario",
+                    "content": [
+                        "You’re the first cybersecurity professional hired by a growing business.",
+                        "Recently, a deposit was made from the business to an unknown bank account. The finance manager confirmed it was not an error, and fortunately, they were able to stop the payment. The owner has asked you to investigate what happened to prevent any future incidents.",
+                        "To do this, you will review the access logs, document findings to identify a potential threat actor, analyze exploited access control weaknesses, and recommend mitigations to strengthen controls and reduce the likelihood of recurrence."
+                    ]
+                },
+                {
+                    "type": "list",
+                    "ordered": false,
+                    "heading": "Findings",
+                    "items": [
+                        "All employees were granted administrator-level access within the system.",
+                        "Log records indicate that contractor Robert Taylor Jr. retained administrative access after his contract ended on December 27, 2019.",
+                        "The unauthorized transaction occurred on October 3, 2023 at 8:29:57 AM.",
+                        "Event logs show that the system was accessed from the device 'Up2-NoGud' with IP address 152.207.255.255."
+                    ]
+                },
+                {
+                    "type": "list",
+                    "ordered": false,
+                    "heading": "Analysis",
+                    "items": [
+                        "Granting administrative access to all employees significantly increases the risk of unauthorized transactions, data disclosure, and system misuse.",
+                        "Absence of granular access control reduces traceability, weakens non-repudiation, and impairs effective incident response.",
+                        "Inability to enforce role-based access control (RBAC) further exposes vulnerabilities and weak policies.",
+                        "Failure to restrict system access to authorized, active employees poses internal risks.",
+                        "Ineffective deprovisioning procedures permit post-termination access, increasing the risk of account abuse and unauthorized activity."
+                    ]
+                },
+                {
+                    "type": "list",
+                    "ordered": false,
+                    "heading": "Recommendations",
+                    "items": [
+                        "Implement strong authentication controls to verify all users, systems, bank accounts, and data accessing company assets.",
+                        "Conduct regular security awareness training to employee accountability and vigilance, and adherence to security policies.",
+                        "Leverage incident response teams to efficiently detect, investigate, and resolve security incidents and threats.",
+                        "Establish and enforce strict policies, standards, and procedures, including immediate revocation of employee access upon termination, to strengthen the company's security posture."
+                    ]
+                }
+            ]
         }
     ]
 }
