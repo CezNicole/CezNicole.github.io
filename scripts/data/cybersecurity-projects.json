@@ -489,14 +489,14 @@
             ]
         },
         {
-            "projectName": "xxx",
+            "projectName": "Access Control Analysis Using the AAA Framework",
             "skills": [
-                "Access Control Analysis (Authentication and Authorization)",
-                "Security Event Log Investigation"
+                "Security Event Log Investigation",
+                "Application of AAA (Authentication, Authorization, Accounting) Framework"
             ],
-            "description": "xxx",
-            "title": "xxx",
-            "overview": "xxx",
+            "description": "Reviewed and analyzed security event logs to improve authentication, authorization, and accounting controls for a small business.",
+            "title": "Access Control Analysis Using AAA Framework",
+            "overview": "Assessed access control and operational process for a small business, identified security gaps, and provided recommendations to strengthen overall security practices",
             "sections": [
                 {
                     "type": "text",
