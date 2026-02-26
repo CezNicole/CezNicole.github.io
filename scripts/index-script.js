@@ -339,34 +339,50 @@ function renderSectionData(section, container){
                 const tableRow = document.createElement('tr');
                 tableRow.classList.add('table__cells');
 
-                if(index === 0){
-                    const tdAsset = document.createElement('td');
-                    tdAsset.classList.add('table__cells', 'project-details__desc', 'table--span', 'table--center');
-                    tdAsset.rowSpan = item.risks.length;
-                    tdAsset.textContent = risk.asset;          
+                // if(index === 0){
+                //     const tdAsset = document.createElement('td');
+                //     tdAsset.classList.add('table__cells', 'project-details__desc', 'table--span', 'table--center');
+                //     tdAsset.rowSpan = item.risks.length;
+                //     tdAsset.textContent = risk.asset;          
+
                     
-                    tableRow.appendChild(tdAsset);
-                }
+                //     tableRow.appendChild(tdAsset);
+                // }
 
-                const tdRisk = document.createElement('td');
-                tdRisk.classList.add('table__cells', 'project-details__desc');
-                tdRisk.textContent = risk.riskItem;
-                tableRow.appendChild(tdRisk);
+                // const tdRisk = document.createElement('td');
+                // tdRisk.classList.add('table__cells', 'project-details__desc');
+                // tdRisk.textContent = risk.riskItem;
+                // tableRow.appendChild(tdRisk);
 
-                const tdDesc = document.createElement('td');
-                tdDesc.classList.add('table__cells', 'project-details__desc');
-                tdDesc.textContent = risk.description;
-                tableRow.appendChild(tdDesc);
+                // const tdDesc = document.createElement('td');
+                // tdDesc.classList.add('table__cells', 'project-details__desc');
+                // tdDesc.textContent = risk.description;
+                // tableRow.appendChild(tdDesc);
 
-                const tdLikelihood = document.createElement('td');
-                tdLikelihood.classList.add('table__cells', 'project-details__desc', 'table--center');
-                tdLikelihood.textContent = risk.likelihood;
-                tableRow.appendChild(tdLikelihood);
+                // const tdLikelihood = document.createElement('td');
+                // tdLikelihood.classList.add('table__cells', 'project-details__desc', 'table--center');
+                // tdLikelihood.textContent = risk.likelihood;
+                // tableRow.appendChild(tdLikelihood);
 
-                const tdSeverity = document.createElement('td');
-                tdSeverity.classList.add('table__cells', 'project-details__desc', 'table--center');
-                tdSeverity.textContent = risk.severity;
-                tableRow.appendChild(tdSeverity);
+                // const tdSeverity = document.createElement('td');
+                // tdSeverity.classList.add('table__cells', 'project-details__desc', 'table--center');
+                // tdSeverity.textContent = risk.severity;
+                // tableRow.appendChild(tdSeverity);
+
+                Object.entries(risk).forEach(([key, value]) => {
+                    if(key === 'priority') return;
+
+                    const tableData = document.createElement('td');
+                    tableData.classList.add('table__cells', 'project-details__desc');
+
+                    if(typeof value === "number"){
+                        tableData.classList.add('table--center');
+                    }
+
+                    tableData.textContent = value ?? "";
+
+                    tableRow.appendChild(tableData);
+                })
 
                 const tdPriority = document.createElement('td');
                 tdPriority.classList.add('table__cells', 'project-details__desc', 'table--center');
