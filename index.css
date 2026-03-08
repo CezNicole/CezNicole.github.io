@@ -484,6 +484,9 @@ body {
   font-size: 1.08em;
   color: #fff;
 }
+.table--left-padding {
+  padding-left: 1em;
+}
 
 .priority--low {
   background-color: rgb(49, 117, 49);

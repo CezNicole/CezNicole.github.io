@@ -571,7 +571,7 @@
                     "type": "text",
                     "heading": "Scope",
                     "content": [
-                        "This vulnerability assessment focused on evaluating the effectiveness of current access controls for the publicly accessible database server. The review covered a three-month period from June to August 2025 and assessed risks associated with unauthorized access and misuse of company data."
+                        "This vulnerability assessment focused on evaluating the effectiveness of current access controls for the publicly accessible database server. The review covered a three-month period from June to August 2025 and assessed risks associated with unauthorized access, data exposure, and potential misuse of organizational information assets."
                     ]
                 },
                 {
@@ -600,14 +600,14 @@
                                         "Mistakenly modify / delete server information",
                                         "Disgruntled employees can misuse publicly available business assets"
                                     ],
-                                    "likelihood": "3",
+                                    "likelihood": "2",
                                     "severity": "3"
                                 },
                                 {
                                     "threatSource": "Customers",
                                     "threatEvent": "Misuse publicly available business assets",
-                                    "likelihood": "3",
-                                    "severity": "2"
+                                    "likelihood": "1",
+                                    "severity": "3"
                                 },
                                 {
                                     "threatSource": "Public users",
@@ -619,7 +619,8 @@
                                     "threatSource": "Malicious actors / software",
                                     "threatEvent": [
                                         "Misuse publicly available business assets",
-                                        "Exploit system vulnerabilities"
+                                        "Exploit system vulnerabilities",
+                                        "Access confidential information that is open to the public"
                                     ],
                                     "likelihood": "3",
                                     "severity": "3"
@@ -630,10 +631,27 @@
                 },
                 {
                     "type": "text",
-                    "heading": "Analysis",
+                    "heading": "Business Impact Analysis",
                     "content": [
-                        "The identified risks pose a significant threat to the bank’s operational environment due to poor security controls, weak encryption practices, and insufficient disaster recovery planning. These gaps increase the likelihood of unauthorized access to sensitive customer and banking data, potentially resulting in substantial financial losses, regulatory penalties, and reputational damage.",
-                        "Given the volume of sensitive data and the complexity of user and system access, the bank must implement robust security measures to ensure the confidentiality, integrity, and availability of critical information assets."
+                        "The publicly accessible database presents a critical security weakness. The absence of appropriate access restrictions significantly increases the probability of unauthorized access, data exfiltration, and service disruption.",
+                        "Exposure of sensitive organizational and customer data could result in financial loss, legal liability, and reputational harm. Given the organization's reliance on remote access and centralized data storage, it is essential to implement stronger access controls, encryption mechanisms, and monitor capabilities to preserve confidentiality, integrity, and availability."
+                    ]
+                },
+                {
+                    "type": "list",
+                    "ordered": false,
+                    "heading": "Assessment Limitations",
+                    "items": [
+                        "Risk ratings were limited to a three-tier qualitative scale.",
+                        "The scenario provided limited visibility into the company's overall security posture and existing security controls.",
+                        "The specific types and classification of data stored in the database were not provided, which may affect the accuracy of the impact assessment."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "heading": "Remediation Strategy",
+                    "content": [
+                        "xxx"
                     ]
                 }
             ]

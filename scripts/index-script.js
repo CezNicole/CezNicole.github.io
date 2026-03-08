@@ -371,16 +371,29 @@ function renderSectionData(section, container){
 
                 Object.entries(risk).forEach(([key, value]) => {
                     if(key === 'priority') return;
-
+                    
                     const tableData = document.createElement('td');
                     tableData.classList.add('table__cells', 'project-details__desc');
 
-                    if(typeof value === "number"){
+                    if(key === 'likelihood' || key === 'severity'){
                         tableData.classList.add('table--center');
+                    } 
+                    
+                    if(typeof value === "object" && value !== null){
+                        const items = document.createElement('ul');
+                        items.classList.add('table--left-padding');
+
+                        toArray(value).forEach(text => {
+                            const listItem = document.createElement('li');
+                            listItem.classList.add('project-details__desc');
+                            listItem.textContent = text;
+
+                            items.appendChild(listItem);
+                        })
+                        tableData.appendChild(items);
+                    } else{
+                        tableData.textContent = value ?? "";
                     }
-
-                    tableData.textContent = value ?? "";
-
                     tableRow.appendChild(tableData);
                 })
 
