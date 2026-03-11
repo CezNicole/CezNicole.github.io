@@ -318,6 +318,9 @@ body {
 .project-details__desc--indent-list {
   padding: 0 1.5em 0.7em;
 }
+.project-details__desc--left-margin {
+  margin-left: 1em;
+}
 .project-details__cybersecurity {
   transform: none;
   width: 100%;

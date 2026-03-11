@@ -223,14 +223,46 @@ function renderSectionData(section, container){
             
             subsectionContainer.appendChild(sectionSubtitle);
 
-            toArray(item.content).forEach(text => {
-                const sectionContent = document.createElement('p');
-                sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--extra-padding');
+            if(item.type === 'list'){
+                if(item.ordered === false){
+                    const unorderedList = document.createElement('ul');
+                    unorderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--left-margin');
 
-                sectionContent.textContent = text;
+                    item.content.forEach(listItem => {
+                        const itemContent = document.createElement('li');
+                        itemContent.classList.add('project-details__desc');
+                        itemContent.textContent = listItem;
 
-                subsectionContainer.appendChild(sectionContent);
-            })
+                        unorderedList.append(itemContent);
+
+                        subsectionContainer.appendChild(unorderedList);
+                    })
+                } else if(section.ordered === true){
+                    const orderedList = document.createElement('ol');
+                    orderedList.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
+
+                    item.content.forEach(listItem => {
+                        const itemContent = document.createElement('li');
+                        itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                        itemContent.textContent = listItem;
+
+                        orderedList.append(itemContent);
+
+                        subsectionContainer.appendChild(orderedList);
+                    })
+                }
+            } else{
+                toArray(item.content).forEach(text => {
+                    const sectionContent = document.createElement('p');
+                    // sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--extra-padding');
+                    sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+
+    
+                    sectionContent.textContent = text;
+    
+                    subsectionContainer.appendChild(sectionContent);
+                })
+            }
             container.append(sectionTitle, subsectionContainer);
         })
     } else if(section.type === 'list'){
@@ -249,7 +281,9 @@ function renderSectionData(section, container){
                     sectionSubtitle.textContent = item.subheading;
 
                     const itemContent = document.createElement('p');
-                    itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                    // itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                    itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
+
                     itemContent.textContent = item.content;
 
                     unorderedList.append(sectionSubtitle, itemContent);
@@ -277,7 +311,9 @@ function renderSectionData(section, container){
                     sectionSubtitle.textContent = item.subheading;
 
                     const itemContent = document.createElement('p');
-                    itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                    // itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                    itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
+
                     itemContent.textContent = item.content;
                     
                     orderedList.append(sectionSubtitle, itemContent);

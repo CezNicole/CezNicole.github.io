@@ -648,10 +648,41 @@
                     ]
                 },
                 {
-                    "type": "text",
+                    "type": "subsections",
                     "heading": "Remediation Strategy",
-                    "content": [
-                        "xxx"
+                    "items": [
+                        {
+                            "type": "list",
+                            "ordered": false,
+                            "subheading": "Technical Controls",
+                            "content": [
+                                "Restrict public access to the database by implementing firewall rules or network access control list (NACL) that only allow authorized connections.",
+                                "Require employees to connect through a virtual private network (VPN) when accessing internal systems remotely to ensure encrypted communication.",
+                                "Implement role-based access control (RBAC) and enforce the principle of least privilege to limit user permissions to only what's required for their roles.",
+                                "Enable encryption mechanisms to protect sensitive data both in transit and at rest.",
+                                "Implement centralized logging and monitoring to detect unauthorized access and malicious activity."
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "ordered": false,
+                            "subheading": "Operational Controls",
+                            "content": [
+                                "Conduct regular vulnerability assessments and security reviews to identify any misconfigurations or exposed services.",
+                                "Establish database access logs and monitoring procedures.",
+                                "Implement routine system updates and patch management to ensure operating system and database software remain secure."
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "ordered": false,
+                            "subheading": "Managerial Controls",
+                            "content": [
+                                "Develop and enforce organizational policies governing database access and data protection.",
+                                "Provide security awareness training to employees on proper handling of sensitive data.",
+                                "Establish an incident response process to ensure timely investigation and remediation of security events."
+                            ]
+                        }
                     ]
                 }
             ]
