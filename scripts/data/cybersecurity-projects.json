@@ -546,12 +546,14 @@
         {
             "projectName": "Vulnerability Assessment Report",
             "skills": [
-                "xxx",
-                "xxx"
+                "Risk Assessment Using NIST SP 800-30",
+                "Threat and Vulnerability Analysis",
+                "Security Control Recommendations (Technical, Operational, Managerial)",
+                "Risk Scoring and Impact Evaluation"
             ],
-            "description": "xxx",
+            "description": "Conducted a NIST SP 800-30 vulnerability assessment, evaluating potential risks and creating a report that outlines business impact and remediation strategies.",
             "title": "Vulnerability Assessment Report",
-            "overview": "xxx",
+            "overview": "Performed a vulnerability assessment for a small business to evaluate the security of critical systems, identify potential risks, and provide actionable recommendations to strengthen the organization’s overall security posture.",
             "sections": [
                 {
                     "type": "text",
@@ -596,9 +598,9 @@
                                 {
                                     "threatSource": "Employees",
                                     "threatEvent": [
-                                        "Access confidential information that is open to the public",
-                                        "Mistakenly modify / delete server information",
-                                        "Disgruntled employees can misuse publicly available business assets"
+                                        "Access publicly available confidential information",
+                                        "Accidentally modify / delete server data",
+                                        "Disgruntled employees may misuse publicly available business assets"
                                     ],
                                     "likelihood": "2",
                                     "severity": "3"
@@ -618,9 +620,9 @@
                                 {
                                     "threatSource": "Malicious actors / software",
                                     "threatEvent": [
-                                        "Misuse publicly available business assets",
                                         "Exploit system vulnerabilities",
-                                        "Access confidential information that is open to the public"
+                                        "Access publicly available confidential information",
+                                        "Misuse publicly available business assets"
                                     ],
                                     "likelihood": "3",
                                     "severity": "3"
