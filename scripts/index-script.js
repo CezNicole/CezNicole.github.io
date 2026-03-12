@@ -254,10 +254,7 @@ function renderSectionData(section, container){
             } else{
                 toArray(item.content).forEach(text => {
                     const sectionContent = document.createElement('p');
-                    // sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--extra-padding');
                     sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
-
-    
                     sectionContent.textContent = text;
     
                     subsectionContainer.appendChild(sectionContent);
@@ -281,9 +278,7 @@ function renderSectionData(section, container){
                     sectionSubtitle.textContent = item.subheading;
 
                     const itemContent = document.createElement('p');
-                    // itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
                     itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
-
                     itemContent.textContent = item.content;
 
                     unorderedList.append(sectionSubtitle, itemContent);
@@ -311,9 +306,7 @@ function renderSectionData(section, container){
                     sectionSubtitle.textContent = item.subheading;
 
                     const itemContent = document.createElement('p');
-                    // itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
                     itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
-
                     itemContent.textContent = item.content;
                     
                     orderedList.append(sectionSubtitle, itemContent);
