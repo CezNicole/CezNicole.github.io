@@ -223,14 +223,43 @@ function renderSectionData(section, container){
             
             subsectionContainer.appendChild(sectionSubtitle);
 
-            toArray(item.content).forEach(text => {
-                const sectionContent = document.createElement('p');
-                sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--extra-padding');
+            if(item.type === 'list'){
+                if(item.ordered === false){
+                    const unorderedList = document.createElement('ul');
+                    unorderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--left-margin');
 
-                sectionContent.textContent = text;
+                    item.content.forEach(listItem => {
+                        const itemContent = document.createElement('li');
+                        itemContent.classList.add('project-details__desc');
+                        itemContent.textContent = listItem;
 
-                subsectionContainer.appendChild(sectionContent);
-            })
+                        unorderedList.append(itemContent);
+
+                        subsectionContainer.appendChild(unorderedList);
+                    })
+                } else if(section.ordered === true){
+                    const orderedList = document.createElement('ol');
+                    orderedList.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
+
+                    item.content.forEach(listItem => {
+                        const itemContent = document.createElement('li');
+                        itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                        itemContent.textContent = listItem;
+
+                        orderedList.append(itemContent);
+
+                        subsectionContainer.appendChild(orderedList);
+                    })
+                }
+            } else{
+                toArray(item.content).forEach(text => {
+                    const sectionContent = document.createElement('p');
+                    sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                    sectionContent.textContent = text;
+    
+                    subsectionContainer.appendChild(sectionContent);
+                })
+            }
             container.append(sectionTitle, subsectionContainer);
         })
     } else if(section.type === 'list'){
@@ -249,7 +278,7 @@ function renderSectionData(section, container){
                     sectionSubtitle.textContent = item.subheading;
 
                     const itemContent = document.createElement('p');
-                    itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                    itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
                     itemContent.textContent = item.content;
 
                     unorderedList.append(sectionSubtitle, itemContent);
@@ -277,7 +306,7 @@ function renderSectionData(section, container){
                     sectionSubtitle.textContent = item.subheading;
 
                     const itemContent = document.createElement('p');
-                    itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                    itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
                     itemContent.textContent = item.content;
                     
                     orderedList.append(sectionSubtitle, itemContent);
@@ -339,34 +368,63 @@ function renderSectionData(section, container){
                 const tableRow = document.createElement('tr');
                 tableRow.classList.add('table__cells');
 
-                if(index === 0){
-                    const tdAsset = document.createElement('td');
-                    tdAsset.classList.add('table__cells', 'project-details__desc', 'table--span', 'table--center');
-                    tdAsset.rowSpan = item.risks.length;
-                    tdAsset.textContent = risk.asset;          
+                // if(index === 0){
+                //     const tdAsset = document.createElement('td');
+                //     tdAsset.classList.add('table__cells', 'project-details__desc', 'table--span', 'table--center');
+                //     tdAsset.rowSpan = item.risks.length;
+                //     tdAsset.textContent = risk.asset;          
+
                     
-                    tableRow.appendChild(tdAsset);
-                }
+                //     tableRow.appendChild(tdAsset);
+                // }
 
-                const tdRisk = document.createElement('td');
-                tdRisk.classList.add('table__cells', 'project-details__desc');
-                tdRisk.textContent = risk.riskItem;
-                tableRow.appendChild(tdRisk);
+                // const tdRisk = document.createElement('td');
+                // tdRisk.classList.add('table__cells', 'project-details__desc');
+                // tdRisk.textContent = risk.riskItem;
+                // tableRow.appendChild(tdRisk);
 
-                const tdDesc = document.createElement('td');
-                tdDesc.classList.add('table__cells', 'project-details__desc');
-                tdDesc.textContent = risk.description;
-                tableRow.appendChild(tdDesc);
+                // const tdDesc = document.createElement('td');
+                // tdDesc.classList.add('table__cells', 'project-details__desc');
+                // tdDesc.textContent = risk.description;
+                // tableRow.appendChild(tdDesc);
 
-                const tdLikelihood = document.createElement('td');
-                tdLikelihood.classList.add('table__cells', 'project-details__desc', 'table--center');
-                tdLikelihood.textContent = risk.likelihood;
-                tableRow.appendChild(tdLikelihood);
+                // const tdLikelihood = document.createElement('td');
+                // tdLikelihood.classList.add('table__cells', 'project-details__desc', 'table--center');
+                // tdLikelihood.textContent = risk.likelihood;
+                // tableRow.appendChild(tdLikelihood);
 
-                const tdSeverity = document.createElement('td');
-                tdSeverity.classList.add('table__cells', 'project-details__desc', 'table--center');
-                tdSeverity.textContent = risk.severity;
-                tableRow.appendChild(tdSeverity);
+                // const tdSeverity = document.createElement('td');
+                // tdSeverity.classList.add('table__cells', 'project-details__desc', 'table--center');
+                // tdSeverity.textContent = risk.severity;
+                // tableRow.appendChild(tdSeverity);
+
+                Object.entries(risk).forEach(([key, value]) => {
+                    if(key === 'priority') return;
+                    
+                    const tableData = document.createElement('td');
+                    tableData.classList.add('table__cells', 'project-details__desc');
+
+                    if(key === 'likelihood' || key === 'severity'){
+                        tableData.classList.add('table--center');
+                    } 
+                    
+                    if(typeof value === "object" && value !== null){
+                        const items = document.createElement('ul');
+                        items.classList.add('table--left-padding');
+
+                        toArray(value).forEach(text => {
+                            const listItem = document.createElement('li');
+                            listItem.classList.add('project-details__desc');
+                            listItem.textContent = text;
+
+                            items.appendChild(listItem);
+                        })
+                        tableData.appendChild(items);
+                    } else{
+                        tableData.textContent = value ?? "";
+                    }
+                    tableRow.appendChild(tableData);
+                })
 
                 const tdPriority = document.createElement('td');
                 tdPriority.classList.add('table__cells', 'project-details__desc', 'table--center');

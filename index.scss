@@ -242,6 +242,10 @@
 		&--indent-list {
 			padding: 0 1.5em 0.7em;
 		}
+
+		&--left-margin {
+			margin-left: 1em;
+		}
 	}
 
 	&__cybersecurity {
@@ -410,6 +414,10 @@
 	&__header {
 		font-size: 1.08em;
 		color: colors.$white;
+	}
+
+	&--left-padding {
+		padding-left: 1em;
 	}
 }
 
