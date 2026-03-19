@@ -358,9 +358,7 @@
                 {
                     "type": "text",
                     "heading": "Operational Environment",
-                    "content": [
-                        "The bank is located in a coastal area with low crime rates. Many people and systems handle the bank's data — 100 on-premise employees and 20 remote employees. The customer base of the bank includes 2,000 individual accounts and 200 commercial accounts. The bank's services are marketed by a professional sports team and ten local businesses in the community. There are strict financial regulations that require the bank to secure their data and funds, like having enough cash available each day to meet Federal Reserve requirements."
-                    ]
+                    "content": "The bank is located in a coastal area with low crime rates. Many people and systems handle the bank's data — 100 on-premise employees and 20 remote employees. The customer base of the bank includes 2,000 individual accounts and 200 commercial accounts. The bank's services are marketed by a professional sports team and ten local businesses in the community. There are strict financial regulations that require the bank to secure their data and funds, like having enough cash available each day to meet Federal Reserve requirements."
                 },
                 {
                     "type": "table",
@@ -558,30 +556,22 @@
                 {
                     "type": "text",
                     "heading": "Scenario",
-                    "content": [
-                        "You are a newly hired cybersecurity analyst for an e-commerce company that relies on a remote database server to support globally distributed employees. The database, which employees regularly query for customer data, has been publicly accessible since the company’s launch three years ago, creating a significant security vulnerability. You are responsible for conducting a vulnerability assessment and preparing a report outlining the business risks and recommending measures to secure the server."
-                    ]
+                    "content": "You are a newly hired cybersecurity analyst for an e-commerce company that relies on a remote database server to support globally distributed employees. The database, which employees regularly query for customer data, has been publicly accessible since the company’s launch three years ago, creating a significant security vulnerability. You are responsible for conducting a vulnerability assessment and preparing a report outlining the business risks and recommending measures to secure the server."
                 },
                 {
                     "type": "text",
                     "heading": "System Environment",
-                    "content": [
-                        "The server hardware consists of a powerful CPU processor and 128GB of memory. It runs on the latest version of Linux operating system and hosts a MySQL database management system. It is configured with a stable network connection using IPv4 addresses and interacts with other servers on the network. Security measures include SSL/TLS encrypted connections."
-                    ]
+                    "content": "The server hardware consists of a powerful CPU processor and 128GB of memory. It runs on the latest version of Linux operating system and hosts a MySQL database management system. It is configured with a stable network connection using IPv4 addresses and interacts with other servers on the network. Security measures include SSL/TLS encrypted connections."
                 },
                 {
                     "type": "text",
                     "heading": "Scope",
-                    "content": [
-                        "This vulnerability assessment focused on evaluating the effectiveness of current access controls for the publicly accessible database server. The review covered a three-month period from June to August 2025 and assessed risks associated with unauthorized access, data exposure, and potential misuse of organizational information assets."
-                    ]
+                    "content": "This vulnerability assessment focused on evaluating the effectiveness of current access controls for the publicly accessible database server. The review covered a three-month period from June to August 2025 and assessed risks associated with unauthorized access, data exposure, and potential misuse of organizational information assets."
                 },
                 {
                     "type": "text",
                     "heading": "Methodology",
-                    "content": [
-                        "The risk analysis was conducted using the framework outlined in NIST SP 800-30 Rev. 1. Threat sources, threat events, and associated vulnerabilities were identified based on the server’s public exposure. Likelihood and severity ratings were assigned using a qualitative three-level scale (Low, Medium, High) in accordance with NIST guidance, and overall risk scores were calculated accordingly."
-                    ]
+                    "content": "The risk analysis was conducted using the framework outlined in NIST SP 800-30 Rev. 1. Threat sources, threat events, and associated vulnerabilities were identified based on the server’s public exposure. Likelihood and severity ratings were assigned using a qualitative three-level scale (Low, Medium, High) in accordance with NIST guidance, and overall risk scores were calculated accordingly."
                 },
                 {
                     "type": "table",
@@ -703,132 +693,65 @@
                 {
                     "type": "text",
                     "heading": "Scenario",
+                    "content": "You are part of the security team at Rhetorical Hospital and discover an unattended USB drive in the parking lot. Recognizing the security risk, you analyze the device using virtualization software in an isolated environment to safely investigate its contents without exposing the hospital’s systems or network to potential malware."
+                },
+                {
+                    "type": "text",
+                    "heading": "Findings",
                     "content": [
-                        "You are part of the security team at Rhetorical Hospital and discover an unattended USB drive in the parking lot. Recognizing the security risk, you analyze the device using virtualization software in an isolated environment to safely investigate its contents without exposing the hospital’s systems or network to potential malware."
+                        "A virtual machine was created to safely analyze the USB drive in an isolated environment. The contents of the device appear to belong to Jorge Bailey, the Human Resource Manager at Rhetorical Hospital.",
+                        "The device contains a mix of personal and work-related files which include family and pet photos, a new hire letter, an employee shift schedule, employee budget information, and a resume, indicating a lack of separation between personal and corporate data."
                     ]
                 },
                 {
                     "type": "text",
-                    "heading": "Problem Summary",
+                    "heading": "Device Analysis",
+                    "content": "The presence of sensitive work files, including employee budget data, a new hire letter, employee scheduling, and a resume, poses a significant security risk. These files contain personally identifiable information (PII) that could be exploited for identity theft, financial fraud, or unauthorized access to corporate resources, potentially resulting to reputational and financial damage to both the employee and the organization."
+                },
+                {
+                    "type": "text",
+                    "heading": "Attacker Mindset",
                     "content": [
-                        "You create a virtual environment and plug the USB drive into the workstation. The contents of the device appear to belong to Jorge Bailey, the human resource manager at Rhetorical Hospital.",
-                        "Jorge's drive contains a mix of personal and work-related files. For example, it contains folders that appear to store family and pet photos. There is also a new hire letter and an employee shift schedule."
+                        "If a threat actor gains access to the device, sensitive information could be exploited for identity theft, financial fraud, blackmail, or unauthorized access to internal systems.",
+                        "Personal files, such as family photos and event-related documents (‘Wedding list.gslides’), could enable targeted phishing and social engineering attacks against Jorge Bailey and his associates by providing information that increases the likelihood of successful exploitation.",
+                        "The 'Vacation Ideas' file can provide access to the business, and the content can be misused or sold to its competitors for financial gain.",
+                        "Such attacks can be used to target Jorge Bailey, the hospital employees, and the entire organization if not mitigated."
                     ]
                 },
                 {
                     "type": "text",
-                    "heading": "Scope",
+                    "heading": "Threat Analysis",
                     "content": [
-                        "This vulnerability assessment focused on evaluating the effectiveness of current access controls for the publicly accessible database server. The review covered a three-month period from June to August 2025 and assessed risks associated with unauthorized access, data exposure, and potential misuse of organizational information assets."
-                    ]
-                },
-                {
-                    "type": "text",
-                    "heading": "Methodology",
-                    "content": [
-                        "The risk analysis was conducted using the framework outlined in NIST SP 800-30 Rev. 1. Threat sources, threat events, and associated vulnerabilities were identified based on the server’s public exposure. Likelihood and severity ratings were assigned using a qualitative three-level scale (Low, Medium, High) in accordance with NIST guidance, and overall risk scores were calculated accordingly."
-                    ]
-                },
-                {
-                    "type": "table",
-                    "heading": "Risk Assessment",
-                    "items": [
-                        {
-                            "risks": [
-                                {
-                                    "threatSource": "Competitor",
-                                    "threatEvent": "Obtain sensitive information via exfiltration",
-                                    "likelihood": "3",
-                                    "severity": "3"
-                                },
-                                {
-                                    "threatSource": "Employees",
-                                    "threatEvent": [
-                                        "Access publicly available confidential information",
-                                        "Accidentally modify / delete server data",
-                                        "Disgruntled employees may misuse publicly available business assets"
-                                    ],
-                                    "likelihood": "2",
-                                    "severity": "3"
-                                },
-                                {
-                                    "threatSource": "Customers",
-                                    "threatEvent": "Misuse publicly available business assets",
-                                    "likelihood": "1",
-                                    "severity": "3"
-                                },
-                                {
-                                    "threatSource": "Public users",
-                                    "threatEvent": "Misuse publicly available business assets",
-                                    "likelihood": "3",
-                                    "severity": "2"
-                                },
-                                {
-                                    "threatSource": "Malicious actors / software",
-                                    "threatEvent": [
-                                        "Exploit system vulnerabilities",
-                                        "Access publicly available confidential information",
-                                        "Misuse publicly available business assets"
-                                    ],
-                                    "likelihood": "3",
-                                    "severity": "3"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "type": "text",
-                    "heading": "Business Impact Analysis",
-                    "content": [
-                        "The publicly accessible database presents a critical security weakness. The absence of appropriate access restrictions significantly increases the probability of unauthorized access, data exfiltration, and service disruption.",
-                        "Exposure of sensitive organizational and customer data could result in financial loss, legal liability, and reputational harm. Given the organization's reliance on remote access and centralized data storage, it is essential to implement stronger access controls, encryption mechanisms, and monitor capabilities to preserve confidentiality, integrity, and availability."
-                    ]
-                },
-                {
-                    "type": "list",
-                    "ordered": false,
-                    "heading": "Assessment Limitations",
-                    "items": [
-                        "Risk ratings were limited to a three-tier qualitative scale.",
-                        "The scenario provided limited visibility into the company's overall security posture and existing security controls.",
-                        "The specific types and classification of data stored in the database were not provided, which may affect the accuracy of the impact assessment."
+                        "Untrusted, unsecure media devices may contain malware or be embedded with phishing links to bait users in providing sensitive information.",
+                        "If accessed by an employee, the infected device could compromise their personal data, as well as the company's assets.",
+                        "The presence of both personal and work-related files increases the risks for malicious attacks such as identity theft, blackmail, ransomware, and social engineering attacks that may lead to financial losses, reputational damage, and loss of trust."
                     ]
                 },
                 {
                     "type": "subsections",
-                    "heading": "Remediation Strategy",
+                    "heading": "Threat Mitigation",
+                    "content": "To mitigate the identified potential attacks, the company could protect itself and its employees by impelementing a combination of technical, managerial, and operational controls:",
                     "items": [
                         {
-                            "type": "list",
-                            "ordered": false,
+                            "type": "text",
                             "subheading": "Technical Controls",
                             "content": [
-                                "Restrict public access to the database by implementing firewall rules or network access control list (NACL) that only allow authorized connections.",
-                                "Require employees to connect through a virtual private network (VPN) when accessing internal systems remotely to ensure encrypted communication.",
-                                "Implement role-based access control (RBAC) and enforce the principle of least privilege to limit user permissions to only what's required for their roles.",
-                                "Enable encryption mechanisms to protect sensitive data both in transit and at rest.",
-                                "Implement centralized logging and monitoring to detect unauthorized access and malicious activity."
+                                "encrypting data at rest and in transit"
                             ]
                         },
                         {
-                            "type": "list",
-                            "ordered": false,
+                            "type": "text",
                             "subheading": "Operational Controls",
                             "content": [
-                                "Conduct regular vulnerability assessments and security reviews to identify any misconfigurations or exposed services.",
-                                "Establish database access logs and monitoring procedures.",
-                                "Implement routine system updates and patch management to ensure operating system and database software remain secure."
+                                "creating strict policies and standards to protect the company and its assets"
                             ]
                         },
                         {
-                            "type": "list",
-                            "ordered": false,
+                            "type": "text",
                             "subheading": "Managerial Controls",
                             "content": [
-                                "Develop and enforce organizational policies governing database access and data protection.",
-                                "Provide security awareness training to employees on proper handling of sensitive data.",
-                                "Establish an incident response process to ensure timely investigation and remediation of security events."
+                                "providing security awareness training to employees regularly",
+                                "leveraging security teams for incident response"
                             ]
                         }
                     ]
