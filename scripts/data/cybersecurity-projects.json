@@ -712,10 +712,10 @@
                     "type": "text",
                     "heading": "Attacker Mindset",
                     "content": [
-                        "If a threat actor gains access to the device, sensitive information could be exploited for identity theft, financial fraud, blackmail, or unauthorized access to internal systems.",
-                        "Personal files, such as family photos and event-related documents (‘Wedding list.gslides’), could enable targeted phishing and social engineering attacks against Jorge Bailey and his associates by providing information that increases the likelihood of successful exploitation.",
-                        "The 'Vacation Ideas' file can provide access to the business, and the content can be misused or sold to its competitors for financial gain.",
-                        "Such attacks can be used to target Jorge Bailey, the hospital employees, and the entire organization if not mitigated."
+                        "If a threat actor gains access to the device, they can collect sensitive information such as personal data and work-related files. These information can be used for identity theft, financial fraud, blackmail, or unauthorized access to internal systems.",
+                        "Personal files, such as family photos and documents like the ‘Wedding list.gslides’, can provide information about relationships and important events, enabling targeted phishing and social engineering attacks against Jorge Bailey and his associates into sharing more sensitive data.",
+                        "Business-related files like the 'Vacation ideas.gdoc' may contain details, such as special promotions and plans, that can be misused or sold to its competitors for financial gain.",
+                        "With enough information, the attacker can expand their scope, targeting Jorge Bailey, the hospital employees, and the entire organization, which may potentially lead to a larger security breach."
                     ]
                 },
                 {
