@@ -358,9 +358,7 @@
                 {
                     "type": "text",
                     "heading": "Operational Environment",
-                    "content": [
-                        "The bank is located in a coastal area with low crime rates. Many people and systems handle the bank's data — 100 on-premise employees and 20 remote employees. The customer base of the bank includes 2,000 individual accounts and 200 commercial accounts. The bank's services are marketed by a professional sports team and ten local businesses in the community. There are strict financial regulations that require the bank to secure their data and funds, like having enough cash available each day to meet Federal Reserve requirements."
-                    ]
+                    "content": "The bank is located in a coastal area with low crime rates. Many people and systems handle the bank's data — 100 on-premise employees and 20 remote employees. The customer base of the bank includes 2,000 individual accounts and 200 commercial accounts. The bank's services are marketed by a professional sports team and ten local businesses in the community. There are strict financial regulations that require the bank to secure their data and funds, like having enough cash available each day to meet Federal Reserve requirements."
                 },
                 {
                     "type": "table",
@@ -558,30 +556,22 @@
                 {
                     "type": "text",
                     "heading": "Scenario",
-                    "content": [
-                        "You are a newly hired cybersecurity analyst for an e-commerce company that relies on a remote database server to support globally distributed employees. The database, which employees regularly query for customer data, has been publicly accessible since the company’s launch three years ago, creating a significant security vulnerability. You are responsible for conducting a vulnerability assessment and preparing a report outlining the business risks and recommending measures to secure the server."
-                    ]
+                    "content": "You are a newly hired cybersecurity analyst for an e-commerce company that relies on a remote database server to support globally distributed employees. The database, which employees regularly query for customer data, has been publicly accessible since the company’s launch three years ago, creating a significant security vulnerability. You are responsible for conducting a vulnerability assessment and preparing a report outlining the business risks and recommending measures to secure the server."
                 },
                 {
                     "type": "text",
                     "heading": "System Environment",
-                    "content": [
-                        "The server hardware consists of a powerful CPU processor and 128GB of memory. It runs on the latest version of Linux operating system and hosts a MySQL database management system. It is configured with a stable network connection using IPv4 addresses and interacts with other servers on the network. Security measures include SSL/TLS encrypted connections."
-                    ]
+                    "content": "The server hardware consists of a powerful CPU processor and 128GB of memory. It runs on the latest version of Linux operating system and hosts a MySQL database management system. It is configured with a stable network connection using IPv4 addresses and interacts with other servers on the network. Security measures include SSL/TLS encrypted connections."
                 },
                 {
                     "type": "text",
                     "heading": "Scope",
-                    "content": [
-                        "This vulnerability assessment focused on evaluating the effectiveness of current access controls for the publicly accessible database server. The review covered a three-month period from June to August 2025 and assessed risks associated with unauthorized access, data exposure, and potential misuse of organizational information assets."
-                    ]
+                    "content": "This vulnerability assessment focused on evaluating the effectiveness of current access controls for the publicly accessible database server. The review covered a three-month period from June to August 2025 and assessed risks associated with unauthorized access, data exposure, and potential misuse of organizational information assets."
                 },
                 {
                     "type": "text",
                     "heading": "Methodology",
-                    "content": [
-                        "The risk analysis was conducted using the framework outlined in NIST SP 800-30 Rev. 1. Threat sources, threat events, and associated vulnerabilities were identified based on the server’s public exposure. Likelihood and severity ratings were assigned using a qualitative three-level scale (Low, Medium, High) in accordance with NIST guidance, and overall risk scores were calculated accordingly."
-                    ]
+                    "content": "The risk analysis was conducted using the framework outlined in NIST SP 800-30 Rev. 1. Threat sources, threat events, and associated vulnerabilities were identified based on the server’s public exposure. Likelihood and severity ratings were assigned using a qualitative three-level scale (Low, Medium, High) in accordance with NIST guidance, and overall risk scores were calculated accordingly."
                 },
                 {
                     "type": "table",
@@ -683,6 +673,93 @@
                                 "Develop and enforce organizational policies governing database access and data protection.",
                                 "Provide security awareness training to employees on proper handling of sensitive data.",
                                 "Establish an incident response process to ensure timely investigation and remediation of security events."
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "projectName": "Attack Vector Investigation",
+            "skills": [
+                "Threat Modeling Using an Attacker Mindset",
+                "Removable Media Risk Assessment",
+                "Attack Vector Analysis and Mitigation"
+            ],
+            "description": "Inspected a removable media device using an attacker mindset, identifying risks and potential exploits, and recommending mitigations to enhance security posture.",
+            "title": "Attack Vector Investigation",
+            "overview": "Assessed attack vectors of a found USB drive by analyzing exploitation techniques from both attacker and target perspectives, identifying risks, and recommending mitigation strategies.",
+            "sections": [
+                {
+                    "type": "text",
+                    "heading": "Scenario",
+                    "content": "You are part of the security team at Rhetorical Hospital and discover an unattended USB drive in the parking lot. Recognizing the security risk, you analyze the device using virtualization software in an isolated environment to safely investigate its contents without exposing the hospital’s systems or network to potential malware."
+                },
+                {
+                    "type": "text",
+                    "heading": "Findings",
+                    "content": [
+                        "A virtual machine was created to safely analyze the USB drive in an isolated environment. The contents of the device appear to belong to Jorge Bailey, the Human Resource Manager at Rhetorical Hospital.",
+                        "The device contains a mix of personal and work-related files which include family and pet photos, a new hire letter, an employee shift schedule, employee budget information, and a resume, indicating a lack of separation between personal and corporate data."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "heading": "Device Analysis",
+                    "content": "The presence of sensitive work files, including employee budget data, a new hire letter, employee scheduling, and a resume, poses a significant security risk. These files contain personally identifiable information (PII) that could be exploited for identity theft, financial fraud, or unauthorized access to corporate resources, potentially resulting to reputational and financial damage to both the employee and the organization."
+                },
+                {
+                    "type": "text",
+                    "heading": "Attacker Mindset",
+                    "content": [
+                        "If a threat actor gains access to the device, they can collect sensitive information such as personal data and work-related files. This information can be used for identity theft, financial fraud, blackmail, or unauthorized access to internal systems.",
+                        "Personal files, such as family photos and documents like the ‘Wedding list.gslides’, can reveal relationships and important events. An attacker can use this information to craft convincing phishing messages that trick Jorge Bailey and his associates into sharing more sensitive data.",
+                        "Business-related files like 'Vacation ideas.gdoc' may contain details, such as plans and special promotions, which can be misused or sold to competitors for financial gain.",
+                        "With enough information, the attacker can attempt to access other accounts or systems, allowing them to target Jorge Bailey, the hospital employees, and the entire organization, potentially leading to a larger security breach."
+                    ]
+                },
+                {
+                    "type": "text",
+                    "heading": "Threat Analysis",
+                    "content": [
+                        "Untrusted removable media devices may contain malware or embedded phishing content designed to compromise user systems.",
+                        "If accessed by an employee, the infected device could result in data exposure, identity theft, or unauthorized access to corporate resources.",
+                        "The presence of both personal and work-related files on the device increases the risk of attacks such as ransomware, social engineering, and data theft, which may lead to financial loss, reputational damage, and loss of trust."
+                    ]
+                },
+                {
+                    "type": "subsections",
+                    "heading": "Threat Mitigation",
+                    "content": "To mitigate the risks associated with untrusted removable devices, the company can protect itself and its employees by implementing a combination of technical, managerial, and operational controls:",
+                    "items": [
+                        {
+                            "type": "list",
+                            "ordered": false,
+                            "subheading": "Technical Controls",
+                            "content": [
+                                "Encrypt data at rest and in transit to prevent unauthorized access",
+                                "Use antivirus software to detect and protect against malware and from external devices",
+                                "Disable autorun features to prevent automatic execution of malicious files and programs from removable media"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "ordered": false,
+                            "subheading": "Operational Controls",
+                            "content": [
+                                "Implement procedures to scan all removable devices before use",
+                                "Create and enforce strict policies that restrict the use of untrusted removable media devices",
+                                "Require the use of company-approved cloud services for data storage and sharing",
+                                "Establish incident response procedures and ensure security teams actively monitor, contain, and resolve incidents within defined service levels"
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "ordered": false,
+                            "subheading": "Managerial Controls",
+                            "content": [
+                                "Provide regular security awareness training to educate employees on the risks of untrusted removable media, phishing, and malware",
+                                "Establish and conduct regular audits of security controls to identify and remediate vulnerabilities"
                             ]
                         }
                     ]
