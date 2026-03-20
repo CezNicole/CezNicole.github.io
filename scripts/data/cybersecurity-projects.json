@@ -682,13 +682,13 @@
         {
             "projectName": "Attack Vector Investigation",
             "skills": [
-                "Risk Analysis",
-                "Application of Attacker Mindset",
-                "Attack Vector Assessment"
+                "Threat Modeling Using an Attacker Mindset",
+                "Removable Media Risk Assessment",
+                "Attack Vector Analysis and Mitigation"
             ],
-            "description": "xxx",
+            "description": "Inspected a removable media device using an attacker mindset, identifying risks and potential exploits, and recommending mitigations to enhance security posture.",
             "title": "Attack Vector Investigation",
-            "overview": "xxx",
+            "overview": "Assessed attack vectors of a found USB drive by analyzing exploitation techniques from both attacker and target perspectives, identifying risks, and recommending mitigation strategies.",
             "sections": [
                 {
                     "type": "text",
@@ -712,46 +712,54 @@
                     "type": "text",
                     "heading": "Attacker Mindset",
                     "content": [
-                        "If a threat actor gains access to the device, they can collect sensitive information such as personal data and work-related files. These information can be used for identity theft, financial fraud, blackmail, or unauthorized access to internal systems.",
-                        "Personal files, such as family photos and documents like the ‘Wedding list.gslides’, can provide information about relationships and important events, enabling targeted phishing and social engineering attacks against Jorge Bailey and his associates into sharing more sensitive data.",
-                        "Business-related files like the 'Vacation ideas.gdoc' may contain details, such as special promotions and plans, that can be misused or sold to its competitors for financial gain.",
-                        "With enough information, the attacker can expand their scope, targeting Jorge Bailey, the hospital employees, and the entire organization, which may potentially lead to a larger security breach."
+                        "If a threat actor gains access to the device, they can collect sensitive information such as personal data and work-related files. This information can be used for identity theft, financial fraud, blackmail, or unauthorized access to internal systems.",
+                        "Personal files, such as family photos and documents like the ‘Wedding list.gslides’, can reveal relationships and important events. An attacker can use this information to craft convincing phishing messages that trick Jorge Bailey and his associates into sharing more sensitive data.",
+                        "Business-related files like 'Vacation ideas.gdoc' may contain details, such as plans and special promotions, which can be misused or sold to competitors for financial gain.",
+                        "With enough information, the attacker can attempt to access other accounts or systems, allowing them to target Jorge Bailey, the hospital employees, and the entire organization, potentially leading to a larger security breach."
                     ]
                 },
                 {
                     "type": "text",
                     "heading": "Threat Analysis",
                     "content": [
-                        "Untrusted, unsecure media devices may contain malware or be embedded with phishing links to bait users in providing sensitive information.",
-                        "If accessed by an employee, the infected device could compromise their personal data, as well as the company's assets.",
-                        "The presence of both personal and work-related files increases the risks for malicious attacks such as identity theft, blackmail, ransomware, and social engineering attacks that may lead to financial losses, reputational damage, and loss of trust."
+                        "Untrusted removable media devices may contain malware or embedded phishing content designed to compromise user systems.",
+                        "If accessed by an employee, the infected device could result in data exposure, identity theft, or unauthorized access to corporate resources.",
+                        "The presence of both personal and work-related files on the device increases the risk of attacks such as ransomware, social engineering, and data theft, which may lead to financial loss, reputational damage, and loss of trust."
                     ]
                 },
                 {
                     "type": "subsections",
                     "heading": "Threat Mitigation",
-                    "content": "To mitigate the identified potential attacks, the company could protect itself and its employees by impelementing a combination of technical, managerial, and operational controls:",
+                    "content": "To mitigate the risks associated with untrusted removable devices, the company can protect itself and its employees by implementing a combination of technical, managerial, and operational controls:",
                     "items": [
                         {
-                            "type": "text",
+                            "type": "list",
+                            "ordered": false,
                             "subheading": "Technical Controls",
                             "content": [
-                                "encrypting data at rest and in transit"
+                                "Encrypt data at rest and in transit to prevent unauthorized access",
+                                "Use antivirus software to detect and protect against malware and from external devices",
+                                "Disable autorun features to prevent automatic execution of malicious files and programs from removable media"
                             ]
                         },
                         {
-                            "type": "text",
+                            "type": "list",
+                            "ordered": false,
                             "subheading": "Operational Controls",
                             "content": [
-                                "creating strict policies and standards to protect the company and its assets"
+                                "Implement procedures to scan all removable devices before use",
+                                "Create and enforce strict policies that restrict the use of untrusted removable media devices",
+                                "Require the use of company-approved cloud services for data storage and sharing",
+                                "Establish incident response procedures and ensure security teams actively monitor, contain, and resolve incidents within defined service levels"
                             ]
                         },
                         {
-                            "type": "text",
+                            "type": "list",
+                            "ordered": false,
                             "subheading": "Managerial Controls",
                             "content": [
-                                "providing security awareness training to employees regularly",
-                                "leveraging security teams for incident response"
+                                "Provide regular security awareness training to educate employees on the risks of untrusted removable media, phishing, and malware",
+                                "Establish and conduct regular audits of security controls to identify and remediate vulnerabilities"
                             ]
                         }
                     ]
