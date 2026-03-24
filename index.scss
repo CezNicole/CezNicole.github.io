@@ -227,6 +227,10 @@
 			@include font-italic;
 		}
 
+		&--bold {
+			@include font-bold;
+		}
+
 		&--modal-padding {
 			padding: 0 0.5em;
 		}
@@ -245,6 +249,10 @@
 
 		&--left-margin {
 			margin-left: 1em;
+		}
+
+		&--colored-text {
+			@include blue-text;
 		}
 	}
 

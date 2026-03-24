@@ -765,6 +765,123 @@
                     ]
                 }
             ]
+        },
+        {
+            "projectName": "PASTA Threat Model Framework",
+            "skills": [
+                "Threat Modeling Using the PASTA Framework"
+            ],
+            "description": "xxx",
+            "title": "PASTA Threat Model Framework",
+            "overview": "xxx",
+            "sections": [
+                {
+                    "type": "text",
+                    "heading": "Scenario",
+                    "content": "You are part of a growing security team at a sneaker marketplace company preparing to launch a mobile app for buying and selling shoes. Using the PASTA framework, you analyze risks across all seven stages to define application security requirements."
+                },
+                {
+                    "type": "subsections",
+                    "heading": "Process for Attack Simulation and Threat Analysis (PASTA) Framework",
+                    "items": [
+                        {
+                            "type": "text",
+                            "subheading": "I. Define Business and Security Objectives",
+                            "objective": "Define the objectives early by asking broad questions about the purpose of the application, which guides the detailed work that will follow.",
+                            "content": [
+                                "The sneaker marketplace application is designed to enable seamless transactions between buyers and sellers. Core functionalities include user registration and authentication, account management, in-app messaging, and integrated payment processing. Users can interact, complete transactions, and provide seller ratings to support and encourage good service.",
+                                "Given the app functionality for messaging and payment handling, the company must implement proper data sensitivity and encryption measures to ensure the security of sensitive data."
+                            ]
+                        },
+                        {
+                            "type": "text",
+                            "subheading": "II. Define Technical Scope",
+                            "objective": "Understand the attack surface by identifying the technologies being used by the application and their dependencies.",
+                            "sections": [
+                                {
+                                    "type": "list",
+                                    "ordered": false,
+                                    "title": "Key Technologies",
+                                    "content": [
+                                        "• API: Defines how software components interact; used to integrate functionality without building from scratch.",
+                                        "• PKI: Provides an encryption framework using AES and RSA to secure data exchange.",
+                                        "• AES: Encrypts sensitive information such as credit card data.",
+                                        "• SHA-256: Hashes sensitive user data like passwords and credit card numbers for protection.",
+                                        "• SQL: Manages storage and retrieval of application data, including sneakers and seller information.",
+                                        "Rationale: Given that the new sneaker app will be used to exchange and store large volumes of user data, these technologies are prioritized to ensure secure data handling and reliable client-server interactions. Collectively, they enforce encryption, hashing, and structured data management to maintain confidentiality, integrity, and system security."
+                                    ]
+                                },
+                                {
+                                    "type": "text",
+                                    "title": "Rationale",
+                                    "content": "Given that the new sneaker app will be used to exchange and store large volumes of user data, these technologies are prioritized to ensure secure data handling and reliable client-server interactions. Collectively, they enforce encryption, hashing, and structured data management to maintain confidentiality, integrity, and system security."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "list",
+                    "ordered": false,
+                    "heading": "SAMPLE GUIDE: Identified Security Risks",
+                    "items": [
+                        {
+                            "subheading": "Shared employee passwords",
+                            "content": "The organization's employees share passwords, increasing the risk of unauthorized access."
+                        },
+                        {
+                            "subheading": "Default admin credentials",
+                            "content": "The admin password for the database is set to the default, making the database highly vulnerable to brute force attacks and potential data leaks."
+                        },
+                        {
+                            "subheading": "Absence of firewall rules",
+                            "content": "The firewalls do not have rules in place to filter inbound and outbound network traffic, exposing the network to malicious activity."
+                        },
+                        {
+                            "subheading": "Lack of multi-factor authentication (MFA)",
+                            "content": "Multi-factor authentication (MFA) is not used, increasing the risk of unauthorized access to sensitive data."
+                        }
+                    ]
+                },
+                {
+                    "type": "subsections",
+                    "heading": "Remediation Strategy",
+                    "items": [
+                        {
+                            "type": "list",
+                            "ordered": false,
+                            "subheading": "Technical Controls",
+                            "content": [
+                                "Restrict public access to the database by implementing firewall rules or network access control list (NACL) that only allow authorized connections.",
+                                "Require employees to connect through a virtual private network (VPN) when accessing internal systems remotely to ensure encrypted communication.",
+                                "Implement role-based access control (RBAC) and enforce the principle of least privilege to limit user permissions to only what's required for their roles.",
+                                "Enable encryption mechanisms to protect sensitive data both in transit and at rest.",
+                                "Implement centralized logging and monitoring to detect unauthorized access and malicious activity."
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "ordered": false,
+                            "subheading": "Operational Controls",
+                            "content": [
+                                "Conduct regular vulnerability assessments and security reviews to identify any misconfigurations or exposed services.",
+                                "Establish database access logs and monitoring procedures.",
+                                "Implement routine system updates and patch management to ensure operating system and database software remain secure."
+                            ]
+                        },
+                        {
+                            "type": "list",
+                            "ordered": false,
+                            "subheading": "Managerial Controls",
+                            "content": [
+                                "Develop and enforce organizational policies governing database access and data protection.",
+                                "Provide security awareness training to employees on proper handling of sensitive data.",
+                                "Establish an incident response process to ensure timely investigation and remediation of security events."
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

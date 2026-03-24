@@ -151,8 +151,7 @@ function createProjectModal(project){
     overviewTitle.textContent = 'Overview:';
 
     const overviewContent = document.createElement('p');
-    overviewContent.classList.add('project-details__desc');
-    overviewContent.classList.add('project-details__desc--modal-padding');
+    overviewContent.classList.add('project-details__desc', 'project-details__desc--modal-padding');
     overviewContent.textContent = project.overview;
 
     overviewDiv.append(overviewTitle, overviewContent);
@@ -220,8 +219,27 @@ function renderSectionData(section, container){
             const sectionSubtitle = document.createElement('h3');
             sectionSubtitle.classList.add('modal__section-subtitles');
             sectionSubtitle.textContent = item.subheading;
-            
+
             subsectionContainer.appendChild(sectionSubtitle);
+
+            // PASTA stage objectives
+            if(item.objective){
+                const objectiveDiv = document.createElement('div');
+                objectiveDiv.classList.add('modal__header-content', 'project-details__desc--colored-text');
+    
+                const objectiveTitle = document.createElement('p');
+                objectiveTitle.classList.add('project-details__desc--bold', 'project-details__desc--left-margin');
+                objectiveTitle.textContent = 'Objective:';
+    
+                const objectiveContent = document.createElement('p');
+                objectiveContent.classList.add('project-details__desc', 'project-details__desc--modal-padding', 'project-details__desc--italic');
+                objectiveContent.textContent = item.objective;
+    
+                objectiveDiv.append(objectiveTitle, objectiveContent);
+    
+                subsectionContainer.appendChild(objectiveDiv);
+            }
+
 
             if(item.type === 'list'){
                 if(item.ordered === false){

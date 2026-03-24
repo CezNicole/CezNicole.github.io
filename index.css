@@ -306,6 +306,10 @@ body {
   font-weight: 400;
   font-style: italic;
 }
+.project-details__desc--bold {
+  font-weight: 700;
+  font-style: normal;
+}
 .project-details__desc--modal-padding {
   padding: 0 0.5em;
 }
@@ -320,6 +324,9 @@ body {
 }
 .project-details__desc--left-margin {
   margin-left: 1em;
+}
+.project-details__desc--colored-text {
+  color: #5bacc3;
 }
 .project-details__cybersecurity {
   transform: none;
