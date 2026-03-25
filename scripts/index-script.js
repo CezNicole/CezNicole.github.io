@@ -240,6 +240,55 @@ function renderSectionData(section, container){
                 subsectionContainer.appendChild(objectiveDiv);
             }
 
+            // Item Subsections w/in Project Sections
+            if(item.subsections){
+                item.subsections.forEach(subsection => {
+                    const subtitle = document.createElement('h4');
+                    subtitle.classList.add('modal__section-subtitles', 'project-details__desc--left-margin');
+                    subtitle.textContent = subsection.subtitle;
+                    
+                    subsectionContainer.appendChild(subtitle);
+
+                    if(subsection.type === 'list'){
+                        
+                        if(subsection.ordered === false){
+                            const unorderedList = document.createElement('ul');
+                            unorderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
+
+                            subsection.content.forEach(listItem => {
+                                const itemContent = document.createElement('li');
+                                itemContent.classList.add('project-details__desc');
+                                itemContent.textContent = listItem;
+
+                                unorderedList.append(itemContent);
+
+                                subsectionContainer.appendChild(unorderedList);
+                            })
+                        } else if(subsection.ordered === true){
+                            const orderedList = document.createElement('ol');
+                            orderedList.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
+
+                            subsection.content.forEach(listItem => {
+                                const itemContent = document.createElement('li');
+                                itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                                itemContent.textContent = listItem;
+
+                                orderedList.append(itemContent);
+
+                                subsectionContainer.appendChild(orderedList);
+                            })
+                        }
+                    } else if(subsection.type === 'text'){
+                        const itemContent = document.createElement('p');
+                        itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding');
+                        itemContent.textContent = subsection.content;
+
+                        subsectionContainer.appendChild(itemContent);
+                    }
+                })
+            }
+                        
+
 
             if(item.type === 'list'){
                 if(item.ordered === false){
@@ -273,6 +322,7 @@ function renderSectionData(section, container){
                 toArray(item.content).forEach(text => {
                     const sectionContent = document.createElement('p');
                     sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                    // sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding', 'project-details--newline');
                     sectionContent.textContent = text;
     
                     subsectionContainer.appendChild(sectionContent);

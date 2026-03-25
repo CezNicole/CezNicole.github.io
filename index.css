@@ -325,6 +325,9 @@ body {
 .project-details__desc--left-margin {
   margin-left: 1em;
 }
+.project-details__desc--extra-left-margin {
+  margin-left: 2em;
+}
 .project-details__desc--colored-text {
   color: #5bacc3;
 }

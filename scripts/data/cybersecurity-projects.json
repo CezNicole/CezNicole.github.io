@@ -797,23 +797,22 @@
                             "type": "text",
                             "subheading": "II. Define Technical Scope",
                             "objective": "Understand the attack surface by identifying the technologies being used by the application and their dependencies.",
-                            "sections": [
+                            "subsections": [
                                 {
                                     "type": "list",
                                     "ordered": false,
-                                    "title": "Key Technologies",
+                                    "subtitle": "Key Technologies",
                                     "content": [
-                                        "• API: Defines how software components interact; used to integrate functionality without building from scratch.",
-                                        "• PKI: Provides an encryption framework using AES and RSA to secure data exchange.",
-                                        "• AES: Encrypts sensitive information such as credit card data.",
-                                        "• SHA-256: Hashes sensitive user data like passwords and credit card numbers for protection.",
-                                        "• SQL: Manages storage and retrieval of application data, including sneakers and seller information.",
-                                        "Rationale: Given that the new sneaker app will be used to exchange and store large volumes of user data, these technologies are prioritized to ensure secure data handling and reliable client-server interactions. Collectively, they enforce encryption, hashing, and structured data management to maintain confidentiality, integrity, and system security."
+                                        "API: Defines how software components interact; used to integrate functionality without building from scratch.",
+                                        "PKI: Provides an encryption framework using AES and RSA to secure data exchange.",
+                                        "AES: Encrypts sensitive information such as credit card data.",
+                                        "SHA-256: Hashes sensitive user data like passwords and credit card numbers for protection.",
+                                        "SQL: Manages storage and retrieval of application data, including sneakers and seller information."
                                     ]
                                 },
                                 {
                                     "type": "text",
-                                    "title": "Rationale",
+                                    "subtitle": "Rationale",
                                     "content": "Given that the new sneaker app will be used to exchange and store large volumes of user data, these technologies are prioritized to ensure secure data handling and reliable client-server interactions. Collectively, they enforce encryption, hashing, and structured data management to maintain confidentiality, integrity, and system security."
                                 }
                             ]

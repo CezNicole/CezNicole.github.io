@@ -251,6 +251,10 @@
 			margin-left: 1em;
 		}
 
+		&--extra-left-margin {
+			margin-left: 2em;
+		}
+
 		&--colored-text {
 			@include blue-text;
 		}
