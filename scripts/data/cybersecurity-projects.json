@@ -813,32 +813,40 @@
                                 {
                                     "type": "text",
                                     "subtitle": "Rationale",
-                                    "content": "Given that the new sneaker app will be used to exchange and store large volumes of user data, these technologies are prioritized to ensure secure data handling and reliable client-server interactions. Collectively, they enforce encryption, hashing, and structured data management to maintain confidentiality, integrity, and system security."
+                                    "content": "These technologies are prioritized because they are directly involved in how user data is handled and protected within the application. The API serves as the main entry point for client-server communication, while the database stores sensitive information. The combination of encryption and hashing helps keep the data secure. If any of these components are compromised, it could lead to risks such as unauthorized access or data exposure."
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "list",
-                    "ordered": false,
-                    "heading": "SAMPLE GUIDE: Identified Security Risks",
-                    "items": [
-                        {
-                            "subheading": "Shared employee passwords",
-                            "content": "The organization's employees share passwords, increasing the risk of unauthorized access."
                         },
                         {
-                            "subheading": "Default admin credentials",
-                            "content": "The admin password for the database is set to the default, making the database highly vulnerable to brute force attacks and potential data leaks."
-                        },
-                        {
-                            "subheading": "Absence of firewall rules",
-                            "content": "The firewalls do not have rules in place to filter inbound and outbound network traffic, exposing the network to malicious activity."
-                        },
-                        {
-                            "subheading": "Lack of multi-factor authentication (MFA)",
-                            "content": "Multi-factor authentication (MFA) is not used, increasing the risk of unauthorized access to sensitive data."
+                            "type": "text",
+                            "subheading": "III. Decompose Application",
+                            "objective": "Review how the application works and how security controls are currently implemented.",
+                            "subsections": [
+                                {
+                                    "type": "text",
+                                    "content": "The sneaker app consists of a mobile client, an API layer, backend services, and a database. These parts work together to process user actions and store data."
+                                },
+                                {
+                                    "type": "list",
+                                    "ordered": true,
+                                    "subtitle": "How a Request Works",
+                                    "content": [
+                                        "A user searches for sneakers or sale items on the mobile app.",
+                                        "The app sends the request over a secured connection to the API.",
+                                        "The API passes the request to the backend services, which take the information from the database.",
+                                        "The data is sent back to the app so the user can see the results."
+                                    ]
+                                },
+                                {
+                                    "type": "list",
+                                    "ordered": false,
+                                    "subtitle": "Security Controls",
+                                    "content": [
+                                        "Sensitive data is protected throughout the process using encryption and hashing to prevent it from being stolen.",
+                                        "All communication between the app, API, and backend services is secured to prevent unauthorized access."
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },

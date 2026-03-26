@@ -266,11 +266,11 @@ function renderSectionData(section, container){
                             })
                         } else if(subsection.ordered === true){
                             const orderedList = document.createElement('ol');
-                            orderedList.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
+                            orderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
 
                             subsection.content.forEach(listItem => {
                                 const itemContent = document.createElement('li');
-                                itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                                itemContent.classList.add('project-details__desc');
                                 itemContent.textContent = listItem;
 
                                 orderedList.append(itemContent);
@@ -278,9 +278,11 @@ function renderSectionData(section, container){
                                 subsectionContainer.appendChild(orderedList);
                             })
                         }
-                    } else if(subsection.type === 'text'){
+                    } 
+                    // else if(subsection.type === 'text'){
+                    else{
                         const itemContent = document.createElement('p');
-                        itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding');
+                        itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding', 'project-details--newline');
                         itemContent.textContent = subsection.content;
 
                         subsectionContainer.appendChild(itemContent);
@@ -321,8 +323,8 @@ function renderSectionData(section, container){
             } else{
                 toArray(item.content).forEach(text => {
                     const sectionContent = document.createElement('p');
-                    sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
-                    // sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding', 'project-details--newline');
+                    // sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+                    sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding', 'project-details--newline');
                     sectionContent.textContent = text;
     
                     subsectionContainer.appendChild(sectionContent);
