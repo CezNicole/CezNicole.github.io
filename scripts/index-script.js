@@ -240,55 +240,55 @@ function renderSectionData(section, container){
                 subsectionContainer.appendChild(objectiveDiv);
             }
 
-            // Item Subsections w/in Project Sections
-            if(item.subsections){
-                item.subsections.forEach(subsection => {
-                    const subtitle = document.createElement('h4');
-                    subtitle.classList.add('modal__section-subtitles', 'project-details__desc--left-margin');
-                    subtitle.textContent = subsection.subtitle;
+            // // Item Subsections w/in Project Sections
+            // if(item.subsections){
+            //     item.subsections.forEach(subsection => {
+            //         const subtitle = document.createElement('h4');
+            //         subtitle.classList.add('modal__section-subtitles', 'project-details__desc--left-margin');
+            //         subtitle.textContent = subsection.subtitle;
                     
-                    subsectionContainer.appendChild(subtitle);
+            //         subsectionContainer.appendChild(subtitle);
 
-                    if(subsection.type === 'list'){
+            //         if(subsection.type === 'list'){
                         
-                        if(subsection.ordered === false){
-                            const unorderedList = document.createElement('ul');
-                            unorderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
+            //             if(subsection.ordered === false){
+            //                 const unorderedList = document.createElement('ul');
+            //                 unorderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
 
-                            subsection.content.forEach(listItem => {
-                                const itemContent = document.createElement('li');
-                                itemContent.classList.add('project-details__desc');
-                                itemContent.textContent = listItem;
+            //                 subsection.content.forEach(listItem => {
+            //                     const itemContent = document.createElement('li');
+            //                     itemContent.classList.add('project-details__desc');
+            //                     itemContent.textContent = listItem;
 
-                                unorderedList.append(itemContent);
+            //                     unorderedList.append(itemContent);
 
-                                subsectionContainer.appendChild(unorderedList);
-                            })
-                        } else if(subsection.ordered === true){
-                            const orderedList = document.createElement('ol');
-                            orderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
+            //                     subsectionContainer.appendChild(unorderedList);
+            //                 })
+            //             } else if(subsection.ordered === true){
+            //                 const orderedList = document.createElement('ol');
+            //                 orderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
 
-                            subsection.content.forEach(listItem => {
-                                const itemContent = document.createElement('li');
-                                itemContent.classList.add('project-details__desc');
-                                itemContent.textContent = listItem;
+            //                 subsection.content.forEach(listItem => {
+            //                     const itemContent = document.createElement('li');
+            //                     itemContent.classList.add('project-details__desc');
+            //                     itemContent.textContent = listItem;
 
-                                orderedList.append(itemContent);
+            //                     orderedList.append(itemContent);
 
-                                subsectionContainer.appendChild(orderedList);
-                            })
-                        }
-                    } 
-                    // else if(subsection.type === 'text'){
-                    else{
-                        const itemContent = document.createElement('p');
-                        itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding', 'project-details--newline');
-                        itemContent.textContent = subsection.content;
+            //                     subsectionContainer.appendChild(orderedList);
+            //                 })
+            //             }
+            //         } 
+            //         // else if(subsection.type === 'text'){
+            //         else{
+            //             const itemContent = document.createElement('p');
+            //             itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding', 'project-details--newline');
+            //             itemContent.textContent = subsection.content;
 
-                        subsectionContainer.appendChild(itemContent);
-                    }
-                })
-            }
+            //             subsectionContainer.appendChild(itemContent);
+            //         }
+            //     })
+            // }
                         
 
 
@@ -331,6 +331,57 @@ function renderSectionData(section, container){
                 })
             }
             container.append(sectionTitle, subsectionContainer);
+
+
+            // Item Subsections w/in Project Sections
+            if(item.subsections){
+                item.subsections.forEach(subsection => {
+                    const subtitle = document.createElement('h4');
+                    subtitle.classList.add('modal__section-subtitles', 'project-details__desc--left-margin');
+                    subtitle.textContent = subsection.subtitle;
+                    
+                    subsectionContainer.appendChild(subtitle);
+
+                    if(subsection.type === 'list'){
+                        const listEl = document.createElement(subsection.ordered ? 'ol' : 'ul');
+                        listEl.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
+                        
+                        if(subsection.items){
+                            subsection.items.forEach(item => {
+                                const itemHeading = document.createElement('li');
+                                itemHeading.classList.add('project-details__desc', 'project-details__desc--bold', 'project-details__desc--remove-bottom-margin');
+                                itemHeading.textContent = item.subheading;
+
+                                const itemContent = document.createElement('p');
+                                itemContent.classList.add('project-details__desc');
+                                itemContent.textContent = item.content;
+
+                                listEl.append(itemHeading, itemContent);
+
+                                subsectionContainer.appendChild(listEl);
+                            })
+                        } else if(subsection.content){
+                            subsection.content.forEach(listItem => {
+                                const itemContent = document.createElement('li');
+                                itemContent.classList.add('project-details__desc');
+                                itemContent.textContent = listItem;
+
+                                listEl.append(itemContent);
+
+                                subsectionContainer.appendChild(listEl);
+                            })
+                        } 
+                    } 
+                    // else if(subsection.type === 'text'){
+                    else{
+                        const itemContent = document.createElement('p');
+                        itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding', 'project-details--newline');
+                        itemContent.textContent = subsection.content;
+
+                        subsectionContainer.appendChild(itemContent);
+                    }
+                })
+            }
         })
     } else if(section.type === 'list'){
         const sectionTitle = document.createElement('h2');

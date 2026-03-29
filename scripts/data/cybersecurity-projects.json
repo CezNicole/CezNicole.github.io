@@ -802,12 +802,27 @@
                                     "type": "list",
                                     "ordered": false,
                                     "subtitle": "Key Technologies",
-                                    "content": [
-                                        "API: Defines how software components interact; used to integrate functionality without building from scratch.",
-                                        "PKI: Provides an encryption framework using AES and RSA to secure data exchange.",
-                                        "AES: Encrypts sensitive information such as credit card data.",
-                                        "SHA-256: Hashes sensitive user data like passwords and credit card numbers for protection.",
-                                        "SQL: Manages storage and retrieval of application data, including sneakers and seller information."
+                                    "items": [
+                                        {
+                                            "subheading": "API",
+                                            "content": "Defines how software components interact; used to integrate functionality without building from scratch."
+                                        },
+                                        {
+                                            "subheading": "PKI",
+                                            "content": "Provides an encryption framework using AES and RSA to secure data exchange."
+                                        },
+                                        {
+                                            "subheading": "AES",
+                                            "content": "Encrypts sensitive information such as credit card data."
+                                        },
+                                        {
+                                            "subheading": "SHA-256",
+                                            "content": "Hashes sensitive user data like passwords and credit card numbers for protection."
+                                        },
+                                        {
+                                            "subheading": "SQL",
+                                            "content": "Manages storage and retrieval of application data, including sneakers and seller information."
+                                        }
                                     ]
                                 },
                                 {
@@ -821,20 +836,18 @@
                             "type": "text",
                             "subheading": "III. Decompose Application",
                             "objective": "Review how the application works and how security controls are currently implemented.",
+                            "content": "The sneaker app consists of a mobile client, an API layer, backend services, and a database. These parts work together to process user actions and store data.",
                             "subsections": [
-                                {
-                                    "type": "text",
-                                    "content": "The sneaker app consists of a mobile client, an API layer, backend services, and a database. These parts work together to process user actions and store data."
-                                },
                                 {
                                     "type": "list",
                                     "ordered": true,
                                     "subtitle": "How a Request Works",
                                     "content": [
-                                        "A user searches for sneakers or sale items on the mobile app.",
-                                        "The app sends the request over a secured connection to the API.",
-                                        "The API passes the request to the backend services, which take the information from the database.",
-                                        "The data is sent back to the app so the user can see the results."
+                                        "A user performs an action in the mobile app, such as searching for sneakers, interacting with sellers, or submitting a rating.",
+                                        "The app sends the request to the API over a secure connection.",
+                                        "The API forwards the request to backend services, where the input is processed and validated.",
+                                        "The backend services interact with the database to retrieve or store the essential data.",
+                                        "The response is returned through the API to the mobile app, where the user can view the results."
                                     ]
                                 },
                                 {
