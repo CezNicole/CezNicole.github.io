@@ -836,8 +836,31 @@
                             "type": "text",
                             "subheading": "III. Decompose Application",
                             "objective": "Review how the application works and how security controls are currently implemented.",
-                            "content": "The sneaker app consists of a mobile client, an API layer, backend services, and a database. These parts work together to process user actions and store data.",
                             "subsections": [
+                                {
+                                    "type": "list",
+                                    "ordered": true,
+                                    "subtitle": "Application Components",
+                                    "description": "The sneaker app consists of several components that work together to process user actions and manage data:",
+                                    "items": [
+                                        {
+                                            "subheading": "Mobile Client",
+                                            "content": "Interface where users (buyers and sellers) interact with the app – e.g. browsing, messaging, purchasing, seller rating"
+                                        },
+                                        {
+                                            "subheading": "API Layer",
+                                            "content": "Handles incoming requests from the mobile client and routes them to the appropriate backend services"
+                                        },
+                                        {
+                                            "subheading": "Backend Services",
+                                            "content": "Process business logic, validate user input, and handle transactions"
+                                        },
+                                        {
+                                            "subheading": "SQL Database",
+                                            "content": "Stores application data such as user accounts, sneakers inventory, and transaction records"
+                                        }
+                                    ]
+                                },
                                 {
                                     "type": "list",
                                     "ordered": true,
@@ -854,49 +877,95 @@
                                     "type": "list",
                                     "ordered": false,
                                     "subtitle": "Security Controls",
-                                    "content": [
-                                        "Sensitive data is protected throughout the process using encryption and hashing to prevent it from being stolen.",
-                                        "All communication between the app, API, and backend services is secured to prevent unauthorized access."
+                                    "items": [
+                                        {
+                                            "subheading": "Secure Communication",
+                                            "content": "Data is sent between the mobile app, API, and backend services over encrypted connections to protect it from being intercepted."
+                                        },
+                                        {
+                                            "subheading": "Input Validation",
+                                            "content": "Backend services validate user input before processing it to reduce the risk of malicious data."
+                                        },
+                                        {
+                                            "subheading": "Encryption",
+                                            "content": "Sensitive data, such as login credentials and payment information, is encrypted during transmission to protect it from unauthorized access."
+                                        },
+                                        {
+                                            "subheading": "Hashing",
+                                            "content": "Sensitive data, like passwords, is hashed before being stored in the database to prevent it from being exposed."
+                                        }
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    "type": "subsections",
-                    "heading": "Remediation Strategy",
-                    "items": [
-                        {
-                            "type": "list",
-                            "ordered": false,
-                            "subheading": "Technical Controls",
-                            "content": [
-                                "Restrict public access to the database by implementing firewall rules or network access control list (NACL) that only allow authorized connections.",
-                                "Require employees to connect through a virtual private network (VPN) when accessing internal systems remotely to ensure encrypted communication.",
-                                "Implement role-based access control (RBAC) and enforce the principle of least privilege to limit user permissions to only what's required for their roles.",
-                                "Enable encryption mechanisms to protect sensitive data both in transit and at rest.",
-                                "Implement centralized logging and monitoring to detect unauthorized access and malicious activity."
-                            ]
                         },
                         {
-                            "type": "list",
-                            "ordered": false,
-                            "subheading": "Operational Controls",
-                            "content": [
-                                "Conduct regular vulnerability assessments and security reviews to identify any misconfigurations or exposed services.",
-                                "Establish database access logs and monitoring procedures.",
-                                "Implement routine system updates and patch management to ensure operating system and database software remain secure."
-                            ]
-                        },
-                        {
-                            "type": "list",
-                            "ordered": false,
-                            "subheading": "Managerial Controls",
-                            "content": [
-                                "Develop and enforce organizational policies governing database access and data protection.",
-                                "Provide security awareness training to employees on proper handling of sensitive data.",
-                                "Establish an incident response process to ensure timely investigation and remediation of security events."
+                            "type": "text",
+                            "subheading": "IV. Threat Analysis",
+                            "objective": "Consider the types of threats, including technologies in scope and type of data that will be processed, that might affect the application.",
+                            "subsections": [
+                                {
+                                    "type": "list",
+                                    "ordered": false,
+                                    "subtitle": "Internal Threats",
+                                    "items": [
+                                        {
+                                            "subheading": "Unauthorized Access to Database",
+                                            "content": [
+                                                "Internal users or system with improper permissions can access sensitive data, such as user information and transaction records.",
+                                                "Mitigation: Implement principle of least privilege, , restrict database access, enforce encryption, and use data hashing"
+                                            ]
+                                        },
+                                        {
+                                            "subheading": "Server Misconfiguration",
+                                            "content": [
+                                                "Improperly configured backend servers can allow threat actors to exploit them to gain control on application processes and data.",
+                                                "Mitigation: Regularly monitor system access, conduct system health checks regularly, validate input validation and use secure communication"
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "list",
+                                    "ordered": false,
+                                    "subtitle": "External Threats",
+                                    "items": [
+                                        {
+                                            "subheading": "Malicious User Input",
+                                            "content": [
+                                                "Attackers can enter unexpected data or inject malicious data through the input fields, such as the search bar, to exploit backend processing.",
+                                                "Mitigation: Validate user inputs before processing"
+                                            ]
+                                        },
+                                        {
+                                            "subheading": "Data Infiltration and Exfiltration",
+                                            "content": [
+                                                "Data transmitted between the mobile app, API, and the backend services can be intercepted, infiltrated, or exfiltrated.",
+                                                "Mitigation: Encrypt all sensitive data and use secure network connections"
+                                            ]
+                                        },
+                                        {
+                                            "subheading": "API Exploitation",
+                                            "content": [
+                                                "Unauthorized or manipulated API requests can access or modify data.",
+                                                "Mitigation: Authenticate user requests, validate user inputs, and use secure communication"
+                                            ]
+                                        },
+                                        {
+                                            "subheading": "Compromised User Devices",
+                                            "content": [
+                                                "If a user's device is compromised, attackers can access accounts using stolen credentials.",
+                                                "Mitigation: Enforce multi-factor authentication (MFA), use hashing and encryption on sensitive data"
+                                            ]
+                                        },
+                                        {
+                                            "subheading": "Payment Data Exposure",
+                                            "content": [
+                                                "Sensitive payment information can be exposed during processing if not properly protected.",
+                                                "Mitigation: Encrypt sensitive data, use secure communication, and enforce TLS connections"
+                                            ]
+                                        }
+                                    ]
+                                }
                             ]
                         }
                     ]
