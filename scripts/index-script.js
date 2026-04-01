@@ -216,11 +216,20 @@ function renderSectionData(section, container){
         subsectionContainer.classList.add('project-details__desc');
 
         section.items.forEach(item => {
+            // Collapsible section header
             const sectionSubtitle = document.createElement('h3');
-            sectionSubtitle.classList.add('modal__section-subtitles');
+            sectionSubtitle.classList.add('modal__section-subtitles', 'collapsible');
             sectionSubtitle.textContent = item.subheading;
+            
+            // Collapsible section content
+            const contentDiv = document.createElement('div');
+            contentDiv.classList.add('collapsible-content');
 
-            subsectionContainer.appendChild(sectionSubtitle);
+            // subsectionContainer.appendChild(sectionSubtitle);
+            subsectionContainer.append(sectionSubtitle,contentDiv);
+            
+            collapsibleSections(subsectionContainer);
+
 
             // PASTA stage objectives
             if(item.objective){
@@ -626,3 +635,29 @@ function toArray(data){
 function calculateOverallRiskScore(likelihood, severity){
     return likelihood * severity;
 }
+
+
+// Collapsible content functionality
+function collapsibleSections(container){
+    container.querySelectorAll('collapsible').forEach(section => {
+        section.addEventListener('click', () => {
+            section.classList.toggle('active');
+
+            const content = section.nextElementSibling;
+
+            content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
+        })
+    });
+}
+// for (let i = 0; i < collapsible.length; i++) {
+//     collapsible[i].addEventListener('click', () => {
+//         collapsible[i].classList.toggle('active');
+
+//         let content = collapsible[i].nextElementSibling;
+//         if(content.style.maxHeight){
+//             content.style.maxHeight = null;
+//         } else {
+//             content.style.maxHeight = content.scrollHeight + 'px';
+//         }
+//     })
+// }

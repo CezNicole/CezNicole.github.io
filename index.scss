@@ -447,6 +447,33 @@
 	}
 }
 
+.collapsible {
+	@extend .buttons;
+	cursor: pointer;
+	padding: 0.5em;
+	width: 100%;
+	text-align: left;
+	margin: 0.5em 0;
+
+	&:after {
+		@include font-bold;
+		content: '\25B2';
+		float: right;
+	}
+}
+
+.active:after {
+	content: '\25BC';
+}
+
+.collapsible-content {
+	padding: 0 0.5em;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	background-color: colors.$japanese-indigo;
+}
+
 @include breakpoints.tablet {
 	.nav-links {
 		margin: 1.5em;

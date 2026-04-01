@@ -911,15 +911,15 @@
                                         {
                                             "subheading": "Unauthorized Access to Database",
                                             "content": [
-                                                "Internal users or system with improper permissions can access sensitive data, such as user information and transaction records.",
-                                                "Mitigation: Implement principle of least privilege, , restrict database access, enforce encryption, and use data hashing"
+                                                "Internal users or systems with default administrator permissions may access sensitive data, including user information and transaction records.",
+                                                "Mitigation: Enforce the principle of least privilege, restrict access using role-based access controls (RBAC), and protect stored data using encryption and hashing"
                                             ]
                                         },
                                         {
                                             "subheading": "Server Misconfiguration",
                                             "content": [
-                                                "Improperly configured backend servers can allow threat actors to exploit them to gain control on application processes and data.",
-                                                "Mitigation: Regularly monitor system access, conduct system health checks regularly, validate input validation and use secure communication"
+                                                "Improperly configured backend servers may expose vulnerabilities (e.g. open ports, weak security controls) that can allow attackers to gain control over application processes and access sensitive data.",
+                                                "Mitigation: Regularly audit system settings, monitor access logs, and keep systems up-to-date"
                                             ]
                                         }
                                     ]
@@ -930,38 +930,31 @@
                                     "subtitle": "External Threats",
                                     "items": [
                                         {
-                                            "subheading": "Malicious User Input",
+                                            "subheading": "SQL Injection",
                                             "content": [
-                                                "Attackers can enter unexpected data or inject malicious data through the input fields, such as the search bar, to exploit backend processing.",
+                                                "Attackers may inject unexpected or malicious data through the input fields, such as the search bar, to manipulate database queries and access unauthorized data.",
                                                 "Mitigation: Validate user inputs before processing"
                                             ]
                                         },
                                         {
-                                            "subheading": "Data Infiltration and Exfiltration",
+                                            "subheading": "Data Exfiltration",
                                             "content": [
-                                                "Data transmitted between the mobile app, API, and the backend services can be intercepted, infiltrated, or exfiltrated.",
-                                                "Mitigation: Encrypt all sensitive data and use secure network connections"
+                                                "Attackers may extract sensitive data after gaining unauthorized access to the application.",
+                                                "Mitigation: Encrypt all sensitive data and monitor for unusual data access or transfer activities"
                                             ]
                                         },
                                         {
-                                            "subheading": "API Exploitation",
+                                            "subheading": "Malware on User Devices",
                                             "content": [
-                                                "Unauthorized or manipulated API requests can access or modify data.",
-                                                "Mitigation: Authenticate user requests, validate user inputs, and use secure communication"
+                                                "Malware on a user's device may capture sensitive information, allowing attackers to access accounts using stolen credentials.",
+                                                "Mitigation: Enforce multi-factor authentication (MFA) and protect sensitive data using hashing and encryption"
                                             ]
                                         },
                                         {
-                                            "subheading": "Compromised User Devices",
+                                            "subheading": "Social Engineering Attacks",
                                             "content": [
-                                                "If a user's device is compromised, attackers can access accounts using stolen credentials.",
-                                                "Mitigation: Enforce multi-factor authentication (MFA), use hashing and encryption on sensitive data"
-                                            ]
-                                        },
-                                        {
-                                            "subheading": "Payment Data Exposure",
-                                            "content": [
-                                                "Sensitive payment information can be exposed during processing if not properly protected.",
-                                                "Mitigation: Encrypt sensitive data, use secure communication, and enforce TLS connections"
+                                                "Attackers may trick users into revealing sensitive information through phishing or deceptive communication.",
+                                                "Mitigation: Educate users on recognizing phishing attacks and enforce MFA"
                                             ]
                                         }
                                     ]
