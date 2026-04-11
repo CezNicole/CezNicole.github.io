@@ -470,9 +470,15 @@
 	padding: 0 0.5em;
 	max-height: 0;
 	overflow: hidden;
-	transition: max-height 0.2s ease-out;
-	background-color: colors.$japanese-indigo;
+	// transition: max-height 0.2s ease-out;
+	transition: max-height 0.3s ease;
+
+	// background-color: colors.$japanese-indigo;
 }
+
+// .collapsible.open + .collapsible-content {
+// 	max-height: 500px;
+// }
 
 @include breakpoints.tablet {
 	.nav-links {

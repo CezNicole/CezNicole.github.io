@@ -1,3 +1,4 @@
+import { createElement } from "react";
 import {getProjects, getHighlightedSkills} from "./index-api.js";
 
 const btnContact = document.getElementById('btnContactMe');
@@ -192,7 +193,7 @@ function renderProjectCards(projects){
 }
 
 // TO-DO: Refactor to make the code DRY for each section type render
-function renderSectionData(section, container){
+function renderSectionData(section, container, isPastaProject = false){
     if(section.type === 'text'){
         const sectionTitle = document.createElement('h2');
         sectionTitle.classList.add('modal__section-titles');
@@ -218,17 +219,30 @@ function renderSectionData(section, container){
         section.items.forEach(item => {
             // Collapsible section header
             const sectionSubtitle = document.createElement('h3');
-            sectionSubtitle.classList.add('modal__section-subtitles', 'collapsible');
+            sectionSubtitle.classList.add('modal__section-subtitles');
             sectionSubtitle.textContent = item.subheading;
+            
+            // if(isPastaProject){
+            //     sectionSubtitle.classList.add('collapsible');
+            // }
+
             
             // Collapsible section content
             const contentDiv = document.createElement('div');
-            contentDiv.classList.add('collapsible-content');
+            
 
             // subsectionContainer.appendChild(sectionSubtitle);
-            subsectionContainer.append(sectionSubtitle,contentDiv);
+
+
+            if(isPastaProject){
+                sectionSubtitle.classList.add('collapsible');
+                contentDiv.classList.add('collapsible-content');
+                subsectionContainer.append(sectionSubtitle, contentDiv);
+            } 
+            else{
+                subsectionContainer.appendChild(sectionSubtitle);
+            }
             
-            collapsibleSections(subsectionContainer);
 
 
             // PASTA stage objectives
@@ -246,7 +260,13 @@ function renderSectionData(section, container){
     
                 objectiveDiv.append(objectiveTitle, objectiveContent);
     
-                subsectionContainer.appendChild(objectiveDiv);
+                // subsectionContainer.appendChild(objectiveDiv);
+
+                if(isPastaProject){
+                    contentDiv.appendChild(objectiveDiv);
+                } else{
+                    subsectionContainer.appendChild(objectiveDiv);
+                }
             }
 
             // // Item Subsections w/in Project Sections
@@ -300,6 +320,8 @@ function renderSectionData(section, container){
             // }
                         
 
+            container.appendChild(sectionTitle);
+            container.appendChild(subsectionContainer);
 
             if(item.type === 'list'){
                 if(item.ordered === false){
@@ -313,7 +335,13 @@ function renderSectionData(section, container){
 
                         unorderedList.append(itemContent);
 
-                        subsectionContainer.appendChild(unorderedList);
+                        // subsectionContainer.appendChild(unorderedList);
+
+                        if(isPastaProject){
+                            contentDiv.appendChild(unorderedList);
+                        } else{
+                            subsectionContainer.appendChild(unorderedList);
+                        }
                     })
                 } else if(section.ordered === true){
                     const orderedList = document.createElement('ol');
@@ -326,7 +354,13 @@ function renderSectionData(section, container){
 
                         orderedList.append(itemContent);
 
-                        subsectionContainer.appendChild(orderedList);
+                        // subsectionContainer.appendChild(orderedList);
+
+                        if(isPastaProject){
+                            contentDiv.appendChild(orderedList);
+                        } else{
+                            subsectionContainer.appendChild(orderedList);
+                        }
                     })
                 }
             } else{
@@ -336,10 +370,19 @@ function renderSectionData(section, container){
                     sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding', 'project-details--newline');
                     sectionContent.textContent = text;
     
-                    subsectionContainer.appendChild(sectionContent);
+                    // subsectionContainer.appendChild(sectionContent);
+
+                    if(isPastaProject){
+                        contentDiv.appendChild(sectionContent);
+                    } else{
+                        subsectionContainer.appendChild(sectionContent);
+                    }
                 })
             }
-            container.append(sectionTitle, subsectionContainer);
+            // container.append(sectionTitle, subsectionContainer);
+
+            // container.appendChild(sectionTitle);
+            // container.appendChild(subsectionContainer);
 
 
             // Item Subsections w/in Project Sections
@@ -349,7 +392,11 @@ function renderSectionData(section, container){
                     subtitle.classList.add('modal__section-subtitles', 'project-details__desc--left-margin');
                     subtitle.textContent = subsection.subtitle;
                     
-                    subsectionContainer.appendChild(subtitle);
+                    if(isPastaProject){
+                        contentDiv.appendChild(subtitle);
+                    } else {
+                        subsectionContainer.appendChild(subtitle);
+                    }
 
                     if(subsection.description){
                         const description = document.createElement('p');
@@ -358,7 +405,11 @@ function renderSectionData(section, container){
 
                         description.textContent = subsection.description;
     
-                        subsectionContainer.appendChild(description);
+                        if(isPastaProject){
+                            contentDiv.appendChild(description);
+                        } else{
+                            subsectionContainer.appendChild(description);
+                        }
                     }
 
                     if(subsection.type === 'list'){
@@ -383,7 +434,7 @@ function renderSectionData(section, container){
                                     itemContent.classList.add('project-details__desc', 'project-details__desc--modal-padding', 'project-details--newline');
                                     itemContent.textContent = text;
 
-                                    console.log(text);
+                                    // console.log(text);
                                     
 
                                     listEl.appendChild(itemContent);
@@ -391,7 +442,11 @@ function renderSectionData(section, container){
 
                                 // listEl.append(itemHeading, itemContent);
 
-                                subsectionContainer.appendChild(listEl);
+                                if(isPastaProject){
+                                    contentDiv.appendChild(listEl);
+                                } else{
+                                    subsectionContainer.appendChild(listEl);
+                                }
                             })
                         } else if(subsection.content){
                             subsection.content.forEach(listItem => {
@@ -401,7 +456,11 @@ function renderSectionData(section, container){
 
                                 listEl.append(itemContent);
 
-                                subsectionContainer.appendChild(listEl);
+                                if(isPastaProject){
+                                    contentDiv.appendChild(listEl);
+                                } else{
+                                    subsectionContainer.appendChild(listEl);
+                                }
                             })
                         } 
                     } 
@@ -410,7 +469,11 @@ function renderSectionData(section, container){
                         itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding', 'project-details--newline');
                         itemContent.textContent = subsection.content;
 
-                        subsectionContainer.appendChild(itemContent);
+                        if(isPastaProject){
+                            contentDiv.appendChild(itemContent);
+                        } else{
+                            subsectionContainer.appendChild(itemContent);
+                        }
                     }
                 })
             }
@@ -600,6 +663,71 @@ function renderSectionData(section, container){
     }
 }
 
+function renderSection(section, container, renderConfig = {}){
+    const element = createSection(section, renderConfig);
+    if(element){
+        container.appendChild(element);
+    }
+}
+
+function createSection(section, renderConfig = {}){
+    switch (section.type) {
+        case 'text':
+            return renderText();
+        case 'list':
+            return renderList();
+        case 'subsections':
+            return renderSubsections();
+        case 'table':
+            return renderTable();
+        default:
+            return null;
+    }
+}
+
+function renderText(section){
+    const sectionContainer = document.createElement('div');
+
+    if(section.heading){
+        const sectionTitle = document.createElement('h2');
+        sectionTitle.classList.add('modal__section-titles');
+        sectionTitle.textContent = section.heading;
+        
+        sectionContainer.appendChild(sectionTitle);
+    }
+
+    toArray(section.content).forEach(text => {
+        const sectionContent = document.createElement('p');
+        sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
+        sectionContent.textContent = text;
+
+        sectionContainer.appendChild(sectionContent);
+    })
+    return sectionContainer;
+}
+
+function renderList(section){
+    const sectionContainer = document.createElement('div');
+
+    if(section.heading){
+        const sectionTitle = document.createElement('h2');
+        sectionTitle.classList.add('modal__section-titles');
+        sectionTitle.textContent = section.heading;
+    }
+
+    const list = document.createElement(section.ordered ? 'ol' : 'ul');
+
+    section.items.forEach(item => {
+        const sectionSubtitle = document.createElement('li');
+        
+    })
+}
+
+// Adding collapsibleSections function on PASTA project
+const pastaContainer = document.getElementById('pasta-project');
+renderSectionData(section, pastaContainer, isPastaProject = true);
+collapsibleSections(pastaContainer);
+
 // Cybersecurity Projects - Modal Functionality
 function openModal(id){
     const modal = document.getElementById(id);
@@ -639,25 +767,16 @@ function calculateOverallRiskScore(likelihood, severity){
 
 // Collapsible content functionality
 function collapsibleSections(container){
-    container.querySelectorAll('collapsible').forEach(section => {
-        section.addEventListener('click', () => {
-            section.classList.toggle('active');
+    container.addEventListener('click', (event) => {
+        const header = event.target.closest('.collapsible');
+        if(!header) return;
 
-            const content = section.nextElementSibling;
+        const content = header.nextElementSibling;
+        if(!content) return;
 
-            content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
-        })
-    });
+        // header.classList.toggle('open');
+        header.classList.toggle('active');
+
+        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
+    })
 }
-// for (let i = 0; i < collapsible.length; i++) {
-//     collapsible[i].addEventListener('click', () => {
-//         collapsible[i].classList.toggle('active');
-
-//         let content = collapsible[i].nextElementSibling;
-//         if(content.style.maxHeight){
-//             content.style.maxHeight = null;
-//         } else {
-//             content.style.maxHeight = content.scrollHeight + 'px';
-//         }
-//     })
-// }

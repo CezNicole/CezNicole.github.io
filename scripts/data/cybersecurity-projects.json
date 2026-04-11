@@ -132,7 +132,7 @@
                         "Packet capture using Wireshark revealed that usually high volume of TCP SYN packets coming from source IP 203.0.113.0",
                         "Initial requests from the malicious source IP 203.0.113.0 completed the 3-way TCP handshake, but subsequent SYN requests exhausted the company web server's capacity to respond to legitimate traffic",
                         "Company users (source IP 194.51.100.0/24) were able to access the website prior to the attack, but began experiencing connection timeouts when the malicious activity started",
-                        "Logs showed [RST, ACK] packets and HTTP Gateway Timout responses resulting from unacknowledged SYN requests"
+                        "Logs showed [RST, ACK] packets and HTTP Gateway Timeout responses resulting from unacknowledged SYN requests"
                     ]
                 },
                 {

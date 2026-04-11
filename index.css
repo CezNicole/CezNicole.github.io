@@ -534,8 +534,7 @@ body {
   padding: 0 0.5em;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #2f3e46;
+  transition: max-height 0.3s ease;
 }
 
 @media (min-width: 768px) {
