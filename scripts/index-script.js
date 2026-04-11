@@ -713,14 +713,232 @@ function renderList(section){
         const sectionTitle = document.createElement('h2');
         sectionTitle.classList.add('modal__section-titles');
         sectionTitle.textContent = section.heading;
+
+        sectionContainer.appendChild(sectionTitle);
     }
 
     const list = document.createElement(section.ordered ? 'ol' : 'ul');
+    list.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
 
     section.items.forEach(item => {
-        const sectionSubtitle = document.createElement('li');
-        
+        const itemSubheading = document.createElement('li');
+
+        if(typeof item === 'string'){
+            itemSubheading.classList.add('project-details__desc');
+            itemSubheading.textContent = item;
+        } else{
+            itemSubheading.classList.add('project-details__desc', 'modal__list-items', 'modal__list-items--strong', 'project-details__desc--remove-bottom-margin');
+            itemSubheading.textContent = item.subheading;
+
+            if(item.content){
+                toArray(item.content).forEach(text => {
+                    const itemContent = document.createElement('p');
+                    itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
+                    itemContent.textContent = text;
+                    
+                    itemSubheading.appendChild(itemContent);
+                })
+            }
+        }
+        list.append(itemSubheading);
     })
+    sectionContainer.appendChild(list);
+    return sectionContainer;
+}
+
+function renderSubsections(section, renderConfig = {}){
+    const sectionContainer = document.createElement('div');
+
+    if(section.heading){
+        const sectionTitle = document.createElement('h2');
+        sectionTitle.classList.add('modal__section-titles');
+        sectionTitle.textContent = section.heading;
+
+        sectionContainer.appendChild(sectionTitle);
+    }
+
+    section.items.forEach(item => {
+        const sectionItems = renderConfig.collapsible ? createCollapsibleSection(item, renderConfig) : createRegularSection(item, renderConfig);
+
+        sectionContainer.appendChild(sectionItems);
+    })
+
+    return sectionContainer;
+}
+
+function renderTable(section){
+    const sectionContainer = document.createElement('div');
+
+    if(section.heading){
+        const sectionTitle = document.createElement('h2');
+        sectionTitle.classList.add('modal__section-titles');
+        sectionTitle.textContent = section.heading;
+
+        sectionContainer.appendChild(sectionTitle);
+    }
+
+    const table = document.createElement('table');
+    table.classList.add('table');
+
+    const thead = document.createElement('thead');
+
+    section.items.forEach(item => {
+        const tableRow = document.createElement('tr');
+        tableRow.classList.add('table__cells');
+        
+        Object.keys(item.risks[0]).forEach(key => {
+            const tableHeader = document.createElement('th');
+            tableHeader.classList.add('table__cells', 'modal__section-subtitles', 'table__header');
+
+            const uppercaseHeader = key.charAt(0).toUpperCase() + key.slice(1);
+            tableHeader.textContent = uppercaseHeader.split(/(?=[A-Z])/).join(" ");
+
+            tableRow.appendChild(tableHeader);
+        })
+
+        const priorityHeader = document.createElement('th');
+        priorityHeader.classList.add('table__cells', 'modal__section-subtitles', 'table__header');
+        priorityHeader.textContent = 'Priority';
+        tableRow.appendChild(priorityHeader);
+
+        thead.appendChild(tableRow);
+        table.appendChild(thead);
+
+        item.risks.forEach((risk, index) => {
+            const tableRow = document.createElement('tr');
+            tableRow.classList.add('table__cells');
+
+            // if(index === 0){
+            //     const tdAsset = document.createElement('td');
+            //     tdAsset.classList.add('table__cells', 'project-details__desc', 'table--span', 'table--center');
+            //     tdAsset.rowSpan = item.risks.length;
+            //     tdAsset.textContent = risk.asset;          
+
+                
+            //     tableRow.appendChild(tdAsset);
+            // }
+
+            // const tdRisk = document.createElement('td');
+            // tdRisk.classList.add('table__cells', 'project-details__desc');
+            // tdRisk.textContent = risk.riskItem;
+            // tableRow.appendChild(tdRisk);
+
+            // const tdDesc = document.createElement('td');
+            // tdDesc.classList.add('table__cells', 'project-details__desc');
+            // tdDesc.textContent = risk.description;
+            // tableRow.appendChild(tdDesc);
+
+            // const tdLikelihood = document.createElement('td');
+            // tdLikelihood.classList.add('table__cells', 'project-details__desc', 'table--center');
+            // tdLikelihood.textContent = risk.likelihood;
+            // tableRow.appendChild(tdLikelihood);
+
+            // const tdSeverity = document.createElement('td');
+            // tdSeverity.classList.add('table__cells', 'project-details__desc', 'table--center');
+            // tdSeverity.textContent = risk.severity;
+            // tableRow.appendChild(tdSeverity);
+
+            Object.entries(risk).forEach(([key, value]) => {
+                if(key === 'priority') return;
+                
+                const tableData = document.createElement('td');
+                tableData.classList.add('table__cells', 'project-details__desc');
+
+                if(key === 'likelihood' || key === 'severity'){
+                    tableData.classList.add('table--center');
+                } 
+                
+                if(typeof value === "object" && value !== null){
+                    const items = document.createElement('ul');
+                    items.classList.add('table--left-padding');
+
+                    toArray(value).forEach(text => {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('project-details__desc');
+                        listItem.textContent = text;
+
+                        items.appendChild(listItem);
+                    })
+                    tableData.appendChild(items);
+                } else{
+                    tableData.textContent = value ?? "";
+                }
+                tableRow.appendChild(tableData);
+            })
+
+            const tdPriority = document.createElement('td');
+            tdPriority.classList.add('table__cells', 'project-details__desc', 'table--center');
+            let result = calculateOverallRiskScore(risk.likelihood, risk.severity);
+            tdPriority.textContent = result;
+
+            if(result <= 3){
+                tdPriority.classList.add('priority--low');
+            } else if(result > 3 && result <= 6){
+                tdPriority.classList.add('priority--medium');
+            } else{
+                tdPriority.classList.add('priority--high');
+            }
+
+            tableRow.appendChild(tdPriority);
+            table.appendChild(tableRow);
+        })
+    })
+    sectionContainer.appendChild(table);
+    return sectionContainer;
+}
+
+function createCollapsibleSection(item, renderConfig){
+    const sectionContainer = document.createElement('div');
+    sectionContainer.classList.add('collapsible-item');
+
+    const itemSubheading = document.createElement('h3');
+    itemSubheading.classList.add('modal__section-subtitles');
+    itemSubheading.textContent = item.subheading;
+
+    const collapsibleContentContainer = document.createElement('div');
+    collapsibleContentContainer.classList.add('collapsible-content');
+
+    sectionContainer.append(itemSubheading, collapsibleContentContainer);
+
+    renderSubsectionItemContent(item, collapsibleContentContainer, renderConfig);
+
+    return sectionContainer;
+}
+
+function createRegularSection(item, renderConfig){
+    const sectionContainer = document.createElement('div');
+    
+    const itemSubheading = document.createElement('h3');
+    itemSubheading.classList.add('modal__section-subtitles');
+    itemSubheading.textContent = item.subheading;
+
+    sectionContainer.appendChild(itemSubheading);
+
+    renderSubsectionItemContent(item, sectionContainer, renderConfig);
+
+    return sectionContainer;
+}
+
+function renderSubsectionItemContent(item, container, renderConfig){
+    // PASTA stage objectives
+    if(item.objective){
+        const objectiveDiv = document.createElement('div');
+        objectiveDiv.classList.add('modal__header-content', 'project-details__desc--colored-text');
+
+        const objectiveTitle = document.createElement('p');
+        objectiveTitle.classList.add('project-details__desc--bold', 'project-details__desc--left-margin');
+        objectiveTitle.textContent = 'Objective:';
+
+        const objectiveContent = document.createElement('p');
+        objectiveContent.classList.add('project-details__desc', 'project-details__desc--modal-padding', 'project-details__desc--italic');
+        objectiveContent.textContent = item.objective;
+
+        objectiveDiv.append(objectiveTitle, objectiveContent);
+
+        container.appendChild(objectiveDiv);
+    }
+
+    
 }
 
 // Adding collapsibleSections function on PASTA project
