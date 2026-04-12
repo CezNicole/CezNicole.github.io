@@ -1,4 +1,3 @@
-import { createElement } from "react";
 import {getProjects, getHighlightedSkills} from "./index-api.js";
 
 const btnContact = document.getElementById('btnContactMe');
@@ -47,7 +46,9 @@ skills.forEach(skill => {
     divSkills.classList.add('section-cards__skills');
     divSkills.textContent = skill;
 
-    divSkillsContainer.appendChild(divSkills);
+    if(divSkillsContainer){
+        divSkillsContainer.appendChild(divSkills);
+    }
 })
 
 
@@ -57,24 +58,37 @@ let cybersecurityProjects = [];
 async function loadCybersecurityProjects(){
     try {
         const response = await getProjects();
-        cybersecurityProjects = response;
+        console.log('RAW RESPONSE:', response);
         
-        const projectWithIds = cybersecurityProjects.map((project, index) =>{
+        // cybersecurityProjects = response;
+
+        
+        const projectWithIds = response.map((project, index) => {
             return{
                 id: `CSProject${index + 1}`,
                 ...project
             }
         })
+
+        cybersecurityProjects = projectWithIds;
+
+        console.log('CYBERSECURITY PROJECTS:', cybersecurityProjects);
+        
+
         renderProjectCards(projectWithIds);
 
         return projectWithIds;
-
     } catch (error) {
-        console.log('Error loading Cybersecurity Projects:', error)        
+        console.log('Error loading Cybersecurity Projects:', error);
+        return [];
     }
 }
 
-cybersecurityProjects = await loadCybersecurityProjects();
+// cybersecurityProjects = await loadCybersecurityProjects();
+await loadCybersecurityProjects();
+
+console.log('ALL PROJECTS:', cybersecurityProjects);
+
 
 
 function createProjectCard(project){
@@ -172,10 +186,24 @@ function createProjectModal(project){
 
     modalContent.append(btnClose, title, overviewDiv, roleDiv);
 
+    // modal.appendChild(modalContent);
+
     // Display project modal details
+    const pastaContainer = document.getElementById('pasta-project');
+
+
     project.sections.forEach(section => {
-        renderSectionData(section, modalContent);
+        // renderSectionData(section, modalContent);
+        // renderSection(section, modalContent);
+        const isPastaProject = (project.projectName || "").toLowerCase().includes('pasta');
+
+        renderSection(section, modalContent, {
+            collapsible: isPastaProject
+        });
     })
+
+    makeCollapsible(pastaContainer);
+
     
     modal.appendChild(modalContent);
 
@@ -192,476 +220,476 @@ function renderProjectCards(projects){
     return portfolioContainer;
 }
 
-// TO-DO: Refactor to make the code DRY for each section type render
-function renderSectionData(section, container, isPastaProject = false){
-    if(section.type === 'text'){
-        const sectionTitle = document.createElement('h2');
-        sectionTitle.classList.add('modal__section-titles');
-        sectionTitle.textContent = section.heading;
+// // TO-DO: Refactor to make the code DRY for each section type render
+// function renderSectionData(section, container, isPastaProject = false){
+//     if(section.type === 'text'){
+//         const sectionTitle = document.createElement('h2');
+//         sectionTitle.classList.add('modal__section-titles');
+//         sectionTitle.textContent = section.heading;
         
-        container.appendChild(sectionTitle);
+//         container.appendChild(sectionTitle);
 
-        toArray(section.content).forEach(text => {
-            const sectionContent = document.createElement('p');
-            sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
-            sectionContent.textContent = text;
+//         toArray(section.content).forEach(text => {
+//             const sectionContent = document.createElement('p');
+//             sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
+//             sectionContent.textContent = text;
 
-            container.appendChild(sectionContent);
-        })
-    } else if(section.type === 'subsections'){
-        const sectionTitle = document.createElement('h2');
-        sectionTitle.classList.add('modal__section-titles');
-        sectionTitle.textContent = section.heading;
+//             container.appendChild(sectionContent);
+//         })
+//     } else if(section.type === 'subsections'){
+//         const sectionTitle = document.createElement('h2');
+//         sectionTitle.classList.add('modal__section-titles');
+//         sectionTitle.textContent = section.heading;
         
-        const subsectionContainer = document.createElement('div');
-        subsectionContainer.classList.add('project-details__desc');
+//         const subsectionContainer = document.createElement('div');
+//         subsectionContainer.classList.add('project-details__desc');
 
-        section.items.forEach(item => {
-            // Collapsible section header
-            const sectionSubtitle = document.createElement('h3');
-            sectionSubtitle.classList.add('modal__section-subtitles');
-            sectionSubtitle.textContent = item.subheading;
+//         section.items.forEach(item => {
+//             // Collapsible section header
+//             const sectionSubtitle = document.createElement('h3');
+//             sectionSubtitle.classList.add('modal__section-subtitles');
+//             sectionSubtitle.textContent = item.subheading;
             
-            // if(isPastaProject){
-            //     sectionSubtitle.classList.add('collapsible');
-            // }
+//             // if(isPastaProject){
+//             //     sectionSubtitle.classList.add('collapsible');
+//             // }
 
             
-            // Collapsible section content
-            const contentDiv = document.createElement('div');
-            
-
-            // subsectionContainer.appendChild(sectionSubtitle);
-
-
-            if(isPastaProject){
-                sectionSubtitle.classList.add('collapsible');
-                contentDiv.classList.add('collapsible-content');
-                subsectionContainer.append(sectionSubtitle, contentDiv);
-            } 
-            else{
-                subsectionContainer.appendChild(sectionSubtitle);
-            }
+//             // Collapsible section content
+//             const contentDiv = document.createElement('div');
             
 
+//             // subsectionContainer.appendChild(sectionSubtitle);
 
-            // PASTA stage objectives
-            if(item.objective){
-                const objectiveDiv = document.createElement('div');
-                objectiveDiv.classList.add('modal__header-content', 'project-details__desc--colored-text');
-    
-                const objectiveTitle = document.createElement('p');
-                objectiveTitle.classList.add('project-details__desc--bold', 'project-details__desc--left-margin');
-                objectiveTitle.textContent = 'Objective:';
-    
-                const objectiveContent = document.createElement('p');
-                objectiveContent.classList.add('project-details__desc', 'project-details__desc--modal-padding', 'project-details__desc--italic');
-                objectiveContent.textContent = item.objective;
-    
-                objectiveDiv.append(objectiveTitle, objectiveContent);
-    
-                // subsectionContainer.appendChild(objectiveDiv);
 
-                if(isPastaProject){
-                    contentDiv.appendChild(objectiveDiv);
-                } else{
-                    subsectionContainer.appendChild(objectiveDiv);
-                }
-            }
+//             if(isPastaProject){
+//                 sectionSubtitle.classList.add('collapsible');
+//                 contentDiv.classList.add('collapsible-content');
+//                 subsectionContainer.append(sectionSubtitle, contentDiv);
+//             } 
+//             else{
+//                 subsectionContainer.appendChild(sectionSubtitle);
+//             }
+            
 
-            // // Item Subsections w/in Project Sections
-            // if(item.subsections){
-            //     item.subsections.forEach(subsection => {
-            //         const subtitle = document.createElement('h4');
-            //         subtitle.classList.add('modal__section-subtitles', 'project-details__desc--left-margin');
-            //         subtitle.textContent = subsection.subtitle;
+
+//             // PASTA stage objectives
+//             if(item.objective){
+//                 const objectiveDiv = document.createElement('div');
+//                 objectiveDiv.classList.add('modal__header-content', 'project-details__desc--colored-text');
+    
+//                 const objectiveTitle = document.createElement('p');
+//                 objectiveTitle.classList.add('project-details__desc--bold', 'project-details__desc--left-margin');
+//                 objectiveTitle.textContent = 'Objective:';
+    
+//                 const objectiveContent = document.createElement('p');
+//                 objectiveContent.classList.add('project-details__desc', 'project-details__desc--modal-padding', 'project-details__desc--italic');
+//                 objectiveContent.textContent = item.objective;
+    
+//                 objectiveDiv.append(objectiveTitle, objectiveContent);
+    
+//                 // subsectionContainer.appendChild(objectiveDiv);
+
+//                 if(isPastaProject){
+//                     contentDiv.appendChild(objectiveDiv);
+//                 } else{
+//                     subsectionContainer.appendChild(objectiveDiv);
+//                 }
+//             }
+
+//             // // Item Subsections w/in Project Sections
+//             // if(item.subsections){
+//             //     item.subsections.forEach(subsection => {
+//             //         const subtitle = document.createElement('h4');
+//             //         subtitle.classList.add('modal__section-subtitles', 'project-details__desc--left-margin');
+//             //         subtitle.textContent = subsection.subtitle;
                     
-            //         subsectionContainer.appendChild(subtitle);
+//             //         subsectionContainer.appendChild(subtitle);
 
-            //         if(subsection.type === 'list'){
+//             //         if(subsection.type === 'list'){
                         
-            //             if(subsection.ordered === false){
-            //                 const unorderedList = document.createElement('ul');
-            //                 unorderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
+//             //             if(subsection.ordered === false){
+//             //                 const unorderedList = document.createElement('ul');
+//             //                 unorderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
 
-            //                 subsection.content.forEach(listItem => {
-            //                     const itemContent = document.createElement('li');
-            //                     itemContent.classList.add('project-details__desc');
-            //                     itemContent.textContent = listItem;
+//             //                 subsection.content.forEach(listItem => {
+//             //                     const itemContent = document.createElement('li');
+//             //                     itemContent.classList.add('project-details__desc');
+//             //                     itemContent.textContent = listItem;
 
-            //                     unorderedList.append(itemContent);
+//             //                     unorderedList.append(itemContent);
 
-            //                     subsectionContainer.appendChild(unorderedList);
-            //                 })
-            //             } else if(subsection.ordered === true){
-            //                 const orderedList = document.createElement('ol');
-            //                 orderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
+//             //                     subsectionContainer.appendChild(unorderedList);
+//             //                 })
+//             //             } else if(subsection.ordered === true){
+//             //                 const orderedList = document.createElement('ol');
+//             //                 orderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
 
-            //                 subsection.content.forEach(listItem => {
-            //                     const itemContent = document.createElement('li');
-            //                     itemContent.classList.add('project-details__desc');
-            //                     itemContent.textContent = listItem;
+//             //                 subsection.content.forEach(listItem => {
+//             //                     const itemContent = document.createElement('li');
+//             //                     itemContent.classList.add('project-details__desc');
+//             //                     itemContent.textContent = listItem;
 
-            //                     orderedList.append(itemContent);
+//             //                     orderedList.append(itemContent);
 
-            //                     subsectionContainer.appendChild(orderedList);
-            //                 })
-            //             }
-            //         } 
-            //         // else if(subsection.type === 'text'){
-            //         else{
-            //             const itemContent = document.createElement('p');
-            //             itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding', 'project-details--newline');
-            //             itemContent.textContent = subsection.content;
+//             //                     subsectionContainer.appendChild(orderedList);
+//             //                 })
+//             //             }
+//             //         } 
+//             //         // else if(subsection.type === 'text'){
+//             //         else{
+//             //             const itemContent = document.createElement('p');
+//             //             itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding', 'project-details--newline');
+//             //             itemContent.textContent = subsection.content;
 
-            //             subsectionContainer.appendChild(itemContent);
-            //         }
-            //     })
-            // }
+//             //             subsectionContainer.appendChild(itemContent);
+//             //         }
+//             //     })
+//             // }
                         
 
-            container.appendChild(sectionTitle);
-            container.appendChild(subsectionContainer);
+//             container.appendChild(sectionTitle);
+//             container.appendChild(subsectionContainer);
 
-            if(item.type === 'list'){
-                if(item.ordered === false){
-                    const unorderedList = document.createElement('ul');
-                    unorderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--left-margin');
+//             if(item.type === 'list'){
+//                 if(item.ordered === false){
+//                     const unorderedList = document.createElement('ul');
+//                     unorderedList.classList.add('project-details__desc--extra-padding', 'project-details__desc--left-margin');
 
-                    item.content.forEach(listItem => {
-                        const itemContent = document.createElement('li');
-                        itemContent.classList.add('project-details__desc');
-                        itemContent.textContent = listItem;
+//                     item.content.forEach(listItem => {
+//                         const itemContent = document.createElement('li');
+//                         itemContent.classList.add('project-details__desc');
+//                         itemContent.textContent = listItem;
 
-                        unorderedList.append(itemContent);
+//                         unorderedList.append(itemContent);
 
-                        // subsectionContainer.appendChild(unorderedList);
+//                         // subsectionContainer.appendChild(unorderedList);
 
-                        if(isPastaProject){
-                            contentDiv.appendChild(unorderedList);
-                        } else{
-                            subsectionContainer.appendChild(unorderedList);
-                        }
-                    })
-                } else if(section.ordered === true){
-                    const orderedList = document.createElement('ol');
-                    orderedList.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
+//                         if(isPastaProject){
+//                             contentDiv.appendChild(unorderedList);
+//                         } else{
+//                             subsectionContainer.appendChild(unorderedList);
+//                         }
+//                     })
+//                 } else if(section.ordered === true){
+//                     const orderedList = document.createElement('ol');
+//                     orderedList.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
 
-                    item.content.forEach(listItem => {
-                        const itemContent = document.createElement('li');
-                        itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
-                        itemContent.textContent = listItem;
+//                     item.content.forEach(listItem => {
+//                         const itemContent = document.createElement('li');
+//                         itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+//                         itemContent.textContent = listItem;
 
-                        orderedList.append(itemContent);
+//                         orderedList.append(itemContent);
 
-                        // subsectionContainer.appendChild(orderedList);
+//                         // subsectionContainer.appendChild(orderedList);
 
-                        if(isPastaProject){
-                            contentDiv.appendChild(orderedList);
-                        } else{
-                            subsectionContainer.appendChild(orderedList);
-                        }
-                    })
-                }
-            } else{
-                toArray(item.content).forEach(text => {
-                    const sectionContent = document.createElement('p');
-                    // sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
-                    sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding', 'project-details--newline');
-                    sectionContent.textContent = text;
+//                         if(isPastaProject){
+//                             contentDiv.appendChild(orderedList);
+//                         } else{
+//                             subsectionContainer.appendChild(orderedList);
+//                         }
+//                     })
+//                 }
+//             } else{
+//                 toArray(item.content).forEach(text => {
+//                     const sectionContent = document.createElement('p');
+//                     // sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding');
+//                     sectionContent.classList.add('project-details__desc', 'project-details__desc--extra-padding', 'project-details--newline');
+//                     sectionContent.textContent = text;
     
-                    // subsectionContainer.appendChild(sectionContent);
+//                     // subsectionContainer.appendChild(sectionContent);
 
-                    if(isPastaProject){
-                        contentDiv.appendChild(sectionContent);
-                    } else{
-                        subsectionContainer.appendChild(sectionContent);
-                    }
-                })
-            }
-            // container.append(sectionTitle, subsectionContainer);
+//                     if(isPastaProject){
+//                         contentDiv.appendChild(sectionContent);
+//                     } else{
+//                         subsectionContainer.appendChild(sectionContent);
+//                     }
+//                 })
+//             }
+//             // container.append(sectionTitle, subsectionContainer);
 
-            // container.appendChild(sectionTitle);
-            // container.appendChild(subsectionContainer);
+//             // container.appendChild(sectionTitle);
+//             // container.appendChild(subsectionContainer);
 
 
-            // Item Subsections w/in Project Sections
-            if(item.subsections){
-                item.subsections.forEach(subsection => {
-                    const subtitle = document.createElement('h4');
-                    subtitle.classList.add('modal__section-subtitles', 'project-details__desc--left-margin');
-                    subtitle.textContent = subsection.subtitle;
+//             // Item Subsections w/in Project Sections
+//             if(item.subsections){
+//                 item.subsections.forEach(subsection => {
+//                     const subtitle = document.createElement('h4');
+//                     subtitle.classList.add('modal__section-subtitles', 'project-details__desc--left-margin');
+//                     subtitle.textContent = subsection.subtitle;
                     
-                    if(isPastaProject){
-                        contentDiv.appendChild(subtitle);
-                    } else {
-                        subsectionContainer.appendChild(subtitle);
-                    }
+//                     if(isPastaProject){
+//                         contentDiv.appendChild(subtitle);
+//                     } else {
+//                         subsectionContainer.appendChild(subtitle);
+//                     }
 
-                    if(subsection.description){
-                        const description = document.createElement('p');
-                        // description.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding', 'project-details--newline');
-                        description.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding');
+//                     if(subsection.description){
+//                         const description = document.createElement('p');
+//                         // description.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding', 'project-details--newline');
+//                         description.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding');
 
-                        description.textContent = subsection.description;
+//                         description.textContent = subsection.description;
     
-                        if(isPastaProject){
-                            contentDiv.appendChild(description);
-                        } else{
-                            subsectionContainer.appendChild(description);
-                        }
-                    }
+//                         if(isPastaProject){
+//                             contentDiv.appendChild(description);
+//                         } else{
+//                             subsectionContainer.appendChild(description);
+//                         }
+//                     }
 
-                    if(subsection.type === 'list'){
-                        const listEl = document.createElement(subsection.ordered ? 'ol' : 'ul');
-                        listEl.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
+//                     if(subsection.type === 'list'){
+//                         const listEl = document.createElement(subsection.ordered ? 'ol' : 'ul');
+//                         listEl.classList.add('project-details__desc--extra-padding', 'project-details__desc--extra-left-margin');
                         
-                        if(subsection.items){
-                            subsection.items.forEach(item => {
-                                const itemHeading = document.createElement('li');
-                                itemHeading.classList.add('project-details__desc', 'project-details__desc--bold', 'project-details__desc--remove-bottom-margin');
-                                itemHeading.textContent = item.subheading;
+//                         if(subsection.items){
+//                             subsection.items.forEach(item => {
+//                                 const itemHeading = document.createElement('li');
+//                                 itemHeading.classList.add('project-details__desc', 'project-details__desc--bold', 'project-details__desc--remove-bottom-margin');
+//                                 itemHeading.textContent = item.subheading;
 
-                                listEl.appendChild(itemHeading);
+//                                 listEl.appendChild(itemHeading);
 
 
-                                // const itemContent = document.createElement('p');
-                                // itemContent.classList.add('project-details__desc');
-                                // itemContent.textContent = item.content;
+//                                 // const itemContent = document.createElement('p');
+//                                 // itemContent.classList.add('project-details__desc');
+//                                 // itemContent.textContent = item.content;
 
-                                toArray(item.content).forEach(text => {
-                                    const itemContent = document.createElement('p');
-                                    itemContent.classList.add('project-details__desc', 'project-details__desc--modal-padding', 'project-details--newline');
-                                    itemContent.textContent = text;
+//                                 toArray(item.content).forEach(text => {
+//                                     const itemContent = document.createElement('p');
+//                                     itemContent.classList.add('project-details__desc', 'project-details__desc--modal-padding', 'project-details--newline');
+//                                     itemContent.textContent = text;
 
-                                    // console.log(text);
+//                                     // console.log(text);
                                     
 
-                                    listEl.appendChild(itemContent);
-                                })
+//                                     listEl.appendChild(itemContent);
+//                                 })
 
-                                // listEl.append(itemHeading, itemContent);
+//                                 // listEl.append(itemHeading, itemContent);
 
-                                if(isPastaProject){
-                                    contentDiv.appendChild(listEl);
-                                } else{
-                                    subsectionContainer.appendChild(listEl);
-                                }
-                            })
-                        } else if(subsection.content){
-                            subsection.content.forEach(listItem => {
-                                const itemContent = document.createElement('li');
-                                itemContent.classList.add('project-details__desc');
-                                itemContent.textContent = listItem;
+//                                 if(isPastaProject){
+//                                     contentDiv.appendChild(listEl);
+//                                 } else{
+//                                     subsectionContainer.appendChild(listEl);
+//                                 }
+//                             })
+//                         } else if(subsection.content){
+//                             subsection.content.forEach(listItem => {
+//                                 const itemContent = document.createElement('li');
+//                                 itemContent.classList.add('project-details__desc');
+//                                 itemContent.textContent = listItem;
 
-                                listEl.append(itemContent);
+//                                 listEl.append(itemContent);
 
-                                if(isPastaProject){
-                                    contentDiv.appendChild(listEl);
-                                } else{
-                                    subsectionContainer.appendChild(listEl);
-                                }
-                            })
-                        } 
-                    } 
-                    else{
-                        const itemContent = document.createElement('p');
-                        itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding', 'project-details--newline');
-                        itemContent.textContent = subsection.content;
+//                                 if(isPastaProject){
+//                                     contentDiv.appendChild(listEl);
+//                                 } else{
+//                                     subsectionContainer.appendChild(listEl);
+//                                 }
+//                             })
+//                         } 
+//                     } 
+//                     else{
+//                         const itemContent = document.createElement('p');
+//                         itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin', 'project-details__desc--extra-padding', 'project-details--newline');
+//                         itemContent.textContent = subsection.content;
 
-                        if(isPastaProject){
-                            contentDiv.appendChild(itemContent);
-                        } else{
-                            subsectionContainer.appendChild(itemContent);
-                        }
-                    }
-                })
-            }
-        })
-    } else if(section.type === 'list'){
-        const sectionTitle = document.createElement('h2');
-        sectionTitle.classList.add('modal__section-titles');
-        sectionTitle.textContent = section.heading;
+//                         if(isPastaProject){
+//                             contentDiv.appendChild(itemContent);
+//                         } else{
+//                             subsectionContainer.appendChild(itemContent);
+//                         }
+//                     }
+//                 })
+//             }
+//         })
+//     } else if(section.type === 'list'){
+//         const sectionTitle = document.createElement('h2');
+//         sectionTitle.classList.add('modal__section-titles');
+//         sectionTitle.textContent = section.heading;
         
-        if(section.ordered === false){
-            const unorderedList = document.createElement('ul');
-            unorderedList.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
+//         if(section.ordered === false){
+//             const unorderedList = document.createElement('ul');
+//             unorderedList.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
 
-            section.items.forEach(item => {
-                if(item.subheading){
-                    const sectionSubtitle = document.createElement('li');
-                    sectionSubtitle.classList.add('project-details__desc', 'modal__list-items', 'modal__list-items--strong', 'project-details__desc--remove-bottom-margin');
-                    sectionSubtitle.textContent = item.subheading;
+//             section.items.forEach(item => {
+//                 if(item.subheading){
+//                     const sectionSubtitle = document.createElement('li');
+//                     sectionSubtitle.classList.add('project-details__desc', 'modal__list-items', 'modal__list-items--strong', 'project-details__desc--remove-bottom-margin');
+//                     sectionSubtitle.textContent = item.subheading;
 
-                    const itemContent = document.createElement('p');
-                    itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
-                    itemContent.textContent = item.content;
+//                     const itemContent = document.createElement('p');
+//                     itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
+//                     itemContent.textContent = item.content;
 
-                    unorderedList.append(sectionSubtitle, itemContent);
-                }
+//                     unorderedList.append(sectionSubtitle, itemContent);
+//                 }
 
-                toArray(item).forEach(text => {
-                    const listItems = document.createElement('li');
-                    listItems.classList.add('project-details__desc');
-                    listItems.textContent = text;
+//                 toArray(item).forEach(text => {
+//                     const listItems = document.createElement('li');
+//                     listItems.classList.add('project-details__desc');
+//                     listItems.textContent = text;
 
-                    unorderedList.appendChild(listItems);
-                })
-            })
+//                     unorderedList.appendChild(listItems);
+//                 })
+//             })
 
-            container.append(sectionTitle, unorderedList);
+//             container.append(sectionTitle, unorderedList);
 
-        } else if(section.ordered === true){
-            const orderedList = document.createElement('ol');
-            orderedList.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
+//         } else if(section.ordered === true){
+//             const orderedList = document.createElement('ol');
+//             orderedList.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
 
-            section.items.forEach(item => {
-                if(item.subheading){
-                    const sectionSubtitle = document.createElement('li');
-                    sectionSubtitle.classList.add('project-details__desc', 'modal__list-items', 'modal__list-items--strong', 'project-details__desc--remove-bottom-margin');
-                    sectionSubtitle.textContent = item.subheading;
+//             section.items.forEach(item => {
+//                 if(item.subheading){
+//                     const sectionSubtitle = document.createElement('li');
+//                     sectionSubtitle.classList.add('project-details__desc', 'modal__list-items', 'modal__list-items--strong', 'project-details__desc--remove-bottom-margin');
+//                     sectionSubtitle.textContent = item.subheading;
 
-                    const itemContent = document.createElement('p');
-                    itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
-                    itemContent.textContent = item.content;
+//                     const itemContent = document.createElement('p');
+//                     itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
+//                     itemContent.textContent = item.content;
                     
-                    orderedList.append(sectionSubtitle, itemContent);
-                }
+//                     orderedList.append(sectionSubtitle, itemContent);
+//                 }
 
-                toArray(item).forEach(text => {
-                    const listItems = document.createElement('li');
-                    listItems.classList.add('project-details__desc');
-                    listItems.textContent = text;
+//                 toArray(item).forEach(text => {
+//                     const listItems = document.createElement('li');
+//                     listItems.classList.add('project-details__desc');
+//                     listItems.textContent = text;
 
-                    orderedList.appendChild(listItems);
-                })
-                container.append(sectionTitle, orderedList);
-            })
-        }
+//                     orderedList.appendChild(listItems);
+//                 })
+//                 container.append(sectionTitle, orderedList);
+//             })
+//         }
 
-        toArray(section.content).forEach(text => {
-            const sectionContent = document.createElement('p');
-            sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
+//         toArray(section.content).forEach(text => {
+//             const sectionContent = document.createElement('p');
+//             sectionContent.classList.add('project-details__desc', 'project-details--newline', 'project-details__desc--modal-padding');
 
-            sectionContent.textContent = text;
+//             sectionContent.textContent = text;
 
-            container.appendChild(sectionContent);
-        })
-    } else if(section.type === 'table'){
-        const sectionTitle = document.createElement('h2');
-        sectionTitle.classList.add('modal__section-titles');
-        sectionTitle.textContent = section.heading;
+//             container.appendChild(sectionContent);
+//         })
+//     } else if(section.type === 'table'){
+//         const sectionTitle = document.createElement('h2');
+//         sectionTitle.classList.add('modal__section-titles');
+//         sectionTitle.textContent = section.heading;
         
-        const table = document.createElement('table');
-        table.classList.add('table');
+//         const table = document.createElement('table');
+//         table.classList.add('table');
 
-        const thead = document.createElement('thead');
+//         const thead = document.createElement('thead');
 
 
-        section.items.forEach(item => {
-            const tableRow = document.createElement('tr');
-            tableRow.classList.add('table__cells');
+//         section.items.forEach(item => {
+//             const tableRow = document.createElement('tr');
+//             tableRow.classList.add('table__cells');
             
-            Object.keys(item.risks[0]).forEach(key => {
-                const tableHeader = document.createElement('th');
-                tableHeader.classList.add('table__cells', 'modal__section-subtitles', 'table__header');
+//             Object.keys(item.risks[0]).forEach(key => {
+//                 const tableHeader = document.createElement('th');
+//                 tableHeader.classList.add('table__cells', 'modal__section-subtitles', 'table__header');
 
-                const uppercaseHeader = key.charAt(0).toUpperCase() + key.slice(1);
-                tableHeader.textContent = uppercaseHeader.split(/(?=[A-Z])/).join(" ");
+//                 const uppercaseHeader = key.charAt(0).toUpperCase() + key.slice(1);
+//                 tableHeader.textContent = uppercaseHeader.split(/(?=[A-Z])/).join(" ");
 
-                tableRow.appendChild(tableHeader);
-            })
-            const priorityHeader = document.createElement('th');
-            priorityHeader.classList.add('table__cells', 'modal__section-subtitles', 'table__header');
-            priorityHeader.textContent = 'Priority';
-            tableRow.appendChild(priorityHeader);
+//                 tableRow.appendChild(tableHeader);
+//             })
+//             const priorityHeader = document.createElement('th');
+//             priorityHeader.classList.add('table__cells', 'modal__section-subtitles', 'table__header');
+//             priorityHeader.textContent = 'Priority';
+//             tableRow.appendChild(priorityHeader);
 
-            thead.appendChild(tableRow);
-            table.appendChild(thead);
+//             thead.appendChild(tableRow);
+//             table.appendChild(thead);
 
 
-            item.risks.forEach((risk, index) => {
-                const tableRow = document.createElement('tr');
-                tableRow.classList.add('table__cells');
+//             item.risks.forEach((risk, index) => {
+//                 const tableRow = document.createElement('tr');
+//                 tableRow.classList.add('table__cells');
 
-                // if(index === 0){
-                //     const tdAsset = document.createElement('td');
-                //     tdAsset.classList.add('table__cells', 'project-details__desc', 'table--span', 'table--center');
-                //     tdAsset.rowSpan = item.risks.length;
-                //     tdAsset.textContent = risk.asset;          
+//                 // if(index === 0){
+//                 //     const tdAsset = document.createElement('td');
+//                 //     tdAsset.classList.add('table__cells', 'project-details__desc', 'table--span', 'table--center');
+//                 //     tdAsset.rowSpan = item.risks.length;
+//                 //     tdAsset.textContent = risk.asset;          
 
                     
-                //     tableRow.appendChild(tdAsset);
-                // }
+//                 //     tableRow.appendChild(tdAsset);
+//                 // }
 
-                // const tdRisk = document.createElement('td');
-                // tdRisk.classList.add('table__cells', 'project-details__desc');
-                // tdRisk.textContent = risk.riskItem;
-                // tableRow.appendChild(tdRisk);
+//                 // const tdRisk = document.createElement('td');
+//                 // tdRisk.classList.add('table__cells', 'project-details__desc');
+//                 // tdRisk.textContent = risk.riskItem;
+//                 // tableRow.appendChild(tdRisk);
 
-                // const tdDesc = document.createElement('td');
-                // tdDesc.classList.add('table__cells', 'project-details__desc');
-                // tdDesc.textContent = risk.description;
-                // tableRow.appendChild(tdDesc);
+//                 // const tdDesc = document.createElement('td');
+//                 // tdDesc.classList.add('table__cells', 'project-details__desc');
+//                 // tdDesc.textContent = risk.description;
+//                 // tableRow.appendChild(tdDesc);
 
-                // const tdLikelihood = document.createElement('td');
-                // tdLikelihood.classList.add('table__cells', 'project-details__desc', 'table--center');
-                // tdLikelihood.textContent = risk.likelihood;
-                // tableRow.appendChild(tdLikelihood);
+//                 // const tdLikelihood = document.createElement('td');
+//                 // tdLikelihood.classList.add('table__cells', 'project-details__desc', 'table--center');
+//                 // tdLikelihood.textContent = risk.likelihood;
+//                 // tableRow.appendChild(tdLikelihood);
 
-                // const tdSeverity = document.createElement('td');
-                // tdSeverity.classList.add('table__cells', 'project-details__desc', 'table--center');
-                // tdSeverity.textContent = risk.severity;
-                // tableRow.appendChild(tdSeverity);
+//                 // const tdSeverity = document.createElement('td');
+//                 // tdSeverity.classList.add('table__cells', 'project-details__desc', 'table--center');
+//                 // tdSeverity.textContent = risk.severity;
+//                 // tableRow.appendChild(tdSeverity);
 
-                Object.entries(risk).forEach(([key, value]) => {
-                    if(key === 'priority') return;
+//                 Object.entries(risk).forEach(([key, value]) => {
+//                     if(key === 'priority') return;
                     
-                    const tableData = document.createElement('td');
-                    tableData.classList.add('table__cells', 'project-details__desc');
+//                     const tableData = document.createElement('td');
+//                     tableData.classList.add('table__cells', 'project-details__desc');
 
-                    if(key === 'likelihood' || key === 'severity'){
-                        tableData.classList.add('table--center');
-                    } 
+//                     if(key === 'likelihood' || key === 'severity'){
+//                         tableData.classList.add('table--center');
+//                     } 
                     
-                    if(typeof value === "object" && value !== null){
-                        const items = document.createElement('ul');
-                        items.classList.add('table--left-padding');
+//                     if(typeof value === "object" && value !== null){
+//                         const items = document.createElement('ul');
+//                         items.classList.add('table--left-padding');
 
-                        toArray(value).forEach(text => {
-                            const listItem = document.createElement('li');
-                            listItem.classList.add('project-details__desc');
-                            listItem.textContent = text;
+//                         toArray(value).forEach(text => {
+//                             const listItem = document.createElement('li');
+//                             listItem.classList.add('project-details__desc');
+//                             listItem.textContent = text;
 
-                            items.appendChild(listItem);
-                        })
-                        tableData.appendChild(items);
-                    } else{
-                        tableData.textContent = value ?? "";
-                    }
-                    tableRow.appendChild(tableData);
-                })
+//                             items.appendChild(listItem);
+//                         })
+//                         tableData.appendChild(items);
+//                     } else{
+//                         tableData.textContent = value ?? "";
+//                     }
+//                     tableRow.appendChild(tableData);
+//                 })
 
-                const tdPriority = document.createElement('td');
-                tdPriority.classList.add('table__cells', 'project-details__desc', 'table--center');
-                let result = calculateOverallRiskScore(risk.likelihood, risk.severity);
-                tdPriority.textContent = result;
+//                 const tdPriority = document.createElement('td');
+//                 tdPriority.classList.add('table__cells', 'project-details__desc', 'table--center');
+//                 let result = calculateOverallRiskScore(risk.likelihood, risk.severity);
+//                 tdPriority.textContent = result;
 
-                if(result <= 3){
-                    tdPriority.classList.add('priority--low');
-                } else if(result > 3 && result <= 6){
-                    tdPriority.classList.add('priority--medium');
-                } else{
-                    tdPriority.classList.add('priority--high');
-                }
+//                 if(result <= 3){
+//                     tdPriority.classList.add('priority--low');
+//                 } else if(result > 3 && result <= 6){
+//                     tdPriority.classList.add('priority--medium');
+//                 } else{
+//                     tdPriority.classList.add('priority--high');
+//                 }
 
-                tableRow.appendChild(tdPriority);
-                table.appendChild(tableRow);
-            })
-        })
-        container.append(sectionTitle, table);
-    }
-}
+//                 tableRow.appendChild(tdPriority);
+//                 table.appendChild(tableRow);
+//             })
+//         })
+//         container.append(sectionTitle, table);
+//     }
+// }
 
 function renderSection(section, container, renderConfig = {}){
     const element = createSection(section, renderConfig);
@@ -673,13 +701,13 @@ function renderSection(section, container, renderConfig = {}){
 function createSection(section, renderConfig = {}){
     switch (section.type) {
         case 'text':
-            return renderText();
+            return renderText(section);
         case 'list':
-            return renderList();
+            return renderList(section);
         case 'subsections':
-            return renderSubsections();
+            return renderSubsections(section, renderConfig);
         case 'table':
-            return renderTable();
+            return renderTable(section);
         default:
             return null;
     }
@@ -705,7 +733,6 @@ function renderText(section){
     })
     return sectionContainer;
 }
-
 function renderList(section){
     const sectionContainer = document.createElement('div');
 
@@ -892,7 +919,7 @@ function createCollapsibleSection(item, renderConfig){
     sectionContainer.classList.add('collapsible-item');
 
     const itemSubheading = document.createElement('h3');
-    itemSubheading.classList.add('modal__section-subtitles');
+    itemSubheading.classList.add('modal__section-subtitles', 'collapsible');
     itemSubheading.textContent = item.subheading;
 
     const collapsibleContentContainer = document.createElement('div');
@@ -938,13 +965,60 @@ function renderSubsectionItemContent(item, container, renderConfig){
         container.appendChild(objectiveDiv);
     }
 
-    
+    // Item Content
+    toArray(item.content).forEach(text => {
+        const itemContent = document.createElement('p');
+        itemContent.classList.add('project-details__desc', 'project-details__desc--extra-padding', 'project-details--newline');
+        itemContent.textContent = text;
+
+        container.appendChild(itemContent);
+    })
+
+    // Item Subsections w/in Project Sections
+    if(item.subsections){
+        item.subsections.forEach(subsection => {
+            const itemSubsection = createSection(subsection, renderConfig);
+
+            if(itemSubsection){
+                container.appendChild(itemSubsection);
+            }
+        }
+    )}
 }
 
-// Adding collapsibleSections function on PASTA project
-const pastaContainer = document.getElementById('pasta-project');
-renderSectionData(section, pastaContainer, isPastaProject = true);
-collapsibleSections(pastaContainer);
+// Collapsible content functionality
+function makeCollapsible(container){
+    container.addEventListener('click', (event) => {
+        const heading = event.target.closest('.collapsible');
+        if(!heading) return;
+
+        const item = heading.closest('.collapsible-item');
+
+        const itemContent = item.querySelector('.collapsible-content');
+
+        heading.classList.toggle('active');
+
+        itemContent.style.maxHeight = itemContent.style.maxHeight ? null : itemContent.scrollHeight + 'px';
+    })
+}
+
+// // Adding collapsibleSections function on PASTA project
+// const pastaContainer = document.getElementById('pasta-project');
+
+// cybersecurityProjects.forEach(project => {
+//     const pastaProject = project.projectName.toLowerCase().includes('pasta');
+
+//     if(pastaProject){
+//         project.sections.forEach(section => {
+//             renderSection(section, modalContent, {
+//                 collapsible: true
+//             })
+//         })
+//     }
+// })
+
+// makeCollapsible(pastaContainer);
+
 
 // Cybersecurity Projects - Modal Functionality
 function openModal(id){
@@ -983,18 +1057,4 @@ function calculateOverallRiskScore(likelihood, severity){
 }
 
 
-// Collapsible content functionality
-function collapsibleSections(container){
-    container.addEventListener('click', (event) => {
-        const header = event.target.closest('.collapsible');
-        if(!header) return;
 
-        const content = header.nextElementSibling;
-        if(!content) return;
-
-        // header.classList.toggle('open');
-        header.classList.toggle('active');
-
-        content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px';
-    })
-}
