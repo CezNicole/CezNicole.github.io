@@ -702,10 +702,10 @@ function createSection(section, renderConfig = {}){
     switch (section.type) {
         case 'text':
             return renderText(section);
-        case 'list':
-            return renderList(section);
         case 'subsections':
             return renderSubsections(section, renderConfig);
+        case 'list':
+            return renderList(section);
         case 'table':
             return renderTable(section);
         default:
@@ -733,45 +733,6 @@ function renderText(section){
     })
     return sectionContainer;
 }
-function renderList(section){
-    const sectionContainer = document.createElement('div');
-
-    if(section.heading){
-        const sectionTitle = document.createElement('h2');
-        sectionTitle.classList.add('modal__section-titles');
-        sectionTitle.textContent = section.heading;
-
-        sectionContainer.appendChild(sectionTitle);
-    }
-
-    const list = document.createElement(section.ordered ? 'ol' : 'ul');
-    list.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
-
-    section.items.forEach(item => {
-        const itemSubheading = document.createElement('li');
-
-        if(typeof item === 'string'){
-            itemSubheading.classList.add('project-details__desc');
-            itemSubheading.textContent = item;
-        } else{
-            itemSubheading.classList.add('project-details__desc', 'modal__list-items', 'modal__list-items--strong', 'project-details__desc--remove-bottom-margin');
-            itemSubheading.textContent = item.subheading;
-
-            if(item.content){
-                toArray(item.content).forEach(text => {
-                    const itemContent = document.createElement('p');
-                    itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
-                    itemContent.textContent = text;
-                    
-                    itemSubheading.appendChild(itemContent);
-                })
-            }
-        }
-        list.append(itemSubheading);
-    })
-    sectionContainer.appendChild(list);
-    return sectionContainer;
-}
 
 function renderSubsections(section, renderConfig = {}){
     const sectionContainer = document.createElement('div');
@@ -790,6 +751,47 @@ function renderSubsections(section, renderConfig = {}){
         sectionContainer.appendChild(sectionItems);
     })
 
+    return sectionContainer;
+}
+
+function renderList(section){
+    const sectionContainer = document.createElement('div');
+
+    if(section.heading){
+        const sectionTitle = document.createElement('h2');
+        sectionTitle.classList.add('modal__section-titles');
+        sectionTitle.textContent = section.heading;
+
+        sectionContainer.appendChild(sectionTitle);
+    }
+
+    const list = document.createElement(section.ordered ? 'ol' : 'ul');
+    list.classList.add('project-details__desc--modal-padding', 'project-details__desc--indent-list');
+
+    section.items.forEach(item => {
+        if(item){
+            toArray(item).forEach(text => {
+                const itemArray = document.createElement('li');
+                itemArray.classList.add('project-details__desc');
+                itemArray.textContent = text;
+                
+                list.appendChild(itemArray);
+            })
+        }
+        
+        if(item.subheading){
+            const sectionSubtitle = document.createElement('li');
+            sectionSubtitle.classList.add('project-details__desc', 'modal__list-items', 'modal__list-items--strong', 'project-details__desc--remove-bottom-margin');
+            sectionSubtitle.textContent = item.subheading;
+
+            const itemContent = document.createElement('p');
+            itemContent.classList.add('project-details__desc', 'project-details__desc--left-margin');
+            itemContent.textContent = item.content;
+
+            list.append(sectionSubtitle, itemContent);
+        }
+    })
+    sectionContainer.appendChild(list);
     return sectionContainer;
 }
 

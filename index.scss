@@ -363,6 +363,7 @@
 		@extend .modal__section-titles;
 		font-size: 1.15em;
 		padding: 0.5em 0.5em 0;
+		color: colors.$white;
 	}
 
 	&__header-content {
@@ -479,6 +480,10 @@
 // .collapsible.open + .collapsible-content {
 // 	max-height: 500px;
 // }
+
+.border-red {
+	border: 2px solid red;
+}
 
 @include breakpoints.tablet {
 	.nav-links {

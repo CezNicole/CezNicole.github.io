@@ -437,6 +437,7 @@ body {
 .modal__section-subtitles {
   font-size: 1.15em;
   padding: 0.5em 0.5em 0;
+  color: #fff;
 }
 .modal__header-content {
   display: flex;
@@ -535,6 +536,10 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
+}
+
+.border-red {
+  border: 2px solid red;
 }
 
 @media (min-width: 768px) {
